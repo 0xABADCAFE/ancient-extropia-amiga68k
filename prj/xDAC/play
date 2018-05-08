@@ -1,0 +1,2 @@
+.key SOUND
+play16 <SOUND> output paula14c verbosity 1

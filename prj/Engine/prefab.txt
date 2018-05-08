@@ -1,0 +1,45 @@
+PrefabDef <tris>, <verts>, <vnorms>, <fnorms>, <pconsts>
+
+; tris    number of triangle definitions      [int 0...85]
+; verts   number of vertex definitions        [int 0...tris*3 (255 max)] 
+; vnorms  number of vertex normal definitions [int 0...verts (255 max)]
+; fnorms  number of face normal definitions   [int 0...tris]
+; pconsts number of plane constants           [int 0...tris]
+
+; triangle definition
+T { <t>, <v1>, <v2>, <v3>, <n1>, <n2>, <n3>, <fn>, <pc>, <s> }
+
+; t = texture           [int 0...255, 0=untextured]
+; v1 = vertex 1         [int 0...verts-1]
+; v2 = vertex 2         [int 0...verts-1]
+; v3 = vertex 3         [int 0...verts-1]
+; n1 = vertex 1 normal  [int 0...vnorms-1]
+; n2 = vertex 2 normal  [int 0...vnorms-1]
+; n3 = vertex 3 normal  [int 0...vnorms-1]
+; fn = face normal      [int 0...fnorms-1]
+; pc = plane constant   [int 0...pconsts-1]
+; s  = solidiy          [int 0, 1]
+
+; vertex definition
+V { <x>, <y>, <z>, <u>, <v>, <c> };
+
+; x = x-coordinate         [float  0.0...1.0]
+; y = y-coordinate         [float  0.0...1.0]
+; z = z-coordinate         [float  0.0...1.0]
+; u = texture x-coordinate [float  0.0...1.0]
+; v = texture y-coordinate [float  0.0...1.0]
+; c = base colour          [argb32 0x00000000...0xFFFFFFFF]
+
+; normal
+N { <x>, <y>, <z> }
+F { <x>, <y>, <z> }
+
+
+; x = x-component          [float -1.0...1.0]
+; y = y-component          [float -1.0...1.0]
+; z = z-component          [float -1.0...1.0]
+
+; plane constant
+C <v>
+
+; v = value                [float <any>]

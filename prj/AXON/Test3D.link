@@ -1,0 +1,18 @@
+"Van:Development/StormC/StormSYS/startups/startup.o"
+0,0,0,132,code_68k
+1,0,132,48,code_68k
+2,0,180,36,code_68k
+3,2,0,16,data
+"Mendoza:Extropia/eXtropia/prj/AXON/test3Dmath.o"
+0,0,216,828,code_68k
+"Mendoza:Extropia/eXtropia/lib/Common/xBase.o"
+0,0,1044,2212,code_68k
+1,2,16,1456,data
+2,3,0,8968,bss
+"Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/sysBase.o"
+0,0,3256,2272,code_68k
+1,2,1472,32,data
+"Mendoza:Extropia/eXtropia/prj/AXON/3DBase.o"
+0,0,5528,7508,code_68k
+1,2,1504,728,data
+!0,216 ; main_

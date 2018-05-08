@@ -1,0 +1,1718 @@
+Global M68K Construktors
+	_INIT_0_InitFiles
+	_INIT_1_DOS_c
+	_INIT_2_MathIEEEDoubTrans_c
+	_INIT_5_InitStdIOFiles
+	_INIT_8_xBase_cpp__xbSt
+	_INIT_8_JasmineTable_cpp
+Global M68K Destruktors
+	_EXIT_5_InitStdIOFiles
+	_EXIT_5_InitFiles
+	_EXIT_4_free
+	_EXIT_2_MathIEEEDoubTrans_c
+	_EXIT_1_DOS_c
+	_EXIT_0_Main
+No Global PPC Construktors
+No Global PPC Destruktors
+
+M68K Code
+
+
+  Hunk #0 ( Far FAST ) 55556 Bytes (0xd904)
+  _exit = 132 (0x84) referenced 2 times
+    File Van:Development/StormC/StormSYS/startups/startup.o
+  JASMINE::Execute(JASMINE *) = 180 (0xb4) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Execute.o
+  JASMINE_EA::fR31(register __a2 JASMINE *,register __d7 unsigned int) = 232 (0xe8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fIR31(register __a2 JASMINE *,register __d7 unsigned int) = 242 (0xf2) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLIR31(register __a2 JASMINE *,register __d7 unsigned int) = 254 (0xfe) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLUIR31(register __a2 JASMINE *,register __d7 unsigned int) = 274 (0x112) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fIRRO(register __a2 JASMINE *,register __d7 unsigned int) = 298 (0x12a) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fIRROU(register __a2 JASMINE *,register __d7 unsigned int) = 348 (0x15c) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fIRSRO(register __a2 JASMINE *,register __d7 unsigned int) = 406 (0x196) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fIRSROU(register __a2 JASMINE *,register __d7 unsigned int) = 466 (0x1d2) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fCTR(register __a2 JASMINE *,register __d7 unsigned int) = 534 (0x216) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fDS(register __a2 JASMINE *,register __d7 unsigned int) = 542 (0x21e) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fCDS(register __a2 JASMINE *,register __d7 unsigned int) = 562 (0x232) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLITERAL(register __a2 JASMINE *,register __d7 unsigned int) = 582 (0x246) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fOFFSET_PC(register __a2 JASMINE *,register __d7 unsigned int) = 596 (0x254) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLUIR30(register __a2 JASMINE *,register __d7 unsigned int) = 274 (0x112) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLUIR29(register __a2 JASMINE *,register __d7 unsigned int) = 274 (0x112) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLUIR28(register __a2 JASMINE *,register __d7 unsigned int) = 274 (0x112) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLUIR27(register __a2 JASMINE *,register __d7 unsigned int) = 274 (0x112) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLUIR26(register __a2 JASMINE *,register __d7 unsigned int) = 274 (0x112) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLUIR25(register __a2 JASMINE *,register __d7 unsigned int) = 274 (0x112) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLUIR24(register __a2 JASMINE *,register __d7 unsigned int) = 274 (0x112) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLUIR23(register __a2 JASMINE *,register __d7 unsigned int) = 274 (0x112) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLUIR22(register __a2 JASMINE *,register __d7 unsigned int) = 274 (0x112) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLUIR21(register __a2 JASMINE *,register __d7 unsigned int) = 274 (0x112) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLUIR20(register __a2 JASMINE *,register __d7 unsigned int) = 274 (0x112) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLUIR19(register __a2 JASMINE *,register __d7 unsigned int) = 274 (0x112) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLUIR18(register __a2 JASMINE *,register __d7 unsigned int) = 274 (0x112) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLUIR17(register __a2 JASMINE *,register __d7 unsigned int) = 274 (0x112) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLUIR16(register __a2 JASMINE *,register __d7 unsigned int) = 274 (0x112) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLUIR15(register __a2 JASMINE *,register __d7 unsigned int) = 274 (0x112) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLUIR14(register __a2 JASMINE *,register __d7 unsigned int) = 274 (0x112) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLUIR13(register __a2 JASMINE *,register __d7 unsigned int) = 274 (0x112) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLUIR12(register __a2 JASMINE *,register __d7 unsigned int) = 274 (0x112) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLUIR11(register __a2 JASMINE *,register __d7 unsigned int) = 274 (0x112) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLUIR10(register __a2 JASMINE *,register __d7 unsigned int) = 274 (0x112) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLUIR9(register __a2 JASMINE *,register __d7 unsigned int) = 274 (0x112) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLUIR8(register __a2 JASMINE *,register __d7 unsigned int) = 274 (0x112) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLUIR7(register __a2 JASMINE *,register __d7 unsigned int) = 274 (0x112) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLUIR6(register __a2 JASMINE *,register __d7 unsigned int) = 274 (0x112) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLUIR5(register __a2 JASMINE *,register __d7 unsigned int) = 274 (0x112) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLUIR4(register __a2 JASMINE *,register __d7 unsigned int) = 274 (0x112) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLUIR3(register __a2 JASMINE *,register __d7 unsigned int) = 274 (0x112) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLUIR2(register __a2 JASMINE *,register __d7 unsigned int) = 274 (0x112) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLUIR1(register __a2 JASMINE *,register __d7 unsigned int) = 274 (0x112) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLUIR0(register __a2 JASMINE *,register __d7 unsigned int) = 274 (0x112) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLIR30(register __a2 JASMINE *,register __d7 unsigned int) = 254 (0xfe) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLIR29(register __a2 JASMINE *,register __d7 unsigned int) = 254 (0xfe) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLIR28(register __a2 JASMINE *,register __d7 unsigned int) = 254 (0xfe) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLIR27(register __a2 JASMINE *,register __d7 unsigned int) = 254 (0xfe) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLIR26(register __a2 JASMINE *,register __d7 unsigned int) = 254 (0xfe) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLIR25(register __a2 JASMINE *,register __d7 unsigned int) = 254 (0xfe) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLIR24(register __a2 JASMINE *,register __d7 unsigned int) = 254 (0xfe) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLIR23(register __a2 JASMINE *,register __d7 unsigned int) = 254 (0xfe) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLIR22(register __a2 JASMINE *,register __d7 unsigned int) = 254 (0xfe) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLIR21(register __a2 JASMINE *,register __d7 unsigned int) = 254 (0xfe) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLIR20(register __a2 JASMINE *,register __d7 unsigned int) = 254 (0xfe) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLIR19(register __a2 JASMINE *,register __d7 unsigned int) = 254 (0xfe) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLIR18(register __a2 JASMINE *,register __d7 unsigned int) = 254 (0xfe) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLIR17(register __a2 JASMINE *,register __d7 unsigned int) = 254 (0xfe) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLIR16(register __a2 JASMINE *,register __d7 unsigned int) = 254 (0xfe) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLIR15(register __a2 JASMINE *,register __d7 unsigned int) = 254 (0xfe) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLIR14(register __a2 JASMINE *,register __d7 unsigned int) = 254 (0xfe) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLIR13(register __a2 JASMINE *,register __d7 unsigned int) = 254 (0xfe) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLIR12(register __a2 JASMINE *,register __d7 unsigned int) = 254 (0xfe) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLIR11(register __a2 JASMINE *,register __d7 unsigned int) = 254 (0xfe) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLIR10(register __a2 JASMINE *,register __d7 unsigned int) = 254 (0xfe) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLIR9(register __a2 JASMINE *,register __d7 unsigned int) = 254 (0xfe) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLIR8(register __a2 JASMINE *,register __d7 unsigned int) = 254 (0xfe) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLIR7(register __a2 JASMINE *,register __d7 unsigned int) = 254 (0xfe) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLIR6(register __a2 JASMINE *,register __d7 unsigned int) = 254 (0xfe) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLIR5(register __a2 JASMINE *,register __d7 unsigned int) = 254 (0xfe) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLIR4(register __a2 JASMINE *,register __d7 unsigned int) = 254 (0xfe) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLIR3(register __a2 JASMINE *,register __d7 unsigned int) = 254 (0xfe) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLIR2(register __a2 JASMINE *,register __d7 unsigned int) = 254 (0xfe) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLIR1(register __a2 JASMINE *,register __d7 unsigned int) = 254 (0xfe) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fLIR0(register __a2 JASMINE *,register __d7 unsigned int) = 254 (0xfe) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fIR30(register __a2 JASMINE *,register __d7 unsigned int) = 242 (0xf2) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fIR29(register __a2 JASMINE *,register __d7 unsigned int) = 242 (0xf2) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fIR28(register __a2 JASMINE *,register __d7 unsigned int) = 242 (0xf2) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fIR27(register __a2 JASMINE *,register __d7 unsigned int) = 242 (0xf2) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fIR26(register __a2 JASMINE *,register __d7 unsigned int) = 242 (0xf2) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fIR25(register __a2 JASMINE *,register __d7 unsigned int) = 242 (0xf2) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fIR24(register __a2 JASMINE *,register __d7 unsigned int) = 242 (0xf2) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fIR23(register __a2 JASMINE *,register __d7 unsigned int) = 242 (0xf2) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fIR22(register __a2 JASMINE *,register __d7 unsigned int) = 242 (0xf2) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fIR21(register __a2 JASMINE *,register __d7 unsigned int) = 242 (0xf2) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fIR20(register __a2 JASMINE *,register __d7 unsigned int) = 242 (0xf2) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fIR19(register __a2 JASMINE *,register __d7 unsigned int) = 242 (0xf2) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fIR18(register __a2 JASMINE *,register __d7 unsigned int) = 242 (0xf2) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fIR17(register __a2 JASMINE *,register __d7 unsigned int) = 242 (0xf2) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fIR16(register __a2 JASMINE *,register __d7 unsigned int) = 242 (0xf2) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fIR15(register __a2 JASMINE *,register __d7 unsigned int) = 242 (0xf2) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fIR14(register __a2 JASMINE *,register __d7 unsigned int) = 242 (0xf2) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fIR13(register __a2 JASMINE *,register __d7 unsigned int) = 242 (0xf2) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fIR12(register __a2 JASMINE *,register __d7 unsigned int) = 242 (0xf2) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fIR11(register __a2 JASMINE *,register __d7 unsigned int) = 242 (0xf2) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fIR10(register __a2 JASMINE *,register __d7 unsigned int) = 242 (0xf2) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fIR9(register __a2 JASMINE *,register __d7 unsigned int) = 242 (0xf2) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fIR8(register __a2 JASMINE *,register __d7 unsigned int) = 242 (0xf2) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fIR7(register __a2 JASMINE *,register __d7 unsigned int) = 242 (0xf2) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fIR6(register __a2 JASMINE *,register __d7 unsigned int) = 242 (0xf2) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fIR5(register __a2 JASMINE *,register __d7 unsigned int) = 242 (0xf2) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fIR4(register __a2 JASMINE *,register __d7 unsigned int) = 242 (0xf2) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fIR3(register __a2 JASMINE *,register __d7 unsigned int) = 242 (0xf2) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fIR2(register __a2 JASMINE *,register __d7 unsigned int) = 242 (0xf2) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fIR1(register __a2 JASMINE *,register __d7 unsigned int) = 242 (0xf2) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fIR0(register __a2 JASMINE *,register __d7 unsigned int) = 242 (0xf2) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fR30(register __a2 JASMINE *,register __d7 unsigned int) = 232 (0xe8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fR29(register __a2 JASMINE *,register __d7 unsigned int) = 232 (0xe8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fR28(register __a2 JASMINE *,register __d7 unsigned int) = 232 (0xe8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fR27(register __a2 JASMINE *,register __d7 unsigned int) = 232 (0xe8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fR26(register __a2 JASMINE *,register __d7 unsigned int) = 232 (0xe8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fR25(register __a2 JASMINE *,register __d7 unsigned int) = 232 (0xe8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fR24(register __a2 JASMINE *,register __d7 unsigned int) = 232 (0xe8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fR23(register __a2 JASMINE *,register __d7 unsigned int) = 232 (0xe8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fR22(register __a2 JASMINE *,register __d7 unsigned int) = 232 (0xe8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fR21(register __a2 JASMINE *,register __d7 unsigned int) = 232 (0xe8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fR20(register __a2 JASMINE *,register __d7 unsigned int) = 232 (0xe8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fR19(register __a2 JASMINE *,register __d7 unsigned int) = 232 (0xe8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fR18(register __a2 JASMINE *,register __d7 unsigned int) = 232 (0xe8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fR17(register __a2 JASMINE *,register __d7 unsigned int) = 232 (0xe8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fR16(register __a2 JASMINE *,register __d7 unsigned int) = 232 (0xe8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fR15(register __a2 JASMINE *,register __d7 unsigned int) = 232 (0xe8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fR14(register __a2 JASMINE *,register __d7 unsigned int) = 232 (0xe8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fR13(register __a2 JASMINE *,register __d7 unsigned int) = 232 (0xe8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fR12(register __a2 JASMINE *,register __d7 unsigned int) = 232 (0xe8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fR11(register __a2 JASMINE *,register __d7 unsigned int) = 232 (0xe8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fR10(register __a2 JASMINE *,register __d7 unsigned int) = 232 (0xe8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fR9(register __a2 JASMINE *,register __d7 unsigned int) = 232 (0xe8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fR8(register __a2 JASMINE *,register __d7 unsigned int) = 232 (0xe8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fR7(register __a2 JASMINE *,register __d7 unsigned int) = 232 (0xe8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fR6(register __a2 JASMINE *,register __d7 unsigned int) = 232 (0xe8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fR5(register __a2 JASMINE *,register __d7 unsigned int) = 232 (0xe8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fR4(register __a2 JASMINE *,register __d7 unsigned int) = 232 (0xe8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fR3(register __a2 JASMINE *,register __d7 unsigned int) = 232 (0xe8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fR2(register __a2 JASMINE *,register __d7 unsigned int) = 232 (0xe8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fR1(register __a2 JASMINE *,register __d7 unsigned int) = 232 (0xe8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_EA::fR0(register __a2 JASMINE *,register __d7 unsigned int) = 232 (0xe8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Address.o
+  JASMINE_OP::fNOP(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 616 (0x268) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Flow.o
+  JASMINE_OP::fEND(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 624 (0x270) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Flow.o
+  JASMINE_OP::fLEA(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 640 (0x280) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Flow.o
+  JASMINE_OP::fBRA(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 648 (0x288) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Flow.o
+  JASMINE_OP::fBNEQ_I8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 704 (0x2c0) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Flow.o
+  JASMINE_OP::fBNEQ_I16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 864 (0x360) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Flow.o
+  JASMINE_OP::fBNEQ_I32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 1024 (0x400) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Flow.o
+  JASMINE_OP::fBNEQ_I64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 1184 (0x4a0) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Flow.o
+  JASMINE_OP::fBNEQ_F32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 1352 (0x548) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Flow.o
+  JASMINE_OP::fBNEQ_F64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 1536 (0x600) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Flow.o
+  JASMINE_OP::fBLS_I8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 1720 (0x6b8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Flow.o
+  JASMINE_OP::fBLS_I16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 1880 (0x758) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Flow.o
+  JASMINE_OP::fBLS_I32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 2040 (0x7f8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Flow.o
+  JASMINE_OP::fBLS_I64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 2200 (0x898) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Flow.o
+  JASMINE_OP::fBLS_F32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 2368 (0x940) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Flow.o
+  JASMINE_OP::fBLS_F64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 2552 (0x9f8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Flow.o
+  JASMINE_OP::fBLSEQ_I8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 2736 (0xab0) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Flow.o
+  JASMINE_OP::fBLSEQ_I16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 2896 (0xb50) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Flow.o
+  JASMINE_OP::fBLSEQ_I32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 3056 (0xbf0) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Flow.o
+  JASMINE_OP::fBLSEQ_I64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 3216 (0xc90) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Flow.o
+  JASMINE_OP::fBLSEQ_F32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 3384 (0xd38) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Flow.o
+  JASMINE_OP::fBLSEQ_F64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 3568 (0xdf0) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Flow.o
+  JASMINE_OP::fBEQ_I8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 3752 (0xea8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Flow.o
+  JASMINE_OP::fBEQ_I16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 3912 (0xf48) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Flow.o
+  JASMINE_OP::fBEQ_I32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 4072 (0xfe8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Flow.o
+  JASMINE_OP::fBEQ_I64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 4232 (0x1088) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Flow.o
+  JASMINE_OP::fBEQ_F32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 4400 (0x1130) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Flow.o
+  JASMINE_OP::fBEQ_F64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 4584 (0x11e8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Flow.o
+  JASMINE_OP::fBGREQ_I8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 4768 (0x12a0) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Flow.o
+  JASMINE_OP::fBGREQ_I16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 4928 (0x1340) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Flow.o
+  JASMINE_OP::fBGREQ_I32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 5088 (0x13e0) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Flow.o
+  JASMINE_OP::fBGREQ_I64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 5248 (0x1480) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Flow.o
+  JASMINE_OP::fBGREQ_F32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 5416 (0x1528) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Flow.o
+  JASMINE_OP::fBGREQ_F64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 5600 (0x15e0) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Flow.o
+  JASMINE_OP::fBGR_I8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 5784 (0x1698) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Flow.o
+  JASMINE_OP::fBGR_I16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 5944 (0x1738) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Flow.o
+  JASMINE_OP::fBGR_I32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 6104 (0x17d8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Flow.o
+  JASMINE_OP::fBGR_I64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 6264 (0x1878) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Flow.o
+  JASMINE_OP::fBGR_F32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 6432 (0x1920) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Flow.o
+  JASMINE_OP::fBGR_F64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 6616 (0x19d8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Flow.o
+  JASMINE_OP::fADD_I8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 6800 (0x1a90) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Arith.o
+  JASMINE_OP::fADD_I16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 6976 (0x1b40) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Arith.o
+  JASMINE_OP::fADD_I32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 7152 (0x1bf0) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Arith.o
+  JASMINE_OP::fSUB_I8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 7328 (0x1ca0) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Arith.o
+  JASMINE_OP::fSUB_I16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 7504 (0x1d50) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Arith.o
+  JASMINE_OP::fSUB_I32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 7680 (0x1e00) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Arith.o
+  JASMINE_OP::fMUL_U8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 7856 (0x1eb0) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Arith.o
+  JASMINE_OP::fMUL_U16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 8040 (0x1f68) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Arith.o
+  JASMINE_OP::fMUL_U32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 8224 (0x2020) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Arith.o
+  JASMINE_OP::fMUL_I8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 8408 (0x20d8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Arith.o
+  JASMINE_OP::fMUL_I16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 8592 (0x2190) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Arith.o
+  JASMINE_OP::fMUL_I32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 8776 (0x2248) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Arith.o
+  JASMINE_OP::fDIV_U8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 8960 (0x2300) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Arith.o
+  JASMINE_OP::fDIV_U16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 9152 (0x23c0) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Arith.o
+  JASMINE_OP::fDIV_U32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 9344 (0x2480) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Arith.o
+  JASMINE_OP::fDIV_I8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 9544 (0x2548) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Arith.o
+  JASMINE_OP::fDIV_I16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 9744 (0x2610) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Arith.o
+  JASMINE_OP::fDIV_I32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 9944 (0x26d8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Arith.o
+  JASMINE_OP::fMOD_U8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 10144 (0x27a0) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Arith.o
+  JASMINE_OP::fMOD_U16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 10344 (0x2868) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Arith.o
+  JASMINE_OP::fMOD_U32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 10544 (0x2930) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Arith.o
+  JASMINE_OP::fMOD_I8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 10744 (0x29f8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Arith.o
+  JASMINE_OP::fMOD_I16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 10944 (0x2ac0) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Arith.o
+  JASMINE_OP::fMOD_I32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 11144 (0x2b88) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Arith.o
+  JASMINE_OP::fNEG_I8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 11344 (0x2c50) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Arith.o
+  JASMINE_OP::fNEG_I16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 11464 (0x2cc8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Arith.o
+  JASMINE_OP::fNEG_I32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 11584 (0x2d40) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Arith.o
+  JASMINE_OP::fSHL_I8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 11704 (0x2db8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Arith.o
+  JASMINE_OP::fSHL_I16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 11888 (0x2e70) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Arith.o
+  JASMINE_OP::fSHL_I32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 12072 (0x2f28) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Arith.o
+  JASMINE_OP::fSHR_I8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 12256 (0x2fe0) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Arith.o
+  JASMINE_OP::fSHR_I16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 12440 (0x3098) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Arith.o
+  JASMINE_OP::fSHR_I32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 12624 (0x3150) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Arith.o
+  JASMINE_OP::fADD_I64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 12812 (0x320c) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int64Arith.o
+  JASMINE_OP::fSUB_I64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 13036 (0x32ec) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int64Arith.o
+  JASMINE_OP::fMUL_I64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 13260 (0x33cc) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int64Arith.o
+  JASMINE_OP::fDIV_I64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 13484 (0x34ac) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int64Arith.o
+  JASMINE_OP::fMOD_I64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 13724 (0x359c) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int64Arith.o
+  JASMINE_OP::fMUL_U64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 13964 (0x368c) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int64Arith.o
+  JASMINE_OP::fDIV_U64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 14188 (0x376c) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int64Arith.o
+  JASMINE_OP::fMOD_U64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 14428 (0x385c) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int64Arith.o
+  JASMINE_OP::fNEG_I64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 14668 (0x394c) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int64Arith.o
+  JASMINE_OP::fSHL_I64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 14820 (0x39e4) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int64Arith.o
+  JASMINE_OP::fSHR_I64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 15044 (0x3ac4) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int64Arith.o
+  JASMINE_OP::fSHL_X64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 14820 (0x39e4) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int64Arith.o
+  JASMINE_OP::fADD_F32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 15268 (0x3ba4) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/FloatArith.o
+  JASMINE_OP::fADD_F64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 15436 (0x3c4c) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/FloatArith.o
+  JASMINE_OP::fSUB_F32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 15604 (0x3cf4) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/FloatArith.o
+  JASMINE_OP::fSUB_F64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 15772 (0x3d9c) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/FloatArith.o
+  JASMINE_OP::fMUL_F32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 15940 (0x3e44) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/FloatArith.o
+  JASMINE_OP::fMUL_F64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 16108 (0x3eec) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/FloatArith.o
+  JASMINE_OP::fDIV_F32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 16276 (0x3f94) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/FloatArith.o
+  JASMINE_OP::fDIV_F64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 16444 (0x403c) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/FloatArith.o
+  JASMINE_OP::fMOD_F32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 16612 (0x40e4) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/FloatArith.o
+  JASMINE_OP::fMOD_F64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 16780 (0x418c) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/FloatArith.o
+  JASMINE_OP::fNEG_F32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 16948 (0x4234) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/FloatArith.o
+  JASMINE_OP::fNEG_F64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 17068 (0x42ac) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/FloatArith.o
+  JASMINE_OP::fAND_X8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 17188 (0x4324) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Logic.o
+  JASMINE_OP::fAND_X16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 17364 (0x43d4) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Logic.o
+  JASMINE_OP::fAND_X32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 17540 (0x4484) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Logic.o
+  JASMINE_OP::fOR_X8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 17716 (0x4534) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Logic.o
+  JASMINE_OP::fOR_X16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 17892 (0x45e4) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Logic.o
+  JASMINE_OP::fOR_X32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 18068 (0x4694) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Logic.o
+  JASMINE_OP::fXOR_X8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 18244 (0x4744) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Logic.o
+  JASMINE_OP::fXOR_X16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 18420 (0x47f4) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Logic.o
+  JASMINE_OP::fXOR_X32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 18596 (0x48a4) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Logic.o
+  JASMINE_OP::fINV_X8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 18772 (0x4954) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Logic.o
+  JASMINE_OP::fINV_X16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 18892 (0x49cc) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Logic.o
+  JASMINE_OP::fINV_X32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 19012 (0x4a44) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Logic.o
+  JASMINE_OP::fSHL_X8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 19132 (0x4abc) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Logic.o
+  JASMINE_OP::fSHL_X16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 19316 (0x4b74) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Logic.o
+  JASMINE_OP::fSHL_X32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 19500 (0x4c2c) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Logic.o
+  JASMINE_OP::fSHR_X8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 19684 (0x4ce4) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Logic.o
+  JASMINE_OP::fSHR_X16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 19868 (0x4d9c) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Logic.o
+  JASMINE_OP::fSHR_X32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 20052 (0x4e54) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Logic.o
+  JASMINE_OP::fAND_X64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 20232 (0x4f08) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int64Logic.o
+  JASMINE_OP::fOR_X64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 20448 (0x4fe0) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int64Logic.o
+  JASMINE_OP::fXOR_X64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 20664 (0x50b8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int64Logic.o
+  JASMINE_OP::fINV_X64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 20888 (0x5198) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int64Logic.o
+  JASMINE_OP::fSHR_X64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 21040 (0x5230) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int64Logic.o
+  JASMINE_OP::fSYS(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 21264 (0x5310) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/System.o
+  JASMINE_OP::fI16_U8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 21292 (0x532c) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Casts.o
+  JASMINE_OP::fI32_U8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 21420 (0x53ac) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Casts.o
+  JASMINE_OP::fF32_U8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 21548 (0x542c) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Casts.o
+  JASMINE_OP::fF64_U8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 21682 (0x54b2) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Casts.o
+  JASMINE_OP::fI32_U16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 21820 (0x553c) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Casts.o
+  JASMINE_OP::fF32_U16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 21948 (0x55bc) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Casts.o
+  JASMINE_OP::fF64_U16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 22084 (0x5644) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Casts.o
+  JASMINE_OP::fF32_U32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 22220 (0x56cc) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Casts.o
+  JASMINE_OP::fF64_U32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 22372 (0x5764) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Casts.o
+  JASMINE_OP::fU32_F64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 22524 (0x57fc) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Casts.o
+  JASMINE_OP::fU16_F64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 22692 (0x58a4) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Casts.o
+  JASMINE_OP::fU8_F64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 22812 (0x591c) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Casts.o
+  JASMINE_OP::fU32_F32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 22932 (0x5994) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Casts.o
+  JASMINE_OP::fU16_F32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 23100 (0x5a3c) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Casts.o
+  JASMINE_OP::fU8_F32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 23220 (0x5ab4) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Casts.o
+  JASMINE_OP::fI16_U32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 23340 (0x5b2c) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Casts.o
+  JASMINE_OP::fI8_U32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 23468 (0x5bac) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Casts.o
+  JASMINE_OP::fI8_U16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 23596 (0x5c2c) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Casts.o
+  JASMINE_OP::fI16_S8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 23724 (0x5cac) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Casts.o
+  JASMINE_OP::fI32_S8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 23844 (0x5d24) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Casts.o
+  JASMINE_OP::fF32_S8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 23964 (0x5d9c) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Casts.o
+  JASMINE_OP::fF64_S8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 24100 (0x5e24) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Casts.o
+  JASMINE_OP::fI32_S16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 24236 (0x5eac) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Casts.o
+  JASMINE_OP::fF32_S16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 24356 (0x5f24) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Casts.o
+  JASMINE_OP::fF64_S16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 24492 (0x5fac) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Casts.o
+  JASMINE_OP::fF32_S32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 24628 (0x6034) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Casts.o
+  JASMINE_OP::fF64_S32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 24764 (0x60bc) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Casts.o
+  JASMINE_OP::fS32_F64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 24900 (0x6144) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Casts.o
+  JASMINE_OP::fS16_F64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 25020 (0x61bc) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Casts.o
+  JASMINE_OP::fS8_F64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 25140 (0x6234) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Casts.o
+  JASMINE_OP::fS32_F32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 25260 (0x62ac) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Casts.o
+  JASMINE_OP::fS16_F32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 25380 (0x6324) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Casts.o
+  JASMINE_OP::fS8_F32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 25500 (0x639c) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Casts.o
+  JASMINE_OP::fI16_S32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 25620 (0x6414) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Casts.o
+  JASMINE_OP::fI8_S32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 25740 (0x648c) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Casts.o
+  JASMINE_OP::fI8_S16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 25860 (0x6504) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/Int32Casts.o
+  JASMINE_OP::fF64_F32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 25980 (0x657c) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/FloatCasts.o
+  JASMINE_OP::fF32_F64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 26100 (0x65f4) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/FloatCasts.o
+  main(int,char **) = 26220 (0x666c) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/runvm.o
+  XSFOBJ::ReadyForRead() = 26694 (0x6846) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/runvm.o
+  XSFOBJ::ReadyForWrite() = 26698 (0x684a) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/runvm.o
+  XSFBASIC::~XSFBASIC() = 26702 (0x684e) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/runvm.o
+  XSFBASIC::FileOptions() = 26750 (0x687e) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/runvm.o
+  XSFBASIC::DataFormat() = 26768 (0x6890) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/runvm.o
+  XSFBASIC::Size() = 26786 (0x68a2) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/runvm.o
+  XSFBASIC::Tell() = 26826 (0x68ca) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/runvm.o
+  XSFBASIC::Seek(long,long) = 26852 (0x68e4) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/runvm.o
+  XSFBASIC::StartOfFile() = 26890 (0x690a) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/runvm.o
+  XSFBASIC::EndOfFile() = 26916 (0x6924) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/runvm.o
+  XSFBASIC::Valid() = 26942 (0x693e) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/runvm.o
+  XSFBASIC::Write64(void *,unsigned int) = 26968 (0x6958) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/runvm.o
+  XSFBASIC::Write32(void *,unsigned int) = 27058 (0x69b2) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/runvm.o
+  XSFBASIC::Write16(void *,unsigned int) = 27148 (0x6a0c) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/runvm.o
+  XSFBASIC::Write8(void *,unsigned int) = 27238 (0x6a66) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/runvm.o
+  XSFBASIC::Read64(void *,unsigned int) = 27282 (0x6a92) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/runvm.o
+  XSFBASIC::Read32(void *,unsigned int) = 27372 (0x6aec) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/runvm.o
+  XSFBASIC::Read16(void *,unsigned int) = 27462 (0x6b46) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/runvm.o
+  XSFBASIC::Read8(void *,unsigned int) = 27552 (0x6ba0) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/runvm.o
+  07JASMINE::_0virttab(JASMINE) = 27732 (0x6c54) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/runvm.o
+  08XSFBASIC::_0virttab(XSFBASIC) = 27748 (0x6c64) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/runvm.o
+  13JASMINEOBJECT::_0virttab(JASMINEOBJECT) = 28036 (0x6d84) referenced 2 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/runvm.o
+  13JASMINEOBJECT::_0virttab(JASMINEOBJECT) = 28036 (0x6d84) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/runvm.o
+  JASMINE_EA::IllegalAddress(register __a2 JASMINE *,register __d7 unsigned int) = 28116 (0x6dd4) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineClass.o
+  JASMINE_OP::IllegalOpcode(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 28168 (0x6e08) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineClass.o
+  JASMINE::JASMINE() = 28204 (0x6e2c) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineClass.o
+  JASMINE::~JASMINE() = 28394 (0x6eea) referenced 2 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineClass.o
+  JASMINE::Alloc(unsigned int,unsigned int,unsigned int) = 28410 (0x6efa) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineClass.o
+  JASMINE::Free() = 28680 (0x7008) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineClass.o
+  JASMINE::Execute(JASMINEOBJECT &) = 28830 (0x709e) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineClass.o
+  JASMINE::GetPC() = 29010 (0x7152) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineClass.o
+  JASMINE::PushRegs(register __a2 JASMINE *,register __d0 long,register __d1 long) = 29058 (0x7182) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineClass.o
+  JASMINE::PopRegs(register __a2 JASMINE *,register __d0 long,register __d1 long) = 29234 (0x7232) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineClass.o
+  JASMINE::GenInclude() = 29406 (0x72de) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineClass.o
+  JASMINE_EA::DSYS_EA(register __a2 JASMINE *,register __d7 unsigned int) = 29548 (0x736c) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_EA::D2SYS_EA(register __a2 JASMINE *,register __d6 unsigned int,register __d7 unsigned int) = 29746 (0x7432) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fSYS(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 30200 (0x75f8) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fSYS_OUT_U8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 30236 (0x761c) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fSYS_OUT_U16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 30274 (0x7642) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fSYS_OUT_U32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 30312 (0x7668) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fSYS_OUT_U64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 30346 (0x768a) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fSYS_OUT_S8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 30390 (0x76b6) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fSYS_OUT_S16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 30428 (0x76dc) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fSYS_OUT_S32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 30466 (0x7702) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fSYS_OUT_S64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 30500 (0x7724) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fSYS_OUT_F32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 30544 (0x7750) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fSYS_OUT_F64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 30586 (0x777a) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fSYS_OUT_STR(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 30628 (0x77a4) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fSYS_INP_U8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 30660 (0x77c4) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fSYS_INP_U16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 30692 (0x77e4) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fSYS_INP_U32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 30724 (0x7804) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fSYS_INP_U64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 30756 (0x7824) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fSYS_INP_S8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 30792 (0x7848) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fSYS_INP_S16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 30824 (0x7868) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fSYS_INP_S32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 30856 (0x7888) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fSYS_INP_S64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 30888 (0x78a8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fSYS_INP_F32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 30924 (0x78cc) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fSYS_INP_F64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 30956 (0x78ec) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fSYS_INP_STR(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 30988 (0x790c) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fSYS_BRK(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 31052 (0x794c) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fSYS_DUMP(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 31054 (0x794e) referenced 2 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fSYS_VER(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 31350 (0x7a76) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fSYS_NEW_X8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 31366 (0x7a86) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fSYS_NEW_X16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 31412 (0x7ab4) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fSYS_NEW_X32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 31464 (0x7ae8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fSYS_NEW_X64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 31516 (0x7b1c) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fSYS_DEL_X8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 31568 (0x7b50) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fSYS_DEL_X16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 31610 (0x7b7a) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fSYS_DEL_X32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 31652 (0x7ba4) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fSYS_DEL_X64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 31694 (0x7bce) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fSYS_NEWS_X8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 31736 (0x7bf8) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fSYS_NEWS_X16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 31750 (0x7c06) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fSYS_NEWS_X32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 31764 (0x7c14) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fSYS_NEWS_X64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 31778 (0x7c22) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fSYS_DELS_X8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 31792 (0x7c30) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fSYS_DELS_X16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 31794 (0x7c32) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fSYS_DELS_X32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 31796 (0x7c34) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fSYS_DELS_X64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 31798 (0x7c36) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineSys.o
+  JASMINE_OP::fNOP(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 32196 (0x7dc4) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineFlow.o
+  JASMINE_OP::fEND(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 32210 (0x7dd2) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineFlow.o
+  JASMINE_OP::fLEA(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 32220 (0x7ddc) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineFlow.o
+  JASMINE_OP::fBRA(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 32484 (0x7ee4) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineFlow.o
+  JASMINE_OP::fBNEQ_I8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 32584 (0x7f48) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineFlow.o
+  JASMINE_OP::fBNEQ_I16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 32870 (0x8066) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineFlow.o
+  JASMINE_OP::fBNEQ_I32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 33156 (0x8184) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineFlow.o
+  JASMINE_OP::fBNEQ_I64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 33442 (0x82a2) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineFlow.o
+  JASMINE_OP::fBNEQ_F32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 33738 (0x83ca) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineFlow.o
+  JASMINE_OP::fBNEQ_F64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 34040 (0x84f8) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineFlow.o
+  JASMINE_OP::fBLS_I8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 34348 (0x862c) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineFlow.o
+  JASMINE_OP::fBLS_I16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 34648 (0x8758) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineFlow.o
+  JASMINE_OP::fBLS_I32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 34950 (0x8886) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineFlow.o
+  JASMINE_OP::fBLS_I64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 35254 (0x89b6) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineFlow.o
+  JASMINE_OP::fBLS_F32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 35582 (0x8afe) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineFlow.o
+  JASMINE_OP::fBLS_F64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 35894 (0x8c36) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineFlow.o
+  JASMINE_OP::fBLSEQ_I8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 36206 (0x8d6e) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineFlow.o
+  JASMINE_OP::fBLSEQ_I16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 36510 (0x8e9e) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineFlow.o
+  JASMINE_OP::fBLSEQ_I32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 36814 (0x8fce) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineFlow.o
+  JASMINE_OP::fBLSEQ_I64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 37118 (0x90fe) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineFlow.o
+  JASMINE_OP::fBLSEQ_F32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 37446 (0x9246) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineFlow.o
+  JASMINE_OP::fBLSEQ_F64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 37758 (0x937e) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineFlow.o
+  JASMINE_OP::fBEQ_I8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 38066 (0x94b2) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineFlow.o
+  JASMINE_OP::fBEQ_I16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 38370 (0x95e2) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineFlow.o
+  JASMINE_OP::fBEQ_I32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 38674 (0x9712) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineFlow.o
+  JASMINE_OP::fBEQ_I64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 38978 (0x9842) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineFlow.o
+  JASMINE_OP::fBEQ_F32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 39298 (0x9982) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineFlow.o
+  JASMINE_OP::fBEQ_F64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 39610 (0x9aba) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineFlow.o
+  JASMINE_OP::fBGREQ_I8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 39922 (0x9bf2) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineFlow.o
+  JASMINE_OP::fBGREQ_I16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 40226 (0x9d22) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineFlow.o
+  JASMINE_OP::fBGREQ_I32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 40530 (0x9e52) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineFlow.o
+  JASMINE_OP::fBGREQ_I64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 40834 (0x9f82) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineFlow.o
+  JASMINE_OP::fBGREQ_F32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 41162 (0xa0ca) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineFlow.o
+  JASMINE_OP::fBGREQ_F64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 41474 (0xa202) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineFlow.o
+  JASMINE_OP::fBGR_I8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 41786 (0xa33a) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineFlow.o
+  JASMINE_OP::fBGR_I16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 42090 (0xa46a) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineFlow.o
+  JASMINE_OP::fBGR_I32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 42394 (0xa59a) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineFlow.o
+  JASMINE_OP::fBGR_I64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 42698 (0xa6ca) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineFlow.o
+  JASMINE_OP::fBGR_F32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 43026 (0xa812) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineFlow.o
+  JASMINE_OP::fBGR_F64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 43254 (0xa8f6) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineFlow.o
+  JASMINE_OP::fCALL(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 43482 (0xa9da) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineFlow.o
+  JASMINE_OP::fRET(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 43638 (0xaa76) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineFlow.o
+  JASMINE_OP::fSAVE(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 43680 (0xaaa0) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineData.o
+  JASMINE_OP::fRESTORE(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 43730 (0xaad2) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineData.o
+  JASMINE_OP::fPUSH_X8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 43780 (0xab04) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineData.o
+  JASMINE_OP::fPUSH_X16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 43982 (0xabce) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineData.o
+  JASMINE_OP::fPUSH_X32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 44184 (0xac98) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineData.o
+  JASMINE_OP::fPUSH_X64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 44386 (0xad62) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineData.o
+  JASMINE_OP::fPOP_X8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 44606 (0xae3e) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineData.o
+  JASMINE_OP::fPOP_X16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 44740 (0xaec4) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineData.o
+  JASMINE_OP::fPOP_X32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 44876 (0xaf4c) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineData.o
+  JASMINE_OP::fPOP_X64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 45012 (0xafd4) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineData.o
+  JASMINE_OP::fSET_X8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 45154 (0xb062) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineData.o
+  JASMINE_OP::fSET_X16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 45380 (0xb144) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineData.o
+  JASMINE_OP::fSET_X32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 45620 (0xb234) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineData.o
+  JASMINE_OP::fSET_X64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 45824 (0xb300) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineData.o
+  JASMINE_OP::fMOVE_X8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 46132 (0xb434) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineData.o
+  JASMINE_OP::fMOVE_X16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 46450 (0xb572) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineData.o
+  JASMINE_OP::fMOVE_X32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 46768 (0xb6b0) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineData.o
+  JASMINE_OP::fMOVE_X64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 47086 (0xb7ee) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineData.o
+  JASMINE_OP::fEMOV_X16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 47414 (0xb936) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineData.o
+  JASMINE_OP::fEMOV_X32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 47746 (0xba82) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineData.o
+  JASMINE_OP::fEMOV_X64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 48086 (0xbbd6) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineData.o
+  JASMINE_OP::fSWAP_X8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 48442 (0xbd3a) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineData.o
+  JASMINE_OP::fSWAP_X16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 48686 (0xbe2e) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineData.o
+  JASMINE_OP::fSWAP_X32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 48930 (0xbf22) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineData.o
+  JASMINE_OP::fSWAP_X64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 49174 (0xc016) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineData.o
+  JASMINE_OP::fI16_U8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 49424 (0xc110) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastU.o
+  JASMINE_OP::fI32_U8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 49622 (0xc1d6) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastU.o
+  JASMINE_OP::fI64_U8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 49820 (0xc29c) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastU.o
+  JASMINE_OP::fF32_U8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 50022 (0xc366) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastU.o
+  JASMINE_OP::fF64_U8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 50234 (0xc43a) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastU.o
+  JASMINE_OP::fI32_U16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 50444 (0xc50c) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastU.o
+  JASMINE_OP::fI64_U16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 50644 (0xc5d4) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastU.o
+  JASMINE_OP::fF32_U16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 50850 (0xc6a2) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastU.o
+  JASMINE_OP::fF64_U16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 51076 (0xc784) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastU.o
+  JASMINE_OP::fI64_U32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 51302 (0xc866) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastU.o
+  JASMINE_OP::fF32_U32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 51518 (0xc93e) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastU.o
+  JASMINE_OP::fF64_U32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 51742 (0xca1e) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastU.o
+  JASMINE_OP::fF32_U64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 51964 (0xcafc) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastU.o
+  JASMINE_OP::fF64_U64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 52200 (0xcbe8) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastU.o
+  JASMINE_OP::fU64_F64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 52434 (0xccd2) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastU.o
+  JASMINE_OP::fU32_F64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 52668 (0xcdbc) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastU.o
+  JASMINE_OP::fU16_F64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 52892 (0xce9c) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastU.o
+  JASMINE_OP::fU8_F64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 53118 (0xcf7e) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastU.o
+  JASMINE_OP::fU64_F32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 53346 (0xd062) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastU.o
+  JASMINE_OP::fU32_F32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 53576 (0xd148) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastU.o
+  JASMINE_OP::fU16_F32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 53794 (0xd222) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastU.o
+  JASMINE_OP::fU8_F32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 54014 (0xd2fe) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastU.o
+  JASMINE_OP::fI32_U64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 54234 (0xd3da) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastU.o
+  JASMINE_OP::fI16_U64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 54460 (0xd4bc) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastU.o
+  JASMINE_OP::fI8_U64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 54686 (0xd59e) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastU.o
+  JASMINE_OP::fI16_U32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 54912 (0xd680) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastU.o
+  JASMINE_OP::fI8_U32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 55126 (0xd756) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastU.o
+  JASMINE_OP::fI8_U16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 55340 (0xd82c) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastU.o
+
+  Hunk #1 ( Far FAST ) 67728 Bytes (0x10890)
+  JASMINE_OP::fI16_S8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 0 (0x0) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastS.o
+  JASMINE_OP::fI32_S8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 198 (0xc6) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastS.o
+  JASMINE_OP::fI64_S8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 396 (0x18c) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastS.o
+  JASMINE_OP::fF32_S8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 602 (0x25a) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastS.o
+  JASMINE_OP::fF64_S8(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 814 (0x32e) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastS.o
+  JASMINE_OP::fI32_S16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 1026 (0x402) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastS.o
+  JASMINE_OP::fI64_S16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 1226 (0x4ca) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastS.o
+  JASMINE_OP::fF32_S16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 1436 (0x59c) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastS.o
+  JASMINE_OP::fF64_S16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 1662 (0x67e) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastS.o
+  JASMINE_OP::fI64_S32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 1888 (0x760) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastS.o
+  JASMINE_OP::fF32_S32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 2108 (0x83c) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastS.o
+  JASMINE_OP::fF64_S32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 2332 (0x91c) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastS.o
+  JASMINE_OP::fF32_S64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 2554 (0x9fa) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastS.o
+  JASMINE_OP::fF64_S64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 2790 (0xae6) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastS.o
+  JASMINE_OP::fS64_F64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 3024 (0xbd0) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastS.o
+  JASMINE_OP::fS32_F64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 3258 (0xcba) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastS.o
+  JASMINE_OP::fS16_F64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 3484 (0xd9c) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastS.o
+  JASMINE_OP::fS8_F64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 3712 (0xe80) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastS.o
+  JASMINE_OP::fS64_F32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 3940 (0xf64) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastS.o
+  JASMINE_OP::fS32_F32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 4170 (0x104a) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastS.o
+  JASMINE_OP::fS16_F32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 4388 (0x1124) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastS.o
+  JASMINE_OP::fS8_F32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 4608 (0x1200) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastS.o
+  JASMINE_OP::fI32_S64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 4828 (0x12dc) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastS.o
+  JASMINE_OP::fI16_S64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 5054 (0x13be) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastS.o
+  JASMINE_OP::fI8_S64(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 5280 (0x14a0) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastS.o
+  JASMINE_OP::fI16_S32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 5506 (0x1582) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastS.o
+  JASMINE_OP::fI8_S32(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 5720 (0x1658) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastS.o
+  JASMINE_OP::fI8_S16(register __a2 JASMINE *,register __a3 void * (*)*(register __a2 JASMINE *,register __d7 unsigned int)) = 5934 (0x172e) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineCastS.o
+  JASMINEOBJECT::JASMINEOBJECT() = 6148 (0x1804) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineObject.o
+  JASMINEOBJECT::~JASMINEOBJECT() = 6298 (0x189a) referenced 2 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineObject.o
+  JASMINEOBJECT::Free() = 6314 (0x18aa) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineObject.o
+  JASMINEOBJECT::ReadBody(XSFIO &) = 6528 (0x1980) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineObject.o
+  JASMINEOBJECT::WriteBody(XSFIO &) = 7220 (0x1c34) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineObject.o
+  JASMINEOBJECT::Alloc() = 7880 (0x1ec8) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineObject.o
+  JASMINEOBJECT::FuncSize() = 8220 (0x201c) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineObject.o
+  JASMINEOBJECT::CodeSize() = 8230 (0x2026) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineObject.o
+  JASMINEOBJECT::DataSize() = 8240 (0x2030) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineObject.o
+  JASMINEOBJECT::CnstSize() = 8262 (0x2046) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineObject.o
+  JASMINEOBJECT::Method(unsigned long) = 8284 (0x205c) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineObject.o
+  JASMINEOBJECT::ListMethods() = 8318 (0x207e) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineObject.o
+  JASMINEFACTORY::Create(char *,short,short,unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,unsigned int) = 8498 (0x2132) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineObject.o
+  XSFOBJ::ReadyForRead() = 8908 (0x22cc) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineObject.o
+  XSFOBJ::ReadyForWrite() = 8912 (0x22d0) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineObject.o
+  _INIT_8_JasmineTable_cpp = 9076 (0x2374) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineTable.o
+  _fopen = 9398 (0x24b6) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _freopen = 9554 (0x2552) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _fclose = 9646 (0x25ae) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _fflush = 9746 (0x2612) referenced 3 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _setvbuf = 9830 (0x2666) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _setbuf = 10050 (0x2742) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _ferror = 10106 (0x277a) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _clearerr = 10132 (0x2794) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _perror = 10150 (0x27a6) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _remove = 10200 (0x27d8) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _rename = 10232 (0x27f8) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _tmpnam = 10272 (0x2820) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _tmpfile = 10396 (0x289c) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigaopen = 10450 (0x28d2) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigaread = 11386 (0x2c7a) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigareadunget = 11878 (0x2e66) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigawrite = 11982 (0x2ece) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigaeof = 12558 (0x310e) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigaseek = 12582 (0x3126) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigagetc = 12888 (0x3258) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigagetcunget = 12946 (0x3292) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigaungetc = 12978 (0x32b2) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigaputc = 13008 (0x32d0) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigaflush = 13070 (0x330e) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigaclose = 13308 (0x33fc) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _INIT_0_InitFiles = 13440 (0x3480) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _EXIT_5_InitFiles = 13512 (0x34c8) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _memcpy = 13672 (0x3568) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _memmove = 13710 (0x358e) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _memcmp = 13770 (0x35ca) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _memchr = 13830 (0x3606) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _memset = 13880 (0x3638) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _set_new_handler = 13950 (0x367e) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _malloc = 13970 (0x3692) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _free = 14384 (0x3830) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _EXIT_4_free = 14578 (0x38f2) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _calloc = 14696 (0x3968) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _realloc = 14748 (0x399c) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  operator new(unsigned int) = 14864 (0x3a10) referenced 3 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  operator delete(void *,unsigned int) = 14880 (0x3a20) referenced 3 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _formatted_out = 15788 (0x3dac) referenced 4 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _formatted_in = 17856 (0x45c0) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _fgets = 19276 (0x4b4c) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _puts = 19340 (0x4b8c) referenced 4 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _printf = 19440 (0x4bf0) referenced 4 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _fprintf = 19492 (0x4c24) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _sprintf = 19544 (0x4c58) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _vsprintf = 19608 (0x4c98) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _scanf = 19672 (0x4cd8) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _INIT_5_InitStdIOFiles = 19736 (0x4d18) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _EXIT_5_InitStdIOFiles = 20000 (0x4e20) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strerror = 20044 (0x4e4c) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strcpy = 21840 (0x5550) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strncpy = 21868 (0x556c) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strcat = 21922 (0x55a2) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strncat = 21956 (0x55c4) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strcmp = 22008 (0x55f8) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strncmp = 22064 (0x5630) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strchr = 22140 (0x567c) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strrchr = 22180 (0x56a4) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strspn = 22250 (0x56ea) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strcspn = 22294 (0x5716) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strpbrk = 22338 (0x5742) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strstr = 22388 (0x5774) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strlen = 22460 (0x57bc) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strtok = 22482 (0x57d2) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _stricmp = 22648 (0x5878) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strnicmp = 22770 (0x58f2) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strlwr = 22966 (0x59b6) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strupr = 23020 (0x59ec) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _signed_out = 23076 (0x5a24) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _signed_out_l = 23732 (0x5cb4) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _unsigned_out = 23820 (0x5d0c) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _unsigned_out_l = 24420 (0x5f64) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _char_out = 24986 (0x619a) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _string_out = 25142 (0x6236) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _int_in = 25354 (0x630a) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _char_in = 26470 (0x6766) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _string_in = 26628 (0x6804) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  MEM::Alloc(unsigned int,short,short) = 26884 (0x6904) referenced 1 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  MEM::Free(void *) = 26960 (0x6950) referenced 1 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  MEM::FreeAll() = 27216 (0x6a50) referenced 1 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  MEM::AllocIndex(unsigned int,short,short) = 27528 (0x6b88) referenced 1 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  MEM::FreeIndex(unsigned long) = 27808 (0x6ca0) referenced 1 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  sysBASELIB::Init() = 28000 (0x6d60) referenced 1 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  sysBASELIB::Done() = 28208 (0x6e30) referenced 1 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  sysBASELIB::MessageBox(char *,char *,char * ...) = 28316 (0x6e9c) referenced 2 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  _INIT_8_xBase_cpp__xbSt = 28416 (0x6f00) unused, maybe local
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  xBASELIB::Init() = 28424 (0x6f08) referenced 1 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  xBASELIB::Done() = 28920 (0x70f8) referenced 1 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  MEM::Swap16(register __a0 unsigned short *,register __a1 unsigned short *,register __d0 unsigned int) = 28928 (0x7100) referenced 2 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  MEM::Swap32(register __a0 unsigned long *,register __a1 unsigned long *,register __d0 unsigned int) = 29250 (0x7242) referenced 2 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  MEM::Swap64(register __a0 unsigned long long *,register __a1 unsigned long long *,register __d0 unsigned int) = 29508 (0x7344) referenced 2 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  xFILEIO::SendPacket(void *) = 29740 (0x742c) referenced 11 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xIO_far.lib
+  xFILEIO::WaitPacket() = 29812 (0x7474) referenced 11 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xIO_far.lib
+  xFILEIO::RequeuePacket() = 30064 (0x7570) referenced 1 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xIO_far.lib
+  xFILEIO::RecordSyncFailure() = 30116 (0x75a4) referenced 1 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xIO_far.lib
+  xFILEIO::Open(const char *,long,long) = 30180 (0x75e4) referenced 2 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xIO_far.lib
+  xFILEIO::Close() = 31316 (0x7a54) referenced 3 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xIO_far.lib
+  xFILEIO::Read(void *,unsigned int,unsigned int) = 31512 (0x7b18) referenced 1 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xIO_far.lib
+  xFILEIO::Write(void *,unsigned int,unsigned int) = 31916 (0x7cac) referenced 1 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xIO_far.lib
+  xFILEIO::Tell() = 32260 (0x7e04) referenced 1 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xIO_far.lib
+  xFILEIO::Seek(long,long) = 32372 (0x7e74) referenced 3 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xIO_far.lib
+  xFILEIO::Read16Swap(void *,unsigned int) = 33084 (0x813c) referenced 1 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xIO_far.lib
+  xFILEIO::Read32Swap(void *,unsigned int) = 33372 (0x825c) referenced 1 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xIO_far.lib
+  xFILEIO::Read64Swap(void *,unsigned int) = 33660 (0x837c) referenced 1 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xIO_far.lib
+  xFILEIO::Write16Swap(void *,unsigned int) = 33948 (0x849c) referenced 1 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xIO_far.lib
+  xFILEIO::Write32Swap(void *,unsigned int) = 34200 (0x8598) referenced 1 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xIO_far.lib
+  xFILEIO::Write64Swap(void *,unsigned int) = 34452 (0x8694) referenced 1 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xIO_far.lib
+  XDATAID::Value(const char *) = 34704 (0x8790) referenced 1 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xIO_far.lib
+  XSFHEAD::CheckXSF(XSFHEAD &) = 34728 (0x87a8) referenced 1 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xIO_far.lib
+  XSFHEAD::operator !=(XSFHEAD &) = 34784 (0x87e0) referenced 1 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xIO_far.lib
+  XSFHEAD::operator ==(XSFHEAD &) = 34832 (0x8810) referenced 1 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xIO_far.lib
+  XSFHEAD::Read(XSFIO &) = 35076 (0x8904) referenced 2 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xIO_far.lib
+  XSFHEAD::Write(XSFIO &) = 35252 (0x89b4) referenced 1 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xIO_far.lib
+  XSFHEAD::operator ==(XSFIO &) = 35356 (0x8a1c) referenced 1 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xIO_far.lib
+  XSFHEAD::Set(const char *,unsigned char,unsigned char,unsigned char,unsigned char) = 35524 (0x8ac4) referenced 1 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xIO_far.lib
+  XSFBASIC::Create(const char *,long) = 35616 (0x8b20) referenced 1 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xIO_far.lib
+  XSFBASIC::Open(const char *,short,long,long) = 35804 (0x8bdc) referenced 1 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xIO_far.lib
+  XSFOBJ::XSFOBJ(const char *,unsigned short,unsigned short,unsigned char,unsigned char) = 36036 (0x8cc4) referenced 1 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xIO_far.lib
+  XSFOBJ::Read(XSFIO &) = 36124 (0x8d1c) referenced 1 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xIO_far.lib
+  lib_double2float = 36508 (0x8e9c) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _floor__r = 36528 (0x8eb0) referenced 2 times
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _pow__r = 36552 (0x8ec8) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  facoss::_060LSP() = 36592 (0x8ef0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _acos__r = 36600 (0x8ef8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  facosx::_060LSP() = 36608 (0x8f00) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fasins::_060LSP() = 36616 (0x8f08) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fasind::_060LSP() = 36624 (0x8f10) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _asin__r = 36624 (0x8f10) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fasinx::_060LSP() = 36632 (0x8f18) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fatans::_060LSP() = 36640 (0x8f20) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fatand::_060LSP() = 36648 (0x8f28) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _atan__r = 36648 (0x8f28) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fatanx::_060LSP() = 36656 (0x8f30) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fatanhs::_060LSP() = 36664 (0x8f38) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fatanhd::_060LSP() = 36672 (0x8f40) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fatanhx::_060LSP() = 36680 (0x8f48) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fcoss::_060LSP() = 36688 (0x8f50) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fcosd::_060LSP() = 36696 (0x8f58) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _cos__r = 36696 (0x8f58) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fcosx::_060LSP() = 36704 (0x8f60) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fcoshs::_060LSP() = 36712 (0x8f68) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fcoshd::_060LSP() = 36720 (0x8f70) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _cosh__r = 36720 (0x8f70) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fcoshx::_060LSP() = 36728 (0x8f78) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fetoxs::_060LSP() = 36736 (0x8f80) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fetoxd::_060LSP() = 36744 (0x8f88) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _exp__r = 36744 (0x8f88) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fetoxx::_060LSP() = 36752 (0x8f90) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fetoxm1s::_060LSP() = 36760 (0x8f98) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fetoxm1d::_060LSP() = 36768 (0x8fa0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fetoxm1x::_060LSP() = 36776 (0x8fa8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fgetexps::_060LSP() = 36784 (0x8fb0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fgetexpd::_060LSP() = 36792 (0x8fb8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fgetexpx::_060LSP() = 36800 (0x8fc0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fgetmans::_060LSP() = 36808 (0x8fc8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fgetmand::_060LSP() = 36816 (0x8fd0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fgetmanx::_060LSP() = 36824 (0x8fd8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flog10s::_060LSP() = 36832 (0x8fe0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flog10d::_060LSP() = 36840 (0x8fe8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _log10__r = 36840 (0x8fe8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flog10x::_060LSP() = 36848 (0x8ff0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flog2s::_060LSP() = 36856 (0x8ff8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flog2d::_060LSP() = 36864 (0x9000) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flog2x::_060LSP() = 36872 (0x9008) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flogns::_060LSP() = 36880 (0x9010) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flognd::_060LSP() = 36888 (0x9018) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _log__r = 36888 (0x9018) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flognx::_060LSP() = 36896 (0x9020) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flognp1s::_060LSP() = 36904 (0x9028) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flognp1d::_060LSP() = 36912 (0x9030) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flognp1x::_060LSP() = 36920 (0x9038) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fmods::_060LSP() = 36928 (0x9040) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fmodd::_060LSP() = 36936 (0x9048) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _fmod__r = 36936 (0x9048) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fmodx::_060LSP() = 36944 (0x9050) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  frems::_060LSP() = 36952 (0x9058) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fremd::_060LSP() = 36960 (0x9060) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fremx::_060LSP() = 36968 (0x9068) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fscales::_060LSP() = 36976 (0x9070) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fscaled::_060LSP() = 36984 (0x9078) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fscalex::_060LSP() = 36992 (0x9080) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsins::_060LSP() = 37000 (0x9088) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsind::_060LSP() = 37008 (0x9090) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _sin__r = 37008 (0x9090) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsinx::_060LSP() = 37016 (0x9098) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsincoss::_060LSP() = 37024 (0x90a0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsincosd::_060LSP() = 37032 (0x90a8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsincosx::_060LSP() = 37040 (0x90b0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsinhs::_060LSP() = 37048 (0x90b8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsinhd::_060LSP() = 37056 (0x90c0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _sinh__r = 37056 (0x90c0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsinhx::_060LSP() = 37064 (0x90c8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftans::_060LSP() = 37072 (0x90d0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftand::_060LSP() = 37080 (0x90d8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _tan__r = 37080 (0x90d8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftanx::_060LSP() = 37088 (0x90e0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftanhs::_060LSP() = 37096 (0x90e8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftanhd::_060LSP() = 37104 (0x90f0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _tanh__r = 37104 (0x90f0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftanhx::_060LSP() = 37112 (0x90f8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftentoxs::_060LSP() = 37120 (0x9100) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftentoxd::_060LSP() = 37128 (0x9108) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftentoxx::_060LSP() = 37136 (0x9110) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftwotoxs::_060LSP() = 37144 (0x9118) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftwotoxd::_060LSP() = 37152 (0x9120) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftwotoxx::_060LSP() = 37160 (0x9128) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fabss::_060LSP() = 37168 (0x9130) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fabsd::_060LSP() = 37176 (0x9138) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _fabs__r = 37176 (0x9138) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fabsx::_060LSP() = 37184 (0x9140) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fadds::_060LSP() = 37192 (0x9148) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  faddd::_060LSP() = 37200 (0x9150) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  faddx::_060LSP() = 37208 (0x9158) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fdivs::_060LSP() = 37216 (0x9160) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fdivd::_060LSP() = 37224 (0x9168) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fdivx::_060LSP() = 37232 (0x9170) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fints::_060LSP() = 37240 (0x9178) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fintd::_060LSP() = 37248 (0x9180) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fintx::_060LSP() = 37256 (0x9188) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fintrzs::_060LSP() = 37264 (0x9190) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fintrzd::_060LSP() = 37272 (0x9198) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fintrzx::_060LSP() = 37280 (0x91a0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fmuls::_060LSP() = 37288 (0x91a8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fmuld::_060LSP() = 37296 (0x91b0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fmulx::_060LSP() = 37304 (0x91b8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fnegs::_060LSP() = 37312 (0x91c0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fnegd::_060LSP() = 37320 (0x91c8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fnegx::_060LSP() = 37328 (0x91d0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsqrts::_060LSP() = 37336 (0x91d8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsqrtd::_060LSP() = 37344 (0x91e0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _sqrt__r = 37344 (0x91e0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsqrtx::_060LSP() = 37352 (0x91e8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsubs::_060LSP() = 37360 (0x91f0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsubd::_060LSP() = 37368 (0x91f8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsubx::_060LSP() = 37376 (0x9200) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  facosd::_060LSP() = 36600 (0x8ef8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _060FPLSP_TOP = 36592 (0x8ef0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+
+  Hunk #2 ( Far FAST ) 4880 Bytes (0x1310)
+  _atan2__r = 0 (0x0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _ldexp__r = 234 (0xea) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _frexp__r = 284 (0x11c) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _modf__r = 366 (0x16e) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _fmod__r = 454 (0x1c6) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _double_out = 984 (0x3d8) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _double_in = 2176 (0x880) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  main() = 3004 (0xbbc) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  wbmain(WBStartup *) = 3012 (0xbc4) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  _wbmain = 3020 (0xbcc) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  main(int,char *) = 3024 (0xbd0) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  _EXIT_0_Main = 3498 (0xdaa) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  _INIT_1_DOS_c = 3560 (0xde8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  _EXIT_1_DOS_c = 3592 (0xe08) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  _InitModules = 3652 (0xe44) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  _CleanupModules = 3720 (0xe88) referenced 2 times
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  LibBaseC::LibBaseC(char *,unsigned long,short) = 3816 (0xee8) referenced 2 times
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  LibBaseC::~LibBaseC() = 4152 (0x1038) referenced 2 times
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  LibBaseC::version() const  = 4190 (0x105e) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  _INIT_2_MathIEEEDoubTrans_c = 4328 (0x10e8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  _EXIT_2_MathIEEEDoubTrans_c = 4360 (0x1108) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  uintmult = 4404 (0x1134) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  intmult = 4404 (0x1134) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___uintmult32 = 4404 (0x1134) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___intmult32 = 4404 (0x1134) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  Add64 = 4436 (0x1154) referenced 2 times
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___add64 = 4436 (0x1154) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  Sub64 = 4444 (0x115c) referenced 2 times
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___sub64 = 4444 (0x115c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  Neg64 = 4452 (0x1164) referenced 2 times
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___neg64 = 4452 (0x1164) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  SMult64 = 4460 (0x116c) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  UMult64 = 4494 (0x118e) referenced 2 times
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___uintmult64 = 4494 (0x118e) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___intmult64 = 4460 (0x116c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  SDiv64 = 4612 (0x1204) referenced 2 times
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  UDiv64 = 4652 (0x122c) referenced 2 times
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___uintdivmod64 = 4652 (0x122c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___intdivmod64 = 4612 (0x1204) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  UMod64 = 4752 (0x1290) referenced 2 times
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___uintmod64 = 4752 (0x1290) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  SMod64 = 4764 (0x129c) referenced 2 times
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___intmod64 = 4764 (0x129c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  lib_64bit_shr = 4776 (0x12a8) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___lsr64 = 4776 (0x12a8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  lib_64bit_shrS = 4808 (0x12c8) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___asr64 = 4808 (0x12c8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  lib_64bit_shl = 4840 (0x12e8) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___lsl64 = 4840 (0x12e8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  blocksize_a2_d2 = 4872 (0x1308) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___blocksize_a2_d2 = 4872 (0x1308) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+
+PowerPC Code
+
+
+Data
+
+
+  Hunk #3 ( Far FAST ) 4436 Bytes (0x1154)
+  _SysBase = 0 (0x0) referenced 17 times
+    File Van:Development/StormC/StormSYS/startups/startup.o
+  _illegalDone__JASMINE = 12 (0xc) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineClass.o
+  _XSFIDString__JASMINEOBJECT = 16 (0x10) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineObject.o
+  _XSFFileSig__JASMINEOBJECT = 20 (0x14) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineObject.o
+  _XSFSuperClass__JASMINEOBJECT = 24 (0x18) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineObject.o
+  _XSFSubClass__JASMINEOBJECT = 26 (0x1a) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineObject.o
+  _XSFDataFormat__JASMINEOBJECT = 28 (0x1c) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineObject.o
+  _XSFFileFormat__JASMINEOBJECT = 29 (0x1d) unused, maybe local
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineObject.o
+  _eaTable__JASMINE_EA = 32 (0x20) referenced 4 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineTable.o
+  _instTable__JASMINE_OP = 1056 (0x420) referenced 2 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineTable.o
+  _sysTable__JASMINE_OP = 2080 (0x820) referenced 3 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineTable.o
+  _resultString__JASMINE = 3104 (0xc20) referenced 1 times
+    File Mendoza:Developer/eXtropia/prj/VM2/Jasmine/objects/JasmineTable.o
+  _std__out = 3528 (0xdc8) referenced 4 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _std__in = 3612 (0xe1c) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _std__err = 3696 (0xe70) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _IntuitionBase = 4104 (0x1008) referenced 4 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  _PowerPCBase = 4108 (0x100c) referenced 3 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  _allocated__MEM = 4112 (0x1010) referenced 6 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  _totSize__MEM = 4116 (0x1014) referenced 3 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  _nextFree__MEM = 4120 (0x1018) referenced 2 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  _cnt__MEM = 4124 (0x101c) referenced 3 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  _sysData__sysBASELIB = 4128 (0x1020) referenced 2 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  _msgbuff__sysBASELIB = 4132 (0x1024) referenced 3 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  _sigXSF__XSFHEAD = 4136 (0x1028) referenced 2 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xIO_far.lib
+  _fileMarker__XSFOBJ = 4140 (0x102c) referenced 1 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xIO_far.lib
+  _DOSBase = 4336 (0x10f0) referenced 14 times
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  _not_open__LibBaseC = 4352 (0x1100) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  _MathIeeeDoubTransBase = 4356 (0x1104) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  ___init_table68k = 4360 (0x1108) referenced 1 times
+    File <Internal Assembled>
+  ___exit_table68k = 4400 (0x1130) referenced 1 times
+    File <Internal Assembled>
+
+BSS
+
+
+  Hunk #4 ( Far FAST ) 10056 Bytes (0x2748)
+  _errno = 0 (0x0) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _gxSt = 1080 (0x438) referenced 1 times
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  _xbSt = 1336 (0x538) unused, maybe local
+    File Mendoza:Developer/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+
+END

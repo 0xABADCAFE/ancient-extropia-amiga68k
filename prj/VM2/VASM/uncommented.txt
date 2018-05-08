@@ -1,0 +1,53 @@
+  
+
+                                                            
+
+  
+
+#pragma stack       1024
+#pragma methodstack 512
+#pragma regstack    512
+#pragma module      "Demo Program"
+
+    move.s32    r1, 64
+    new.ch      p0, r1
+    print       "VM program to generate factorials\nPlease enter your name : "
+    read        p0, r1
+
+    print       "Hello "
+    print       p0
+    print.ch    '\n'
+    del.ch      p0
+
+    print       "Please enter a number : "                       
+    read.s32    r0
+
+    push.s32    r0                                                  
+    call        Factorial
+
+    pop.s32     r0
+    print       "Factorial is : "
+    print.s32   r0
+    print.ch    '\n'
+
+Factorial:
+    save        r0, r1
+    pop.s32     r0
+
+    bls.s32     0, r0, doFac
+    push.s32    1
+    bra         doneFac2
+
+doFac:
+    bgr.s32     2, r0, doneFac
+    sub.s32     r1, r0, 1
+    push.s32    r1
+    call        Factorial
+    pop.s32     r1
+    mul.s32     r0, r0, r1
+
+doneFac:
+    push.s32    r0
+doneFac2:
+    restore     r0, r1
+    ret

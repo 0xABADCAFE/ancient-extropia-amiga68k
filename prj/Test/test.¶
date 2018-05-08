@@ -1,0 +1,128 @@
+Storm Shell Project (0013)
+Settings (Start)
+C/C++ Environment
+"StormC:include"
+"ExtropiaLib:include"
+Includepath (End)
+0 "" 256
+1 "objects"
+C/C++ Preprozessor
+1 "NDEBUG" ""
+1 "KARL_FIXES" ""
+1 "SMALL_DATA_A4" ""
+Defines (End)
+1 1 1
+C/C++ Options
+1 0 0 0 0 0 2 1 0 1 0 3 1 0 0
+C/C++ Optimizer
+3
+C/C++ Warnings
+1 1 1 1 1 1 0 1
+Assembler
+0 ""
+0 "CON://640/200/Storm Assembler/AUTO/WAIT/SCREEN StormScreen"
+0 0
+0 1 60 0 1 0 0 20 0
+Sets (End)
+0 1 0 0 0 2 1 0 0
+1 1 1 1 0 0 0 0 0
+1 0
+0 0 0 0 0
+Linker
+0 0 "PROGDIR:startup.o" 0 0 1 0 1 0 0
+"StormC:lib/" 0 "StormC:lib/logfile" 0 1 1
+0 "_WizardSurface"
+0 0 50 1 50 0 50 0 0
+0 0 0 0 0 0 0 0
+Run
+30 "" "" "" 0
+""
+
+1 "CON://400/180/Storm Console/AUTO/WAIT/SCREEN StormScreen" "RAM:Output" "RAM:Input"
+1 0
+0 0 0 "" ""
+Settings (End)
+File
+1 "test.cpp"
+"test.cpp"
+Storm Shell Project (Dependencies)
+"objects/test.o" "objects/test.debug"
+""
+"objects/test.o" "objects/test.debug"
+Section
+1 1 100
+File
+2 "ExtropiaLib:include/xBase.hpp"
+"ExtropiaLib:include/xBase.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "ExtropiaLib:include/xDefs.hpp"
+"ExtropiaLib:include/xDefs.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "ExtropiaLib:include/Platforms/Amiga68k/sysBase.hpp"
+"ExtropiaLib:include/Platforms/Amiga68k/sysBase.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+Section
+2 1 95
+File
+12 "PPCInterface.asm"
+"measurecontextwos68k.asm"
+"Timer68K.asm"
+"PPCInterface.asm"
+Storm Shell Project (Dependencies)
+"objects/PPCInterface.o" ""
+""
+"objects/PPCInterface.o"
+Section
+12 1 90
+File
+10 "test"
+"test"
+Storm Shell Project (Dependencies)
+"" ""
+""
+"test.link"
+Section
+10 1 40
+File
+3 "TestPPC.o"
+"TestPPC.o"
+Storm Shell Project (Dependencies)
+"" ""
+""
+Section
+3 1 -40
+File
+5 "storm020_far.lib"
+"storm020_far.lib"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+5 "amiga.lib"
+"amiga.lib"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+5 "ExtropiaLib:lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib"
+"ExtropiaLib:lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+5 "ExtropiaLib:lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib"
+"ExtropiaLib:lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib"
+Storm Shell Project (Dependencies)
+"" ""
+""
+Section
+5 1 -50
+Storm Shell Project (End)

@@ -1,0 +1,2 @@
+list rip?.ppm lformat "GenTexture -dat ripple.dat -cmap %n -amap %m.pgm -dst %m.tex" >pipe:doit
+execute pipe:doit

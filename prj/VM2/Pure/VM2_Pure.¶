@@ -1,0 +1,236 @@
+Storm Shell Project (0013)
+Settings (Start)
+C/C++ Environment
+"StormC:include"
+"ExtropiaLib:include"
+Includepath (End)
+0 "" 128
+1 "objects"
+C/C++ Preprozessor
+1 "NDEBUG" ""
+1 "KARL_FIXES" ""
+0 "PARANOID" ""
+Defines (End)
+1 1 1
+C/C++ Options
+1 1 1 0 0 0 0 1 0 0 0 3 1 0 0
+C/C++ Optimizer
+6
+C/C++ Warnings
+1 1 1 1 1 1 1 1
+Assembler
+0 ""
+0 "CON://640/200/Storm Assembler/AUTO/WAIT/SCREEN StormScreen"
+0 0
+0 1 60 0 1 0 0 20 0
+Sets (End)
+0 1 0 0 0 2 1 0 0
+1 1 1 1 0 0 0 0 0
+1 0
+0 0 0 0 0
+Linker
+0 0 "PROGDIR:startup.o" 0 0 1 0 0 0 0
+"StormC:lib/" 0 "StormC:lib/logfile" 0 1 1
+0 "_WizardSurface"
+0 0 50 0 50 0 50 0 0
+2 0 0 0 0 0 0 0
+Run
+30 "" "" "" 0
+"runvm"
+func.xvm
+1 "CON://800/600/Fuck!/AUTO/WAIT/SCREEN StormScreen" "RAM:Output" "RAM:Input"
+1 0
+0 0 0 "" ""
+Settings (End)
+File
+9 "VMProgram.¶"
+"VMProgram.¶"
+Storm Shell Project (Dependencies)
+"" ""
+""
+Section
+9 1 -128
+File
+1 "runvm.cpp"
+"runvm.cpp"
+"ExtropiaLib:prj/VM2/Pure/VM_ObjectCode.hpp"
+"ExtropiaLib:prj/VM2/Pure/VM_Class.hpp"
+"ExtropiaLib:prj/VM2/Pure/VM_Opts.hpp"
+"ExtropiaLib:prj/VM2/Pure/VM_Code.hpp"
+"ExtropiaLib:prj/VM2/Pure/VM_Funcs.hpp"
+Storm Shell Project (Dependencies)
+"objects/runvm.o" "objects/runvm.debug"
+""
+"objects/runvm.o" "objects/runvm.debug"
+File
+1 "VM_Class.cpp"
+"ExtropiaLib:prj/VM2/Pure/VM_ObjectCode.hpp"
+"VM_Class.cpp"
+"ExtropiaLib:prj/VM2/Pure/VM_Class.hpp"
+"ExtropiaLib:prj/VM2/Pure/VM_Opts.hpp"
+"ExtropiaLib:prj/VM2/Pure/VM_Code.hpp"
+"ExtropiaLib:prj/VM2/Pure/VM_Funcs.hpp"
+Storm Shell Project (Dependencies)
+"objects/VM_Class.o" "objects/VM_Class.debug"
+""
+"objects/VM_Class.o" "objects/VM_Class.debug"
+File
+1 "VM_EA.cpp"
+"VM_EA.cpp"
+"ExtropiaLib:prj/VM2/Pure/VM_ObjectCode.hpp"
+"ExtropiaLib:prj/VM2/Pure/VM_Class.hpp"
+"ExtropiaLib:prj/VM2/Pure/VM_Opts.hpp"
+"ExtropiaLib:prj/VM2/Pure/VM_Code.hpp"
+"ExtropiaLib:prj/VM2/Pure/VM_Funcs.hpp"
+Storm Shell Project (Dependencies)
+"objects/VM_EA.o" "objects/VM_EA.debug"
+""
+"objects/VM_EA.o" "objects/VM_EA.debug"
+File
+1 "VM_SysFunc.cpp"
+"VM_SysFunc.cpp"
+"ExtropiaLib:prj/VM2/Pure/VM_ObjectCode.hpp"
+"ExtropiaLib:prj/VM2/Pure/VM_Class.hpp"
+"ExtropiaLib:prj/VM2/Pure/VM_Opts.hpp"
+"ExtropiaLib:prj/VM2/Pure/VM_Code.hpp"
+"ExtropiaLib:prj/VM2/Pure/VM_Funcs.hpp"
+Storm Shell Project (Dependencies)
+"objects/VM_SysFunc.o" "objects/VM_SysFunc.debug"
+""
+"objects/VM_SysFunc.o" "objects/VM_SysFunc.debug"
+File
+1 "VM_Flow.cpp"
+"VM_Flow.cpp"
+"ExtropiaLib:prj/VM2/Pure/VM_ObjectCode.hpp"
+"ExtropiaLib:prj/VM2/Pure/VM_Class.hpp"
+"ExtropiaLib:prj/VM2/Pure/VM_Opts.hpp"
+"ExtropiaLib:prj/VM2/Pure/VM_Code.hpp"
+"ExtropiaLib:prj/VM2/Pure/VM_Funcs.hpp"
+Storm Shell Project (Dependencies)
+"objects/VM_Flow.o" "objects/VM_Flow.debug"
+""
+"objects/VM_Flow.o" "objects/VM_Flow.debug"
+File
+1 "VM_Data.cpp"
+"VM_Data.cpp"
+"ExtropiaLib:prj/VM2/Pure/VM_ObjectCode.hpp"
+"ExtropiaLib:prj/VM2/Pure/VM_Class.hpp"
+"ExtropiaLib:prj/VM2/Pure/VM_Opts.hpp"
+"ExtropiaLib:prj/VM2/Pure/VM_Code.hpp"
+"ExtropiaLib:prj/VM2/Pure/VM_Funcs.hpp"
+Storm Shell Project (Dependencies)
+"objects/VM_Data.o" "objects/VM_Data.debug"
+""
+"objects/VM_Data.o" "objects/VM_Data.debug"
+File
+1 "VM_Arithmetic.cpp"
+"VM_Arithmetic.cpp"
+"ExtropiaLib:prj/VM2/Pure/VM_ObjectCode.hpp"
+"ExtropiaLib:prj/VM2/Pure/VM_Class.hpp"
+"ExtropiaLib:prj/VM2/Pure/VM_Opts.hpp"
+"ExtropiaLib:prj/VM2/Pure/VM_Code.hpp"
+"ExtropiaLib:prj/VM2/Pure/VM_Funcs.hpp"
+Storm Shell Project (Dependencies)
+"objects/VM_Arithmetic.o" "objects/VM_Arithmetic.debug"
+""
+"objects/VM_Arithmetic.o" "objects/VM_Arithmetic.debug"
+File
+1 "VM_Logic.cpp"
+"VM_Logic.cpp"
+"ExtropiaLib:prj/VM2/Pure/VM_ObjectCode.hpp"
+"ExtropiaLib:prj/VM2/Pure/VM_Class.hpp"
+"ExtropiaLib:prj/VM2/Pure/VM_Opts.hpp"
+"ExtropiaLib:prj/VM2/Pure/VM_Code.hpp"
+"ExtropiaLib:prj/VM2/Pure/VM_Funcs.hpp"
+Storm Shell Project (Dependencies)
+"objects/VM_Logic.o" "objects/VM_Logic.debug"
+""
+"objects/VM_Logic.o" "objects/VM_Logic.debug"
+File
+1 "VM_ObjectCode.cpp"
+"VM_ObjectCode.cpp"
+"ExtropiaLib:prj/VM2/Pure/VM_ObjectCode.hpp"
+"ExtropiaLib:prj/VM2/Pure/VM_Opts.hpp"
+"ExtropiaLib:prj/VM2/Pure/VM_Code.hpp"
+Storm Shell Project (Dependencies)
+"objects/VM_ObjectCode.o" "objects/VM_ObjectCode.debug"
+""
+"objects/VM_ObjectCode.o" "objects/VM_ObjectCode.debug"
+Section
+1 1 100
+File
+2 "VM_Opts.hpp"
+"VMOpts.h"
+"VMOpts.hpp"
+"VM_Opts.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "VM_Code.hpp"
+"VMCode.hpp"
+"VM_Code.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "VM_Class.hpp"
+"VM2.hpp"
+"VMClass.hpp"
+"VM_Class.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "VM_Funcs.hpp"
+"VMFuncs.h"
+"VMFuncs.hpp"
+"VM_Funcs.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "VM_ObjectCode.hpp"
+"VM_ObjectCode.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+Section
+2 1 95
+File
+10 "runvm"
+"VMTest"
+"runvm"
+Storm Shell Project (Dependencies)
+"" ""
+""
+"runvm.link"
+Section
+10 1 40
+File
+5 "storm020_far.lib"
+"storm020_far.lib"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+5 "ExtropiaLib:lib/Platforms/Amiga68k/far/lib/xBase_far.lib"
+"ExtropiaLib:lib/Platforms/Amiga68k/far/lib/xBase_far.lib"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+5 "ExtropiaLib:lib/Platforms/Amiga68k/far/lib/xIO_far.lib"
+"ExtropiaLib:lib/Platforms/Amiga68k/far/lib/xIO_far.lib"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+5 "ExtropiaLib:lib/Platforms/Amiga68k/far/lib/xServices_far.lib"
+"ExtropiaLib:lib/Platforms/Amiga68k/far/lib/xServices_far.lib"
+Storm Shell Project (Dependencies)
+"" ""
+""
+Section
+5 1 -50
+Storm Shell Project (End)

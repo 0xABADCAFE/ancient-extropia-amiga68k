@@ -1,0 +1,571 @@
+Global M68K Construktors
+	_INIT_0_InitFiles
+	_INIT_1_DOS_c
+	_INIT_5_InitStdIOFiles
+	_INIT_8_xBase_cpp__xbSt
+Global M68K Destruktors
+	_EXIT_5_InitFiles
+	_EXIT_5_InitStdIOFiles
+	_EXIT_4_free
+	_EXIT_1_DOS_c
+	_EXIT_0_Main
+No Global PPC Construktors
+No Global PPC Destruktors
+
+M68K Code
+
+
+  Hunk #0 ( Far FAST ) 52588 Bytes (0xcd6c)
+  _exit = 132 (0x84) referenced 2 times
+    File Van:Development/StormC/StormSYS/startups/startup.o
+  JASM68K::TranslateFunc(unsigned long *,unsigned short *) = 180 (0xb4) unused, maybe local
+    File Mendoza:Extropia/eXtropia/prj/VM2/Jasmine/objects/RehannaClass.o
+  REHANNA::Create(long,long) = 184 (0xb8) unused, maybe local
+    File Mendoza:Extropia/eXtropia/prj/VM2/Jasmine/objects/RehannaClass.o
+  REHANNA::Delete() = 388 (0x184) unused, maybe local
+    File Mendoza:Extropia/eXtropia/prj/VM2/Jasmine/objects/RehannaClass.o
+  main(int,char **) = 458 (0x1ca) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/VM2/Jasmine/objects/RehannaClass.o
+  _fopen = 718 (0x2ce) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _freopen = 874 (0x36a) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _fclose = 966 (0x3c6) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _fflush = 1066 (0x42a) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _setvbuf = 1150 (0x47e) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _setbuf = 1370 (0x55a) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _ferror = 1426 (0x592) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _clearerr = 1452 (0x5ac) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _perror = 1470 (0x5be) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _remove = 1520 (0x5f0) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _rename = 1552 (0x610) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _tmpnam = 1592 (0x638) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _tmpfile = 1716 (0x6b4) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigaopen = 1770 (0x6ea) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigaread = 2706 (0xa92) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigareadunget = 3198 (0xc7e) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigawrite = 3302 (0xce6) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigaeof = 3878 (0xf26) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigaseek = 3902 (0xf3e) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigagetc = 4208 (0x1070) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigagetcunget = 4266 (0x10aa) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigaungetc = 4298 (0x10ca) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigaputc = 4328 (0x10e8) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigaflush = 4390 (0x1126) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigaclose = 4628 (0x1214) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _INIT_0_InitFiles = 4760 (0x1298) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _EXIT_5_InitFiles = 4832 (0x12e0) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _memcpy = 4992 (0x1380) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _memmove = 5030 (0x13a6) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _memcmp = 5090 (0x13e2) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _memchr = 5150 (0x141e) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _memset = 5200 (0x1450) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _set_new_handler = 5270 (0x1496) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _malloc = 5290 (0x14aa) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _free = 5704 (0x1648) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _EXIT_4_free = 5898 (0x170a) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _calloc = 6016 (0x1780) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _realloc = 6068 (0x17b4) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _formatted_out = 6744 (0x1a58) referenced 4 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _puts = 8820 (0x2274) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _printf = 8920 (0x22d8) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _fprintf = 8972 (0x230c) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _sprintf = 9024 (0x2340) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _vsprintf = 9088 (0x2380) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _INIT_5_InitStdIOFiles = 9152 (0x23c0) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _EXIT_5_InitStdIOFiles = 9416 (0x24c8) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strerror = 9460 (0x24f4) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strcpy = 11256 (0x2bf8) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strncpy = 11284 (0x2c14) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strcat = 11338 (0x2c4a) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strncat = 11372 (0x2c6c) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strcmp = 11424 (0x2ca0) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strncmp = 11480 (0x2cd8) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strchr = 11556 (0x2d24) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strrchr = 11596 (0x2d4c) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strspn = 11666 (0x2d92) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strcspn = 11710 (0x2dbe) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strpbrk = 11754 (0x2dea) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strstr = 11804 (0x2e1c) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strlen = 11876 (0x2e64) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strtok = 11898 (0x2e7a) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _stricmp = 12064 (0x2f20) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strnicmp = 12186 (0x2f9a) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strlwr = 12382 (0x305e) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strupr = 12436 (0x3094) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _signed_out = 12492 (0x30cc) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _signed_out_l = 13148 (0x335c) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _unsigned_out = 13236 (0x33b4) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _unsigned_out_l = 13836 (0x360c) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _char_out = 14402 (0x3842) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _string_out = 14558 (0x38de) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _int_in = 14770 (0x39b2) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _char_in = 15886 (0x3e0e) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _string_in = 16044 (0x3eac) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  MEM::Alloc(unsigned int,short,short) = 16300 (0x3fac) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  MEM::Free(void *) = 16376 (0x3ff8) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  MEM::FreeAll() = 16632 (0x40f8) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  MEM::AllocIndex(unsigned int,short,short) = 16944 (0x4230) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  MEM::FreeIndex(unsigned long) = 17224 (0x4348) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  sysBASELIB::Init() = 17416 (0x4408) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  sysBASELIB::Done() = 17624 (0x44d8) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  sysBASELIB::MessageBox(char *,char *,char * ...) = 17732 (0x4544) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  _INIT_8_xBase_cpp__xbSt = 17832 (0x45a8) unused, maybe local
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  xBASELIB::Init() = 17840 (0x45b0) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  xBASELIB::Init(int,char **) = 18336 (0x47a0) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  xBASELIB::Done() = 18376 (0x47c8) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  _floor__r = 18384 (0x47d0) referenced 2 times
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _pow__r = 18408 (0x47e8) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  facoss::_060LSP() = 18448 (0x4810) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _acos__r = 18456 (0x4818) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  facosx::_060LSP() = 18464 (0x4820) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fasins::_060LSP() = 18472 (0x4828) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fasind::_060LSP() = 18480 (0x4830) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _asin__r = 18480 (0x4830) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fasinx::_060LSP() = 18488 (0x4838) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fatans::_060LSP() = 18496 (0x4840) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fatand::_060LSP() = 18504 (0x4848) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _atan__r = 18504 (0x4848) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fatanx::_060LSP() = 18512 (0x4850) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fatanhs::_060LSP() = 18520 (0x4858) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fatanhd::_060LSP() = 18528 (0x4860) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fatanhx::_060LSP() = 18536 (0x4868) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fcoss::_060LSP() = 18544 (0x4870) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fcosd::_060LSP() = 18552 (0x4878) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _cos__r = 18552 (0x4878) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fcosx::_060LSP() = 18560 (0x4880) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fcoshs::_060LSP() = 18568 (0x4888) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fcoshd::_060LSP() = 18576 (0x4890) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _cosh__r = 18576 (0x4890) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fcoshx::_060LSP() = 18584 (0x4898) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fetoxs::_060LSP() = 18592 (0x48a0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fetoxd::_060LSP() = 18600 (0x48a8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _exp__r = 18600 (0x48a8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fetoxx::_060LSP() = 18608 (0x48b0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fetoxm1s::_060LSP() = 18616 (0x48b8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fetoxm1d::_060LSP() = 18624 (0x48c0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fetoxm1x::_060LSP() = 18632 (0x48c8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fgetexps::_060LSP() = 18640 (0x48d0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fgetexpd::_060LSP() = 18648 (0x48d8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fgetexpx::_060LSP() = 18656 (0x48e0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fgetmans::_060LSP() = 18664 (0x48e8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fgetmand::_060LSP() = 18672 (0x48f0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fgetmanx::_060LSP() = 18680 (0x48f8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flog10s::_060LSP() = 18688 (0x4900) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flog10d::_060LSP() = 18696 (0x4908) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _log10__r = 18696 (0x4908) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flog10x::_060LSP() = 18704 (0x4910) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flog2s::_060LSP() = 18712 (0x4918) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flog2d::_060LSP() = 18720 (0x4920) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flog2x::_060LSP() = 18728 (0x4928) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flogns::_060LSP() = 18736 (0x4930) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flognd::_060LSP() = 18744 (0x4938) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _log__r = 18744 (0x4938) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flognx::_060LSP() = 18752 (0x4940) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flognp1s::_060LSP() = 18760 (0x4948) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flognp1d::_060LSP() = 18768 (0x4950) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flognp1x::_060LSP() = 18776 (0x4958) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fmods::_060LSP() = 18784 (0x4960) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fmodd::_060LSP() = 18792 (0x4968) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _fmod__r = 18792 (0x4968) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fmodx::_060LSP() = 18800 (0x4970) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  frems::_060LSP() = 18808 (0x4978) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fremd::_060LSP() = 18816 (0x4980) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fremx::_060LSP() = 18824 (0x4988) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fscales::_060LSP() = 18832 (0x4990) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fscaled::_060LSP() = 18840 (0x4998) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fscalex::_060LSP() = 18848 (0x49a0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsins::_060LSP() = 18856 (0x49a8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsind::_060LSP() = 18864 (0x49b0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _sin__r = 18864 (0x49b0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsinx::_060LSP() = 18872 (0x49b8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsincoss::_060LSP() = 18880 (0x49c0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsincosd::_060LSP() = 18888 (0x49c8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsincosx::_060LSP() = 18896 (0x49d0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsinhs::_060LSP() = 18904 (0x49d8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsinhd::_060LSP() = 18912 (0x49e0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _sinh__r = 18912 (0x49e0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsinhx::_060LSP() = 18920 (0x49e8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftans::_060LSP() = 18928 (0x49f0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftand::_060LSP() = 18936 (0x49f8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _tan__r = 18936 (0x49f8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftanx::_060LSP() = 18944 (0x4a00) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftanhs::_060LSP() = 18952 (0x4a08) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftanhd::_060LSP() = 18960 (0x4a10) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _tanh__r = 18960 (0x4a10) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftanhx::_060LSP() = 18968 (0x4a18) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftentoxs::_060LSP() = 18976 (0x4a20) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftentoxd::_060LSP() = 18984 (0x4a28) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftentoxx::_060LSP() = 18992 (0x4a30) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftwotoxs::_060LSP() = 19000 (0x4a38) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftwotoxd::_060LSP() = 19008 (0x4a40) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftwotoxx::_060LSP() = 19016 (0x4a48) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fabss::_060LSP() = 19024 (0x4a50) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fabsd::_060LSP() = 19032 (0x4a58) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _fabs__r = 19032 (0x4a58) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fabsx::_060LSP() = 19040 (0x4a60) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fadds::_060LSP() = 19048 (0x4a68) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  faddd::_060LSP() = 19056 (0x4a70) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  faddx::_060LSP() = 19064 (0x4a78) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fdivs::_060LSP() = 19072 (0x4a80) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fdivd::_060LSP() = 19080 (0x4a88) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fdivx::_060LSP() = 19088 (0x4a90) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fints::_060LSP() = 19096 (0x4a98) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fintd::_060LSP() = 19104 (0x4aa0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fintx::_060LSP() = 19112 (0x4aa8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fintrzs::_060LSP() = 19120 (0x4ab0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fintrzd::_060LSP() = 19128 (0x4ab8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fintrzx::_060LSP() = 19136 (0x4ac0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fmuls::_060LSP() = 19144 (0x4ac8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fmuld::_060LSP() = 19152 (0x4ad0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fmulx::_060LSP() = 19160 (0x4ad8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fnegs::_060LSP() = 19168 (0x4ae0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fnegd::_060LSP() = 19176 (0x4ae8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fnegx::_060LSP() = 19184 (0x4af0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsqrts::_060LSP() = 19192 (0x4af8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsqrtd::_060LSP() = 19200 (0x4b00) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _sqrt__r = 19200 (0x4b00) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsqrtx::_060LSP() = 19208 (0x4b08) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsubs::_060LSP() = 19216 (0x4b10) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsubd::_060LSP() = 19224 (0x4b18) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsubx::_060LSP() = 19232 (0x4b20) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  facosd::_060LSP() = 18456 (0x4818) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _060FPLSP_TOP = 18448 (0x4810) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _atan2__r = 49584 (0xc1b0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _ldexp__r = 49818 (0xc29a) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _frexp__r = 49868 (0xc2cc) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _modf__r = 49950 (0xc31e) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _fmod__r = 50038 (0xc376) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _double_out = 50568 (0xc588) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _double_in = 51760 (0xca30) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+
+  Hunk #1 ( Far FAST ) 1688 Bytes (0x698)
+  main() = 0 (0x0) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  wbmain(WBStartup *) = 8 (0x8) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  _wbmain = 16 (0x10) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  main(int,char *) = 20 (0x14) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  _EXIT_0_Main = 494 (0x1ee) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  _INIT_1_DOS_c = 556 (0x22c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  _EXIT_1_DOS_c = 588 (0x24c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  _InitModules = 648 (0x288) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  _CleanupModules = 716 (0x2cc) referenced 2 times
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  LibBaseC::LibBaseC(char *,unsigned long,short) = 812 (0x32c) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  LibBaseC::~LibBaseC() = 1148 (0x47c) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  LibBaseC::version() const  = 1186 (0x4a2) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  uintmult = 1324 (0x52c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  intmult = 1324 (0x52c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___uintmult32 = 1324 (0x52c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___intmult32 = 1324 (0x52c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  Add64 = 1356 (0x54c) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___add64 = 1356 (0x54c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  Neg64 = 1364 (0x554) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___neg64 = 1364 (0x554) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  SMult64 = 1372 (0x55c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  UMult64 = 1406 (0x57e) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___uintmult64 = 1406 (0x57e) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___intmult64 = 1372 (0x55c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  SDiv64 = 1524 (0x5f4) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  UDiv64 = 1564 (0x61c) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___uintdivmod64 = 1564 (0x61c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___intdivmod64 = 1524 (0x5f4) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  UMod64 = 1664 (0x680) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___uintmod64 = 1664 (0x680) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  SMod64 = 1676 (0x68c) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___intmod64 = 1676 (0x68c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+
+PowerPC Code
+
+
+Data
+
+
+  Hunk #2 ( Far FAST ) 1272 Bytes (0x4f8)
+  _SysBase = 0 (0x0) referenced 9 times
+    File Van:Development/StormC/StormSYS/startups/startup.o
+  _std__out = 392 (0x188) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _std__in = 476 (0x1dc) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _std__err = 560 (0x230) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _IntuitionBase = 968 (0x3c8) referenced 4 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  _PowerPCBase = 972 (0x3cc) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  _allocated__MEM = 976 (0x3d0) referenced 6 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  _totSize__MEM = 980 (0x3d4) referenced 3 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  _nextFree__MEM = 984 (0x3d8) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  _cnt__MEM = 988 (0x3dc) referenced 3 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  _sysData__sysBASELIB = 992 (0x3e0) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  _msgbuff__sysBASELIB = 996 (0x3e4) referenced 3 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  _numStartArgs__xBASELIB = 1000 (0x3e8) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  _startArgs__xBASELIB = 1004 (0x3ec) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  _DOSBase = 1200 (0x4b0) referenced 4 times
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  _not_open__LibBaseC = 1216 (0x4c0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  ___init_table68k = 1224 (0x4c8) referenced 1 times
+    File <Internal Assembled>
+  ___exit_table68k = 1248 (0x4e0) referenced 1 times
+    File <Internal Assembled>
+
+BSS
+
+
+  Hunk #3 ( Far FAST ) 9032 Bytes (0x2348)
+  _errno = 0 (0x0) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _gxSt = 56 (0x38) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  _xbSt = 312 (0x138) unused, maybe local
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+
+END

@@ -1,0 +1,164 @@
+Storm Shell Project (0013)
+Settings (Start)
+C/C++ Environment
+"StormC:include"
+"ExtropiaLib:include"
+Includepath (End)
+0 "" 80
+0 "objects"
+C/C++ Preprozessor
+1 "NDEBUG" ""
+1 "KARL_FIXES" ""
+1 "PARANOID" ""
+Defines (End)
+1 1 1
+C/C++ Options
+1 0 1 0 1 0 2 0 0 1 0 3 1 0 0
+C/C++ Optimizer
+6
+C/C++ Warnings
+1 1 1 1 1 1 1 1
+Assembler
+0 ""
+0 "CON://640/200/Storm Assembler/AUTO/WAIT/SCREEN StormScreen"
+0 0
+0 1 60 0 1 0 0 20 0
+Sets (End)
+0 1 0 0 0 2 1 0 0
+1 1 1 1 0 0 0 0 0
+1 0
+0 0 0 0 0
+Linker
+0 0 "PROGDIR:startup.o" 0 0 1 0 1 0 0
+"StormC:lib/" 0 "StormC:lib/logfile" 0 1 1
+0 "_WizardSurface"
+0 0 50 0 50 0 50 0 0
+0 0 0 0 0 0 0 0
+Run
+30 "" "" "" 0
+""
+
+1 "CON:1000/800/600/400/Storm Console/AUTO/WAIT/SCREEN StormScreen" "RAM:Output" "RAM:Input"
+1 0
+0 0 0 "" ""
+Settings (End)
+File
+1 "X_GFX.cpp"
+"X_GFX.cpp"
+Storm Shell Project (Dependencies)
+"X_GFX.o" "X_GFX.debug"
+""
+"X_GFX.o" "X_GFX.debug"
+File
+1 "ExtropiaLib:lib/Common/xBase.cpp"
+"ExtropiaLib:lib/Common/xBase.cpp"
+Storm Shell Project (Dependencies)
+"ExtropiaLib:lib/Common/xBase.o" "ExtropiaLib:lib/Common/xBase.debug"
+""
+"ExtropiaLib:lib/Common/xBase.o" "ExtropiaLib:lib/Common/xBase.debug"
+File
+1 "ExtropiaLib:lib/Platforms/Amiga68k/sysBase.cpp"
+"ExtropiaLib:lib/Platforms/Amiga68k/sysBase.cpp"
+Storm Shell Project (Dependencies)
+"ExtropiaLib:lib/Platforms/Amiga68k/sysBase.o" "ExtropiaLib:lib/Platforms/Amiga68k/sysBase.debug"
+""
+"ExtropiaLib:lib/Platforms/Amiga68k/sysBase.o" "ExtropiaLib:lib/Platforms/Amiga68k/sysBase.debug"
+File
+1 "ExtropiaLib:lib/Platforms/Amiga68k/xSystem/xResources.cpp"
+"ExtropiaLib:lib/Platforms/Amiga68k/xSystem/xResources.cpp"
+Storm Shell Project (Dependencies)
+"ExtropiaLib:lib/Platforms/Amiga68k/xSystem/xResources.o" "ExtropiaLib:lib/Platforms/Amiga68k/xSystem/xResources.debug"
+""
+"ExtropiaLib:lib/Platforms/Amiga68k/xSystem/xResources.o" "ExtropiaLib:lib/Platforms/Amiga68k/xSystem/xResources.debug"
+File
+1 "ExtropiaLib:lib/Platforms/Amiga68k/xSystem/xGraphics.cpp"
+"ExtropiaLib:lib/Platforms/Amiga68k/xSystem/xGraphics.cpp"
+Storm Shell Project (Dependencies)
+"ExtropiaLib:lib/Platforms/Amiga68k/xSystem/xGraphics.o" "ExtropiaLib:lib/Platforms/Amiga68k/xSystem/xGraphics.debug"
+""
+"ExtropiaLib:lib/Platforms/Amiga68k/xSystem/xGraphics.o" "ExtropiaLib:lib/Platforms/Amiga68k/xSystem/xGraphics.debug"
+File
+1 "ExtropiaLib:lib/Common/xUtility/Pool.cpp"
+"ExtropiaLib:lib/Common/xUtility/Pool.cpp"
+Storm Shell Project (Dependencies)
+"ExtropiaLib:lib/Common/xUtility/Pool.o" "ExtropiaLib:lib/Common/xUtility/Pool.debug"
+""
+"ExtropiaLib:lib/Common/xUtility/Pool.o" "ExtropiaLib:lib/Common/xUtility/Pool.debug"
+File
+1 "ExtropiaLib:lib/Platforms/Amiga68k/xSystem/xDraw.cpp"
+"ExtropiaLib:lib/Platforms/Amiga68k/xSystem/xDraw.cpp"
+Storm Shell Project (Dependencies)
+"ExtropiaLib:lib/Platforms/Amiga68k/xSystem/xDraw.o" "ExtropiaLib:lib/Platforms/Amiga68k/xSystem/xDraw.debug"
+""
+"ExtropiaLib:lib/Platforms/Amiga68k/xSystem/xDraw.o" "ExtropiaLib:lib/Platforms/Amiga68k/xSystem/xDraw.debug"
+Section
+1 1 100
+File
+2 "ExtropiaLib:include/xDefs.hpp"
+"ExtropiaLib:include/xDefs.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "ExtropiaLib:include/xBase.hpp"
+"ExtropiaLib:include/xBase.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "ExtropiaLib:include/Platforms/Amiga68k/sysBase.hpp"
+"ExtropiaLib:include/Platforms/Amiga68k/sysBase.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "ExtropiaLib:include/Platforms/Amiga68k/xSystem/xResources.hpp"
+"ExtropiaLib:include/Platforms/Amiga68k/xSystem/xResources.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "ExtropiaLib:include/Platforms/Amiga68k/xSystem/xGraphics.hpp"
+"ExtropiaLib:include/Platforms/Amiga68k/xSystem/xGraphics.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "ExtropiaLib:include/xUtility/Pool.hpp"
+"ExtropiaLib:include/xUtility/Pool.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "ExtropiaLib:include/Platforms/Amiga68k/xSystem/xDraw.hpp"
+"ExtropiaLib:include/Platforms/Amiga68k/xSystem/xDraw.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+Section
+2 1 95
+File
+10 "X_GFX"
+"testXSL"
+"X_GFX"
+Storm Shell Project (Dependencies)
+"" ""
+""
+"X_GFX.link"
+Section
+10 1 40
+File
+5 "storm020_far.lib"
+"storm020_far.lib"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+5 "amiga.lib"
+"amiga.lib"
+Storm Shell Project (Dependencies)
+"" ""
+""
+Section
+5 1 -50
+Storm Shell Project (End)

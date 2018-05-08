@@ -1,0 +1,86 @@
+
+    VM2 overview
+
+    Elemental types
+
+    uint8, uint16, uint32, uint64, sint8, sint16, sint32, sint64, float32, float64
+
+    Specs
+
+    General Purpose Registers
+
+        32 GPR, capable of holding any of the elemental types. In addition, a register may hold a byte addressable pointer that can be used to access data indirectly.
+
+    Data Section Rgisters
+
+       Two registers that point to statically defined mutable and constant data respectively.
+    
+    Multiple operands
+
+        Up to three operands per operation. This allows the result of a binary expression to be stored independently of the two source operands, eg c = a+b.
+
+    Addressing modes
+
+        Each operand can be referenced in one of several ways.
+
+        Register direct
+            The operand is contained in the given register. 
+
+        Register indirect
+            The operand is pointed to by the given register.
+
+        Register indirect with literal offset
+            The operand is pointed to by the given register, offset by a signed literal value.
+
+        Register indirect updated by literal offset
+            The register address is first updated by adding a signed literal offset to give the operand address.
+
+        Register indirect with register offset
+            The operand is pointed to by the given register, offset by a signed 32-bit value in a second register.
+
+        Register indirect updated by register offset
+            The register address is updated by adding a signed 32-bit offset contained in a second register to give the operand address.
+
+        Data Section with literal offset
+            The operand is pointed to by the Data section pointer, offset by a literal value.
+
+        Constant Section with literal offset
+            The operand is pointed to by the Constant section pointer, offset by a literal value. Operand is read-only.
+
+        Literal
+            The operand is a 8-32 bit literal value contained within the instruction stream. Operand is read-only. Types < 32 bit are stored as 32-bit words.
+
+    Arithmetic
+
+    The following operations are provided for each of the elemental types:
+
+    Add, subtract, multiply, divide, modulus, negate arithmetic shift (integer only)
+
+    Integer arithmetic alyways treats data as signed. This only has implications for multiply, divide and modulus.
+
+    Logic
+
+    The following operations can be performed on any type
+
+    And, or, xor, inv, leftshift, rightshift
+
+    Note that logic operations treat data as simple bit patterns and do not consider any type information apart from the operand size.
+
+    Data conversion/move
+
+    Casting operations are provided to convert between elemental types. Note that integer types are considered signed during conversion. Unsigned casting must be done manually. Operations are provided that move data elements. Note that unless both source and destination are register direct, conversions should use seperate source and destination. Otherwise endian related problems could arise between types of different sizes.
+
+
+    Branch
+
+    Conditional and unconditional branching is provided. Branch offsets are signed 32-bit literal values. The offset size is measured purely in 32-bit words from the offset value itself.
+
+    Conditional branches take a single operand that is tested against zero, the branch is taken if the comparison is true. The following tests are available for each type
+
+    operand != 0, operand < 0, operand <= 0, operand == 0, operand >= 0, operand > 0
+
+    Note that integer operands are treat as signed data.
+
+    Call
+
+    function call / return is provided. The call operation takes an operand that represents the address of the code to be executed. Before jumping, the address of the subsequent instruction is pushed onto a return stack. This value is popped by the return operation.

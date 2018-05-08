@@ -1,0 +1,21 @@
+"Van:Development/StormC/StormSYS/startups/startup.o"
+0,0,0,132,code_68k
+1,0,132,48,code_68k
+2,0,180,36,code_68k
+3,2,0,16,data
+"Mendoza:Extropia/eXtropia/prj/LibTest/objects/SoundMain.o"
+-
+1,0,216,492,code_68k
+2,0,708,72,code_68k
+"Mendoza:Extropia/eXtropia/prj/LibTest/objects/SoundDevice.o"
+-
+1,0,780,852,code_68k
+2,3,0,128,bss
+3,0,1632,88,code_68k
+4,0,1720,340,code_68k
+5,0,2060,208,code_68k
+6,0,2268,300,code_68k
+-
+8,0,2568,4,code_68k
+9,0,2572,44,code_68k
+!0,216 ; main__iPPc

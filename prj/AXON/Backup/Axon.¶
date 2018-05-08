@@ -1,0 +1,241 @@
+Storm Shell Project (0013)
+Settings (Start)
+C/C++ Environment
+"StormC:include"
+"Mendoza:Extropia/eXtropia/include"
+Includepath (End)
+0 "" 80
+0 "objects"
+C/C++ Preprozessor
+1 "NDEBUG" ""
+1 "KARL_FIXES" ""
+1 "PARANOID" ""
+Defines (End)
+1 1 1
+C/C++ Options
+1 1 1 1 0 0 2 0 0 1 0 3 1 0 0
+C/C++ Optimizer
+6
+C/C++ Warnings
+1 1 1 1 1 1 1 1
+Assembler
+0 ""
+0 "CON://640/200/Storm Assembler/AUTO/WAIT/SCREEN StormScreen"
+0 0
+0 1 60 0 1 0 0 20 0
+Sets (End)
+0 1 0 0 0 2 1 0 0
+1 1 1 1 0 0 0 0 0
+1 0
+0 0 0 0 0
+Linker
+0 0 "PROGDIR:startup.o" 0 0 1 0 0 0 0
+"StormC:lib/" 0 "StormC:lib/logfile" 0 1 1
+0 "_WizardSurface"
+0 0 50 0 50 0 50 0 0
+0 0 0 0 0 0 0 0
+Run
+80 "" "" "" 0
+""
+
+1 "CON://400/180/Storm Console/AUTO/WAIT/SCREEN StormScreen" "RAM:Output" "RAM:Input"
+1 0
+0 0 0 "" ""
+Settings (End)
+File
+1 "main.cpp"
+"main.cpp"
+"Mendoza:Extropia/eXtropia/prj/AXON/axon.hpp"
+"Mendoza:Extropia/eXtropia/prj/AXON/view.hpp"
+"Mendoza:Extropia/eXtropia/prj/AXON/world.hpp"
+"Mendoza:Extropia/eXtropia/prj/AXON/model.hpp"
+Storm Shell Project (Dependencies)
+"main.o" "main.debug"
+""
+"main.o" "main.debug"
+File
+1 "Mendoza:Extropia/eXtropia/lib/Common/xBase.cpp"
+"Mendoza:Extropia/eXtropia/lib/Common/xBase.cpp"
+Storm Shell Project (Dependencies)
+"Mendoza:Extropia/eXtropia/lib/Common/xBase.o" "Mendoza:Extropia/eXtropia/lib/Common/xBase.debug"
+""
+"Mendoza:Extropia/eXtropia/lib/Common/xBase.o" "Mendoza:Extropia/eXtropia/lib/Common/xBase.debug"
+File
+1 "Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/sysBase.cpp"
+"Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/sysBase.cpp"
+Storm Shell Project (Dependencies)
+"Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/sysBase.o" "Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/sysBase.debug"
+""
+"Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/sysBase.o" "Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/sysBase.debug"
+File
+1 "Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/xSystem/xResources.cpp"
+"Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/xSystem/xResources.cpp"
+Storm Shell Project (Dependencies)
+"Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/xSystem/xResources.o" "Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/xSystem/xResources.debug"
+""
+"Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/xSystem/xResources.o" "Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/xSystem/xResources.debug"
+File
+1 "Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/xSystem/xGraphics.cpp"
+"Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/xSystem/xGraphics.cpp"
+Storm Shell Project (Dependencies)
+"Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/xSystem/xGraphics.o" "Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/xSystem/xGraphics.debug"
+""
+"Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/xSystem/xGraphics.o" "Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/xSystem/xGraphics.debug"
+File
+1 "Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/xSystem/xDraw.cpp"
+"Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/xSystem/xDraw.cpp"
+Storm Shell Project (Dependencies)
+"Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/xSystem/xDraw.o" "Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/xSystem/xDraw.debug"
+""
+"Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/xSystem/xDraw.o" "Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/xSystem/xDraw.debug"
+File
+1 "Mendoza:Extropia/eXtropia/lib/Common/xUtility/Pool.cpp"
+"Mendoza:Extropia/eXtropia/lib/Common/xUtility/Pool.cpp"
+Storm Shell Project (Dependencies)
+"Mendoza:Extropia/eXtropia/lib/Common/xUtility/Pool.o" "Mendoza:Extropia/eXtropia/lib/Common/xUtility/Pool.debug"
+""
+"Mendoza:Extropia/eXtropia/lib/Common/xUtility/Pool.o" "Mendoza:Extropia/eXtropia/lib/Common/xUtility/Pool.debug"
+File
+1 "axon.cpp"
+"axon.cpp"
+"Mendoza:Extropia/eXtropia/prj/AXON/axon.hpp"
+"Mendoza:Extropia/eXtropia/prj/AXON/view.hpp"
+"Mendoza:Extropia/eXtropia/prj/AXON/world.hpp"
+"Mendoza:Extropia/eXtropia/prj/AXON/model.hpp"
+Storm Shell Project (Dependencies)
+"axon.o" "axon.debug"
+""
+"axon.o" "axon.debug"
+File
+1 "World.cpp"
+"World.cpp"
+"Mendoza:Extropia/eXtropia/prj/AXON/axon.hpp"
+"Mendoza:Extropia/eXtropia/prj/AXON/view.hpp"
+"Mendoza:Extropia/eXtropia/prj/AXON/world.hpp"
+"Mendoza:Extropia/eXtropia/prj/AXON/model.hpp"
+Storm Shell Project (Dependencies)
+"World.o" "World.debug"
+""
+"World.o" "World.debug"
+File
+1 "Cell.cpp"
+"Cell.cpp"
+"Mendoza:Extropia/eXtropia/prj/AXON/axon.hpp"
+"Mendoza:Extropia/eXtropia/prj/AXON/view.hpp"
+"Mendoza:Extropia/eXtropia/prj/AXON/world.hpp"
+"Mendoza:Extropia/eXtropia/prj/AXON/model.hpp"
+Storm Shell Project (Dependencies)
+"Cell.o" "Cell.debug"
+""
+"Cell.o" "Cell.debug"
+File
+1 "View.cpp"
+"View.cpp"
+"Mendoza:Extropia/eXtropia/prj/AXON/axon.hpp"
+"Mendoza:Extropia/eXtropia/prj/AXON/view.hpp"
+"Mendoza:Extropia/eXtropia/prj/AXON/world.hpp"
+"Mendoza:Extropia/eXtropia/prj/AXON/model.hpp"
+Storm Shell Project (Dependencies)
+"View.o" "View.debug"
+""
+"View.o" "View.debug"
+File
+1 "Model.cpp"
+"Mendoza:Extropia/eXtropia/prj/AXON/axon.hpp"
+"Mendoza:Extropia/eXtropia/prj/AXON/view.hpp"
+"Mendoza:Extropia/eXtropia/prj/AXON/world.hpp"
+"Mendoza:Extropia/eXtropia/prj/AXON/model.hpp"
+"Model.cpp"
+Storm Shell Project (Dependencies)
+"Model.o" "Model.debug"
+""
+"Model.o" "Model.debug"
+Section
+1 1 100
+File
+2 "Mendoza:Extropia/eXtropia/include/xDefs.hpp"
+"Mendoza:Extropia/eXtropia/include/xDefs.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "Mendoza:Extropia/eXtropia/include/xBase.hpp"
+"Mendoza:Extropia/eXtropia/include/xBase.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "Mendoza:Extropia/eXtropia/include/Platforms/Amiga68k/sysBase.hpp"
+"Mendoza:Extropia/eXtropia/include/Platforms/Amiga68k/sysBase.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "Mendoza:Extropia/eXtropia/include/Platforms/Amiga68k/xSystem/xResources.hpp"
+"Mendoza:Extropia/eXtropia/include/Platforms/Amiga68k/xSystem/xResources.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "Mendoza:Extropia/eXtropia/include/Platforms/Amiga68k/xSystem/xGraphics.hpp"
+"Mendoza:Extropia/eXtropia/include/Platforms/Amiga68k/xSystem/xGraphics.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "Mendoza:Extropia/eXtropia/include/Platforms/Amiga68k/xSystem/xDraw.hpp"
+"Mendoza:Extropia/eXtropia/include/Platforms/Amiga68k/xSystem/xDraw.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "Mendoza:Extropia/eXtropia/include/xUtility/Pool.hpp"
+"Mendoza:Extropia/eXtropia/include/xUtility/Pool.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "axon.hpp"
+"axon.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "view.hpp"
+"view.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "world.hpp"
+"world.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "model.hpp"
+"models.hpp"
+"model.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+Section
+2 1 95
+File
+10 "Axon"
+"Axon"
+Storm Shell Project (Dependencies)
+"" ""
+""
+"Axon.link"
+Section
+10 0 40
+File
+5 "storm020_far.lib"
+"storm020_far.lib"
+Storm Shell Project (Dependencies)
+"" ""
+""
+Section
+5 0 -50
+Storm Shell Project (End)

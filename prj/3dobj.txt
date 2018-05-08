@@ -1,0 +1,39 @@
+// Basic 3D object definition, runtime definition
+
+Triangle {
+    Vertex* ptrToVertex1
+    Vertex* ptrToVertex2
+    Vertex* ptrToVertex3
+    Normal* ptrToFaceNormal
+}
+
+Normal {
+    float   unitX
+    float   unitY
+    float   unitZ
+}
+
+Vertex {
+    float   ordinateX
+    float   ordinateY
+    float   ordinateZ
+    float   ordinateW
+    float   ordinateU
+    float   ordinateV
+    argb    defaultRGBColour 
+    Normal  vertexNormal
+}
+
+Element {
+    int           numTriangles
+    Triangle*     triangleList
+    TextureImage* texture
+    int           textureEnvironment
+    int           textureSkinMethod
+    int           shadingType
+}
+
+Object {
+    int           numElements
+    Element*      elementList
+}

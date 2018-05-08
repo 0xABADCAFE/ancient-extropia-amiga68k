@@ -1,0 +1,70 @@
+
+    M                   S                   T
+
+    | a   b   c   d |   | x   0   0   0 |   | 1   0   0   x |
+    | e   f   g   h |   | 0   y   0   0 |   | 0   1   0   y |
+    | i   j   k   l |   | 0   0   z   0 |   | 0   0   1   z |
+    | 0   0   0   1 |   | 0   0   0   1 |   | 0   0   0   0 |
+
+    R(x,y,z) : C = cos, S = sin
+
+    | CyCz          -CySz         Sy     0 |
+    |                                      |
+    | SxSyCz+CxSz   -SxSySz+CxCz  SxCy   0 |
+    |                                      |
+    | -CxSyCz-SxSz  CxSySz-SxCz   CxCy   0 |
+    |                                      |
+    | 0             0             0      1 |
+
+
+    M.S
+
+    a*x b*y c*z d
+    e*x f*y g*z h
+    i*x j*y k*z l
+    0   0   0   1
+
+    M.T
+
+    a   b   c   d+a*x+b*y+c*z
+    e   f   g   h+e*x+f*y+g*z
+    i   j   k   l+i*x+j*y+k*z
+    0   0   0   1
+
+Half a bee, philisophically, must ipso facto half not be.
+But half the bee has got to be a viz a viz its entity. You see ?
+But can a bee be said to be, or not to be an entire be,
+when half the bee is not a bee, due to some ancient injury ?
+
+Singing
+
+A-La dee dee, a one two three,
+Eric the half a bee
+A B C D E F G
+Eric the half a bee
+
+Is this wretched demi bee,
+a half asleep upon my knee,
+some freak from a menagerie ? No!
+Its Eric the half a bee
+
+A-fiddle-de-dum, a-fiddle-de-dee
+Eric the half a bee,
+Ho ho ho, tee hee hee,
+Eric the half a bee
+
+I love this hive employee-ee,
+biscected accidentally
+one summer afternoon by me,
+I love him carnally,
+He loves him carnally,
+Semi carnally
+
+The End.
+
+Cyril Conelly ?
+
+No, semi carnally...
+
+oh..
+

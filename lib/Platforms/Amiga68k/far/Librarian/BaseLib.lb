@@ -1,0 +1,8 @@
+StormLibrarian Document (0003)
+lib/BaseLib_far.lib
+1 0 0
+obj/sysBase.o
+obj/xBase.o
+obj/Memory.o
+obj/MEM_opt.o
+EOD

@@ -1,0 +1,7 @@
+join pgm woman_amb.raw as woman_amb.pgm
+join pgm woman_negx.raw as woman_negx.pgm
+join pgm woman_negy.raw as woman_negy.pgm
+join pgm woman_negz.raw as woman_negz.pgm
+join pgm woman_posx.raw as woman_posx.pgm
+join pgm woman_posy.raw as woman_posy.pgm
+join pgm woman_posz.raw as woman_posz.pgm

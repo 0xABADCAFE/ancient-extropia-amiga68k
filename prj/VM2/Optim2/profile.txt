@@ -1,0 +1,7 @@
+Profiler protocol at 22-Jul-02 (04:28:31):
+
+Function                  Usage   Complete    Time       Maximum     Minimum     Calls
+VMCORE::Execute            52 %     99 %   00:00:19.49 00:00:19.49 00:00:19.49        1
+VMCORE::Decode             31 %     31 %   00:00:11.82 00:00:00.00 00:00:00.00   200000
+VMCORE::Decode1            16 %     16 %   00:00:06.06 00:00:00.00 00:00:00.00   100000
+main                        0 %     99 %   00:00:00.05 00:00:00.05 00:00:00.05        1

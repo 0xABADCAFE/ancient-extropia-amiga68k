@@ -1,0 +1,44 @@
+/*
+
+  // hey
+
+  Virtual Machine Test code
+
+    /*  nested comments galore ! */ 
+
+    /* o /* a /* t */ m */ je */ al
+
+*/  /* comment */    //hello jjasf 
+
+
+#pragma stack (1024) /* Is this C? */
+
+#test value \
+      more  \
+      even more
+
+     #test2
+ #error "Error"
+
+    ver                   // show VMCORE version
+    print     aString 
+    new.32    p31, 16
+
+APointlessLabel:
+    push.s32  15          /* hey  /* oiii...*/ mm */
+    call      TestFunc;
+    
+    del.32    p31
+    print     myString; end // two statements and a comment
+
+TestFunc: dump
+    pop.s32 r0;print "Popped /*sint32*/ "; print.s32 r0; 
+    print.ch '\n'
+    ret
+
+const.f64 mmmmmmPI 3.14159265
+data.u32 someStaticData {0xCAFEBABE}
+
+const.ch myString  "The End!//\n"
+data.ch aString {'H'/*this is h letter*/, 'e', 'l', 'l', 'o', '\x13', ' ', 'W', 'o', 'r', 'l', 'd', '\n', 0}
+

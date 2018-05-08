@@ -1,0 +1,1245 @@
+Global M68K Construktors
+	_INIT_0_InitExceptionHandling
+	_INIT_0_InitFiles
+	_INIT_1_DOS_c
+	_INIT_2_MathIEEEDoubTrans_c
+	_INIT_3_TimerBase
+	_INIT_5_InitStdIOFiles
+	_INIT_5_fstream_c
+	_INIT_6_InitStdIOStreamBuffers_
+	_INIT_8_xDraw_cpp__sTab__xDRAW
+	_INIT_8_xDraw_cpp__fonts__xDRAW
+	_INIT_8_Surface_cpp__rPool__xSURFACE
+	_INIT_8_GraphicsBase3D_cpp__warp3D__x3D
+	_INIT_8_GraphicsBase_cpp__cyberGfx__x2D
+	_INIT_8_GraphicsBase_cpp__graphics__x2D
+	_INIT_8_xBase_cpp__errTbl__xBASELIB
+	_INIT_8_xBase_cpp__xbSt
+	_INIT_8_main_cpp_Bound__xDRAW_
+Global M68K Destruktors
+	_EXIT_8_GraphicsBase_cpp__graphics__x2D
+	_EXIT_8_GraphicsBase_cpp__cyberGfx__x2D
+	_EXIT_8_GraphicsBase3D_cpp__warp3D__x3D
+	_EXIT_8_Surface_cpp__rPool__xSURFACE
+	_EXIT_8_xDraw_cpp__fonts__xDRAW
+	_EXIT_8_main_cpp_main_
+	_EXIT_6_ExitStdIOStreamBuffers_
+	_EXIT_5_fstream_c
+	_EXIT_5_InitFiles
+	_EXIT_5_InitStdIOFiles
+	_EXIT_4_free
+	_EXIT_3_TimerBase
+	_EXIT_2_MathIEEEDoubTrans_c
+	_EXIT_1_DOS_c
+No Global PPC Construktors
+No Global PPC Destruktors
+
+M68K Code
+
+
+  Hunk #0 ( Far Public ) 51272 Bytes (0xc848)
+  _exit = 132 (0x84) referenced 2 times
+    File Van:Development/StormC/StormSYS/startups/startup.o
+  abort__STANDARD = 180 (0xb4) referenced 1 times
+    File Van:Development/StormC/StormSYS/startups/startup.o
+  Primitives(xDISPLAY &) = 216 (0xd8) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/XSL_test/X_GFX.o
+  TriangleFX(xDISPLAY &) = 2252 (0x8cc) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/XSL_test/X_GFX.o
+  BounceFX(xDISPLAY &) = 3340 (0xd0c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/XSL_test/X_GFX.o
+  CampFireFX(xDISPLAY &) = 4800 (0x12c0) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/XSL_test/X_GFX.o
+  LightSourceTXFX(xDISPLAY &) = 7776 (0x1e60) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/XSL_test/X_GFX.o
+  xTIMABLE::~xTIMABLE() = 12272 (0x2ff0) referenced 5 times
+    File Mendoza:Extropia/eXtropia/prj/XSL_test/X_GFX.o
+  AREA::~AREA() = 12364 (0x304c) referenced 4 times
+    File Mendoza:Extropia/eXtropia/prj/XSL_test/X_GFX.o
+  AREA::~AREA() = 12364 (0x304c) unused, maybe local
+    File Mendoza:Extropia/eXtropia/prj/XSL_test/X_GFX.o
+  xTIMER::~xTIMER() = 12280 (0x2ff8) referenced 5 times
+    File Mendoza:Extropia/eXtropia/prj/XSL_test/X_GFX.o
+  AREA::Width() = 12288 (0x3000) referenced 4 times
+    File Mendoza:Extropia/eXtropia/prj/XSL_test/X_GFX.o
+  AREA::Width() = 12288 (0x3000) unused, maybe local
+    File Mendoza:Extropia/eXtropia/prj/XSL_test/X_GFX.o
+  AREA::Height() = 12304 (0x3010) referenced 4 times
+    File Mendoza:Extropia/eXtropia/prj/XSL_test/X_GFX.o
+  AREA::Height() = 12304 (0x3010) unused, maybe local
+    File Mendoza:Extropia/eXtropia/prj/XSL_test/X_GFX.o
+  AREA::Depth() = 12324 (0x3024) referenced 4 times
+    File Mendoza:Extropia/eXtropia/prj/XSL_test/X_GFX.o
+  AREA::Depth() = 12324 (0x3024) unused, maybe local
+    File Mendoza:Extropia/eXtropia/prj/XSL_test/X_GFX.o
+  AREA::Format() = 12344 (0x3038) referenced 4 times
+    File Mendoza:Extropia/eXtropia/prj/XSL_test/X_GFX.o
+  AREA::Format() = 12344 (0x3038) unused, maybe local
+    File Mendoza:Extropia/eXtropia/prj/XSL_test/X_GFX.o
+  AREA::~AREA() = 12364 (0x304c) referenced 4 times
+    File Mendoza:Extropia/eXtropia/prj/XSL_test/X_GFX.o
+  AREA::~AREA() = 12364 (0x304c) unused, maybe local
+    File Mendoza:Extropia/eXtropia/prj/XSL_test/X_GFX.o
+  xTEXTURE::~xTEXTURE() = 12372 (0x3054) referenced 3 times
+    File Mendoza:Extropia/eXtropia/prj/XSL_test/X_GFX.o
+  08xTEXTURE::_0virttab(xTEXTURE) = 12396 (0x306c) referenced 2 times
+    File Mendoza:Extropia/eXtropia/prj/XSL_test/X_GFX.o
+  _INIT_8_main_cpp_Bound__xDRAW_ = 12460 (0x30ac) unused, maybe local
+    File Mendoza:Extropia/eXtropia/prj/XSL_test/main.o
+  _EXIT_8_main_cpp_main_ = 13136 (0x3350) unused, maybe local
+    File Mendoza:Extropia/eXtropia/prj/XSL_test/main.o
+  main() = 13214 (0x339e) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/XSL_test/main.o
+  xDISPLAY::~xDISPLAY() = 14780 (0x39bc) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/XSL_test/main.o
+  xDBWIN::Refresh() = 14816 (0x39e0) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/XSL_test/main.o
+  xDBWIN::DrawSurface() = 15000 (0x3a98) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/XSL_test/main.o
+  xDBWIN::ViewSurface() = 15016 (0x3aa8) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/XSL_test/main.o
+  xDBWIN::~xDBWIN() = 15032 (0x3ab8) referenced 3 times
+    File Mendoza:Extropia/eXtropia/prj/XSL_test/main.o
+  08xSURFACE::_0virttab(xSURFACE) = 15108 (0x3b04) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/XSL_test/main.o
+  06xDBWIN::_0virttab(xDBWIN) = 15172 (0x3b44) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/XSL_test/main.o
+  09xLOCKABLE::_0virttab(xDBWIN) = 15284 (0x3bb4) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/XSL_test/main.o
+  04AREA::_0virttab(xDBWIN) = 15300 (0x3bc4) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/XSL_test/main.o
+  _isalnum = 15348 (0x3bf4) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _isalpha = 15374 (0x3c0e) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _iscntrl = 15400 (0x3c28) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _isdigit = 15426 (0x3c42) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _isgraph = 15452 (0x3c5c) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _islower = 15478 (0x3c76) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _isprint = 15504 (0x3c90) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _ispunct = 15530 (0x3caa) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _isspace = 15556 (0x3cc4) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _isupper = 15582 (0x3cde) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _isxdigit = 15608 (0x3cf8) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _tolower = 15634 (0x3d12) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _toupper = 15678 (0x3d3e) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _which_xdigit = 15722 (0x3d6a) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _fopen = 15918 (0x3e2e) referenced 3 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _freopen = 16074 (0x3eca) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _fclose = 16166 (0x3f26) referenced 3 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _fflush = 16266 (0x3f8a) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _setvbuf = 16350 (0x3fde) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _setbuf = 16570 (0x40ba) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _ferror = 16626 (0x40f2) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _clearerr = 16652 (0x410c) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _perror = 16670 (0x411e) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _remove = 16720 (0x4150) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _rename = 16752 (0x4170) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _tmpnam = 16792 (0x4198) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _tmpfile = 16916 (0x4214) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigaopen = 16970 (0x424a) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigaread = 17906 (0x45f2) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigareadunget = 18398 (0x47de) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigawrite = 18502 (0x4846) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigaeof = 19078 (0x4a86) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigaseek = 19102 (0x4a9e) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigagetc = 19408 (0x4bd0) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigagetcunget = 19466 (0x4c0a) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigaungetc = 19498 (0x4c2a) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigaputc = 19528 (0x4c48) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigaflush = 19590 (0x4c86) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigaclose = 19828 (0x4d74) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _INIT_0_InitFiles = 19960 (0x4df8) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _EXIT_5_InitFiles = 20032 (0x4e40) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _INIT_5_fstream_c = 20192 (0x4ee0) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _EXIT_5_fstream_c = 20588 (0x506c) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  ios::~ios() = 20654 (0x50ae) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  istream::~istream() = 20656 (0x50b0) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  ostream::~ostream() = 20668 (0x50bc) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  istream_withassign::~istream_withassign() = 20680 (0x50c8) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  ostream_withassign::~ostream_withassign() = 20698 (0x50da) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  filebuf::filebuf() = 20716 (0x50ec) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  filebuf::~filebuf() = 20748 (0x510c) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  filebuf::open(const char *,int) = 20778 (0x512a) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  filebuf::close() = 21190 (0x52c6) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  filebuf::seekoff(long,enum seek_dir__ios,int) = 21262 (0x530e) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  filebuf::seekpos(streampos,int) = 21364 (0x5374) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  filebuf::setbuf(char *,unsigned int) = 21430 (0x53b6) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  filebuf::sync() = 21434 (0x53ba) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  filebuf::doallocate() = 21666 (0x54a2) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  filebuf::overflow(int) = 21836 (0x554c) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  filebuf::underflow() = 22100 (0x5654) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  filebuf::xsputn(const char *,int) = 22464 (0x57c0) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  filebuf::xsgetn(char *,int) = 22786 (0x5902) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  filebuf::pbackfail(int) = 23186 (0x5a92) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  fstream::fstream() = 23224 (0x5ab8) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  fstream::fstream(const char *,int) = 23536 (0x5bf0) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  fstream::open(const char *,int) = 23874 (0x5d42) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  fstream::close() = 23936 (0x5d80) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  fstream::setbuf(char *,unsigned int) = 23976 (0x5da8) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  ifstream::ifstream() = 24008 (0x5dc8) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  ifstream::ifstream(const char *,int) = 24158 (0x5e5e) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  ifstream::open(const char *,int) = 24332 (0x5f0c) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  ifstream::close() = 24412 (0x5f5c) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  ifstream::setbuf(char *,unsigned int) = 24452 (0x5f84) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  ofstream::ofstream() = 24484 (0x5fa4) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  ofstream::ofstream(const char *,int) = 24634 (0x603a) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  ofstream::open(const char *,int) = 24808 (0x60e8) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  ofstream::close() = 24888 (0x6138) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  ofstream::setbuf(char *,unsigned int) = 24928 (0x6160) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  cinfilebuf::cinfilebuf() = 24960 (0x6180) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  cinfilebuf::~cinfilebuf() = 25056 (0x61e0) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  coutfilebuf::coutfilebuf() = 25076 (0x61f4) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  coutfilebuf::~coutfilebuf() = 25172 (0x6254) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _INIT_6_InitStdIOStreamBuffers_ = 25192 (0x6268) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _EXIT_6_ExitStdIOStreamBuffers_ = 25294 (0x62ce) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  iostream::~iostream() = 25344 (0x6300) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  18istream_withassign::_0virttab(istream_withassign) = 25368 (0x6318) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  03ios::_0virttab(istream_withassign) = 25400 (0x6338) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  18ostream_withassign::_0virttab(ostream_withassign) = 25416 (0x6348) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  03ios::_0virttab(ostream_withassign) = 25448 (0x6368) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  10cinfilebuf::_0virttab(cinfilebuf) = 25464 (0x6378) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  11coutfilebuf::_0virttab(coutfilebuf) = 25672 (0x6448) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  ios::bitalloc() = 25880 (0x6518) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  ios::xalloc() = 25908 (0x6534) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  ios::init(streambuf *) = 25926 (0x6546) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  ios::userword(int) = 25976 (0x6578) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  dec(ios &) = 26130 (0x6612) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  hex(ios &) = 26164 (0x6634) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  oct(ios &) = 26198 (0x6656) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  showbase(ios &) = 26232 (0x6678) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  hidebase(ios &) = 26248 (0x6688) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  streambuf::streambuf() = 26268 (0x669c) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  streambuf::streambuf(char *,int) = 26304 (0x66c0) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  streambuf::~streambuf() = 26364 (0x66fc) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  streambuf::sgetn(char *,int) = 26400 (0x6720) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  streambuf::sputn(const char *,int) = 26506 (0x678a) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  streambuf::setbuf(char *,unsigned int) = 26610 (0x67f2) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  streambuf::setbuffer(char *,unsigned long,int) = 26648 (0x6818) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  streambuf::overflow(int) = 26742 (0x6876) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  streambuf::underflow() = 26746 (0x687a) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  streambuf::xsputn(const char *,int) = 26750 (0x687e) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  streambuf::xsgetn(char *,int) = 26854 (0x68e6) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  streambuf::doallocate() = 26966 (0x6956) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  istream::ipfx(int) = 27172 (0x6a24) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  istream::operator >>(char *) = 27544 (0x6b98) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  istream::operator >>(char &) = 27750 (0x6c66) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  istream::operator >>(short &) = 27922 (0x6d12) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  istream::operator >>(unsigned short &) = 28286 (0x6e7e) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  istream::operator >>(int &) = 28650 (0x6fea) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  istream::operator >>(unsigned int &) = 29014 (0x7156) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  istream::operator >>(long &) = 29378 (0x72c2) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  istream::operator >>(unsigned long &) = 29742 (0x742e) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  istream::operator >>(float &) = 30106 (0x759a) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  istream::operator >>(double &) = 30382 (0x76ae) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  istream::operator >>(long double &) = 30632 (0x77a8) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  istream::operator >>(streambuf *) = 30902 (0x78b6) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  istream::get(char *,int,char) = 30926 (0x78ce) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  istream::getline(char *,int,char) = 31244 (0x7a0c) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  istream::get(streambuf &,char) = 31520 (0x7b20) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  istream::get(char &) = 31546 (0x7b3a) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  istream::get() = 31736 (0x7bf8) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  istream::ignore(int,int) = 31910 (0x7ca6) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  istream::read(char *,int) = 32164 (0x7da4) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  istream::peek() = 32406 (0x7e96) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  istream::seekg(streampos) = 32510 (0x7efe) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  istream::seekg(long,enum seek_dir__ios) = 32586 (0x7f4a) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  ws(istream &) = 32666 (0x7f9a) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  ostream::opfx() = 32930 (0x80a2) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  ostream::osfx() = 33034 (0x810a) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  ostream::operator <<(char) = 33104 (0x8150) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  ostream::operator <<(const char *) = 33276 (0x81fc) referenced 7 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  ostream::operator <<(long) = 33488 (0x82d0) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  ostream::operator <<(unsigned long) = 33868 (0x844c) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  ostream::operator <<(float) = 34248 (0x85c8) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  ostream::operator <<(double) = 34288 (0x85f0) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  ostream::operator <<(void *) = 34692 (0x8784) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  ostream::operator <<(streambuf *) = 34972 (0x889c) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  ostream::seekp(streampos,enum seek_dir__ios) = 35194 (0x897a) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  ostream::seekp(long,enum seek_dir__ios) = 35274 (0x89ca) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  flush(ostream &) = 35354 (0x8a1a) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  endl(ostream &) = 35400 (0x8a48) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  ends(ostream &) = 35440 (0x8a70) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _memcpy = 35472 (0x8a90) referenced 4 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _memmove = 35510 (0x8ab6) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _memcmp = 35570 (0x8af2) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _memchr = 35630 (0x8b2e) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _memset = 35680 (0x8b60) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _set_new_handler = 35750 (0x8ba6) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _malloc = 35770 (0x8bba) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _free = 36184 (0x8d58) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _EXIT_4_free = 36378 (0x8e1a) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _calloc = 36496 (0x8e90) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _realloc = 36548 (0x8ec4) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  operator new(unsigned int) = 36664 (0x8f38) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  operator delete(void *,unsigned int) = 36680 (0x8f48) referenced 4 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _rand = 36696 (0x8f58) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _srand = 36740 (0x8f84) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _signal = 36754 (0x8f92) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _raise = 36806 (0x8fc6) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _abort = 36844 (0x8fec) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _formatted_out = 37752 (0x9378) referenced 3 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _formatted_in = 39820 (0x9b8c) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _fprintf = 41240 (0xa118) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _sprintf = 41292 (0xa14c) referenced 3 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _vsprintf = 41356 (0xa18c) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _fscanf = 41420 (0xa1cc) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _fread = 41472 (0xa200) referenced 3 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _INIT_5_InitStdIOFiles = 41524 (0xa234) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _EXIT_5_InitStdIOFiles = 41788 (0xa33c) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strerror = 41832 (0xa368) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strcpy = 43628 (0xaa6c) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strncpy = 43656 (0xaa88) referenced 3 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strcat = 43710 (0xaabe) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strncat = 43744 (0xaae0) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strcmp = 43796 (0xab14) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strncmp = 43852 (0xab4c) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strchr = 43928 (0xab98) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strrchr = 43968 (0xabc0) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strspn = 44038 (0xac06) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strcspn = 44082 (0xac32) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strpbrk = 44126 (0xac5e) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strstr = 44176 (0xac90) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strlen = 44248 (0xacd8) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strtok = 44270 (0xacee) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _stricmp = 44436 (0xad94) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strnicmp = 44558 (0xae0e) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strlwr = 44754 (0xaed2) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strupr = 44808 (0xaf08) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _signed_out = 44864 (0xaf40) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _signed_out_l = 45520 (0xb1d0) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _unsigned_out = 45608 (0xb228) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _unsigned_out_l = 46208 (0xb480) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _char_out = 46774 (0xb6b6) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _string_out = 46930 (0xb752) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _int_in = 47142 (0xb826) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _char_in = 48258 (0xbc82) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _string_in = 48416 (0xbd20) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  MEM::Alloc(unsigned int,short,short) = 48672 (0xbe20) referenced 7 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  MEM::Free(void *) = 48748 (0xbe6c) referenced 8 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  MEM::DebugInfo() = 49004 (0xbf6c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  MEM::FreeAll() = 49584 (0xc1b0) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  MEM::Zero(void *,unsigned int) = 49896 (0xc2e8) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  MEM::AllocIndex(unsigned int,short,short) = 50080 (0xc3a0) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  MEM::FreeIndex(unsigned long) = 50448 (0xc510) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  sysBASELIB::Init() = 50780 (0xc65c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  sysBASELIB::Done() = 51164 (0xc7dc) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+
+  Hunk #1 ( Far Public ) 62440 Bytes (0xf3e8)
+  sysBASELIB::MessageBox(char *,char *,char * ...) = 0 (0x0) referenced 15 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  sysRTLIB::Attach(Library **) = 100 (0x64) referenced 3 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  sysRTLIB::Open(const char *,long) = 140 (0x8c) referenced 3 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  sysRTLIB::Close() = 248 (0xf8) referenced 4 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  sysRTLIB::~sysRTLIB() = 332 (0x14c) referenced 4 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  _INIT_8_xBase_cpp__xbSt = 348 (0x15c) unused, maybe local
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  _INIT_8_xBase_cpp__errTbl__xBASELIB = 628 (0x274) unused, maybe local
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  xBASELIB::Init() = 1172 (0x494) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  xBASELIB::Error(long,char *) = 1772 (0x6ec) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  xBASELIB::Done() = 2308 (0x904) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  xLOCKABLE::WaitLock() = 2316 (0x90c) referenced 4 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xServices_far.lib
+  xLOCKABLE::FreeLock(short) = 2412 (0x96c) referenced 4 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xServices_far.lib
+  xLOCKABLE::~xLOCKABLE() = 2584 (0xa18) referenced 4 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xServices_far.lib
+  POOL_ST::~POOL_ST() = 2792 (0xae8) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xUtility_far.lib
+  POOL_ST::ExamineBlock(unsigned long) = 2816 (0xb00) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xUtility_far.lib
+  POOL_ST::TestConsistency(short) = 2880 (0xb40) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xUtility_far.lib
+  POOL_ST::Create(unsigned short,unsigned long) = 3032 (0xbd8) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xUtility_far.lib
+  POOL_ST::Delete(short,short) = 3320 (0xcf8) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xUtility_far.lib
+  POOL_ST::Defrag() = 3512 (0xdb8) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xUtility_far.lib
+  POOL_ST::NewT(void *) = 4076 (0xfec) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xUtility_far.lib
+  POOL_ST::NewT(void *,unsigned short) = 4304 (0x10d0) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xUtility_far.lib
+  POOL_ST::FreeT(void *) = 4628 (0x1214) referenced 5 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xUtility_far.lib
+  xDBWIN::Free() = 4932 (0x1344) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  xDBWIN::Set(short,short,short,short,short,const char *) = 5068 (0x13cc) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  xDBWIN::Open() = 5480 (0x1568) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  xDBWIN::Close() = 6616 (0x19d8) referenced 3 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _INIT_8_GraphicsBase_cpp__graphics__x2D = 6680 (0x1a18) unused, maybe local
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _EXIT_8_GraphicsBase_cpp__graphics__x2D = 6694 (0x1a26) unused, maybe local
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _INIT_8_GraphicsBase_cpp__cyberGfx__x2D = 6712 (0x1a38) unused, maybe local
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _EXIT_8_GraphicsBase_cpp__cyberGfx__x2D = 6726 (0x1a46) unused, maybe local
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  x2D::Init() = 6744 (0x1a58) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  x2D::Done() = 7072 (0x1ba0) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  xGFX::Init() = 7104 (0x1bc0) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  xGFX::Done() = 7964 (0x1f1c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  xGFX::BestMode(short,short,unsigned char,short) = 8144 (0x1fd0) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  xDMODE::ReadCGXData(CyberModeNode *) = 8604 (0x219c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  xDMODE::~xDMODE() = 8716 (0x220c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  06xDMODE::_0virttab(xDMODE) = 8720 (0x2210) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _INIT_8_GraphicsBase3D_cpp__warp3D__x3D = 8784 (0x2250) unused, maybe local
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _EXIT_8_GraphicsBase3D_cpp__warp3D__x3D = 8798 (0x225e) unused, maybe local
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  x3D::Init(unsigned long) = 8816 (0x2270) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  x3D::Done() = 9292 (0x244c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  x3D::BuildContext(xSURFACE *,short) = 9316 (0x2464) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  x3D::FreeContext() = 9960 (0x26e8) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  x3D::SetDrawArea(xSURFACE *,short,short,short,short) = 10144 (0x27a0) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  SUPPORTS3D::AssumeFeature(xGFXFTR *,unsigned long) = 10396 (0x289c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  SUPPORTS3D::QueryFeature(xGFXFTR *,unsigned long,unsigned long) = 10452 (0x28d4) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  SUPPORTS3D::QueryTexture(unsigned long,unsigned long) = 10584 (0x2958) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  SUPPORTS3D::AllocDataBase() = 10772 (0x2a14) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  SUPPORTS3D::FreeDataBase() = 12708 (0x31a4) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _INIT_8_Surface_cpp__rPool__xSURFACE = 12864 (0x3240) unused, maybe local
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _EXIT_8_Surface_cpp__rPool__xSURFACE = 12950 (0x3296) unused, maybe local
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  xSURFACE::Init() = 12968 (0x32a8) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  xSURFACE::Done() = 13312 (0x3400) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  xSURFACE::Attach(register __a6 RastPort *) = 13336 (0x3418) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  xSURFACE::Create(short,short,xSURFACE *) = 13616 (0x3530) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  xSURFACE::Delete() = 14448 (0x3870) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  xSURFACE::ReadAttrs(BitMap *) = 14640 (0x3930) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  xSURFACE::~xSURFACE() = 14812 (0x39dc) referenced 4 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  xTEXTURE::Create(short,short,short,void *,unsigned long *) = 14948 (0x3a64) referenced 3 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  xTEXTURE::Delete() = 15364 (0x3c04) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  xTEXTURE::Load(const char *,long) = 15528 (0x3ca8) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  xTEXTURE::LoadPPM(const char *,unsigned long) = 16164 (0x3f24) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  xTEXTURE::LoadLST(const char *,short) = 16840 (0x41c8) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  xTEXTURE::DefineCell(unsigned long,short,short) = 18000 (0x4650) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _INIT_8_xDraw_cpp__fonts__xDRAW = 18228 (0x4734) unused, maybe local
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _EXIT_8_xDraw_cpp__fonts__xDRAW = 18242 (0x4742) unused, maybe local
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _INIT_8_xDraw_cpp__sTab__xDRAW = 18260 (0x4754) unused, maybe local
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  xDRAW::Init(unsigned long) = 18280 (0x4768) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  xDRAW::Done() = 18812 (0x497c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  xDRAW::Bind(xSURFACE *) = 18972 (0x4a1c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  xDRAW::Release() = 19228 (0x4b1c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  xDRAW::Tri(unsigned long,unsigned long,unsigned long,unsigned long) = 19492 (0x4c24) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  xDRAW::TriShA(register __a6 unsigned long *,unsigned long,unsigned long,unsigned long) = 19892 (0x4db4) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  xDRAW::Rect(unsigned long,unsigned long,unsigned long) = 20376 (0x4f98) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  xDRAW::RectScTx(unsigned long,unsigned long,unsigned long,register __a6 xTEXTURE &) = 20896 (0x51a0) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  xDRAW::RectShV(register __a6 unsigned long *,unsigned long,unsigned long) = 21584 (0x5450) referenced 3 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  xDRAW::RectScTxShV(register __a6 unsigned long *,unsigned long,unsigned long,register __a3 xTEXTURE &) = 22164 (0x5694) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  xDRAW::RectShH(register __a6 unsigned long *,unsigned long,unsigned long) = 22924 (0x598c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  xDRAW::RectShA(register __a6 unsigned long *,unsigned long,unsigned long) = 23504 (0x5bd0) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  xDRAW::Circle(unsigned long,unsigned long,unsigned long) = 24192 (0x5e80) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  xDRAW::CircleShC(register __a6 unsigned long *,unsigned long,unsigned long) = 24968 (0x6188) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  xDRAW::CircleShPt(register __a6 unsigned long *,unsigned long,unsigned long,unsigned long) = 25860 (0x6504) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  xDRAW::Elipse(unsigned long,unsigned long,unsigned long) = 26792 (0x68a8) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  xDRAW::ElipseShC(register __a6 unsigned long *,unsigned long,unsigned long) = 27660 (0x6c0c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  xDRAW::ElipseShPt(register __a6 unsigned long *,unsigned long,unsigned long,unsigned long) = 28644 (0x6fe4) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  xDRAW::ElipseScTxShC(register __a6 unsigned long *,unsigned long,unsigned long,register __a3 xTEXTURE &) = 29668 (0x73e4) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  lib_double2float = 31200 (0x79e0) referenced 2 times
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  lib_float2double = 31220 (0x79f4) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _floor__r = 31240 (0x7a08) referenced 2 times
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _pow__r = 31264 (0x7a20) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  facoss::_060LSP() = 31304 (0x7a48) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _acos__r = 31312 (0x7a50) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  facosx::_060LSP() = 31320 (0x7a58) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fasins::_060LSP() = 31328 (0x7a60) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fasind::_060LSP() = 31336 (0x7a68) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _asin__r = 31336 (0x7a68) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fasinx::_060LSP() = 31344 (0x7a70) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fatans::_060LSP() = 31352 (0x7a78) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fatand::_060LSP() = 31360 (0x7a80) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _atan__r = 31360 (0x7a80) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fatanx::_060LSP() = 31368 (0x7a88) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fatanhs::_060LSP() = 31376 (0x7a90) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fatanhd::_060LSP() = 31384 (0x7a98) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fatanhx::_060LSP() = 31392 (0x7aa0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fcoss::_060LSP() = 31400 (0x7aa8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fcosd::_060LSP() = 31408 (0x7ab0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _cos__r = 31408 (0x7ab0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fcosx::_060LSP() = 31416 (0x7ab8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fcoshs::_060LSP() = 31424 (0x7ac0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fcoshd::_060LSP() = 31432 (0x7ac8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _cosh__r = 31432 (0x7ac8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fcoshx::_060LSP() = 31440 (0x7ad0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fetoxs::_060LSP() = 31448 (0x7ad8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fetoxd::_060LSP() = 31456 (0x7ae0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _exp__r = 31456 (0x7ae0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fetoxx::_060LSP() = 31464 (0x7ae8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fetoxm1s::_060LSP() = 31472 (0x7af0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fetoxm1d::_060LSP() = 31480 (0x7af8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fetoxm1x::_060LSP() = 31488 (0x7b00) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fgetexps::_060LSP() = 31496 (0x7b08) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fgetexpd::_060LSP() = 31504 (0x7b10) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fgetexpx::_060LSP() = 31512 (0x7b18) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fgetmans::_060LSP() = 31520 (0x7b20) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fgetmand::_060LSP() = 31528 (0x7b28) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fgetmanx::_060LSP() = 31536 (0x7b30) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flog10s::_060LSP() = 31544 (0x7b38) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flog10d::_060LSP() = 31552 (0x7b40) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _log10__r = 31552 (0x7b40) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flog10x::_060LSP() = 31560 (0x7b48) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flog2s::_060LSP() = 31568 (0x7b50) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flog2d::_060LSP() = 31576 (0x7b58) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flog2x::_060LSP() = 31584 (0x7b60) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flogns::_060LSP() = 31592 (0x7b68) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flognd::_060LSP() = 31600 (0x7b70) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _log__r = 31600 (0x7b70) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flognx::_060LSP() = 31608 (0x7b78) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flognp1s::_060LSP() = 31616 (0x7b80) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flognp1d::_060LSP() = 31624 (0x7b88) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flognp1x::_060LSP() = 31632 (0x7b90) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fmods::_060LSP() = 31640 (0x7b98) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fmodd::_060LSP() = 31648 (0x7ba0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _fmod__r = 31648 (0x7ba0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fmodx::_060LSP() = 31656 (0x7ba8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  frems::_060LSP() = 31664 (0x7bb0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fremd::_060LSP() = 31672 (0x7bb8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fremx::_060LSP() = 31680 (0x7bc0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fscales::_060LSP() = 31688 (0x7bc8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fscaled::_060LSP() = 31696 (0x7bd0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fscalex::_060LSP() = 31704 (0x7bd8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsins::_060LSP() = 31712 (0x7be0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsind::_060LSP() = 31720 (0x7be8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _sin__r = 31720 (0x7be8) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsinx::_060LSP() = 31728 (0x7bf0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsincoss::_060LSP() = 31736 (0x7bf8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsincosd::_060LSP() = 31744 (0x7c00) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsincosx::_060LSP() = 31752 (0x7c08) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsinhs::_060LSP() = 31760 (0x7c10) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsinhd::_060LSP() = 31768 (0x7c18) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _sinh__r = 31768 (0x7c18) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsinhx::_060LSP() = 31776 (0x7c20) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftans::_060LSP() = 31784 (0x7c28) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftand::_060LSP() = 31792 (0x7c30) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _tan__r = 31792 (0x7c30) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftanx::_060LSP() = 31800 (0x7c38) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftanhs::_060LSP() = 31808 (0x7c40) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftanhd::_060LSP() = 31816 (0x7c48) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _tanh__r = 31816 (0x7c48) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftanhx::_060LSP() = 31824 (0x7c50) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftentoxs::_060LSP() = 31832 (0x7c58) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftentoxd::_060LSP() = 31840 (0x7c60) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftentoxx::_060LSP() = 31848 (0x7c68) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftwotoxs::_060LSP() = 31856 (0x7c70) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftwotoxd::_060LSP() = 31864 (0x7c78) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftwotoxx::_060LSP() = 31872 (0x7c80) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fabss::_060LSP() = 31880 (0x7c88) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fabsd::_060LSP() = 31888 (0x7c90) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _fabs__r = 31888 (0x7c90) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fabsx::_060LSP() = 31896 (0x7c98) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fadds::_060LSP() = 31904 (0x7ca0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  faddd::_060LSP() = 31912 (0x7ca8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  faddx::_060LSP() = 31920 (0x7cb0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fdivs::_060LSP() = 31928 (0x7cb8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fdivd::_060LSP() = 31936 (0x7cc0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fdivx::_060LSP() = 31944 (0x7cc8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fints::_060LSP() = 31952 (0x7cd0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fintd::_060LSP() = 31960 (0x7cd8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fintx::_060LSP() = 31968 (0x7ce0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fintrzs::_060LSP() = 31976 (0x7ce8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fintrzd::_060LSP() = 31984 (0x7cf0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fintrzx::_060LSP() = 31992 (0x7cf8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fmuls::_060LSP() = 32000 (0x7d00) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fmuld::_060LSP() = 32008 (0x7d08) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fmulx::_060LSP() = 32016 (0x7d10) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fnegs::_060LSP() = 32024 (0x7d18) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fnegd::_060LSP() = 32032 (0x7d20) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fnegx::_060LSP() = 32040 (0x7d28) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsqrts::_060LSP() = 32048 (0x7d30) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsqrtd::_060LSP() = 32056 (0x7d38) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _sqrt__r = 32056 (0x7d38) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsqrtx::_060LSP() = 32064 (0x7d40) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsubs::_060LSP() = 32072 (0x7d48) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsubd::_060LSP() = 32080 (0x7d50) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsubx::_060LSP() = 32088 (0x7d58) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  facosd::_060LSP() = 31312 (0x7a50) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _060FPLSP_TOP = 31304 (0x7a48) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+
+  Hunk #2 ( Far Public ) 4608 Bytes (0x1200)
+  _atan2__r = 0 (0x0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _ldexp__r = 234 (0xea) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _frexp__r = 284 (0x11c) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _modf__r = 366 (0x16e) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _fmod__r = 454 (0x1c6) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _double_out = 984 (0x3d8) referenced 2 times
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _double_in = 2176 (0x880) referenced 2 times
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  wbmain(WBStartup *) = 3004 (0xbbc) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  _wbmain = 3012 (0xbc4) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  _INIT_1_DOS_c = 3016 (0xbc8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  _EXIT_1_DOS_c = 3048 (0xbe8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  _InitModules = 3108 (0xc24) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  _CleanupModules = 3176 (0xc68) referenced 2 times
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  LibBaseC::LibBaseC(char *,unsigned long,short) = 3272 (0xcc8) referenced 2 times
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  LibBaseC::~LibBaseC() = 3608 (0xe18) referenced 2 times
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  LibBaseC::version() const  = 3646 (0xe3e) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  _INIT_2_MathIEEEDoubTrans_c = 3784 (0xec8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  _EXIT_2_MathIEEEDoubTrans_c = 3816 (0xee8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  _INIT_3_TimerBase = 3860 (0xf14) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  _EXIT_3_TimerBase = 3992 (0xf98) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  uintmult = 4060 (0xfdc) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  intmult = 4060 (0xfdc) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___uintmult32 = 4060 (0xfdc) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___intmult32 = 4060 (0xfdc) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  Add64 = 4092 (0xffc) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___add64 = 4092 (0xffc) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  Neg64 = 4100 (0x1004) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___neg64 = 4100 (0x1004) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  SMult64 = 4108 (0x100c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  UMult64 = 4142 (0x102e) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___uintmult64 = 4142 (0x102e) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___intmult64 = 4108 (0x100c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  SDiv64 = 4260 (0x10a4) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  UDiv64 = 4300 (0x10cc) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___uintdivmod64 = 4300 (0x10cc) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___intdivmod64 = 4260 (0x10a4) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  UMod64 = 4400 (0x1130) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___uintmod64 = 4400 (0x1130) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  SMod64 = 4412 (0x113c) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___intmod64 = 4412 (0x113c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  lib_destruct_a0 = 4424 (0x1148) referenced 5 times
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___destruct_a0 = 4424 (0x1148) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  lib_throw = 4448 (0x1160) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  lib_rethrow = 4508 (0x119c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  lib_catch = 4526 (0x11ae) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  lib_catchclass = 4558 (0x11ce) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  _INIT_0_InitExceptionHandling = 4588 (0x11ec) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___catchclass = 4558 (0x11ce) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___catch = 4526 (0x11ae) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___rethrow = 4508 (0x119c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___throw = 4448 (0x1160) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+
+PowerPC Code
+
+
+Data
+
+
+  Hunk #3 ( Far Public ) 4328 Bytes (0x10e8)
+  _SysBase = 0 (0x0) referenced 21 times
+    File Van:Development/StormC/StormSYS/startups/startup.o
+  _fill0 = 16 (0x10) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/XSL_test/X_GFX.o
+  _fill1 = 32 (0x20) referenced 2 times
+    File Mendoza:Extropia/eXtropia/prj/XSL_test/X_GFX.o
+  _fill2 = 48 (0x30) referenced 2 times
+    File Mendoza:Extropia/eXtropia/prj/XSL_test/X_GFX.o
+  _fill3 = 64 (0x40) referenced 2 times
+    File Mendoza:Extropia/eXtropia/prj/XSL_test/X_GFX.o
+  _fill4 = 72 (0x48) referenced 2 times
+    File Mendoza:Extropia/eXtropia/prj/XSL_test/X_GFX.o
+  _fill5 = 80 (0x50) referenced 2 times
+    File Mendoza:Extropia/eXtropia/prj/XSL_test/X_GFX.o
+  ___ctypetable = 552 (0x228) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _cin = 1440 (0x5a0) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _cout = 1444 (0x5a4) referenced 4 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _cerr = 1448 (0x5a8) referenced 4 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _clog = 1452 (0x5ac) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _basefield__ios = 1456 (0x5b0) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _adjustfield__ios = 1460 (0x5b4) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _floatfield__ios = 1464 (0x5b8) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _aNextBit__ios = 1468 (0x5bc) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _aNextWord__ios = 1472 (0x5c0) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _std__out = 1504 (0x5e0) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _std__in = 1588 (0x634) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _std__err = 1672 (0x688) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _IntuitionBase = 2080 (0x820) referenced 7 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  _PowerPCBase = 2084 (0x824) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  _allocated__MEM = 2088 (0x828) referenced 7 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  _totSize__MEM = 2092 (0x82c) referenced 4 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  _nextFree__MEM = 2096 (0x830) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  _cnt__MEM = 2100 (0x834) referenced 4 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  _sysData__sysBASELIB = 2104 (0x838) referenced 3 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  _msgbuff__sysBASELIB = 2108 (0x83c) referenced 4 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  _main__sysBASELIB = 2112 (0x840) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  _errSev__xBASELIB = 2120 (0x848) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  _errTbl__xBASELIB = 2192 (0x890) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  _TimerBase__xTIMABLE = 2556 (0x9fc) referenced 5 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xServices_far.lib
+  _clockFreq__xTIMABLE = 2560 (0xa00) referenced 5 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xServices_far.lib
+  _GfxBase = 2564 (0xa04) referenced 10 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _CyberGfxBase = 2568 (0xa08) referenced 7 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _surfaceTypes__x2D = 2572 (0xa0c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _flags__xGFX = 2576 (0xa10) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _mode__xGFX = 2580 (0xa14) referenced 3 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _numModes__xGFX = 2584 (0xa18) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _Warp3DBase = 2588 (0xa1c) referenced 30 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _drawSurface__x3D = 2592 (0xa20) referenced 5 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _context__x3D = 2596 (0xa24) referenced 27 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _drawRegion__x3D = 2600 (0xa28) referenced 3 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _pointRender__SUPPORTS3D = 2616 (0xa38) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _lineRender__SUPPORTS3D = 2620 (0xa3c) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _triangleRender__SUPPORTS3D = 2624 (0xa40) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _otherPrimitives__SUPPORTS3D = 2628 (0xa44) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _shadingModes__SUPPORTS3D = 2632 (0xa48) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _textureModes__SUPPORTS3D = 2636 (0xa4c) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _textureFmts__SUPPORTS3D = 2640 (0xa50) referenced 3 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _alpha__SUPPORTS3D = 2644 (0xa54) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _fogModes__SUPPORTS3D = 2648 (0xa58) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _zBuffer__SUPPORTS3D = 2652 (0xa5c) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _stencil__SUPPORTS3D = 2656 (0xa60) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _misc__SUPPORTS3D = 2660 (0xa64) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _hw3D__SUPPORTS3D = 2664 (0xa68) referenced 4 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _DiskfontBase = 2668 (0xa6c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _fontInfo__xDRAW = 2672 (0xa70) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _fontData__xDRAW = 2704 (0xa90) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _flags__xDRAW = 2720 (0xaa0) referenced 18 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _flushCnt__xDRAW = 2724 (0xaa4) referenced 19 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _vBuffer__xDRAW = 2728 (0xaa8) referenced 15 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _vBufPos__xDRAW = 2732 (0xaac) referenced 18 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _vArraySize__xDRAW = 2736 (0xab0) referenced 14 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _zDepth__xDRAW = 2744 (0xab8) referenced 15 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _maxVBufPos__xDRAW = 2752 (0xac0) referenced 19 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _currentCol__xDRAW = 2756 (0xac4) referenced 5 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _cTab__xDRAW = 2760 (0xac8) referenced 15 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _sTab__xDRAW = 3784 (0xec8) referenced 8 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _nestCount__xDRAW = 3856 (0xf10) referenced 5 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _DOSBase = 4056 (0xfd8) referenced 4 times
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  _not_open__LibBaseC = 4072 (0xfe8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  _MathIeeeDoubTransBase = 4076 (0xfec) referenced 2 times
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  sym_handlers = 4156 (0x103c) referenced 9 times
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___init_table68k = 4168 (0x1048) referenced 1 times
+    File <Internal Assembled>
+  ___exit_table68k = 4248 (0x1098) referenced 1 times
+    File <Internal Assembled>
+
+BSS
+
+
+  Hunk #4 ( Far Public ) 10344 Bytes (0x2868)
+  _errno = 0 (0x0) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _st = 1288 (0x508) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  _gxSt = 1800 (0x708) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  _xbSt = 2056 (0x808) unused, maybe local
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xBase_far.lib
+  _current__xTIMABLE = 10256 (0x2810) referenced 5 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xServices_far.lib
+  _graphics__x2D = 10264 (0x2818) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _cyberGfx__x2D = 10272 (0x2820) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _warp3D__x3D = 10280 (0x2828) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _rPool__xSURFACE = 10288 (0x2830) referenced 6 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _fonts__xDRAW = 10328 (0x2858) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/xGraphicsOld_far.lib
+  _TimerBase = 10336 (0x2860) referenced 5 times
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+
+END

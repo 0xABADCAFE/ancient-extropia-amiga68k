@@ -1,0 +1,10 @@
+.key PCPATH
+.def PCPATH PC:D/projects/extropia/prj/vm/
+.bra <
+.ket >
+
+failat 100
+
+list to t:xfer_$process #?.?pp lformat "textconv from %n to <PCPATH>%n a2pc"
+execute t:xfer_$process
+delete t:xfer_$process

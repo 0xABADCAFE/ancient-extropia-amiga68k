@@ -1,0 +1,233 @@
+
+    Opcode Table
+
+    Command        Instruction Word Format      Opcode Extn      Jasm Syntax
+
+    NOP            0x00     00     00     00                     nop
+    END            0x01     00     00     00                     end
+    SYS_OUT_U8     0x02     00  [src]     00                     print.u8
+    SYS_OUT_U16    0x02     01  [src]     00                     print.u16
+    SYS_OUT_U32    0x02     02  [src]     00                     print.u32
+    SYS_OUT_U64    0x02     03  [src]     00                     print.u64
+    SYS_OUT_S8     0x02     04  [src]     00                     print.s8
+    SYS_OUT_S16    0x02     05  [src]     00                     print.s16
+    SYS_OUT_S32    0x02     06  [src]     00                     print.s32
+    SYS_OUT_S64    0x02     07  [src]     00                     print.s64
+    SYS_OUT_F32    0x02     08  [src]     00                     print.f32
+    SYS_OUT_F64    0x02     09  [src]     00                     print.f64
+    SYS_OUT_STR    0x02     0A [srci]     00                     print
+    SYS_INP_U8     0x02     0B  [dst]     00                     read.u8
+    SYS_INP_U16    0x02     0C  [dst]     00                     read.u16
+    SYS_INP_U32    0x02     0D  [dst]     00                     read.u32
+    SYS_INP_U64    0x02     0E  [dst]     00                     read.u64
+    SYS_INP_S8     0x02     0F  [dst]     00                     read.s8
+    SYS_INP_S16    0x02     10  [dst]     00                     read.s16
+    SYS_INP_S32    0x02     11  [dst]     00                     read.s32
+    SYS_INP_S64    0x02     12  [dst]     00                     read.s64
+    SYS_INP_F32    0x02     13  [dst]     00                     read.f32
+    SYS_INP_F64    0x02     14  [dst]     00                     read.f64
+    SYS_INP_STR    0x02     15 [dsti]     00                     read
+    SYS_BRK        0x02     16     00     00                     brk
+    SYS_DUMP       0x02     17     00     00                     dump
+    SYS_VER        0x02     18     00     00                     ver
+    SYS_NEW_X8     0x02     19  [src]  [reg]                     new.u8/s8    
+    SYS_NEW_X16    0x02     1A  [src]  [reg]                     new.u16/s16
+    SYS_NEW_X32    0x02     20  [src]  [reg]                     new.u32/s32/f32
+    SYS_NEW_X64    0x02     21  [src]  [reg]                     new.u64/s64/f64
+    SYS_DEL_X8     0x02     22     00  [reg]                     del.u8/s8
+    SYS_DEL_X16    0x02     23     00  [reg]                     del.u16/s16
+    SYS_DEL_X32    0x02     24     00  [reg]                     del.u32/s32/f32
+    SYS_DEL_X64    0x02     25     00  [reg]                     del.u64/s64/f64
+    SYS_NEWS_X8    0x02     26  [src]  [reg]                     news.u8/s8
+    SYS_NEWS_X16   0x02     27  [src]  [reg]                     news.u16/s16
+    SYS_NEWS_X32   0x02     28  [src]  [reg]                     news.u32/s32/f32
+    SYS_NEWS_X64   0x02     29  [src]  [reg]                     news.u64/s64/f64
+    SYS_DELS_X8    0x02     2A     00  [reg]                     dels.u8/s8
+    SYS_DELS_X16   0x02     2B     00  [reg]                     dels.u16/s16
+    SYS_DELS_X32   0x02     2C     00  [reg]                     dels.u32/s32/f32
+    SYS_DELS_X64   0x02     2D     00  [reg]                     dels.u64/s64/f64
+    LEA            0x03  [ind]  [reg]     00                     lea
+    BRA            0x04     00     00     00    [Displacement]   bra
+    BNEQ_I8        0x05  [src]  [src]     00    [Displacement]   bneq.u8/s8
+    BNEQ_I16       0x06  [src]  [src]     00    [Displacement]   bneq.u16/s16
+    BNEQ_I32       0x07  [src]  [src]     00    [Displacement]   bneq.u32/s32
+    BNEQ_I64       0x08  [src]  [src]     00    [Displacement]   bneq.u64/s64
+    BNEQ_F32       0x09  [src]  [src]     00    [Displacement]   bneq.f32
+    BNEQ_F64       0x0A  [src]  [src]     00    [Displacement]   bneq.f64
+    BLS_I8         0x0B  [src]  [src]     00    [Displacement]   bls.u8/s8
+    BLS_I16        0x0C  [src]  [src]     00    [Displacement]   bls.u16/s16
+    BLS_I32        0x0D  [src]  [src]     00    [Displacement]   bls.u32/s32
+    BLS_I64        0x0E  [src]  [src]     00    [Displacement]   bls.u64/s64
+    BLS_F32        0x0F  [src]  [src]     00    [Displacement]   bls.f32
+    BLS_F64        0x10  [src]  [src]     00    [Displacement]   bls.f64
+    BLSEQ_I8       0x11  [src]  [src]     00    [Displacement]   blseq.u8/s8
+    BLSEQ_I16      0x12  [src]  [src]     00    [Displacement]   blseq.u16/s16
+    BLSEQ_I32      0x13  [src]  [src]     00    [Displacement]   blseq.u32/s32
+    BLSEQ_I64      0x14  [src]  [src]     00    [Displacement]   blseq.u64/s64
+    BLSEQ_F321     0x15  [src]  [src]     00    [Displacement]   blseq.f32
+    BLSEQ_F64      0x16  [src]  [src]     00    [Displacement]   blseq.f64
+    BEQ_I8         0x17  [src]  [src]     00    [Displacement]   beq.u8/s8
+    BEQ_I16        0x18  [src]  [src]     00    [Displacement]   beq.u16/s16
+    BEQ_I32        0x19  [src]  [src]     00    [Displacement]   beq.u32/s32
+    BEQ_I64        0x1A  [src]  [src]     00    [Displacement]   beq.u64/s64
+    BEQ_F32        0x1B  [src]  [src]     00    [Displacement]   beq.f32
+    BEQ_F64        0x1C  [src]  [src]     00    [Displacement]   beq.f64
+    BGREQ_I8       0x1D  [src]  [src]     00    [Displacement]   bgreq.u8/s8
+    BGREQ_I16      0x1E  [src]  [src]     00    [Displacement]   bgreq.u16/s16
+    BGREQ_I32      0x1F  [src]  [src]     00    [Displacement]   bgreq.u32/s32
+    BGREQ_I64      0x20  [src]  [src]     00    [Displacement]   bgreq.u64/s64
+    BGREQ_F32      0x21  [src]  [src]     00    [Displacement]   bgreq.f32
+    BGREQ_F64      0x22  [src]  [src]     00    [Displacement]   bgreq.f64
+    BGR_I8         0x23  [src]  [src]     00    [Displacement]   bgr.u8/s8
+    BGR_I16        0x24  [src]  [src]     00    [Displacement]   bgr.u16/s16
+    BGR_I32        0x25  [src]  [src]     00    [Displacement]   bgr.u32/s32
+    BGR_I64        0x26  [src]  [src]     00    [Displacement]   bgr.u64/s64
+    BGR_F32        0x27  [src]  [src]     00    [Displacement]   bgr.f32
+    BGR_F64        0x28  [src]  [src]     00    [Displacement]   bgr.f32
+    CALL           0x29 [code]     00     00                     call
+    RET            0x2A     00     00     00                     ret
+    PUSH_X8        0x2B  [src]     00     00                     push.8/u8/s8
+    PUSH_X16       0x2C  [src]     00     00                     push.16/u16/s16
+    PUSH_X32       0x2D  [src]     00     00                     push.32/u32/s32/f32
+    PUSH_X64       0x2E  [src]     00     00                     push.64/u64/s64/f64
+    POP_X8         0x2F  [dst]     00     00                     pop.8/u8/s8
+    POP_X16        0x30  [dst]     00     00                     pop.16/u16/s16
+    POP_X32        0x31  [dst]     00     00                     pop.32/u32/s32/f32
+    POP_X64        0x32  [dst]     00     00                     pop.64/u64/s64/f64
+    SAVE           0x33  [reg]  [reg]     00                     save
+    RESTORE        0x34  [reg]  [reg]     00                     restore
+    CLR_X8         0x35  [dst]  [src]*    00                     clr.8/u8/s8
+    CLR_X16        0x36  [dst]  [src]*    00                     clr.16/u16/s16
+    CLR_X32        0x37  [dst]  [src]*    00                     clr.32/u32/s32/s32
+    CLR_X64        0x38  [dst]  [src]*    00                     clr.64/u64/s64/f64
+    MOVE_X8        0x39  [src]  [dst]  [src]*                    move.8/u8/s8
+    MOVE_X16       0x3A  [src]  [dst]  [src]*                    move.16/u16/s16
+    MOVE_X32       0x3B  [src]  [dst]  [src]*                    move.32/u32/s32/f32
+    MOVE_X64       0x3C  [src]  [dst]  [src]*                    move.64/u64/s64/f64
+    ENDIAN_X16     0x3D  [src]  [dst]  [src]*                    endian.16/u16/s16
+    ENDIAN_X32     0x3E  [src]  [dst]  [src]*                    endian.32/u32/s32/f32
+    ENDIAN_X64     0x3F  [src]  [dst]  [src]*                    endian.64/u64/s64/f64
+    SWAP_X8        0x40  [dst]  [dst]  [src]*                    swap.8/u8/s8
+    SWAP_X16       0x41  [dst]  [dst]  [src]*                    swap.16/u16/s16
+    SWAP_X32       0x42  [dst]  [dst]  [src]*                    swap.32/u32/s32/f32
+    SWAP_X64       0x43  [dst]  [dst]  [src]*                    swap.64/u64/s64/f64 
+    I8TOI16        0x44  [src]  [dst]     00                     toi16.s8
+    I8TOI32        0x45  [src]  [dst]     00                     toi32.s8
+    I8TOI64        0x46  [src]  [dst]     00                     toi64.s8
+    I8TOF32        0x47  [src]  [dst]     00                     tof32.s8
+    I8TOF64        0x48  [src]  [dst]     00                     tof64.s8
+    I16TOI32       0x49  [src]  [dst]     00                     toi32.s16
+    I16TOI64       0x4A  [src]  [dst]     00                     toi64.s16
+    I16TOF32       0x4B  [src]  [dst]     00                     tof32.s16
+    I16TOF64       0x4C  [src]  [dst]     00                     tof64.s16
+    I32TOI64       0x4D  [src]  [dst]     00                     toi64.s32
+    I32TOF32       0x4E  [src]  [dst]     00                     tof32.s32
+    I32TOF64       0x4F  [src]  [dst]     00                     tof64.s32
+    I64TOF32       0x50  [src]  [dst]     00                     tof32.s64
+    I64TOF64       0x51  [src]  [dst]     00                     tof64.s64
+    F32TOF64       0x52  [src]  [dst]     00                     tof64.f32
+    F64TOF32       0x53  [src]  [dst]     00                     tof32.f64
+    F64TOI64       0x54  [src]  [dst]     00                     toi64.f64
+    F64TOI32       0x55  [src]  [dst]     00                     toi32.f64
+    F64TOI16       0x56  [src]  [dst]     00                     toi16.f64
+    F64TOI8        0x57  [src]  [dst]     00                     toi8.f64
+    F32TOI64       0x58  [src]  [dst]     00                     toi64.f32
+    F32TOI32       0x59  [src]  [dst]     00                     toi32.f32
+    F32TOI16       0x5A  [src]  [dst]     00                     toi16.f32
+    F32TOI8        0x5B  [src]  [dst]     00                     toi8.f32
+    I64TOI32       0x5C  [src]  [dst]     00                     toi32.s64
+    I64TOI16       0x5D  [src]  [dst]     00                     toi16.s64
+    I64TOI8        0x5E  [src]  [dst]     00                     toi8.s64
+    I32TOI16       0x5F  [src]  [dst]     00                     toi16.s32
+    I32TOI8        0x60  [src]  [dst]     00                     toi8.s32
+    I16TOI8        0x61  [src]  [dst]     00                     toi8.s16
+    ADD_I8         0x62  [src]  [src]  [dst]                     add.u8/s8
+    ADD_I16        0x63  [src]  [src]  [dst]                     add.u16/s16
+    ADD_I32        0x64  [src]  [src]  [dst]                     add.u32/s32
+    ADD_I64        0x65  [src]  [src]  [dst]                     add.u64/s64
+    ADD_F32        0x66  [src]  [src]  [dst]                     add.f32
+    ADD_F64        0x67  [src]  [src]  [dst]                     add.f64
+    SUB_I8         0x68  [src]  [src]  [dst]                     sub.u8/s8
+    SUB_I16        0x69  [src]  [src]  [dst]                     sub.u16/s16
+    SUB_I32        0x6A  [src]  [src]  [dst]                     sub.u32/s32
+    SUB_I64        0x6B  [src]  [src]  [dst]                     sub.u64/s64
+    SUB_F32        0x6C  [src]  [src]  [dst]                     sub.f32
+    SUB_F64        0x6D  [src]  [src]  [dst]                     sub.f64
+    MUL_I8         0x6E  [src]  [src]  [dst]                     mul.s8
+    MUL_I16        0x6F  [src]  [src]  [dst]                     mul.s16
+    MUL_I32        0x70  [src]  [src]  [dst]                     mul.s32
+    MUL_I64        0x71  [src]  [src]  [dst]                     mul.s64
+    MUL_F32        0x72  [src]  [src]  [dst]                     mul.f32
+    MUL_F64        0x73  [src]  [src]  [dst]                     mul.f64
+    DIV_I8         0x74  [src]  [src]  [dst]                     div.s8
+    DIV_I16        0x75  [src]  [src]  [dst]                     div.s16
+    DIV_I32        0x76  [src]  [src]  [dst]                     div.s32
+    DIV_I64        0x77  [src]  [src]  [dst]                     div.s64
+    DIV_F32        0x78  [src]  [src]  [dst]                     div.f32
+    DIV_F64        0x79  [src]  [src]  [dst]                     div.f64
+    MOD_I8         0x7A  [src]  [src]  [dst]                     mod.s8
+    MOD_I16        0x7B  [src]  [src]  [dst]                     mod.s16
+    MOD_I32        0x7C  [src]  [src]  [dst]                     mod.s32
+    MOD_I64        0x7D  [src]  [src]  [dst]                     mod.s64
+    MOD_F32        0x7E  [src]  [src]  [dst]                     mod.f32
+    MOD_F64        0x7F  [src]  [src]  [dst]                     mod.f64
+    MUL_U8         0x80  [src]  [src]  [dst]                     mul.u8
+    MUL_U16        0x81  [src]  [src]  [dst]                     mul.u16
+    MUL_U32        0x82  [src]  [src]  [dst]                     mul.u32
+    MUL_U64        0x83  [src]  [src]  [dst]                     mul.u64
+    DIV_U8         0x84  [src]  [src]  [dst]                     div.u8
+    DIV_U16        0x85  [src]  [src]  [dst]                     div.u16
+    DIV_U32        0x86  [src]  [src]  [dst]                     div.u32
+    DIV_U64        0x87  [src]  [src]  [dst]                     div.u64
+    MOD_U8         0x88  [src]  [src]  [dst]                     mod.u8
+    MOD_U16        0x89  [src]  [src]  [dst]                     mod.u16
+    MOD_U32        0x8A  [src]  [src]  [dst]                     mod.u32
+    MOD_U64        0x8B  [src]  [src]  [dst]                     mod.u64
+    NEG_I8         0x8C  [src]  [dst]     00                     neg.s8
+    NEG_I16        0x8D  [src]  [dst]     00                     neg.s16
+    NEG_I32        0x8E  [src]  [dst]     00                     neg.s32
+    NEG_I64        0x8F  [src]  [dst]     00                     neg.s64
+    NEG_F32        0x90  [src]  [dst]     00                     neg.f32
+    NEG_F64        0x91  [src]  [dst]     00                     neg.f64
+    SHL_I8         0x92  [src]  [src]  [dst]                     shl.s8
+    SHL_I16        0x93  [src]  [src]  [dst]                     shl.s16
+    SHL_I32        0x94  [src]  [src]  [dst]                     shl.s32
+    SHL_I64        0x95  [src]  [src]  [dst]                     shl.s64
+    SHR_I8         0x96  [src]  [src]  [dst]                     shr.s8
+    SHR_I16        0x97  [src]  [src]  [dst]                     shr.s16
+    SHR_I32        0x98  [src]  [src]  [dst]                     shr.s32
+    SHR_I64        0x99  [src]  [src]  [dst]                     shr.s64
+    AND_X8         0x9A  [src]  [src]  [dst]                     and.8
+    AND_X16        0x9B  [src]  [src]  [dst]                     and.16
+    AND_X32        0x9C  [src]  [src]  [dst]                     and.32
+    AND_X64        0x9D  [src]  [src]  [dst]                     and.64
+    OR_X8          0x9E  [src]  [src]  [dst]                     or.8
+    OR_X16         0x9F  [src]  [src]  [dst]                     or.16
+    OR_X32         0xA0  [src]  [src]  [dst]                     or.32
+    OR_X64         0xA1  [src]  [src]  [dst]                     or.64
+    XOR_X8         0xA2  [src]  [src]  [dst]                     xor.8
+    XOR_X16        0xA3  [src]  [src]  [dst]                     xor.16
+    XOR_X32        0xA4  [src]  [src]  [dst]                     xor.32
+    XOR_X64        0xA5  [src]  [src]  [dst]                     xor.64
+    INV_X8         0xA6  [src]  [dst]     00                     not.8
+    INV_X16        0xA7  [src]  [dst]     00                     not.16
+    INV_X32        0xA8  [src]  [dst]     00                     not.32
+    INV_X64        0xA9  [src]  [dst]     00                     not.64
+    SHL_X8         0xAA  [src]  [src]  [dst]                     shl.8/u8
+    SHL_X16        0xAB  [src]  [src]  [dst]                     shl.16/u16
+    SHL_X32        0xAC  [src]  [src]  [dst]                     shl.32/u32
+    SHL_X64        0xAD  [src]  [src]  [dst]                     shl.64/u64
+    SHR_X8         0xAE  [src]  [src]  [dst]                     shr.8/u8
+    SHR_X16        0xAF  [src]  [src]  [dst]                     shr.16/u16
+    SHR_X32        0xB0  [src]  [src]  [dst]                     shr.32/u32
+    SHR_X64        0xB1  [src]  [src]  [dst]                     shr.64/u64
+    NEW_OBJ        0xB2
+    DEL_OBJ        0xB3
+    CALL_STATIC    0xB4
+    CALL_METHOD    0xB5
+    CALL_VIRTUAL   0xB6
+    CALL_NATIVE    0xB7
+
+    * When opereration is performed singularly, the count operand is 0xE1 which is equivalent to EA #1 (small literal format).
+
+<--------------------------------------------------------------------------------------------------------------->

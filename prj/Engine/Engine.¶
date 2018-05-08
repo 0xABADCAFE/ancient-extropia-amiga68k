@@ -1,0 +1,179 @@
+Storm Shell Project (0013)
+Settings (Start)
+C/C++ Environment
+"StormC:include"
+"ExtropiaLib:include"
+Includepath (End)
+0 "" 256
+1 "obj_far"
+C/C++ Preprozessor
+1 "NDEBUG" ""
+1 "KARL_FIXES" ""
+1 "PARANOID" ""
+Defines (End)
+1 1 1
+C/C++ Options
+1 0 0 0 0 0 2 1 0 0 0 3 1 0 0
+C/C++ Optimizer
+6
+C/C++ Warnings
+1 1 1 1 1 0 1 1
+Assembler
+0 ""
+0 "CON://640/200/Storm Assembler/AUTO/WAIT/SCREEN StormScreen"
+0 0
+0 1 60 0 1 0 0 20 0
+Sets (End)
+0 1 0 0 0 2 1 0 0
+1 1 1 1 0 0 0 0 0
+1 0
+0 0 0 0 0
+Linker
+0 0 "PROGDIR:startup.o" 0 0 1 0 0 0 0
+"StormC:lib/" 0 "StormC:lib/logfile" 0 1 1
+0 "_WizardSurface"
+0 0 50 0 50 0 50 0 0
+0 0 0 0 0 0 0 0
+Run
+64 "" "" "" 0
+""
+
+1 "CON:1000/800/600/400/Storm Console/AUTO/WAIT/SCREEN StormScreen" "RAM:Output" "RAM:Input"
+1 0
+0 0 0 "" ""
+Settings (End)
+File
+12 "ExtropiaLib:prj/Engine/Handcoded/math3Dopts.asm"
+"ExtropiaLib:prj/Engine/Handcoded/math3Dopts.asm"
+Storm Shell Project (Dependencies)
+"obj_far/math3Dopts.o" ""
+""
+"obj_far/math3Dopts.o"
+Section
+12 1 90
+File
+13 "ExtropiaLib:prj/Engine/Handcoded/math3D.i"
+"ExtropiaLib:prj/Engine/Handcoded/math3D.i"
+Storm Shell Project (Dependencies)
+"" ""
+""
+Section
+13 1 -128
+File
+1 "main.cpp"
+"main.cpp"
+"ExtropiaLib:prj/Engine/APP.hpp"
+"ExtropiaLib:prj/Engine/prefab.hpp"
+"ExtropiaLib:prj/Engine/math3D.hpp"
+Storm Shell Project (Dependencies)
+"obj_far/main.o" "obj_far/main.debug"
+""
+"obj_far/main.o" "obj_far/main.debug"
+File
+1 "math3D.cpp"
+"math3D.cpp"
+"ExtropiaLib:prj/Engine/math3D.hpp"
+Storm Shell Project (Dependencies)
+"obj_far/math3D.o" "obj_far/math3D.debug"
+""
+"obj_far/math3D.o" "obj_far/math3D.debug"
+File
+1 "prefab.cpp"
+"prefab.cpp"
+"ExtropiaLib:prj/Engine/prefab.hpp"
+"ExtropiaLib:prj/Engine/math3D.hpp"
+Storm Shell Project (Dependencies)
+"obj_far/prefab.o" "obj_far/prefab.debug"
+""
+"obj_far/prefab.o" "obj_far/prefab.debug"
+File
+1 "prefabedit.cpp"
+"ExtropiaLib:prj/Engine/prefab.hpp"
+"ExtropiaLib:prj/Engine/math3D.hpp"
+"prefabedit.cpp"
+Storm Shell Project (Dependencies)
+"obj_far/prefabedit.o" "obj_far/prefabedit.debug"
+""
+"obj_far/prefabedit.o" "obj_far/prefabedit.debug"
+Section
+1 1 100
+File
+2 "app.hpp"
+"app.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "math3D.hpp"
+"math3D.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "prefab.hpp"
+"prefab.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "ExtropiaLib:include/Platforms/Amiga68k/IOLib/IOLib.hpp"
+"ExtropiaLib:include/Platforms/Amiga68k/IOLib/IOLib.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+Section
+2 1 95
+File
+10 "engine"
+"engine"
+Storm Shell Project (Dependencies)
+"" ""
+""
+"engine.link"
+Section
+10 1 40
+File
+5 "storm020_far.lib"
+"storm020_far.lib"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+5 "amiga.lib"
+"amiga.lib"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+5 "ExtropiaLib:lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib"
+"ExtropiaLib:lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+5 "ExtropiaLib:lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib"
+"ExtropiaLib:lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+5 "ExtropiaLib:lib/Platforms/Amiga68k/far/lib/IOLib_far.lib"
+"ExtropiaLib:lib/Platforms/Amiga68k/far/lib/IOLib_far.lib"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+5 "ExtropiaLib:lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib"
+"ExtropiaLib:lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+5 "ExtropiaLib:lib/Platforms/Amiga68k/far/lib/UtilityLib_far.lib"
+"ExtropiaLib:lib/Platforms/Amiga68k/far/lib/UtilityLib_far.lib"
+Storm Shell Project (Dependencies)
+"" ""
+""
+Section
+5 1 -50
+Storm Shell Project (End)

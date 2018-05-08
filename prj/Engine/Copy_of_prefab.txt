@@ -1,0 +1,55 @@
+
+class VECTOR3D {
+  public:
+    float32 x;
+    float32 y;
+    float32 z;
+}; // 12
+
+class VERTEX : public VECTOR3D {
+  public:
+    float32 w;
+    float32 u;
+    float32 v;
+    uint32  c;
+}; // 28
+
+
+
+class PREFAB {
+  public:
+    typedef struct {
+      uint8 iVertex1;     // index of first vertex, relative to prefab 
+      uint8 iVertex2;
+      uint8 iVertex3;
+      uint8 iVertexNorm1; // index of first vertex normal
+      uint8 iVertexNorm2;
+      uint8 iVertexNorm3;
+      uint8 ifaceNorm;    // index of face normal
+      uint8 iPlaneConst;  // index of face plane constant
+      uint8 iTexture;     // index of texture
+      uint8 visInfo;
+      uint8 pad[2];
+  } TRIDEF; // 12
+
+  private:
+    const size_t maxTris        = 85;   // 1020
+    const size_t maxVerts       = 255;  // 7140
+    const size_t maxVertNorms   = 255;  // 3060
+    const size_t maxFaceNorms   = 85;   // 1020
+    const size_t maxPlaneConsts = 85;   // 340 --> max size = 12620, 85 fully unique tris
+    size_t   numTris;
+    size_t   numVerts;
+    size_t   numVertNorms;
+    size_t   numFaceNorms;
+    size_t   numPlaneConsts; 
+
+    void     *mem;
+    TRIDEF   *tris;
+    VERTEX   *vertices;
+    VECTOR3D *vertNorms;
+    VECTOR3D *faceNorms;
+    float32  *faceConsts;
+
+   
+};

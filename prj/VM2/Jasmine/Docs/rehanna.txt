@@ -1,0 +1,115 @@
+
+    eXtropia Studios
+
+    Rehanna : JIT implementation of JASMINE VM
+
+    K Churchill
+
+    The JASMINE system uses a simple interpretation method that allows for respectable VM code throughput for simple applications. All opcode and operand address types are represented as bytecodes within an instruction word that can be used to perform lookup based instruction decoding. A typical three operand instuction is handled as follows.
+
+    (Execute Loop)
+
+        Fectch instruction
+        Get opcode -> lookup opcode handler
+        Call opcode handler
+            Get operand 1 -> lookup operand 1 address handler
+                Call address handler
+            Store operand 1
+            Get operand 2 -> lookup operand 2 address handler
+                Call address handler
+            Store operand 2
+            Perform operation on operands 1 and 2
+            Get destination -> lookup destination operand address
+                Call address handler
+            Write result to operand address
+
+    (Test exit conditions)
+    
+
+    In practice, each opcode handler is optimised to call only the necessary address handlers etc. To improve interpretation performance, the most common address modes are 'inlined' (requiring no handler calls) and handlers written in such a way as to minimise parameter/stack usage.
+
+    Despite the simplicity of the above scheme, the performance is still way behind that of native code. The principal bottlenecks are as follows.
+
+    1) Function call overhead
+       Each VM instruction is handled via a function from a function table. Also, each operand (up to three in total) may invoke a handler function to determine the operand address. The worst case scenario thus involves a total of four indirect (via pointer) function calls. It is also the case that such jumps are difficult to predict and can be cache unfriendly. Hence, in nearly all cases, the time taken to call the instruction and operand handlers dramatically outweighs the time taken to perform the actual low level operation itself.
+
+    2) Execute loop
+       In tandem with the above, each instruction is handled from an execute loop. This loop checks for an exit condition after each instruction processed, adding to the time taken to process all instructions, even though only a minority may set an exit condition.
+
+    Rehanna
+
+    Rehanna is a Just In Time compiler replacement for JASMINE that aims to address the speed bottlenecks described above. Rather than interpreting each VM instruction one at a time, Rehanna works by transcribing entire blocks of VM code into native code that can be executed far more efficiently than any interpreter.
+
+    Strategy
+
+    Rehanna works by translating VM functions. A VM function is defined as any section of VM code that can be called from elsewhere, does some work and then either returns or exits. Under this definition, any VM progam comprises of at least one function (the main code itself).
+    Given an existing VM instruction stream, Rehanna translates the VM instructions until a terminating RET or END command is encountered. The resulting native code can then be executed directly as a single function call. This is a vast improvement over the function(s)-per-instruction overhead of the interpeter.
+    By using a translation cache, VM functions need only be translated once, i.e. on their first invokation. The next time a function is called, the translated version can be called from the cache.
+
+    Technicalities
+
+    1) An entire VM function is translated in two passes. The first pass converts VM instructions into native code, keeping record of the respective VM / native code positions for each transcription.
+
+    2) On encountering a VM branch, the branch direction is examined:
+
+      a) Backward branches to already translated code can be resolved immediately by scanning backwards through the current transcription record until the matching target is found. These branches are marked as resolved in the record and no further action is required. 
+
+      b) Forward branches cannot be resolved since the native target is not yet known. The native branch displacement is set to zero and the branch is marked as unresolved in the transcription record.
+
+    3) Special behaviour is required when any type of call opcode is encountered during transcription. When this occurs, a function call to a handler is inserted in the native code. This handler function forms part of the runtime environment and takes the original VM target address as an argument. Later, during execution of the native code, the handler is invoked and performs one of two actions:
+
+      a) The VM target address is compared to those of already transcribed functions. If the VM code at the target address has already been translated the handler calls the corresponding native code.
+
+      b) If the VM target address was not recognised, the handler invokes a new transcription starting at the target address then calls the native code thus generated.
+
+    4) The first pass is normally terminated on encountering the last RET or END opcode that can logically be reached having explored all VM branches in the code segment.
+
+    5) The second pass scans through the record and identifies the targets of any remaining unresolved branches.
+
+    6) The freshly translated code is executed by the runtime system. The runtime system is able to invoke the transcription engine whenever the handler is invoked.
+
+
+    Potential foibles
+
+    Regarding point 3, having to search through the cache to find the native code will add considerable overhead in calling functions. Functions not already translated will have the additional overhead of transcription, though the latter is only required once.
+    As more and more VM functions are translated, lookup times will inevitably increase. In order to keep code lookup times down, a strategy for sorting the lookup based on frequency of use etc, may be useful.
+
+    Point 4 introduces some interesting problems. It is likely that a function may have several return points that are reached on the results of different branch conditions. Tracing out all branch possibilities until a return or exit point is reached is not a trivial matter. Moreover it is possible to write code that could branch to a VM address lower than the VM function entry point (i.e. before the transcription start address). Consider the following code example.
+
+    Before:                      // This is an internally visible fucntion
+      add.s32 r0, r0, r1
+      ret
+
+    #pragma public Function:     // This is an externally visible function
+      bless.s32 r1, r0, Before
+      sub.s32 r0, r1, r0
+      ret
+
+    Transcription beginning at 'Function' could run into serious problems attempting to resolve the branch destination since the branch is 'outside' the scope of 'Function'.
+
+
+    Thoughts
+
+    Since Jasmine objects keep all code and data seperated, total transcription of an object prior to execution ought to be feasable. As long as all VM functions are translated and cross referenced, any direct function call can theoretically be resolved (including calls to local functions using VM pc relative addressing).
+    However, since all calculations made in native code will be the same as for virtual code, any addresses calculated by native code will still refer to a VM address. This is true for both data and code addresses and so the latter case presents the original problem of identifying which native code (if any) matches the evaluated VM address we're attempting to call.
+    It is unlikely that function calls will jump to any arbitrary address. Rather such indirect calls must be based on pointers that were originally assigned the address of a VM function. The most likely cases are
+
+    1) Call to a VM function absolute address (constant)
+    2) Call to a VM function address relative to the VM pc register (constant)
+    3) Call to a VM function address assigned to a pointer (variable)
+    4) Call to a VM function address held in a constant jump table (constant)
+    5) Call to a VM function address held in a writable jump table (variable)
+
+    In theory it should be possible to resolve all constant cases at JIT compile time. Perhaps a third pass could be used that would detect all references to VM function addresses assigned to pointers and modify accordingly.
+
+
+    Transcription would be greatly assisted by foreknowledge of the VM code layout. Several options seem feasible here.
+
+    1) Add a transcription start/end marker opcodes to mark out blocks of code.
+
+    2) Build a function reference table within the JASMINE object that details the start address and total length of each VM function. This could be coupled with code addressing modes that use the table to resolve most direct/indirect calls.
+
+
+
+
+

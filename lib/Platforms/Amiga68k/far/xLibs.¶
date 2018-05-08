@@ -1,0 +1,389 @@
+Storm Shell Project (0013)
+Settings (Start)
+C/C++ Environment
+"StormC:include"
+"ExtropiaLib:include"
+Includepath (End)
+0 "" 256
+1 "ExtropiaLib:lib/Platforms/Amiga68k/far/obj"
+C/C++ Preprozessor
+1 "NDEBUG" ""
+0 "PARANOID" ""
+1 "KARL_FIXES" ""
+0 "_INLINE_INCLUDES" ""
+0 "X_DEBUG" ""
+1 "STORMPRAGMAS" ""
+Defines (End)
+1 1 1
+C/C++ Options
+1 0 0 0 0 0 2 1 0 1 0 3 1 0 0
+C/C++ Optimizer
+6
+C/C++ Warnings
+1 1 1 1 1 1 0 1
+Assembler
+0 ""
+0 "CON://640/200/Storm Assembler/AUTO/WAIT/SCREEN StormScreen"
+0 0
+0 1 60 0 1 0 0 20 0
+Sets (End)
+0 1 0 0 0 2 1 0 0
+1 1 1 1 0 0 0 0 0
+1 0
+0 0 0 0 0
+Linker
+1 0 "PROGDIR:startup.o" 0 0 1 0 0 0 0
+"StormC:lib/" 0 "StormC:lib/logfile" 0 1 1
+0 "_WizardSurface"
+0 0 50 0 50 0 50 0 0
+0 0 0 0 0 0 0 0
+Run
+30 "" "" "" 0
+""
+
+1 "CON://400/180/Storm Console/AUTO/WAIT/SCREEN StormScreen" "RAM:Output" "RAM:Input"
+1 0
+0 0 0 "" ""
+Settings (End)
+File
+12 "ExtropiaLib:lib/Platforms/Amiga68k/HandOptimized/xNumericO.asm"
+"ExtropiaLib:lib/Platforms/Amiga68k/HandOptimized/xNumericO.asm"
+Storm Shell Project (Dependencies)
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/xNumericO.o" ""
+""
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/xNumericO.o"
+File
+12 "ExtropiaLib:lib/Platforms/Amiga68k/HandOptimized/MEM.asm"
+"ExtropiaLib:lib/Platforms/Amiga68k/HandOptimized/MEM.asm"
+Storm Shell Project (Dependencies)
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/MEM.o" ""
+""
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/MEM.o"
+Section
+12 1 90
+File
+18 "ExtropiaLib:lib/Platforms/Amiga68k/far/Librarian/Graphics.lb"
+"ExtropiaLib:lib/Platforms/Amiga68k/far/Librarian/xGraphics2.lb"
+"ExtropiaLib:lib/Platforms/Amiga68k/far/Librarian/Graphics.lb"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+18 "ExtropiaLib:lib/Platforms/Amiga68k/far/Librarian/xUtility.lb"
+"ExtropiaLib:lib/Platforms/Amiga68k/far/Librarian/xUtility.lb"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+18 "ExtropiaLib:lib/Platforms/Amiga68k/far/Librarian/GraphicsOld.lb"
+"ExtropiaLib:lib/Platforms/Amiga68k/far/Librarian/xGraphics.lb"
+"ExtropiaLib:lib/Platforms/Amiga68k/far/Librarian/GraphicsOld.lb"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+18 "ExtropiaLib:lib/Platforms/Amiga68k/far/Librarian/xServices.lb"
+"ExtropiaLib:lib/Platforms/Amiga68k/far/Librarian/xServices.lb"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+18 "ExtropiaLib:lib/Platforms/Amiga68k/far/Librarian/xBase.lb"
+"ExtropiaLib:lib/Platforms/Amiga68k/far/Librarian/xBase.lb"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+18 "ExtropiaLib:lib/Platforms/Amiga68k/far/Librarian/xIO.lb"
+"ExtropiaLib:lib/Platforms/Amiga68k/far/Librarian/xIO.lb"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+18 "ExtropiaLib:lib/Platforms/Amiga68k/far/Librarian/xSound.lb"
+"ExtropiaLib:lib/Platforms/Amiga68k/far/Librarian/xSound.lb"
+Storm Shell Project (Dependencies)
+"" ""
+""
+Section
+18 1 65
+File
+2 "ExtropiaLib:include/xDefs.hpp"
+"ExtropiaLib:include/xDefs.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "ExtropiaLib:include/xBase.hpp"
+"ExtropiaLib:include/xBase.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "ExtropiaLib:include/Platforms/Amiga68k/sysBase.hpp"
+"ExtropiaLib:include/Platforms/Amiga68k/sysBase.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "ExtropiaLib:include/xUtility/xNumeric.hpp"
+"ExtropiaLib:include/xUtility/xNumeric.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "ExtropiaLib:include/xUtility/Pool.hpp"
+"ExtropiaLib:include/xUtility/Pool.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "ExtropiaLib:include/xUtility/Bitarray.hpp"
+"ExtropiaLib:include/xUtility/Bitarray.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "ExtropiaLib:include/xUtility/RangedInts.hpp"
+"ExtropiaLib:include/xUtility/RangedInts.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "ExtropiaLib:include/XSF/XSF.hpp"
+"ExtropiaLib:include/XSF/XSF.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "ExtropiaLib:include/XSF/XSFClassDefs.hpp"
+"ExtropiaLib:include/XSF/XSFClassDefs.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "ExtropiaLib:include/Platforms/Amiga68k/ServiceLib/xResources.hpp"
+"ExtropiaLib:include/Platforms/Amiga68k/ServiceLib/xResources.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "ExtropiaLib:include/Platforms/Amiga68k/IOLib/xIO.hpp"
+"ExtropiaLib:include/Platforms/Amiga68k/IOLib/xIO.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "ExtropiaLib:include/Platforms/Amiga68k/GraphicsLib/xGraphics.hpp"
+"ExtropiaLib:include/Platforms/Amiga68k/GraphicsLib/xGraphics.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "ExtropiaLib:include/Platforms/Amiga68k/GraphicsLib/xGfx_3D.hpp"
+"ExtropiaLib:include/Platforms/Amiga68k/GraphicsLib/xGfx_3D.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "ExtropiaLib:include/Platforms/Amiga68k/GraphicsLib/Surface.hpp"
+"ExtropiaLib:include/Platforms/Amiga68k/GraphicsLib/Surface.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "ExtropiaLib:include/Platforms/Amiga68k/GraphicsLib/Display.hpp"
+"ExtropiaLib:include/Platforms/Amiga68k/GraphicsLib/Display.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "ExtropiaLib:include/Platforms/Amiga68k/GraphicsLib/Draw.hpp"
+"ExtropiaLib:include/Platforms/Amiga68k/GraphicsLib/Draw.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "ExtropiaLib:include/Platforms/Amiga68k/SoundLib/xAudio.hpp"
+"ExtropiaLib:include/Platforms/Amiga68k/SoundLib/xAudio.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "ExtropiaLib:include/Platforms/Amiga68k/SoundLib/PCM.hpp"
+"ExtropiaLib:include/Platforms/Amiga68k/SoundLib/PCM.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "ExtropiaLib:include/Platforms/Amiga68k/ServiceLib/Thread.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+Section
+2 1 -128
+File
+1 "ExtropiaLib:lib/Common/xBase.cpp"
+"ExtropiaLib:lib/Common/xBase.cpp"
+Storm Shell Project (Dependencies)
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/xBase.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/xBase.debug"
+""
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/xBase.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/xBase.debug"
+File
+1 "ExtropiaLib:lib/Platforms/Amiga68k/sysBase.cpp"
+"ExtropiaLib:lib/Platforms/Amiga68k/sysBase.cpp"
+Storm Shell Project (Dependencies)
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/sysBase.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/sysBase.debug"
+""
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/sysBase.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/sysBase.debug"
+File
+1 "ExtropiaLib:lib/Platforms/Amiga68k/ServiceLib/xResources.cpp"
+"ExtropiaLib:lib/Platforms/Amiga68k/ServiceLib/xResources.cpp"
+Storm Shell Project (Dependencies)
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/xResources.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/xResources.debug"
+""
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/xResources.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/xResources.debug"
+File
+1 "ExtropiaLib:lib/Platforms/Amiga68k/IOLib/xFILEIO.cpp"
+"ExtropiaLib:lib/Platforms/Amiga68k/IOLib/xFILEIO.cpp"
+Storm Shell Project (Dependencies)
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/xFILEIO.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/xFILEIO.debug"
+""
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/xFILEIO.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/xFILEIO.debug"
+File
+1 "ExtropiaLib:lib/Platforms/Amiga68k/GraphicsLib/GraphicsBase.cpp"
+"ExtropiaLib:lib/Platforms/Amiga68k/GraphicsLib/GraphicsBase.cpp"
+Storm Shell Project (Dependencies)
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/GraphicsBase.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/GraphicsBase.debug"
+""
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/GraphicsBase.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/GraphicsBase.debug"
+File
+1 "ExtropiaLib:lib/Platforms/Amiga68k/GraphicsLib/Surface.cpp"
+"ExtropiaLib:lib/Platforms/Amiga68k/GraphicsLib/Surface.cpp"
+Storm Shell Project (Dependencies)
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/Surface.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/Surface.debug"
+""
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/Surface.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/Surface.debug"
+File
+1 "ExtropiaLib:lib/Platforms/Amiga68k/GraphicsLib/GraphicsBase3D.cpp"
+"ExtropiaLib:lib/Platforms/Amiga68k/GraphicsLib/GraphicsBase3D.cpp"
+Storm Shell Project (Dependencies)
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/GraphicsBase3D.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/GraphicsBase3D.debug"
+""
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/GraphicsBase3D.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/GraphicsBase3D.debug"
+File
+1 "ExtropiaLib:lib/Platforms/Amiga68k/GraphicsLib/Display.cpp"
+"ExtropiaLib:lib/Platforms/Amiga68k/GraphicsLib/Display.cpp"
+Storm Shell Project (Dependencies)
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/Display.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/Display.debug"
+""
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/Display.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/Display.debug"
+File
+1 "ExtropiaLib:lib/Platforms/Amiga68k/GraphicsLib/TextureSurface.cpp"
+"ExtropiaLib:lib/Platforms/Amiga68k/GraphicsLib/TextureSurface.cpp"
+Storm Shell Project (Dependencies)
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/TextureSurface.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/TextureSurface.debug"
+""
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/TextureSurface.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/TextureSurface.debug"
+File
+1 "ExtropiaLib:lib/Platforms/Amiga68k/GraphicsLib/DrawList.cpp"
+"ExtropiaLib:lib/Platforms/Amiga68k/GraphicsLib/DrawList.cpp"
+Storm Shell Project (Dependencies)
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/DrawList.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/DrawList.debug"
+""
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/DrawList.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/DrawList.debug"
+File
+1 "ExtropiaLib:lib/Platforms/Amiga68k/GraphicsLib/DrawListMethods.cpp"
+"ExtropiaLib:lib/Platforms/Amiga68k/GraphicsLib/DrawListMethods.cpp"
+Storm Shell Project (Dependencies)
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/DrawListMethods.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/DrawListMethods.debug"
+""
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/DrawListMethods.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/DrawListMethods.debug"
+File
+1 "ExtropiaLib:lib/Platforms/Amiga68k/GraphicsLib/DrawListGPU.cpp"
+"ExtropiaLib:lib/Platforms/Amiga68k/GraphicsLib/DrawListGPU.cpp"
+Storm Shell Project (Dependencies)
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/DrawListGPU.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/DrawListGPU.debug"
+""
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/DrawListGPU.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/DrawListGPU.debug"
+File
+1 "ExtropiaLib:lib/Platforms/Amiga68k/SoundLib/xAudio.cpp"
+"ExtropiaLib:lib/Platforms/Amiga68k/SoundLib/xAudio.cpp"
+Storm Shell Project (Dependencies)
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/xAudio.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/xAudio.debug"
+""
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/xAudio.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/xAudio.debug"
+File
+1 "ExtropiaLib:lib/Platforms/Amiga68k/SoundLib/PCM.cpp"
+"ExtropiaLib:lib/Platforms/Amiga68k/SoundLib/PCM.cpp"
+Storm Shell Project (Dependencies)
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/PCM.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/PCM.debug"
+""
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/PCM.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/PCM.debug"
+File
+1 "ExtropiaLib:lib/Common/xUtility/Pool.cpp"
+"ExtropiaLib:lib/Common/xUtility/Pool.cpp"
+Storm Shell Project (Dependencies)
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/Pool.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/Pool.debug"
+""
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/Pool.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/Pool.debug"
+File
+1 "ExtropiaLib:lib/Common/xUtility/xNumeric.cpp"
+"ExtropiaLib:lib/Common/xUtility/xNumeric.cpp"
+"EXTROPIALIB:lib/Common/xUtility/xNumeric_Data.cpp"
+Storm Shell Project (Dependencies)
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/xNumeric.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/xNumeric.debug"
+""
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/xNumeric.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/xNumeric.debug"
+File
+1 "ExtropiaLib:lib/Common/XSF/XSF.cpp"
+"ExtropiaLib:lib/Common/XSF/XSF.cpp"
+Storm Shell Project (Dependencies)
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/XSF.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/XSF.debug"
+""
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/XSF.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/XSF.debug"
+File
+1 "ExtropiaLib:lib/Platforms/Amiga68k/GraphicsLib/Texture.cpp"
+"ExtropiaLib:lib/Platforms/Amiga68k/GraphicsLib/Texture.cpp"
+Storm Shell Project (Dependencies)
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/Texture.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/Texture.debug"
+""
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/Texture.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/Texture.debug"
+File
+1 "ExtropiaLib:lib/Platforms/Amiga68k/GraphicsLib/xDraw.cpp"
+"ExtropiaLib:lib/Platforms/Amiga68k/GraphicsLib/xDraw.cpp"
+Storm Shell Project (Dependencies)
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/xDraw.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/xDraw.debug"
+""
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/xDraw.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/xDraw.debug"
+File
+1 "ExtropiaLib:lib/Platforms/Amiga68k/GraphicsLib/xDrawMethods.cpp"
+"ExtropiaLib:lib/Platforms/Amiga68k/GraphicsLib/xDrawMethods.cpp"
+Storm Shell Project (Dependencies)
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/xDrawMethods.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/xDrawMethods.debug"
+""
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/xDrawMethods.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/xDrawMethods.debug"
+File
+1 "ExtropiaLib:lib/Platforms/Amiga68k/IOLib/xINPUT.cpp"
+"ExtropiaLib:lib/Platforms/Amiga68k/IOLib/xINPUT.cpp"
+Storm Shell Project (Dependencies)
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/xINPUT.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/xINPUT.debug"
+""
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/xINPUT.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/xINPUT.debug"
+File
+1 "ExtropiaLib:lib/Platforms/Amiga68k/ServiceLib/Thread.cpp"
+Storm Shell Project (Dependencies)
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/Thread.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/Thread.debug"
+""
+"ExtropiaLib:lib/Platforms/Amiga68k/far/obj/Thread.o" "ExtropiaLib:lib/Platforms/Amiga68k/far/obj/Thread.debug"
+Section
+1 1 100
+File
+21 "EXTROPIALIB:lib/Common/xUtility/xNumeric_Data.cpp"
+"EXTROPIALIB:lib/Common/xUtility/xNumeric_Data.cpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+Section
+21 1 87
+Storm Shell Project (End)

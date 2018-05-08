@@ -1,0 +1,7 @@
+Internal error
+Syntax error
+Premature end of file
+Character literal too long
+String literal too long
+Block comment not terminated
+Pre-processor directive expected

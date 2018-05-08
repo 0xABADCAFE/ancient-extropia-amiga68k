@@ -1,0 +1,59 @@
+/*
+
+    Simple Jasmine(tm) program to calculate factorials
+
+    Calculations are performed using float64, giving a calculation range
+    up to 10^300. In practice this allows aprox 170! to be evaluated
+
+    The program uses a basic recursive algorithm that tests function
+    call and stack based passing. Overall, all registers are preserved.
+
+*/
+
+#pragma stack       1024
+#pragma methodstack 512
+#pragma regstack    512
+#pragma module      "Factorial Demo"
+
+    print       "VM program to generate factorials\n\nPlease enter a number : "
+    read.s32    r0
+
+    bgreq.s32   r0, #0, NotNegative
+    print       "Factorials are defined for positive integers only\n"
+    end
+
+NotNegative:
+    tof64.s32   r0, r0            // Do factorial calculation using float64
+    tof64.s32   r2, #1            // Only #0 valid for floating point, so
+    tof64.s32   r3, #2            // convert two quick# to float64 in regs
+
+    push.f64    r0                // push arg onto stack
+    call        Factorial
+
+    pop.f64     r0                // pop arg from stack
+    print       "Factorial is : "
+    print.f64   r0
+    print.ch    '\n'
+    end
+
+Factorial:
+    save        r0, r1
+    pop.f64     r0
+
+    bls.f64     #0, r0, doFac
+    push.f64    r2
+    bra         doneFac2
+
+doFac:
+    bgr.f64     r3, r0, doneFac
+    sub.f64     r1, r0, r2
+    push.f64    r1
+    call        Factorial
+    pop.f64     r1
+    mul.f64     r0, r0, r1
+
+doneFac:
+    push.f64    r0
+doneFac2:
+    restore     r0, r1
+    ret

@@ -1,0 +1,2 @@
+run execute pipe:gencaust_$process
+list caust#?.ppm lformat "gentexture -dat caustics.dat -cmap %n -amap %m.pgm -dst %m.tex" >pipe:gencaust_$process

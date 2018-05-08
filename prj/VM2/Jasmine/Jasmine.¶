@@ -1,0 +1,418 @@
+Storm Shell Project (0013)
+Settings (Start)
+C/C++ Environment
+"StormC:include"
+"extropialib:include"
+Includepath (End)
+0 "" 128
+1 "objects"
+C/C++ Preprozessor
+1 "NDEBUG" ""
+1 "KARL_FIXES" ""
+0 "PARANOID" ""
+Defines (End)
+1 1 1
+C/C++ Options
+1 1 0 0 0 0 2 0 0 0 0 3 1 0 0
+C/C++ Optimizer
+6
+C/C++ Warnings
+1 1 1 1 1 1 1 1
+Assembler
+0 ""
+0 "CON://640/200/Storm Assembler/AUTO/WAIT/SCREEN StormScreen"
+0 0
+0 1 60 0 1 0 0 20 0
+Sets (End)
+0 1 0 0 0 2 1 0 0
+1 1 1 1 0 0 0 0 0
+1 0
+0 0 0 0 0
+Linker
+0 0 "PROGDIR:startup.o" 0 0 1 0 1 0 0
+"StormC:lib/" 0 "StormC:lib/logfile" 0 1 1
+0 "_WizardSurface"
+0 0 50 0 50 0 50 0 0
+2 0 0 0 0 0 0 0
+Run
+30 "" "" "" 0
+"jasmine"
+func.xvm
+1 "CON://800/600/Jasmine/AUTO/WAIT/SCREEN StormScreen" "RAM:Output" "RAM:Input"
+1 0
+0 0 0 "" ""
+Settings (End)
+File
+9 "GenVM.¶"
+"GenVM.¶"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+9 "DecodeVM.¶"
+"DecodeVM.¶"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+9 "Rehanna.¶"
+"Rehanna.¶"
+Storm Shell Project (Dependencies)
+"" ""
+""
+Section
+9 1 -128
+File
+13 "extropialib:prj/VM2/Jasmine/M680x0/Jasmine.i"
+"extropialib:prj/VM2/Jasmine/M680x0/Jasmine.i"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+13 "extropialib:prj/VM2/Jasmine/M680x0/Int32Arith.i"
+"extropialib:prj/VM2/Jasmine/M680x0/Macros.i"
+"extropialib:prj/VM2/Jasmine/M680x0/Int32Arith.i"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+13 "extropialib:prj/VM2/Jasmine/M680x0/Int32Logic.i"
+"extropialib:prj/VM2/Jasmine/M680x0/Int32Logic.i"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+13 "extropialib:prj/VM2/Jasmine/M680x0/FloatArith.i"
+"extropialib:prj/VM2/Jasmine/M680x0/FloatMacros.i"
+"extropialib:prj/VM2/Jasmine/M680x0/FloatArith.i"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+13 "extropialib:prj/VM2/Jasmine/M680x0/Flow.i"
+"extropialib:prj/VM2/Jasmine/M680x0/Flow.i"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+13 "extropialib:prj/VM2/Jasmine/M680x0/Casts.i"
+"extropialib:prj/VM2/Jasmine/M680x0/Int32Casts.i"
+"extropialib:prj/VM2/Jasmine/M680x0/Casts.i"
+Storm Shell Project (Dependencies)
+"" ""
+""
+Section
+13 1 -128
+File
+12 "extropialib:prj/VM2/Jasmine/M680x0/Execute.asm"
+"extropialib:prj/VM2/Jasmine/M680x0/Execute.asm"
+Storm Shell Project (Dependencies)
+"objects/Execute.o" ""
+""
+"objects/Execute.o"
+File
+12 "extropialib:prj/VM2/Jasmine/M680x0/Address.asm"
+"extropialib:prj/VM2/Jasmine/M680x0/Address.asm"
+Storm Shell Project (Dependencies)
+"objects/Address.o" ""
+""
+"objects/Address.o"
+File
+12 "extropialib:prj/VM2/Jasmine/M680x0/Flow.asm"
+"extropialib:prj/VM2/Jasmine/M680x0/Flow.asm"
+Storm Shell Project (Dependencies)
+"objects/Flow.o" ""
+""
+"objects/Flow.o"
+File
+12 "extropialib:prj/VM2/Jasmine/M680x0/Int32Arith.asm"
+"extropialib:prj/VM2/Jasmine/M680x0/Int32Arith.asm"
+Storm Shell Project (Dependencies)
+"objects/Int32Arith.o" ""
+""
+"objects/Int32Arith.o"
+File
+12 "extropialib:prj/VM2/Jasmine/M680x0/Int64Arith.asm"
+"extropialib:prj/VM2/Jasmine/M680x0/Int64Arith.asm"
+Storm Shell Project (Dependencies)
+"objects/Int64Arith.o" ""
+""
+"objects/Int64Arith.o"
+File
+12 "extropialib:prj/VM2/Jasmine/M680x0/FloatArith.asm"
+"extropialib:prj/VM2/Jasmine/M680x0/FloatArith.asm"
+Storm Shell Project (Dependencies)
+"objects/FloatArith.o" ""
+""
+"objects/FloatArith.o"
+File
+12 "extropialib:prj/VM2/Jasmine/M680x0/Int32Logic.asm"
+"extropialib:prj/VM2/Jasmine/M680x0/Int32Logic.asm"
+Storm Shell Project (Dependencies)
+"objects/Int32Logic.o" ""
+""
+"objects/Int32Logic.o"
+File
+12 "extropialib:prj/VM2/Jasmine/M680x0/Int64Logic.asm"
+"extropialib:prj/VM2/Jasmine/M680x0/Int64Logic.asm"
+Storm Shell Project (Dependencies)
+"objects/Int64Logic.o" ""
+""
+"objects/Int64Logic.o"
+File
+12 "extropialib:prj/VM2/Jasmine/M680x0/System.asm"
+"extropialib:prj/VM2/Jasmine/M680x0/System.asm"
+Storm Shell Project (Dependencies)
+"objects/System.o" ""
+""
+"objects/System.o"
+File
+12 "extropialib:prj/VM2/Jasmine/M680x0/Int32Casts.asm"
+"extropialib:prj/VM2/Jasmine/M680x0/Int32Casts.asm"
+Storm Shell Project (Dependencies)
+"objects/Int32Casts.o" ""
+""
+"objects/Int32Casts.o"
+File
+12 "extropialib:prj/VM2/Jasmine/M680x0/FloatCasts.asm"
+"extropialib:prj/VM2/Jasmine/M680x0/FloatCasts.asm"
+Storm Shell Project (Dependencies)
+"objects/FloatCasts.o" ""
+""
+"objects/FloatCasts.o"
+Section
+12 1 -128
+File
+2 "Jasmine.hpp"
+"Jasmine.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "JasmineCode.hpp"
+"VMCode.hpp"
+"VM_Code.hpp"
+"JasmineCode.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "JasmineClass.hpp"
+"JasmineClass.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "JasmineInline.hpp"
+"JasmineInline.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "JasmineObject.hpp"
+"VM_ObjectCode.hpp"
+"JasmineObject.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "extropialib:include/XSF/XSF.hpp"
+"extropialib:include/XSF/XSF.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+Section
+2 1 -128
+File
+1 "runvm.cpp"
+"runvm.cpp"
+"extropialib:prj/VM2/Jasmine/Jasmine.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineCode.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineClass.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineInline.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineObject.hpp"
+Storm Shell Project (Dependencies)
+"objects/runvm.o" "objects/runvm.debug"
+""
+"objects/runvm.o" "objects/runvm.debug"
+File
+1 "JasmineClass.cpp"
+"JasmineClass.cpp"
+"extropialib:prj/VM2/Jasmine/Jasmine.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineCode.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineClass.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineInline.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineObject.hpp"
+Storm Shell Project (Dependencies)
+"objects/JasmineClass.o" "objects/JasmineClass.debug"
+""
+"objects/JasmineClass.o" "objects/JasmineClass.debug"
+File
+1 "JasmineEA.cpp"
+"JasmineEA.cpp"
+"extropialib:prj/VM2/Jasmine/Jasmine.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineCode.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineClass.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineInline.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineObject.hpp"
+Storm Shell Project (Dependencies)
+"objects/JasmineEA.o" "objects/JasmineEA.debug"
+""
+"objects/JasmineEA.o" "objects/JasmineEA.debug"
+File
+1 "JasmineSys.cpp"
+"JasmineSys.cpp"
+"extropialib:prj/VM2/Jasmine/Jasmine.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineCode.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineClass.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineInline.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineObject.hpp"
+Storm Shell Project (Dependencies)
+"objects/JasmineSys.o" "objects/JasmineSys.debug"
+""
+"objects/JasmineSys.o" "objects/JasmineSys.debug"
+File
+1 "JasmineFlow.cpp"
+"JasmineFlow.cpp"
+"extropialib:prj/VM2/Jasmine/Jasmine.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineCode.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineClass.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineInline.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineObject.hpp"
+Storm Shell Project (Dependencies)
+"objects/JasmineFlow.o" "objects/JasmineFlow.debug"
+""
+"objects/JasmineFlow.o" "objects/JasmineFlow.debug"
+File
+1 "JasmineData.cpp"
+"JasmineData.cpp"
+"extropialib:prj/VM2/Jasmine/Jasmine.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineCode.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineClass.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineInline.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineObject.hpp"
+Storm Shell Project (Dependencies)
+"objects/JasmineData.o" "objects/JasmineData.debug"
+""
+"objects/JasmineData.o" "objects/JasmineData.debug"
+File
+1 "JasmineCastU.cpp"
+"JasmineCastU.cpp"
+"extropialib:prj/VM2/Jasmine/Jasmine.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineCode.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineClass.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineInline.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineObject.hpp"
+Storm Shell Project (Dependencies)
+"objects/JasmineCastU.o" "objects/JasmineCastU.debug"
+""
+"objects/JasmineCastU.o" "objects/JasmineCastU.debug"
+File
+1 "JasmineCastS.cpp"
+"JasmineCastS.cpp"
+"extropialib:prj/VM2/Jasmine/Jasmine.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineCode.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineClass.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineInline.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineObject.hpp"
+Storm Shell Project (Dependencies)
+"objects/JasmineCastS.o" "objects/JasmineCastS.debug"
+""
+"objects/JasmineCastS.o" "objects/JasmineCastS.debug"
+File
+1 "JasmineCastF.cpp"
+"JasmineCastF.cpp"
+"extropialib:prj/VM2/Jasmine/Jasmine.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineCode.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineClass.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineInline.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineObject.hpp"
+Storm Shell Project (Dependencies)
+"objects/JasmineCastF.o" "objects/JasmineCastF.debug"
+""
+"objects/JasmineCastF.o" "objects/JasmineCastF.debug"
+File
+1 "JasmineArithmetic.cpp"
+"JasmineArithmetic.cpp"
+"extropialib:prj/VM2/Jasmine/Jasmine.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineCode.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineClass.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineInline.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineObject.hpp"
+Storm Shell Project (Dependencies)
+"objects/JasmineArithmetic.o" "objects/JasmineArithmetic.debug"
+""
+"objects/JasmineArithmetic.o" "objects/JasmineArithmetic.debug"
+File
+1 "JasmineLogic.cpp"
+"JasmineLogic.cpp"
+"extropialib:prj/VM2/Jasmine/Jasmine.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineCode.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineClass.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineInline.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineObject.hpp"
+Storm Shell Project (Dependencies)
+"objects/JasmineLogic.o" "objects/JasmineLogic.debug"
+""
+"objects/JasmineLogic.o" "objects/JasmineLogic.debug"
+File
+1 "JasmineObject.cpp"
+"JasmineObject.cpp"
+"extropialib:prj/VM2/Jasmine/JasmineObject.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineCode.hpp"
+Storm Shell Project (Dependencies)
+"objects/JasmineObject.o" "objects/JasmineObject.debug"
+""
+"objects/JasmineObject.o" "objects/JasmineObject.debug"
+File
+1 "JasmineTable.cpp"
+"JasmineTable.cpp"
+"extropialib:prj/VM2/Jasmine/Jasmine.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineCode.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineClass.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineInline.hpp"
+"extropialib:prj/VM2/Jasmine/JasmineObject.hpp"
+Storm Shell Project (Dependencies)
+"objects/JasmineTable.o" "objects/JasmineTable.debug"
+""
+"objects/JasmineTable.o" "objects/JasmineTable.debug"
+Section
+1 1 100
+File
+10 "jasmine"
+"VMTest"
+"runvm"
+"jasmine"
+Storm Shell Project (Dependencies)
+"" ""
+""
+"jasmine.link"
+Section
+10 1 40
+File
+5 "storm020_far.lib"
+"storm020_far.lib"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+5 "extropialib:lib/Platforms/Amiga68k/far/lib/xBase_far.lib"
+"extropialib:lib/Platforms/Amiga68k/far/lib/xBase_far.lib"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+5 "extropialib:lib/Platforms/Amiga68k/far/lib/xIO_far.lib"
+"extropialib:lib/Platforms/Amiga68k/far/lib/xIO_far.lib"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+5 "extropialib:lib/Platforms/Amiga68k/far/lib/xServices_far.lib"
+"extropialib:lib/Platforms/Amiga68k/far/lib/xServices_far.lib"
+Storm Shell Project (Dependencies)
+"" ""
+""
+Section
+5 1 -50
+Storm Shell Project (End)

@@ -1,0 +1,49 @@
+Translation Transform
+
+     T           C
+
+[ 1 0 0 X ] [ a b c x ]
+[ 0 1 0 Y ] [ d e f y ]
+[ 0 0 1 Z ] [ g h i z ]
+[ 0 0 0 1 ] [ 0 0 0 1 ]
+
+[ a    b    c    x+X ]
+[ d    e    f    y+Y ]
+[ g    h    i    z+Z ]
+[ 0    0    0    1   ]
+
+Note : Simple operation to achieve, just modify requisite terms. No temp required.
+
+
+Scale Transform
+
+     S           C
+
+[ X 0 0 0 ] [ a b c x ]
+[ 0 Y 0 0 ] [ d e f y ]
+[ 0 0 Z 0 ] [ g h i z ]
+[ 0 0 0 1 ] [ 0 0 0 1 ]
+
+[ X*a    X*b    X*c    X*x ] Cache XYZ
+[ Y*d    Y*e    Y*f    Y*y ]
+[ Z*g    Z*h    Z*i    Z*z ]
+[ 0      0      0      1   ]
+
+Note : Simple operation, no temp required.
+
+
+Rotation Transform
+
+     R           C
+
+[ A B C 0 ] [ a b c x ]
+[ D E F 0 ] [ d e f y ]
+[ G H I 0 ] [ g h i z ]
+[ 0 0 0 1 ] [ 0 0 0 1 ]
+
+[ A*a+B*d+C*g    A*b+e*B+C*h    A*c+B*f+C*i    A*x+B*y+C*z ] cache ABC
+[ D*a+E*d+F*g    D*b+e*E+F*h    D*c+E*f+F*i    D*x+E*y+F*z ] cache DEF
+[ G*a+H*d+I*g    G*b+e*H+I*h    G*c+H*f+I*i    G*x+H*y+I*z ] cache GHI
+[ 0              0              0              1           ]
+
+Note : More complex operation. Requires that we either use a temporary. Alternatively we can use a double buffered matrix. The primary buffer contains the current matrix, C. In the secondary buffer we build the rotation matrix R. We can then perform a multiply operation in which the result ends up in the secondary. We then switch buffer such that the secondary is primary and vice versa.  

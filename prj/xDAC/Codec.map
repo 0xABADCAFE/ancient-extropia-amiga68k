@@ -1,0 +1,883 @@
+Global M68K Construktors
+	_INIT_0_InitExceptionHandling
+	_INIT_0_InitFiles
+	_INIT_1_DOS_c
+	_INIT_3_TimerBase
+	_INIT_5_InitStdIOFiles
+	_INIT_8_Timer_cpp__TimerBase__MILLICLOCK
+	_INIT_8_xBase_cpp__xbSt
+Global M68K Destruktors
+	_EXIT_5_InitFiles
+	_EXIT_5_InitStdIOFiles
+	_EXIT_4_free
+	_EXIT_3_TimerBase
+	_EXIT_1_DOS_c
+	_EXIT_0_Main
+No Global PPC Construktors
+No Global PPC Destruktors
+
+M68K Code
+
+
+  Hunk #0 ( Far Public ) 75656 Bytes (0x12788)
+  _exit = 132 (0x84) referenced 3 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/startups/startup.o
+  abort__STANDARD = 180 (0xb4) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/startups/startup.o
+  main(int,char **) = 216 (0xd8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/codec.o
+  GetCLIParm(int,char **,const char *) = 1320 (0x528) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/codec.o
+  GetCLISwitch(int,char **,const char *) = 1392 (0x570) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/codec.o
+  PCM::~PCM() = 1456 (0x5b0) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/codec.o
+  AIFF::~AIFF() = 1456 (0x5b0) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/codec.o
+  04AIFF::_0virttab(AIFF) = 1480 (0x5c8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/codec.o
+  XDAC::XDAC() = 1544 (0x608) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XDAC::XDAC(long,short,unsigned short,unsigned short,unsigned short *,unsigned short) = 1676 (0x68c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XDAC::ReadBody(XSFIO &) = 1832 (0x728) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XDAC::WriteBody(XSFIO &) = 2112 (0x840) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XDAC::Frame(long) = 2300 (0x8fc) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XDAC::DecodeFrames(short *,long,long) = 2580 (0xa14) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XDACCODEC::~XDACCODEC() = 2824 (0xb08) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XDACCODEC::Encode(const char *,PCM &,short) = 2848 (0xb20) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XDACCODEC::Decode(const char *,PCM &) = 3684 (0xe64) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  xFILEIO::~xFILEIO() = 4284 (0x10bc) referenced 4 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  xFILEIO::~xFILEIO() = 4284 (0x10bc) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XSFIO::~XSFIO() = 4308 (0x10d4) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XSFHEAD::~XSFHEAD() = 4316 (0x10dc) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XSFOBJ::~XSFOBJ() = 5352 (0x14e8) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  MILLICLOCK::~MILLICLOCK() = 5352 (0x14e8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XSFHEAD::~XSFHEAD() = 4316 (0x10dc) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XSFOBJ::~XSFOBJ() = 5352 (0x14e8) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  MILLICLOCK::~MILLICLOCK() = 5352 (0x14e8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XSFBASIC::Read8(void *,unsigned int) = 4324 (0x10e4) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XSFBASIC::Read16(void *,unsigned int) = 4376 (0x1118) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XSFBASIC::Read32(void *,unsigned int) = 4472 (0x1178) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XSFBASIC::Read64(void *,unsigned int) = 4568 (0x11d8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XSFBASIC::Write8(void *,unsigned int) = 4664 (0x1238) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XSFBASIC::Write16(void *,unsigned int) = 4716 (0x126c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XSFBASIC::Write32(void *,unsigned int) = 4812 (0x12cc) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XSFBASIC::Write64(void *,unsigned int) = 4908 (0x132c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XSFBASIC::Valid() = 5004 (0x138c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XSFBASIC::EndOfFile() = 5036 (0x13ac) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XSFBASIC::StartOfFile() = 5068 (0x13cc) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XSFBASIC::Seek(long,long) = 5100 (0x13ec) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XSFBASIC::Tell() = 5144 (0x1418) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XSFBASIC::Size() = 5176 (0x1438) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XSFBASIC::DataFormat() = 5224 (0x1468) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XSFBASIC::FileOptions() = 5248 (0x1480) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XSFBASIC::~XSFBASIC() = 5272 (0x1498) referenced 3 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XSFOBJ::ReadyForWrite() = 5328 (0x14d0) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XSFOBJ::ReadyForRead() = 5340 (0x14dc) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XDACENCODE::TestUpsample() = 5340 (0x14dc) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XSFOBJ::ReadyForRead() = 5340 (0x14dc) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XDACENCODE::TestUpsample() = 5340 (0x14dc) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XSFOBJ::~XSFOBJ() = 5352 (0x14e8) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  MILLICLOCK::~MILLICLOCK() = 5352 (0x14e8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XDAC::~XDAC() = 5360 (0x14f0) referenced 3 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  08XSFBASIC::_0virttab(XSFBASIC) = 5392 (0x1510) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  04XDAC::_0virttab(XDAC) = 5680 (0x1630) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  AIFF::DecodeFreq(void *) = 5760 (0x1680) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/SoundFormats.o
+  AIFF::EncodeFreq(void *,long) = 6144 (0x1800) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/SoundFormats.o
+  AIFF::Load(const char *) = 6488 (0x1958) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/SoundFormats.o
+  AIFF::Save(const char *) = 7528 (0x1d68) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/SoundFormats.o
+  XDACENCODE::~XDACENCODE() = 8356 (0x20a4) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDacEncode.o
+  XDACENCODE::EncodeBody() = 8380 (0x20bc) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDacEncode.o
+  XDACENCODE::Write(XSFIO &) = 9160 (0x23c8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDacEncode.o
+  XDACENCODE::GetSpace(long) = 9740 (0x260c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDacEncode.o
+  XDACENCODE::FreeSpace() = 9976 (0x26f8) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDacEncode.o
+  XDACENCODE::Set(PCM &,short,short,short) = 10032 (0x2730) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDacEncode.o
+  XDACENCODE::First() = 10348 (0x286c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDacEncode.o
+  XDACENCODE::operator ++(int) = 10376 (0x2888) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDacEncode.o
+  XDACENCODE::FetchData() = 10448 (0x28d0) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDacEncode.o
+  XDACENCODE::CalcDeltaPop() = 10676 (0x29b4) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDacEncode.o
+  XDACENCODE::Analyse() = 10976 (0x2ae0) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDacEncode.o
+  XDACENCODE::GenTable() = 11244 (0x2bec) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDacEncode.o
+  XDACENCODE::DeltaModelKarl1(short,short,short) = 11804 (0x2e1c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDacEncode.o
+  XDACENCODE::DeltaModelSerkan1(short,short,short) = 12232 (0x2fc8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDacEncode.o
+  compare(const void *,const void *) = 12956 (0x329c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDacEncode.o
+  XDAC::DecodeMergedStereo(short *,long) = 12996 (0x32c4) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDacDecode.o
+  XDAC::DecodeMonoFrames(short *,long) = 13388 (0x344c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDacDecode.o
+  XDAC::DecodeMergedFrames(short *,long) = 13728 (0x35a0) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDacDecode.o
+  XDAC::DecodeAlternFrames(short *,long) = 14172 (0x375c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDacDecode.o
+  XDAC::DecodeEitherFrames(short *,long) = 14532 (0x38c4) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDacDecode.o
+  _fopen = 14618 (0x391a) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _freopen = 14774 (0x39b6) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _fclose = 14866 (0x3a12) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _fflush = 14966 (0x3a76) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _setvbuf = 15050 (0x3aca) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _setbuf = 15270 (0x3ba6) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _ferror = 15326 (0x3bde) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _clearerr = 15352 (0x3bf8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _perror = 15370 (0x3c0a) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _remove = 15420 (0x3c3c) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _rename = 15452 (0x3c5c) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _tmpnam = 15492 (0x3c84) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _tmpfile = 15616 (0x3d00) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _amigaopen = 15670 (0x3d36) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _amigaread = 16606 (0x40de) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _amigareadunget = 17098 (0x42ca) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _amigawrite = 17202 (0x4332) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _amigaeof = 17778 (0x4572) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _amigaseek = 17802 (0x458a) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _amigagetc = 18108 (0x46bc) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _amigagetcunget = 18166 (0x46f6) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _amigaungetc = 18198 (0x4716) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _amigaputc = 18228 (0x4734) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _amigaflush = 18290 (0x4772) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _amigaclose = 18528 (0x4860) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _INIT_0_InitFiles = 18660 (0x48e4) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _EXIT_5_InitFiles = 18732 (0x492c) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _div = 18956 (0x4a0c) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _abs = 19012 (0x4a44) referenced 2 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _labs = 19024 (0x4a50) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _llabs = 19036 (0x4a5c) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _atoi = 19086 (0x4a8e) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _atol = 19110 (0x4aa6) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strtol = 19134 (0x4abe) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strtoul = 19694 (0x4cee) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _atoll = 20194 (0x4ee2) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strtoll = 20218 (0x4efa) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strtoull = 21068 (0x524c) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _uinttostr = 21814 (0x5536) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _inttostr = 22004 (0x55f4) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _ullongtostr = 22056 (0x5628) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _llongtostr = 22296 (0x5718) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _memcpy = 22380 (0x576c) referenced 2 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _memmove = 22418 (0x5792) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _memcmp = 22478 (0x57ce) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _memchr = 22538 (0x580a) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _memset = 22588 (0x583c) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _set_new_handler = 22658 (0x5882) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _malloc = 22678 (0x5896) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _free = 23092 (0x5a34) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _EXIT_4_free = 23286 (0x5af6) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _calloc = 23404 (0x5b6c) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _realloc = 23456 (0x5ba0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _qsort = 23900 (0x5d5c) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _signal = 24002 (0x5dc2) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _raise = 24054 (0x5df6) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _abort = 24092 (0x5e1c) referenced 2 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _formatted_out = 24668 (0x605c) referenced 4 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _puts = 26736 (0x6870) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _printf = 26836 (0x68d4) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _fprintf = 26888 (0x6908) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _sprintf = 26940 (0x693c) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _vsprintf = 27004 (0x697c) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _INIT_5_InitStdIOFiles = 27068 (0x69bc) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _EXIT_5_InitStdIOFiles = 27332 (0x6ac4) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strerror = 27376 (0x6af0) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strcpy = 29172 (0x71f4) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strncpy = 29200 (0x7210) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strcat = 29254 (0x7246) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strncat = 29288 (0x7268) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strcmp = 29340 (0x729c) referenced 2 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strncmp = 29396 (0x72d4) referenced 2 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strchr = 29472 (0x7320) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strrchr = 29512 (0x7348) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strspn = 29582 (0x738e) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strcspn = 29626 (0x73ba) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strpbrk = 29670 (0x73e6) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strstr = 29720 (0x7418) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strlen = 29792 (0x7460) referenced 2 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strtok = 29814 (0x7476) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _stricmp = 29980 (0x751c) referenced 2 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strnicmp = 30102 (0x7596) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strlwr = 30298 (0x765a) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strupr = 30352 (0x7690) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _signed_out = 30408 (0x76c8) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _signed_out_l = 31064 (0x7958) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _unsigned_out = 31152 (0x79b0) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _unsigned_out_l = 31752 (0x7c08) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _char_out = 32318 (0x7e3e) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _string_out = 32474 (0x7eda) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _int_in = 32686 (0x7fae) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _char_in = 33802 (0x840a) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _string_in = 33960 (0x84a8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  sysBASELIB::Init() = 34216 (0x85a8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  sysBASELIB::Done() = 34384 (0x8650) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  sysBASELIB::MessageBox(char *,char *,char * ...) = 34464 (0x86a0) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  _INIT_8_xBase_cpp__xbSt = 34564 (0x8704) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  xBASELIB::Init() = 34572 (0x870c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  xBASELIB::Done() = 35068 (0x88fc) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  Alloc__MEM__UisE = 35076 (0x8904) referenced 4 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  MEM::Free(void *) = 35356 (0x8a1c) referenced 6 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  MEM::FreeAll() = 35748 (0x8ba4) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  MEM::Zero(register __a0 void *,register __d0 unsigned int) = 36060 (0x8cdc) referenced 5 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  MEM::Copy(register __a0 void *,register __a1 void *,register __d0 unsigned int) = 36196 (0x8d64) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  MEM::Swap16(register __a0 void *,register __a1 void *,register __d0 unsigned int) = 36364 (0x8e0c) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  MEM::Swap32(register __a0 void *,register __a1 void *,register __d0 unsigned int) = 36714 (0x8f6a) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  MEM::Swap64(register __a0 void *,register __a1 void *,register __d0 unsigned int) = 37004 (0x908c) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  xFILEIO::SendPacket(void *) = 37260 (0x918c) referenced 11 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  xFILEIO::WaitPacket() = 37332 (0x91d4) referenced 11 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  xFILEIO::RequeuePacket() = 37584 (0x92d0) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  xFILEIO::RecordSyncFailure() = 37636 (0x9304) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  xFILEIO::Open(const char *,long,long) = 37700 (0x9344) referenced 4 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  xFILEIO::Close() = 38732 (0x974c) referenced 6 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  xFILEIO::Read(void *,unsigned int,unsigned int) = 38928 (0x9810) referenced 5 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  xFILEIO::Write(void *,unsigned int,unsigned int) = 39184 (0x9910) referenced 6 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  xFILEIO::Tell() = 39408 (0x99f0) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  xFILEIO::Seek(long,long) = 39520 (0x9a60) referenced 5 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  xFILEIO::Read16Swap(void *,unsigned int) = 40232 (0x9d28) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  xFILEIO::Read32Swap(void *,unsigned int) = 40520 (0x9e48) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  xFILEIO::Read64Swap(void *,unsigned int) = 40808 (0x9f68) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  xFILEIO::Write16Swap(void *,unsigned int) = 41096 (0xa088) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  xFILEIO::Write32Swap(void *,unsigned int) = 41348 (0xa184) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  xFILEIO::Write64Swap(void *,unsigned int) = 41600 (0xa280) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  XDATAID::Value(const char *) = 41852 (0xa37c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  XSFHEAD::CheckXSF(XSFHEAD &) = 41876 (0xa394) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  XSFHEAD::operator !=(XSFHEAD &) = 41932 (0xa3cc) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  XSFHEAD::operator ==(XSFHEAD &) = 41980 (0xa3fc) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  XSFHEAD::Read(XSFIO &) = 42224 (0xa4f0) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  XSFHEAD::Write(XSFIO &) = 42400 (0xa5a0) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  XSFHEAD::operator ==(XSFIO &) = 42504 (0xa608) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  XSFHEAD::Set(const char *,unsigned char,unsigned char,unsigned char,unsigned char) = 42672 (0xa6b0) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  XSFBASIC::Create(const char *,long) = 42764 (0xa70c) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  XSFBASIC::Open(const char *,short,long,long) = 42952 (0xa7c8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  XSFOBJ::XSFOBJ(const char *,unsigned short,unsigned short,unsigned char,unsigned char) = 43184 (0xa8b0) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  XSFOBJ::Write(XSFIO &) = 43272 (0xa908) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  XSFOBJ::Read(XSFIO &) = 43624 (0xaa68) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  _INIT_8_Timer_cpp__TimerBase__MILLICLOCK = 44008 (0xabe8) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  MILLICLOCK::Elapsed() = 44060 (0xac1c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  PCM::Free() = 44148 (0xac74) referenced 3 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/xSound_far.lib
+  PCM::New(long,long,long) = 44188 (0xac9c) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/xSound_far.lib
+  PCM::Delete(short) = 44344 (0xad38) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/xSound_far.lib
+  PCM::Data() = 44380 (0xad5c) referenced 8 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/xSound_far.lib
+  _floor__r = 44456 (0xada8) referenced 3 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _pow__r = 44480 (0xadc0) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  facoss::_060LSP() = 44520 (0xade8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _acos__r = 44528 (0xadf0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  facosx::_060LSP() = 44536 (0xadf8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fasins::_060LSP() = 44544 (0xae00) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fasind::_060LSP() = 44552 (0xae08) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _asin__r = 44552 (0xae08) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fasinx::_060LSP() = 44560 (0xae10) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fatans::_060LSP() = 44568 (0xae18) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fatand::_060LSP() = 44576 (0xae20) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _atan__r = 44576 (0xae20) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fatanx::_060LSP() = 44584 (0xae28) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fatanhs::_060LSP() = 44592 (0xae30) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fatanhd::_060LSP() = 44600 (0xae38) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fatanhx::_060LSP() = 44608 (0xae40) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fcoss::_060LSP() = 44616 (0xae48) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fcosd::_060LSP() = 44624 (0xae50) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _cos__r = 44624 (0xae50) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fcosx::_060LSP() = 44632 (0xae58) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fcoshs::_060LSP() = 44640 (0xae60) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fcoshd::_060LSP() = 44648 (0xae68) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _cosh__r = 44648 (0xae68) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fcoshx::_060LSP() = 44656 (0xae70) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fetoxs::_060LSP() = 44664 (0xae78) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fetoxd::_060LSP() = 44672 (0xae80) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _exp__r = 44672 (0xae80) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fetoxx::_060LSP() = 44680 (0xae88) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fetoxm1s::_060LSP() = 44688 (0xae90) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fetoxm1d::_060LSP() = 44696 (0xae98) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fetoxm1x::_060LSP() = 44704 (0xaea0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fgetexps::_060LSP() = 44712 (0xaea8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fgetexpd::_060LSP() = 44720 (0xaeb0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fgetexpx::_060LSP() = 44728 (0xaeb8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fgetmans::_060LSP() = 44736 (0xaec0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fgetmand::_060LSP() = 44744 (0xaec8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fgetmanx::_060LSP() = 44752 (0xaed0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  flog10s::_060LSP() = 44760 (0xaed8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  flog10d::_060LSP() = 44768 (0xaee0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _log10__r = 44768 (0xaee0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  flog10x::_060LSP() = 44776 (0xaee8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  flog2s::_060LSP() = 44784 (0xaef0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  flog2d::_060LSP() = 44792 (0xaef8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  flog2x::_060LSP() = 44800 (0xaf00) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  flogns::_060LSP() = 44808 (0xaf08) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  flognd::_060LSP() = 44816 (0xaf10) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _log__r = 44816 (0xaf10) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  flognx::_060LSP() = 44824 (0xaf18) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  flognp1s::_060LSP() = 44832 (0xaf20) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  flognp1d::_060LSP() = 44840 (0xaf28) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  flognp1x::_060LSP() = 44848 (0xaf30) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fmods::_060LSP() = 44856 (0xaf38) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fmodd::_060LSP() = 44864 (0xaf40) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _fmod__r = 44864 (0xaf40) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fmodx::_060LSP() = 44872 (0xaf48) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  frems::_060LSP() = 44880 (0xaf50) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fremd::_060LSP() = 44888 (0xaf58) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fremx::_060LSP() = 44896 (0xaf60) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fscales::_060LSP() = 44904 (0xaf68) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fscaled::_060LSP() = 44912 (0xaf70) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fscalex::_060LSP() = 44920 (0xaf78) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fsins::_060LSP() = 44928 (0xaf80) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fsind::_060LSP() = 44936 (0xaf88) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _sin__r = 44936 (0xaf88) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fsinx::_060LSP() = 44944 (0xaf90) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fsincoss::_060LSP() = 44952 (0xaf98) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fsincosd::_060LSP() = 44960 (0xafa0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fsincosx::_060LSP() = 44968 (0xafa8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fsinhs::_060LSP() = 44976 (0xafb0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fsinhd::_060LSP() = 44984 (0xafb8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _sinh__r = 44984 (0xafb8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fsinhx::_060LSP() = 44992 (0xafc0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  ftans::_060LSP() = 45000 (0xafc8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  ftand::_060LSP() = 45008 (0xafd0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _tan__r = 45008 (0xafd0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  ftanx::_060LSP() = 45016 (0xafd8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  ftanhs::_060LSP() = 45024 (0xafe0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  ftanhd::_060LSP() = 45032 (0xafe8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _tanh__r = 45032 (0xafe8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  ftanhx::_060LSP() = 45040 (0xaff0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  ftentoxs::_060LSP() = 45048 (0xaff8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  ftentoxd::_060LSP() = 45056 (0xb000) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  ftentoxx::_060LSP() = 45064 (0xb008) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  ftwotoxs::_060LSP() = 45072 (0xb010) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  ftwotoxd::_060LSP() = 45080 (0xb018) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  ftwotoxx::_060LSP() = 45088 (0xb020) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fabss::_060LSP() = 45096 (0xb028) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fabsd::_060LSP() = 45104 (0xb030) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _fabs__r = 45104 (0xb030) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fabsx::_060LSP() = 45112 (0xb038) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fadds::_060LSP() = 45120 (0xb040) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  faddd::_060LSP() = 45128 (0xb048) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  faddx::_060LSP() = 45136 (0xb050) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fdivs::_060LSP() = 45144 (0xb058) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fdivd::_060LSP() = 45152 (0xb060) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fdivx::_060LSP() = 45160 (0xb068) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fints::_060LSP() = 45168 (0xb070) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fintd::_060LSP() = 45176 (0xb078) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fintx::_060LSP() = 45184 (0xb080) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fintrzs::_060LSP() = 45192 (0xb088) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fintrzd::_060LSP() = 45200 (0xb090) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fintrzx::_060LSP() = 45208 (0xb098) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fmuls::_060LSP() = 45216 (0xb0a0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fmuld::_060LSP() = 45224 (0xb0a8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fmulx::_060LSP() = 45232 (0xb0b0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fnegs::_060LSP() = 45240 (0xb0b8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fnegd::_060LSP() = 45248 (0xb0c0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fnegx::_060LSP() = 45256 (0xb0c8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fsqrts::_060LSP() = 45264 (0xb0d0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fsqrtd::_060LSP() = 45272 (0xb0d8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _sqrt__r = 45272 (0xb0d8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fsqrtx::_060LSP() = 45280 (0xb0e0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fsubs::_060LSP() = 45288 (0xb0e8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fsubd::_060LSP() = 45296 (0xb0f0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fsubx::_060LSP() = 45304 (0xb0f8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  facosd::_060LSP() = 44528 (0xadf0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _060FPLSP_TOP = 44520 (0xade8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+
+  Hunk #1 ( Far Public ) 5224 Bytes (0x1468)
+  _atan2__r = 0 (0x0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _ldexp__r = 234 (0xea) referenced 2 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _frexp__r = 284 (0x11c) referenced 2 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _modf__r = 366 (0x16e) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _fmod__r = 454 (0x1c6) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _double_out = 984 (0x3d8) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _double_in = 2176 (0x880) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  main() = 3004 (0xbbc) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcstartup020.lib
+  wbmain(WBStartup *) = 3012 (0xbc4) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcstartup020.lib
+  _wbmain = 3020 (0xbcc) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcstartup020.lib
+  main(int,char *) = 3024 (0xbd0) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcstartup020.lib
+  _EXIT_0_Main = 3498 (0xdaa) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcstartup020.lib
+  _INIT_1_DOS_c = 3560 (0xde8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcstartup020.lib
+  _EXIT_1_DOS_c = 3592 (0xe08) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcstartup020.lib
+  _InitModules = 3652 (0xe44) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcstartup020.lib
+  _CleanupModules = 3720 (0xe88) referenced 2 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcstartup020.lib
+  LibBaseC::LibBaseC(char *,unsigned long,short) = 3816 (0xee8) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcstartup020.lib
+  LibBaseC::~LibBaseC() = 4152 (0x1038) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcstartup020.lib
+  LibBaseC::version() const  = 4190 (0x105e) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcstartup020.lib
+  _INIT_3_TimerBase = 4328 (0x10e8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcstartup020.lib
+  _EXIT_3_TimerBase = 4460 (0x116c) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcstartup020.lib
+  uintmult = 4528 (0x11b0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  intmult = 4528 (0x11b0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  ___uintmult32 = 4528 (0x11b0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  ___intmult32 = 4528 (0x11b0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  intdiv = 4560 (0x11d0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  uintdiv = 4598 (0x11f6) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  lib_div_uint = 4598 (0x11f6) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  ___uintdivmod32 = 4598 (0x11f6) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  lib_div_int = 4560 (0x11d0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  ___intdivmod32 = 4560 (0x11d0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  Add64 = 4680 (0x1248) referenced 2 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  ___add64 = 4680 (0x1248) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  Neg64 = 4688 (0x1250) referenced 2 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  ___neg64 = 4688 (0x1250) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  SMult64 = 4696 (0x1258) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  UMult64 = 4730 (0x127a) referenced 2 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  ___uintmult64 = 4730 (0x127a) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  ___intmult64 = 4696 (0x1258) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  SDiv64 = 4848 (0x12f0) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  UDiv64 = 4888 (0x1318) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  ___uintdivmod64 = 4888 (0x1318) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  ___intdivmod64 = 4848 (0x12f0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  UMod64 = 4988 (0x137c) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  ___uintmod64 = 4988 (0x137c) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  SMod64 = 5000 (0x1388) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  ___intmod64 = 5000 (0x1388) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  ___udivmod32 = 5012 (0x1394) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  ___udivmod64 = 5024 (0x13a0) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  lib_destruct_a0 = 5040 (0x13b0) referenced 6 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  ___destruct_a0 = 5040 (0x13b0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  lib_throw = 5064 (0x13c8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  lib_rethrow = 5124 (0x1404) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  lib_catch = 5142 (0x1416) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  lib_catchclass = 5174 (0x1436) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  _INIT_0_InitExceptionHandling = 5204 (0x1454) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  ___catchclass = 5174 (0x1436) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  ___catch = 5142 (0x1416) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  ___rethrow = 5124 (0x1404) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  ___throw = 5064 (0x13c8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+
+PowerPC Code
+
+
+Data
+
+
+  Hunk #2 ( Far Public ) 1460 Bytes (0x5b4)
+  _SysBase = 0 (0x0) referenced 16 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/startups/startup.o
+  _xDAC_XSFDesc = 16 (0x10) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  _std__out = 456 (0x1c8) referenced 2 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _std__in = 540 (0x21c) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _std__err = 624 (0x270) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _IntuitionBase = 1032 (0x408) referenced 4 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  _sysData__sysBASELIB = 1036 (0x40c) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  _msgbuff__sysBASELIB = 1040 (0x410) referenced 3 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  _allocated__MEM = 1044 (0x414) referenced 4 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  _totSize__MEM = 1048 (0x418) referenced 3 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  _nextFree__MEM = 1052 (0x41c) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  _cnt__MEM = 1056 (0x420) referenced 3 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  _sigXSF__XSFHEAD = 1060 (0x424) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  _fileMarker__XSFOBJ = 1064 (0x428) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  _TimerBase__MILLICLOCK = 1068 (0x42c) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  _clockFreq__MILLICLOCK = 1072 (0x430) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  _DOSBase = 1272 (0x4f8) referenced 14 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcstartup020.lib
+  _not_open__LibBaseC = 1288 (0x508) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcstartup020.lib
+  sym_handlers = 1372 (0x55c) referenced 8 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  ___init_table68k = 1384 (0x568) referenced 1 times
+    File <Internal Assembled>
+  ___exit_table68k = 1424 (0x590) referenced 1 times
+    File <Internal Assembled>
+
+BSS
+
+
+  Hunk #3 ( Far Public ) 9184 Bytes (0x23e0)
+  _errno = 0 (0x0) referenced 2 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _gxSt = 192 (0xc0) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  _xbSt = 448 (0x1c0) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  _current__MILLICLOCK = 8648 (0x21c8) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  _TimerBase = 9176 (0x23d8) referenced 2 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcstartup020.lib
+
+END

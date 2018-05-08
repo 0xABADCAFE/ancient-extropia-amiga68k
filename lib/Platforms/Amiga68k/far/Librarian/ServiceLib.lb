@@ -1,0 +1,7 @@
+StormLibrarian Document (0003)
+lib/ServiceLib_far.lib
+1 0 0
+obj/ServiceLib.o
+obj/Timer.o
+obj/Thread.o
+EOD

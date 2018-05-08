@@ -1,0 +1,11 @@
+StormLibrarian Document (0003)
+lib/GraphicsLibOld_far.lib
+1 0 0
+obj/Display.o
+obj/GraphicsBase.o
+obj/GraphicsBase3D.o
+obj/Surface.o
+obj/Texture.o
+obj/DrawOld.o
+obj/DrawMethOld.o
+EOD

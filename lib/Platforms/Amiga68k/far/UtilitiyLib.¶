@@ -1,0 +1,107 @@
+Storm Shell Project (0013)
+Settings (Start)
+C/C++ Environment
+"StormC:include"
+"extropialib:include"
+Includepath (End)
+0 "" 256
+1 "extropialib:lib/Platforms/Amiga68k/far/obj"
+C/C++ Preprozessor
+1 "NDEBUG" ""
+0 "PARANOID" ""
+1 "KARL_FIXES" ""
+0 "_INLINE_INCLUDES" ""
+0 "X_DEBUG" ""
+1 "STORMPRAGMAS" ""
+Defines (End)
+1 1 1
+C/C++ Options
+1 0 0 0 0 0 2 1 0 1 0 3 1 0 0
+C/C++ Optimizer
+6
+C/C++ Warnings
+1 1 1 1 1 1 0 1
+Assembler
+0 ""
+0 "CON://640/200/Storm Assembler/AUTO/WAIT/SCREEN StormScreen"
+0 0
+0 1 60 0 1 0 0 20 0
+Sets (End)
+0 1 0 0 0 2 1 0 0
+1 1 1 1 0 0 0 0 0
+1 0
+0 0 0 0 0
+Linker
+1 0 "PROGDIR:startup.o" 0 0 1 0 0 0 0
+"StormC:lib/" 0 "StormC:lib/logfile" 0 1 1
+0 "_WizardSurface"
+0 0 50 0 50 0 50 0 0
+0 0 0 0 0 0 0 0
+Run
+30 "" "" "" 0
+""
+
+1 "CON://400/180/Storm Console/AUTO/WAIT/SCREEN StormScreen" "RAM:Output" "RAM:Input"
+1 0
+0 0 0 "" ""
+Settings (End)
+File
+18 "extropialib:lib/Platforms/Amiga68k/far/Librarian/UtilityLib.lb"
+"extropialib:lib/Platforms/Amiga68k/far/Librarian/UtilityLib.lb"
+Storm Shell Project (Dependencies)
+"" ""
+""
+Section
+18 1 -128
+File
+2 "extropialib:include/xUtility/RangedInts.hpp"
+"extropialib:include/xUtility/RangedInts.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "extropialib:include/xUtility/Bitarray.hpp"
+"extropialib:include/xUtility/Bitarray.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "extropialib:include/xUtility/Pool.hpp"
+"extropialib:include/xUtility/Pool.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "extropialib:include/xUtility/Numeric.hpp"
+"extropialib:include/xUtility/Numeric.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+Section
+2 1 -128
+File
+1 "extropialib:lib/Common/xUtility/Numeric.cpp"
+"extropialib:lib/Common/xUtility/Numeric.cpp"
+"EXTROPIALIB:lib/Common/xUtility/Numeric_Data.cpp"
+Storm Shell Project (Dependencies)
+"extropialib:lib/Platforms/Amiga68k/far/obj/Numeric.o" "extropialib:lib/Platforms/Amiga68k/far/obj/Numeric.debug"
+""
+"extropialib:lib/Platforms/Amiga68k/far/obj/Numeric.o" "extropialib:lib/Platforms/Amiga68k/far/obj/Numeric.debug"
+File
+1 "extropialib:lib/Common/xUtility/Pool.cpp"
+"extropialib:lib/Common/xUtility/Pool.cpp"
+Storm Shell Project (Dependencies)
+"extropialib:lib/Platforms/Amiga68k/far/obj/Pool.o" "extropialib:lib/Platforms/Amiga68k/far/obj/Pool.debug"
+""
+"extropialib:lib/Platforms/Amiga68k/far/obj/Pool.o" "extropialib:lib/Platforms/Amiga68k/far/obj/Pool.debug"
+Section
+1 1 100
+File
+21 "EXTROPIALIB:lib/Common/xUtility/Numeric_Data.cpp"
+"EXTROPIALIB:lib/Common/xUtility/Numeric_Data.cpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+Section
+21 1 -128
+Storm Shell Project (End)

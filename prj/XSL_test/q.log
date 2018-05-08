@@ -1,0 +1,428 @@
+X3D 0.0, (C) eXtropia Studios, AmigaOS 68K / Warp3D
+
+X3D_DRIVERINFO for SubLayer driver [Permedia2]
+Type : Hardware rasterizer
+
+--------------------------------------------------------------------------------------------------------
+
+  Surface Format 0: 8 bpp Palettized
+
+  Primitives
+    Point[full]    : Texture, 
+    Line[full]     : Texture, 
+    Triangle[full] : Arbitrary Size, Texture, Other Effects, 
+  Shading
+    Shade[full]    : Flat, 
+  Texturing
+    Texture[full]  : Rectangular Textures, Linear Mapping, Linear Repeat, Linear Clamping, 
+                     Perspective Mapping, Perspective Repeat, Perspective Clamping, Asymmetric Wrapping, 
+                     Env Replace, 
+    Formats[full]  : 
+  Alpha
+    N/A
+  Fog
+    N/A
+  Z Buffer
+    Z Buffer[full] : Update, Comparison Methods, 
+  Stencil Buffer
+    N/A
+  Misc
+    Misc[full]     : Scissor Test, Logic Operations, Masking, 
+
+--------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------
+
+  Surface Format 1: 15 bpp RGB 555
+
+  Primitives
+    Point[full]    : Texture, Other Effects, 
+    Line[full]     : Texture, Other Effects, 
+    Triangle[full] : Arbitrary Size, Texture, Other Effects, 
+  Shading
+    Shade[full]    : Flat, Gouraud, 
+  Texturing
+    Texture[full]  : Rectangular Textures, Linear Mapping, Linear Repeat, Linear Clamping, 
+                     Perspective Mapping, Perspective Repeat, Perspective Clamping, Asymmetric Wrapping, 
+                     Bilinear Filtering, Env Replace, Env Decal, Env with fogging, 
+                     Specular Highlighting, Chroma Testing, 
+    Formats[full]  : 8 bpt Palettized, 16 bpt ARGB 1555, 16 bpt ARGB 4444, 32 bpt ARGB 8888, 
+                     
+    Formats[part]  : 16 bpt RGB 565, 24 bpt RGB 888, 32 bpt RGBA 8888, 8 bpt Luminance, 
+                     8 bpt Intensity, 16 bpt LA 88, 
+  Alpha
+    Alpha[full]    : Blending, 
+    Alpha[part]    : Alpha Modes, Testing, 
+  Fog
+    Fog[full]      : Interpolated, 
+  Z Buffer
+    Z Buffer[full] : Update, Comparison Methods, 
+  Stencil Buffer
+    N/A
+  Misc
+    Misc[full]     : Dithering, Scissor Test, Logic Operations, Masking, 
+
+--------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------
+
+  Surface Format 2: 15 bpp BGR 555
+
+  Primitives
+    Point[full]    : Texture, Other Effects, 
+    Line[full]     : Texture, Other Effects, 
+    Triangle[full] : Arbitrary Size, Texture, Other Effects, 
+  Shading
+    Shade[full]    : Flat, Gouraud, 
+  Texturing
+    Texture[full]  : Rectangular Textures, Linear Mapping, Linear Repeat, Linear Clamping, 
+                     Perspective Mapping, Perspective Repeat, Perspective Clamping, Asymmetric Wrapping, 
+                     Bilinear Filtering, Env Replace, Env Decal, Env with fogging, 
+                     Specular Highlighting, Chroma Testing, 
+    Formats[full]  : 8 bpt Palettized, 16 bpt ARGB 1555, 16 bpt ARGB 4444, 32 bpt ARGB 8888, 
+                     
+    Formats[part]  : 16 bpt RGB 565, 24 bpt RGB 888, 32 bpt RGBA 8888, 8 bpt Luminance, 
+                     8 bpt Intensity, 16 bpt LA 88, 
+  Alpha
+    Alpha[full]    : Blending, 
+    Alpha[part]    : Alpha Modes, Testing, 
+  Fog
+    Fog[full]      : Interpolated, 
+  Z Buffer
+    Z Buffer[full] : Update, Comparison Methods, 
+  Stencil Buffer
+    N/A
+  Misc
+    Misc[full]     : Dithering, Scissor Test, Logic Operations, Masking, 
+
+--------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------
+
+  Surface Format 3: 15 bpp RGB 555, little endian
+
+  Primitives
+    Point[full]    : Texture, Other Effects, 
+    Line[full]     : Texture, Other Effects, 
+    Triangle[full] : Arbitrary Size, Texture, Other Effects, 
+  Shading
+    Shade[full]    : Flat, Gouraud, 
+  Texturing
+    Texture[full]  : Rectangular Textures, Linear Mapping, Linear Repeat, Linear Clamping, 
+                     Perspective Mapping, Perspective Repeat, Perspective Clamping, Asymmetric Wrapping, 
+                     Bilinear Filtering, Env Replace, Env Decal, Env with fogging, 
+                     Specular Highlighting, Chroma Testing, 
+    Formats[full]  : 8 bpt Palettized, 16 bpt ARGB 1555, 16 bpt ARGB 4444, 32 bpt ARGB 8888, 
+                     
+    Formats[part]  : 16 bpt RGB 565, 24 bpt RGB 888, 32 bpt RGBA 8888, 8 bpt Luminance, 
+                     8 bpt Intensity, 16 bpt LA 88, 
+  Alpha
+    Alpha[full]    : Blending, 
+    Alpha[part]    : Alpha Modes, Testing, 
+  Fog
+    Fog[full]      : Interpolated, 
+  Z Buffer
+    Z Buffer[full] : Update, Comparison Methods, 
+  Stencil Buffer
+    N/A
+  Misc
+    Misc[full]     : Dithering, Scissor Test, Logic Operations, Masking, 
+
+--------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------
+
+  Surface Format 4: 15 bpp BGR 555, little endian
+
+  Primitives
+    Point[full]    : Texture, Other Effects, 
+    Line[full]     : Texture, Other Effects, 
+    Triangle[full] : Arbitrary Size, Texture, Other Effects, 
+  Shading
+    Shade[full]    : Flat, Gouraud, 
+  Texturing
+    Texture[full]  : Rectangular Textures, Linear Mapping, Linear Repeat, Linear Clamping, 
+                     Perspective Mapping, Perspective Repeat, Perspective Clamping, Asymmetric Wrapping, 
+                     Bilinear Filtering, Env Replace, Env Decal, Env with fogging, 
+                     Specular Highlighting, Chroma Testing, 
+    Formats[full]  : 8 bpt Palettized, 16 bpt ARGB 1555, 16 bpt ARGB 4444, 32 bpt ARGB 8888, 
+                     
+    Formats[part]  : 16 bpt RGB 565, 24 bpt RGB 888, 32 bpt RGBA 8888, 8 bpt Luminance, 
+                     8 bpt Intensity, 16 bpt LA 88, 
+  Alpha
+    Alpha[full]    : Blending, 
+    Alpha[part]    : Alpha Modes, Testing, 
+  Fog
+    Fog[full]      : Interpolated, 
+  Z Buffer
+    Z Buffer[full] : Update, Comparison Methods, 
+  Stencil Buffer
+    N/A
+  Misc
+    Misc[full]     : Dithering, Scissor Test, Logic Operations, Masking, 
+
+--------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------
+
+  Surface Format 5: 16 bpp RGB 565
+
+  Primitives
+    Point[full]    : Texture, Other Effects, 
+    Line[full]     : Texture, Other Effects, 
+    Triangle[full] : Arbitrary Size, Texture, Other Effects, 
+  Shading
+    Shade[full]    : Flat, Gouraud, 
+  Texturing
+    Texture[full]  : Rectangular Textures, Linear Mapping, Linear Repeat, Linear Clamping, 
+                     Perspective Mapping, Perspective Repeat, Perspective Clamping, Asymmetric Wrapping, 
+                     Bilinear Filtering, Env Replace, Env Decal, Env with fogging, 
+                     Specular Highlighting, Chroma Testing, 
+    Formats[full]  : 8 bpt Palettized, 16 bpt ARGB 1555, 16 bpt ARGB 4444, 32 bpt ARGB 8888, 
+                     
+    Formats[part]  : 16 bpt RGB 565, 24 bpt RGB 888, 32 bpt RGBA 8888, 8 bpt Luminance, 
+                     8 bpt Intensity, 16 bpt LA 88, 
+  Alpha
+    Alpha[full]    : Blending, 
+    Alpha[part]    : Alpha Modes, Testing, 
+  Fog
+    Fog[full]      : Interpolated, 
+  Z Buffer
+    Z Buffer[full] : Update, Comparison Methods, 
+  Stencil Buffer
+    N/A
+  Misc
+    Misc[full]     : Dithering, Scissor Test, Logic Operations, Masking, 
+
+--------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------
+
+  Surface Format 6: 16 bpp BGR 565
+
+  Primitives
+    Point[full]    : Texture, Other Effects, 
+    Line[full]     : Texture, Other Effects, 
+    Triangle[full] : Arbitrary Size, Texture, Other Effects, 
+  Shading
+    Shade[full]    : Flat, Gouraud, 
+  Texturing
+    Texture[full]  : Rectangular Textures, Linear Mapping, Linear Repeat, Linear Clamping, 
+                     Perspective Mapping, Perspective Repeat, Perspective Clamping, Asymmetric Wrapping, 
+                     Bilinear Filtering, Env Replace, Env Decal, Env with fogging, 
+                     Specular Highlighting, Chroma Testing, 
+    Formats[full]  : 8 bpt Palettized, 16 bpt ARGB 1555, 16 bpt ARGB 4444, 32 bpt ARGB 8888, 
+                     
+    Formats[part]  : 16 bpt RGB 565, 24 bpt RGB 888, 32 bpt RGBA 8888, 8 bpt Luminance, 
+                     8 bpt Intensity, 16 bpt LA 88, 
+  Alpha
+    Alpha[full]    : Blending, 
+    Alpha[part]    : Alpha Modes, Testing, 
+  Fog
+    Fog[full]      : Interpolated, 
+  Z Buffer
+    Z Buffer[full] : Update, Comparison Methods, 
+  Stencil Buffer
+    N/A
+  Misc
+    Misc[full]     : Dithering, Scissor Test, Logic Operations, Masking, 
+
+--------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------
+
+  Surface Format 7: 16 bpp RGB 565, little endian
+
+  Primitives
+    Point[full]    : Texture, Other Effects, 
+    Line[full]     : Texture, Other Effects, 
+    Triangle[full] : Arbitrary Size, Texture, Other Effects, 
+  Shading
+    Shade[full]    : Flat, Gouraud, 
+  Texturing
+    Texture[full]  : Rectangular Textures, Linear Mapping, Linear Repeat, Linear Clamping, 
+                     Perspective Mapping, Perspective Repeat, Perspective Clamping, Asymmetric Wrapping, 
+                     Bilinear Filtering, Env Replace, Env Decal, Env with fogging, 
+                     Specular Highlighting, Chroma Testing, 
+    Formats[full]  : 8 bpt Palettized, 16 bpt ARGB 1555, 16 bpt ARGB 4444, 32 bpt ARGB 8888, 
+                     
+    Formats[part]  : 16 bpt RGB 565, 24 bpt RGB 888, 32 bpt RGBA 8888, 8 bpt Luminance, 
+                     8 bpt Intensity, 16 bpt LA 88, 
+  Alpha
+    Alpha[full]    : Blending, 
+    Alpha[part]    : Alpha Modes, Testing, 
+  Fog
+    Fog[full]      : Interpolated, 
+  Z Buffer
+    Z Buffer[full] : Update, Comparison Methods, 
+  Stencil Buffer
+    N/A
+  Misc
+    Misc[full]     : Dithering, Scissor Test, Logic Operations, Masking, 
+
+--------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------
+
+  Surface Format 8: 16 bpp BGR 565, little endian
+
+  Primitives
+    Point[full]    : Texture, Other Effects, 
+    Line[full]     : Texture, Other Effects, 
+    Triangle[full] : Arbitrary Size, Texture, Other Effects, 
+  Shading
+    Shade[full]    : Flat, Gouraud, 
+  Texturing
+    Texture[full]  : Rectangular Textures, Linear Mapping, Linear Repeat, Linear Clamping, 
+                     Perspective Mapping, Perspective Repeat, Perspective Clamping, Asymmetric Wrapping, 
+                     Bilinear Filtering, Env Replace, Env Decal, Env with fogging, 
+                     Specular Highlighting, Chroma Testing, 
+    Formats[full]  : 8 bpt Palettized, 16 bpt ARGB 1555, 16 bpt ARGB 4444, 32 bpt ARGB 8888, 
+                     
+    Formats[part]  : 16 bpt RGB 565, 24 bpt RGB 888, 32 bpt RGBA 8888, 8 bpt Luminance, 
+                     8 bpt Intensity, 16 bpt LA 88, 
+  Alpha
+    Alpha[full]    : Blending, 
+    Alpha[part]    : Alpha Modes, Testing, 
+  Fog
+    Fog[full]      : Interpolated, 
+  Z Buffer
+    Z Buffer[full] : Update, Comparison Methods, 
+  Stencil Buffer
+    N/A
+  Misc
+    Misc[full]     : Dithering, Scissor Test, Logic Operations, Masking, 
+
+--------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------
+
+  Surface Format 11: 32 bpp ARGB 8888
+
+  Primitives
+    Point[full]    : Texture, Other Effects, 
+    Line[full]     : Texture, Other Effects, 
+    Triangle[full] : Arbitrary Size, Texture, Other Effects, 
+  Shading
+    Shade[full]    : Flat, Gouraud, 
+  Texturing
+    Texture[full]  : Rectangular Textures, Linear Mapping, Linear Repeat, Linear Clamping, 
+                     Perspective Mapping, Perspective Repeat, Perspective Clamping, Asymmetric Wrapping, 
+                     Bilinear Filtering, Env Replace, Env Decal, Env with fogging, 
+                     Specular Highlighting, Chroma Testing, 
+    Formats[full]  : 8 bpt Palettized, 16 bpt ARGB 1555, 16 bpt ARGB 4444, 32 bpt ARGB 8888, 
+                     
+    Formats[part]  : 16 bpt RGB 565, 24 bpt RGB 888, 32 bpt RGBA 8888, 8 bpt Luminance, 
+                     8 bpt Intensity, 16 bpt LA 88, 
+  Alpha
+    Alpha[full]    : Blending, 
+    Alpha[part]    : Alpha Modes, Testing, 
+  Fog
+    Fog[full]      : Interpolated, 
+  Z Buffer
+    Z Buffer[full] : Update, Comparison Methods, 
+  Stencil Buffer
+    N/A
+  Misc
+    Misc[full]     : Dithering, Scissor Test, Logic Operations, Masking, 
+
+--------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------
+
+  Surface Format 12: 32 bpp ABGR 8888
+
+  Primitives
+    Point[full]    : Texture, Other Effects, 
+    Line[full]     : Texture, Other Effects, 
+    Triangle[full] : Arbitrary Size, Texture, Other Effects, 
+  Shading
+    Shade[full]    : Flat, Gouraud, 
+  Texturing
+    Texture[full]  : Rectangular Textures, Linear Mapping, Linear Repeat, Linear Clamping, 
+                     Perspective Mapping, Perspective Repeat, Perspective Clamping, Asymmetric Wrapping, 
+                     Bilinear Filtering, Env Replace, Env Decal, Env with fogging, 
+                     Specular Highlighting, Chroma Testing, 
+    Formats[full]  : 8 bpt Palettized, 16 bpt ARGB 1555, 16 bpt ARGB 4444, 32 bpt ARGB 8888, 
+                     
+    Formats[part]  : 16 bpt RGB 565, 24 bpt RGB 888, 32 bpt RGBA 8888, 8 bpt Luminance, 
+                     8 bpt Intensity, 16 bpt LA 88, 
+  Alpha
+    Alpha[full]    : Blending, 
+    Alpha[part]    : Alpha Modes, Testing, 
+  Fog
+    Fog[full]      : Interpolated, 
+  Z Buffer
+    Z Buffer[full] : Update, Comparison Methods, 
+  Stencil Buffer
+    N/A
+  Misc
+    Misc[full]     : Dithering, Scissor Test, Logic Operations, Masking, 
+
+--------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------
+
+  Surface Format 13: 32 bpp RGBA 8888
+
+  Primitives
+    Point[full]    : Texture, Other Effects, 
+    Line[full]     : Texture, Other Effects, 
+    Triangle[full] : Arbitrary Size, Texture, Other Effects, 
+  Shading
+    Shade[full]    : Flat, Gouraud, 
+  Texturing
+    Texture[full]  : Rectangular Textures, Linear Mapping, Linear Repeat, Linear Clamping, 
+                     Perspective Mapping, Perspective Repeat, Perspective Clamping, Asymmetric Wrapping, 
+                     Bilinear Filtering, Env Replace, Env Decal, Env with fogging, 
+                     Specular Highlighting, Chroma Testing, 
+    Formats[full]  : 8 bpt Palettized, 16 bpt ARGB 1555, 16 bpt ARGB 4444, 32 bpt ARGB 8888, 
+                     
+    Formats[part]  : 16 bpt RGB 565, 24 bpt RGB 888, 32 bpt RGBA 8888, 8 bpt Luminance, 
+                     8 bpt Intensity, 16 bpt LA 88, 
+  Alpha
+    Alpha[full]    : Blending, 
+    Alpha[part]    : Alpha Modes, Testing, 
+  Fog
+    Fog[full]      : Interpolated, 
+  Z Buffer
+    Z Buffer[full] : Update, Comparison Methods, 
+  Stencil Buffer
+    N/A
+  Misc
+    Misc[full]     : Dithering, Scissor Test, Logic Operations, Masking, 
+
+--------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------
+
+  Surface Format 14: 32 bpp BGRA 8888
+
+  Primitives
+    Point[full]    : Texture, Other Effects, 
+    Line[full]     : Texture, Other Effects, 
+    Triangle[full] : Arbitrary Size, Texture, Other Effects, 
+  Shading
+    Shade[full]    : Flat, Gouraud, 
+  Texturing
+    Texture[full]  : Rectangular Textures, Linear Mapping, Linear Repeat, Linear Clamping, 
+                     Perspective Mapping, Perspective Repeat, Perspective Clamping, Asymmetric Wrapping, 
+                     Bilinear Filtering, Env Replace, Env Decal, Env with fogging, 
+                     Specular Highlighting, Chroma Testing, 
+    Formats[full]  : 8 bpt Palettized, 16 bpt ARGB 1555, 16 bpt ARGB 4444, 32 bpt ARGB 8888, 
+                     
+    Formats[part]  : 16 bpt RGB 565, 24 bpt RGB 888, 32 bpt RGBA 8888, 8 bpt Luminance, 
+                     8 bpt Intensity, 16 bpt LA 88, 
+  Alpha
+    Alpha[full]    : Blending, 
+    Alpha[part]    : Alpha Modes, Testing, 
+  Fog
+    Fog[full]      : Interpolated, 
+  Z Buffer
+    Z Buffer[full] : Update, Comparison Methods, 
+  Stencil Buffer
+    N/A
+  Misc
+    Misc[full]     : Dithering, Scissor Test, Logic Operations, Masking, 
+
+--------------------------------------------------------------------------------------------------------

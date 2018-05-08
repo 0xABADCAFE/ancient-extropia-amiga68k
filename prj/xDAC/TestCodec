@@ -1,0 +1,14 @@
+.key RAW/A
+failat 21
+
+; encode
+codec -raw <RAW> -xdac <RAW>_2bit.xdac -encode -fsize 128 -brate 2
+codec -raw <RAW> -xdac <RAW>_3bit.xdac -encode -fsize 128 -brate 3
+codec -raw <RAW> -xdac <RAW>_4bit.xdac -encode -fsize 128 -brate 4
+codec -raw <RAW> -xdac <RAW>_5bit.xdac -encode -fsize 128 -brate 5
+
+; decode
+codec -raw <RAW>_2bit.raw -xdac <RAW>_2bit.xdac
+codec -raw <RAW>_3bit.raw -xdac <RAW>_3bit.xdac
+codec -raw <RAW>_4bit.raw -xdac <RAW>_4bit.xdac
+codec -raw <RAW>_5bit.raw -xdac <RAW>_5bit.xdac

@@ -1,0 +1,1351 @@
+Global M68K Construktors
+	_INIT_1_DOS_c
+	_INIT_2_MathIEEEDoubTrans_c
+	_INIT_2_Keymap_c
+	_INIT_3_TimerBase
+	_INIT_8_DrawGPU_cpp__stack__VGPU
+	_INIT_8_Thread_cpp__rootThread__THREAD
+	_INIT_8_Timer_cpp__TimerBase__MILLICLOCK
+	_INIT_8_Surface_cpp__rPool__xSURFACE
+	_INIT_8_xBase_cpp__xbSt
+	_INIT_8_APP_cpp__frame__APP
+	_INIT_8_APP_cpp__sourceWave__APP
+	_INIT_8_APP_cpp__viewWindow__APP
+	_INIT_8_APP_cpp__font
+	_INIT_8_APP_cpp__draw
+Global M68K Destruktors
+	_EXIT_8_Thread_cpp_Main__THREAD_
+	_EXIT_8_APP_cpp__draw
+	_EXIT_8_APP_cpp__font
+	_EXIT_8_APP_cpp__viewWindow__APP
+	_EXIT_8_APP_cpp__sourceWave__APP
+	_EXIT_8_APP_cpp__frame__APP
+	_EXIT_8_Surface_cpp__rPool__xSURFACE
+	_EXIT_4_free
+	_EXIT_3_TimerBase
+	_EXIT_2_Keymap_c
+	_EXIT_2_MathIEEEDoubTrans_c
+	_EXIT_1_DOS_c
+	_EXIT_0_Main
+No Global PPC Construktors
+No Global PPC Destruktors
+
+M68K Code
+
+
+  Hunk #0 ( Far Public ) 51224 Bytes (0xc818)
+  _exit = 132 (0x84) referenced 3 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/startups/startup.o
+  main(int,char **) = 180 (0xb4) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/main.o
+  GetCLIParm(int,char **,const char *) = 784 (0x310) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/main.o
+  GetCLISwitch(int,char **,const char *) = 856 (0x358) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/main.o
+  _INIT_8_APP_cpp__draw = 920 (0x398) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  _EXIT_8_APP_cpp__draw = 968 (0x3c8) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  _INIT_8_APP_cpp__font = 992 (0x3e0) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  _EXIT_8_APP_cpp__font = 1070 (0x42e) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  _INIT_8_APP_cpp__viewWindow__APP = 1116 (0x45c) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  _EXIT_8_APP_cpp__viewWindow__APP = 1234 (0x4d2) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  _INIT_8_APP_cpp__sourceWave__APP = 1272 (0x4f8) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  _EXIT_8_APP_cpp__sourceWave__APP = 1342 (0x53e) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  _INIT_8_APP_cpp__frame__APP = 1384 (0x568) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  _EXIT_8_APP_cpp__frame__APP = 1446 (0x5a6) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  APP::Init(const char *,const char *,long,long,short) = 1488 (0x5d0) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  APP::Done() = 2448 (0x990) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  APPWINDOW::APPWINDOW(short,short,short,short,short,const char *) = 2564 (0xa04) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  APPWINDOW::~APPWINDOW() = 2852 (0xb24) referenced 4 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  APPWINDOW::Open() = 2960 (0xb90) referenced 3 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  APPWINDOW::Close() = 3272 (0xcc8) referenced 4 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  APPWINDOW::Clear() = 3332 (0xd04) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  APPWINDOW::Refresh() = 3552 (0xde0) referenced 5 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  APPWINDOW::MouseEvent(long,long,long) = 3792 (0xed0) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  APPWINDOW::ExitEvent() = 5900 (0x170c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  APPWINDOW::ResizeEvent() = 5908 (0x1714) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  APPWINDOW::MoveEvent() = 5916 (0x171c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  xFONT::Bold() = 16072 (0x3ec8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  xFONT::Italic() = 16080 (0x3ed0) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  xFONT::Normal() = 16080 (0x3ed0) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  APPWINDOW::KeyEvent(long,short,long) = 3800 (0xed8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  APPWINDOW::ExitEvent() = 5900 (0x170c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  APPWINDOW::ResizeEvent() = 5908 (0x1714) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  APPWINDOW::MoveEvent() = 5916 (0x171c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  xFONT::Bold() = 16072 (0x3ec8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  xFONT::Italic() = 16080 (0x3ed0) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  xFONT::Normal() = 16080 (0x3ed0) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  APPWINDOW::ResizeEvent() = 5908 (0x1714) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  APPWINDOW::MoveEvent() = 5916 (0x171c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  xFONT::Bold() = 16072 (0x3ec8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  xFONT::Italic() = 16080 (0x3ed0) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  xFONT::Normal() = 16080 (0x3ed0) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  APPWINDOW::MoveEvent() = 5916 (0x171c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  xFONT::Bold() = 16072 (0x3ec8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  xFONT::Italic() = 16080 (0x3ed0) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  xFONT::Normal() = 16080 (0x3ed0) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  DRAWWAVE::ViewClear() = 5924 (0x1724) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  DRAWWAVE::ViewRender() = 6888 (0x1ae8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  DRAWWAVE::ViewDefine(short,short,short,short) = 8540 (0x215c) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  DRAWWAVE::SetRange(unsigned long,unsigned long,float) = 8640 (0x21c0) referenced 5 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  DRAWWAVE::ZoomRange(float) = 8888 (0x22b8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  DRAWWAVE::ScrollRange(float) = 9120 (0x23a0) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  DRAWWAVE::ZoomY(float) = 9248 (0x2420) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  DRAWWAVE::Play(unsigned long,unsigned long,float,float) = 9300 (0x2454) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  DRAWWAVE::Stop() = 9452 (0x24ec) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  DRAWFRAME::ViewClear() = 9476 (0x2504) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  DRAWFRAME::ViewRender() = 9808 (0x2650) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  DRAWFRAME::Write(XSFIO &) = 13628 (0x353c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  DRAWFRAME::ViewDefine(short,short,short,short) = 13700 (0x3584) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  APP::EncodeXDAC() = 13800 (0x35e8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  XSFBASIC::Read8(void *,unsigned int) = 14912 (0x3a40) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  XSFBASIC::Read8(void *,unsigned int) = 14912 (0x3a40) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  XSFBASIC::Read16(void *,unsigned int) = 14964 (0x3a74) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  XSFBASIC::Read16(void *,unsigned int) = 14964 (0x3a74) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  XSFBASIC::Read32(void *,unsigned int) = 15060 (0x3ad4) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  XSFBASIC::Read32(void *,unsigned int) = 15060 (0x3ad4) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  XSFBASIC::Read64(void *,unsigned int) = 15156 (0x3b34) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  XSFBASIC::Read64(void *,unsigned int) = 15156 (0x3b34) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  XSFBASIC::Write8(void *,unsigned int) = 15252 (0x3b94) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  XSFBASIC::Write8(void *,unsigned int) = 15252 (0x3b94) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  XSFBASIC::Write16(void *,unsigned int) = 15304 (0x3bc8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  XSFBASIC::Write16(void *,unsigned int) = 15304 (0x3bc8) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  XSFBASIC::Write32(void *,unsigned int) = 15400 (0x3c28) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  XSFBASIC::Write32(void *,unsigned int) = 15400 (0x3c28) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  XSFBASIC::Write64(void *,unsigned int) = 15496 (0x3c88) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  XSFBASIC::Write64(void *,unsigned int) = 15496 (0x3c88) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  XSFBASIC::Valid() = 15592 (0x3ce8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  XSFBASIC::Valid() = 15592 (0x3ce8) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  XSFBASIC::EndOfFile() = 15624 (0x3d08) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  XSFBASIC::EndOfFile() = 15624 (0x3d08) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  XSFBASIC::StartOfFile() = 15656 (0x3d28) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  XSFBASIC::StartOfFile() = 15656 (0x3d28) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  XSFBASIC::Seek(long,long) = 15688 (0x3d48) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  XSFBASIC::Seek(long,long) = 15688 (0x3d48) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  XSFBASIC::Tell() = 15732 (0x3d74) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  XSFBASIC::Tell() = 15732 (0x3d74) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  XSFBASIC::Size() = 15764 (0x3d94) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  XSFBASIC::Size() = 15764 (0x3d94) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  XSFBASIC::DataFormat() = 15812 (0x3dc4) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  XSFBASIC::DataFormat() = 15812 (0x3dc4) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  XSFBASIC::FileOptions() = 15836 (0x3ddc) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  XSFBASIC::FileOptions() = 15836 (0x3ddc) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  XSFBASIC::~XSFBASIC() = 15860 (0x3df4) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  XSFBASIC::~XSFBASIC() = 15860 (0x3df4) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  XSFOBJ::ReadyForWrite() = 15916 (0x3e2c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  XSFOBJ::ReadyForRead() = 15928 (0x3e38) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  XSFOBJ::ReadyForWrite() = 0 (0x0) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XSFOBJ::ReadyForRead() = 0 (0x0) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XDACENCODE::TestUpsample() = 0 (0x0) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XSFOBJ::ReadyForRead() = 15928 (0x3e38) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  XSFOBJ::ReadyForWrite() = 0 (0x0) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XSFOBJ::ReadyForRead() = 0 (0x0) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XDACENCODE::TestUpsample() = 0 (0x0) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  AREA::Width() = 15940 (0x3e44) referenced 4 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  AREA::Height() = 15956 (0x3e54) referenced 4 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  AREA::Depth() = 15976 (0x3e68) referenced 4 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  AREA::Format() = 15996 (0x3e7c) referenced 4 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  xDISPLAYIO::InputQueued() = 16016 (0x3e90) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  xDBWIN::DrawSurface() = 16040 (0x3ea8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  xDBWIN::ViewSurface() = 16056 (0x3eb8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  xFONT::Bold() = 16072 (0x3ec8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  xFONT::Italic() = 16080 (0x3ed0) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  xFONT::Normal() = 16080 (0x3ed0) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  xFONT::Italic() = 16080 (0x3ed0) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  xFONT::Normal() = 16080 (0x3ed0) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  xTEXFONT::~xTEXFONT() = 16088 (0x3ed8) referenced 3 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  XDAC::~XDAC() = 16132 (0x3f04) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  XDAC::~XDAC() = 16132 (0x3f04) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  DRAWWAVE::~DRAWWAVE() = 16164 (0x3f24) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  DRAWFRAME::~DRAWFRAME() = 16204 (0x3f4c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  08XSFBASIC::_0virttab(XSFBASIC) = 16244 (0x3f74) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  08XSFBASIC::_0virttab(XSFBASIC) = 16244 (0x3f74) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  08xSURFACE::_0virttab(xSURFACE) = 16532 (0x4094) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  08xTEXFONT::_0virttab(xTEXFONT) = 16596 (0x40d4) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  06XSFOBJ::_0virttab(xTEXFONT) = 16652 (0x410c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  08xTEXSURF::_0virttab(xTEXFONT) = 16700 (0x413c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  04XDAC::_0virttab(XDAC) = 16796 (0x419c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  04XDAC::_0virttab(XDAC) = 16796 (0x419c) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  09APPWINDOW::_0virttab(APPWINDOW) = 16876 (0x41ec) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  04AREA::_0virttab(APPWINDOW) = 17092 (0x42c4) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  06xDBWIN::_0virttab(APPWINDOW) = 17140 (0x42f4) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  08DRAWWAVE::_0virttab(DRAWWAVE) = 17252 (0x4364) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  04AIFF::_0virttab(DRAWWAVE) = 17332 (0x43b4) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  09DRAWFRAME::_0virttab(DRAWFRAME) = 17396 (0x43f4) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  XDAC::XDAC(long,short,unsigned short,unsigned short,unsigned short *,unsigned short) = 17476 (0x4444) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XDAC::ReadBody(XSFIO &) = 17600 (0x44c0) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XDAC::WriteBody(XSFIO &) = 17880 (0x45d8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  XDACENCODE::~XDACENCODE() = 18068 (0x4694) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDacEncode.o
+  XDACENCODE::EncodeBody() = 18092 (0x46ac) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDacEncode.o
+  XDACENCODE::Write(XSFIO &) = 18872 (0x49b8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDacEncode.o
+  XDACENCODE::GetSpace(long) = 19452 (0x4bfc) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDacEncode.o
+  XDACENCODE::FreeSpace() = 19688 (0x4ce8) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDacEncode.o
+  XDACENCODE::Set(PCM &,short,short,short) = 19744 (0x4d20) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDacEncode.o
+  XDACENCODE::Size(short) = 20060 (0x4e5c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDacEncode.o
+  XDACENCODE::First() = 20296 (0x4f48) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDacEncode.o
+  XDACENCODE::Last() = 20324 (0x4f64) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDacEncode.o
+  XDACENCODE::operator ++(int) = 20408 (0x4fb8) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDacEncode.o
+  XDACENCODE::operator --(int) = 20480 (0x5000) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDacEncode.o
+  XDACENCODE::FetchData() = 20556 (0x504c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDacEncode.o
+  XDACENCODE::CalcDeltaPop() = 20784 (0x5130) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDacEncode.o
+  XDACENCODE::Analyse() = 21084 (0x525c) referenced 4 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDacEncode.o
+  XDACENCODE::GenTable() = 21320 (0x5348) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDacEncode.o
+  XDACENCODE::DeltaModelKarl1(short,short,short) = 21880 (0x5578) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDacEncode.o
+  XDACENCODE::DeltaModelSerkan1(short,short,short) = 22308 (0x5724) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDacEncode.o
+  compare(const void *,const void *) = 23032 (0x59f8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDacEncode.o
+  AIFF::DecodeFreq(void *) = 23072 (0x5a20) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/SoundFormats.o
+  AIFF::EncodeFreq(void *,long) = 23456 (0x5ba0) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/SoundFormats.o
+  AIFF::Load(const char *) = 23800 (0x5cf8) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/SoundFormats.o
+  AIFF::Save(const char *) = 24832 (0x6100) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/SoundFormats.o
+  _div = 25704 (0x6468) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _abs = 25760 (0x64a0) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _labs = 25772 (0x64ac) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _llabs = 25784 (0x64b8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _atoi = 25834 (0x64ea) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _atol = 25858 (0x6502) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strtol = 25882 (0x651a) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strtoul = 26442 (0x674a) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _atoll = 26942 (0x693e) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strtoll = 26966 (0x6956) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strtoull = 27816 (0x6ca8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _uinttostr = 28562 (0x6f92) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _inttostr = 28752 (0x7050) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _ullongtostr = 28804 (0x7084) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _llongtostr = 29044 (0x7174) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _memcpy = 29128 (0x71c8) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _memmove = 29166 (0x71ee) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _memcmp = 29226 (0x722a) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _memchr = 29286 (0x7266) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _memset = 29336 (0x7298) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _set_new_handler = 29406 (0x72de) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _malloc = 29426 (0x72f2) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _free = 29840 (0x7490) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _EXIT_4_free = 30034 (0x7552) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _calloc = 30152 (0x75c8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _realloc = 30204 (0x75fc) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  operator new(unsigned int) = 30320 (0x7670) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  operator delete(void *,unsigned int) = 30336 (0x7680) referenced 2 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _qsort = 30680 (0x77d8) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _formatted_out = 31612 (0x7b7c) referenced 2 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _formatted_in = 33680 (0x8390) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _sprintf = 35100 (0x891c) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _vsprintf = 35164 (0x895c) referenced 2 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _sscanf = 35228 (0x899c) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strcpy = 35284 (0x89d4) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strncpy = 35312 (0x89f0) referenced 3 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strcat = 35366 (0x8a26) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strncat = 35400 (0x8a48) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strcmp = 35452 (0x8a7c) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strncmp = 35508 (0x8ab4) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strchr = 35584 (0x8b00) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strrchr = 35624 (0x8b28) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strspn = 35694 (0x8b6e) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strcspn = 35738 (0x8b9a) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strpbrk = 35782 (0x8bc6) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strstr = 35832 (0x8bf8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strlen = 35904 (0x8c40) referenced 2 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strtok = 35926 (0x8c56) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _stricmp = 36092 (0x8cfc) referenced 2 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strnicmp = 36214 (0x8d76) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strlwr = 36410 (0x8e3a) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _strupr = 36464 (0x8e70) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _signed_out = 36520 (0x8ea8) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _signed_out_l = 37176 (0x9138) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _unsigned_out = 37264 (0x9190) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _unsigned_out_l = 37864 (0x93e8) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _char_out = 38430 (0x961e) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _string_out = 38586 (0x96ba) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _int_in = 38798 (0x978e) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _char_in = 39914 (0x9bea) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _string_in = 40072 (0x9c88) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  sysBASELIB::Init() = 40328 (0x9d88) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  sysBASELIB::Done() = 40496 (0x9e30) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  sysBASELIB::MessageBox(char *,char *,char * ...) = 40576 (0x9e80) referenced 10 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  _INIT_8_xBase_cpp__xbSt = 40676 (0x9ee4) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  xBASELIB::Init() = 40684 (0x9eec) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  xBASELIB::Done() = 41180 (0xa0dc) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  Alloc__MEM__UisE = 41188 (0xa0e4) referenced 9 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  MEM::Free(void *) = 41468 (0xa1fc) referenced 11 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  MEM::DebugInfo() = 41860 (0xa384) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  MEM::FreeAll() = 42308 (0xa544) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  MEM::Zero(register __a0 void *,register __d0 unsigned int) = 42620 (0xa67c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  MEM::Copy(register __a0 void *,register __a1 void *,register __d0 unsigned int) = 42756 (0xa704) referenced 3 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  MEM::Swap16(register __a0 void *,register __a1 void *,register __d0 unsigned int) = 42924 (0xa7ac) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  MEM::Swap32(register __a0 void *,register __a1 void *,register __d0 unsigned int) = 43274 (0xa90a) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  MEM::Swap64(register __a0 void *,register __a1 void *,register __d0 unsigned int) = 43564 (0xaa2c) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  xDBWIN::Free() = 43820 (0xab2c) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  xDBWIN::Set(short,short,short,short,short,const char *) = 43956 (0xabb4) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  xDBWIN::Open() = 44280 (0xacf8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  xDBWIN::Close() = 45200 (0xb090) referenced 3 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  xDISPLAYIO::ApplyInputModification() = 45220 (0xb0a4) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  xDISPLAYIO::Idle() = 45388 (0xb14c) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  xDISPLAYIO::HandleEvent() = 45444 (0xb184) referenced 3 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  xDISPLAYIO::WaitForEvent() = 46320 (0xb4f0) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  DRAW::Bind(xSURFACE *) = 46388 (0xb534) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  DRAW::Release() = 46732 (0xb68c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  DRAW::Init() = 46820 (0xb6e4) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  DRAW::Done() = 46824 (0xb6e8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  DRAWLIST::InitRegs() = 46848 (0xb700) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  DRAWLIST::DRAWLIST() = 46924 (0xb74c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  DRAWLIST::Create(long,long) = 46960 (0xb770) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  DRAWLIST::Delete() = 47192 (0xb858) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  DRAWLIST::~DRAWLIST() = 47256 (0xb898) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _INIT_8_DrawGPU_cpp__stack__VGPU = 47272 (0xb8a8) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  VGPU::ExecuteBuffer(short,DCOMMAND *,DVERTEX *,long,long) = 47292 (0xb8bc) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _DrawDummy__VGPU__r8Pv = 47948 (0xbb4c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _Skip__VGPU__r8Pv = 47952 (0xbb50) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _Clip__VGPU__r8Pv = 47968 (0xbb60) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _ClearRGB__VGPU__r8Pv = 48020 (0xbb94) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _ClearDepth__VGPU__r8Pv = 48072 (0xbbc8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _DrawPoints__VGPU__r8Pv = 48140 (0xbc0c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _DrawLines__VGPU__r8Pv = 48224 (0xbc60) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _DrawLineStrip__VGPU__r8Pv = 48316 (0xbcbc) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _DrawTris__VGPU__r8Pv = 48408 (0xbd18) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _DrawTrifan__VGPU__r8Pv = 48476 (0xbd5c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _DrawTriStrip__VGPU__r8Pv = 48544 (0xbda0) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _DrawOSText__VGPU__r8Pv = 48612 (0xbde4) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _Blit__VGPU__r8Pv = 48616 (0xbde8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _Blit2__VGPU__r8Pv = 48748 (0xbe6c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _BlendMode__VGPU__r8Pv = 48880 (0xbef0) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _FogParms__VGPU__r8Pv = 48920 (0xbf18) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _ColourMask__VGPU__r8Pv = 48992 (0xbf60) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _SetColour__VGPU__r8Pv = 49076 (0xbfb4) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _SetTexture__VGPU__r8Pv = 49112 (0xbfd8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _SetLogic__VGPU__r8Pv = 49152 (0xc000) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _SetFogMode__VGPU__r8Pv = 49176 (0xc018) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _SetZCompare__VGPU__r8Pv = 49232 (0xc050) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _SetACompare__VGPU__r8Pv = 49284 (0xc084) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _Enable__VGPU__r8Pv = 49364 (0xc0d4) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _Disable__VGPU__r8Pv = 49428 (0xc114) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _Lock__VGPU__r8Pv = 49496 (0xc158) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _PushDVS__VGPU__r8Pv = 49652 (0xc1f4) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _PopDVS__VGPU__r8Pv = 49800 (0xc288) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _Abort__VGPU__r8Pv = 49900 (0xc2ec) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _BreakPoint__VGPU__r8Pv = 49912 (0xc2f8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  DRAWLIST::GetVertices(long,short) = 50280 (0xc468) referenced 3 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  DRAWLIST::LineStrip(long) = 50440 (0xc508) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  DRAWLIST::Tris(long) = 50620 (0xc5bc) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  DRAWLIST::Flush() = 50824 (0xc688) referenced 13 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  DRAWLIST::Begin() = 50956 (0xc70c) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  DRAWLIST::End() = 51044 (0xc764) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  Enable__DRAWLIST__TE = 51128 (0xc7b8) referenced 6 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+
+  Hunk #1 ( Far Public ) 56816 Bytes (0xddf0)
+  Disable__DRAWLIST__TE = 0 (0x0) referenced 10 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  DRAWLIST::SetColour(unsigned long) = 100 (0x64) referenced 6 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  DRAWLIST::SetTexture(xTEXSURF *) = 220 (0xdc) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  DRAWLIST::Clear(unsigned long) = 344 (0x158) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  AlphaCompareMode__DRAWLIST__TEf = 548 (0x224) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  DRAWLIST::Line(unsigned long,short,short,short,short) = 712 (0x2c8) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  DRAWLIST::Tri(unsigned long,short,short,short,short,short,short) = 1080 (0x438) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  DRAWLIST::Rect(unsigned long,short,short,short,short) = 1496 (0x5d8) referenced 3 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  DRAWLIST::RectShH(unsigned long *,short,short,short,short) = 2020 (0x7e4) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  DRAWLIST::RectShV(unsigned long *,short,short,short,short) = 2620 (0xa3c) referenced 3 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  x2D::Init() = 3220 (0xc94) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  x2D::Done() = 3520 (0xdc0) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  xGFX::Init() = 3588 (0xe04) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  xGFX::Done() = 4088 (0xff8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  xGFX::BestMode(short,short,unsigned char,short) = 4264 (0x10a8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  xDMODE::ReadCGXData(CyberModeNode *) = 4724 (0x1274) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  xDMODE::~xDMODE() = 4836 (0x12e4) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  06xDMODE::_0virttab(xDMODE) = 4840 (0x12e8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  x3D::Init(unsigned long) = 4904 (0x1328) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  x3D::Done() = 5064 (0x13c8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  x3D::BuildContext(xSURFACE *,short) = 5104 (0x13f0) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  x3D::FreeContext() = 5676 (0x162c) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  x3D::SetVertexArray(DVERTEX *) = 5860 (0x16e4) referenced 3 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  x3D::SetDrawArea(short,short,short,short) = 6080 (0x17c0) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  x3D::SetDrawArea(xSURFACE *,short,short,short,short) = 6216 (0x1848) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  x3D::SetColour(unsigned long) = 6468 (0x1944) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  SetFogProperties__x3D__EUjfff = 6668 (0x1a0c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  x3D::v3DrawLines(long,long) = 6856 (0x1ac8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  x3D::v3DrawLineStrip(long,long) = 7584 (0x1da0) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _INIT_8_Surface_cpp__rPool__xSURFACE = 8576 (0x2180) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _EXIT_8_Surface_cpp__rPool__xSURFACE = 8618 (0x21aa) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  xSURFACE::Init() = 8636 (0x21bc) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  xSURFACE::Done() = 8808 (0x2268) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  xSURFACE::Attach(register __a6 RastPort *) = 8832 (0x2280) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  xSURFACE::Create(short,short,xSURFACE *) = 9112 (0x2398) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  xSURFACE::Delete() = 9464 (0x24f8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  xSURFACE::ReadAttrs(BitMap *) = 9656 (0x25b8) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  xSURFACE::~xSURFACE() = 9828 (0x2664) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  xTEXSURF::Bind() = 9964 (0x26ec) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  xTEXSURF::UnBind() = 10332 (0x285c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  Create__xTEXSURF__TssEP06ARGB32 = 10396 (0x289c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  xTEXSURF::Delete() = 10852 (0x2a64) referenced 3 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  xTEXSURF::ReadyForWrite() = 10956 (0x2acc) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  xTEXSURF::ReadyForRead() = 10980 (0x2ae4) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  xTEXSURF::WriteBody(XSFIO &) = 11004 (0x2afc) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  xTEXSURF::ReadBody(XSFIO &) = 11472 (0x2cd0) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  xTEXSURF::xTEXSURF() = 12048 (0x2f10) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  xTEXFONT::SetFixed(short,short,short,short,short) = 12168 (0x2f88) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  xTEXFONT::LoadFixedPGM(const char *) = 12252 (0x2fdc) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  xTEXFONT::Delete() = 13016 (0x32d8) referenced 3 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  xTEXFONT::WriteTextF(DRAWLIST *,unsigned long,short,short,char * ...) = 13044 (0x32f4) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  xTEXFONT::WriteText(DRAWLIST *,unsigned long,short,short,char *) = 13172 (0x3374) referenced 3 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  xFILEIO::ReadText(char *,long,char,long) = 14800 (0x39d0) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  xFILEIO::SendPacket(void *) = 15060 (0x3ad4) referenced 13 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  xFILEIO::WaitPacket() = 15132 (0x3b1c) referenced 13 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  xFILEIO::RequeuePacket() = 15384 (0x3c18) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  xFILEIO::RecordSyncFailure() = 15436 (0x3c4c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  xFILEIO::Open(const char *,long,long) = 15500 (0x3c8c) referenced 4 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  xFILEIO::Close() = 16532 (0x4094) referenced 6 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  xFILEIO::Read(void *,unsigned int,unsigned int) = 16728 (0x4158) referenced 5 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  xFILEIO::Write(void *,unsigned int,unsigned int) = 16984 (0x4258) referenced 6 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  xFILEIO::Tell() = 17208 (0x4338) referenced 3 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  xFILEIO::Seek(long,long) = 17320 (0x43a8) referenced 4 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  xFILEIO::Read16Swap(void *,unsigned int) = 18032 (0x4670) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  xFILEIO::Read32Swap(void *,unsigned int) = 18320 (0x4790) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  xFILEIO::Read64Swap(void *,unsigned int) = 18608 (0x48b0) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  xFILEIO::Write16Swap(void *,unsigned int) = 18896 (0x49d0) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  xFILEIO::Write32Swap(void *,unsigned int) = 19148 (0x4acc) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  xFILEIO::Write64Swap(void *,unsigned int) = 19400 (0x4bc8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  XDATAID::Value(const char *) = 19652 (0x4cc4) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  XSFHEAD::Write(XSFIO &) = 19676 (0x4cdc) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  XSFHEAD::Set(const char *,unsigned char,unsigned char,unsigned char,unsigned char) = 19780 (0x4d44) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  XSFBASIC::Create(const char *,long) = 19872 (0x4da0) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  XSFOBJ::XSFOBJ(const char *,unsigned short,unsigned short,unsigned char,unsigned char) = 20060 (0x4e5c) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  XSFOBJ::Write(XSFIO &) = 20148 (0x4eb4) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  xKEY::xKEY() = 20500 (0x5014) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  xKEY::~xKEY() = 20580 (0x5064) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  xKEY::KeyToChar(IntuiMessage *) = 20644 (0x50a4) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  xCHAINABLE::LinkEnd(xCHAIN *) = 20776 (0x5128) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  xCHAINABLE::UnLink() = 20868 (0x5184) referenced 4 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  _INIT_8_Timer_cpp__TimerBase__MILLICLOCK = 20932 (0x51c4) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  MILLICLOCK::Elapsed() = 20984 (0x51f8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  DELAY::DELAY() = 21072 (0x5250) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  DELAY::~DELAY() = 21276 (0x531c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  DELAY::Abort() = 21412 (0x53a4) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  DELAY::Pause(unsigned long,unsigned long) = 21500 (0x53fc) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  THREAD_MAIN::THREAD_MAIN() = 21696 (0x54c0) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  THREAD_MAIN::~THREAD_MAIN() = 21816 (0x5538) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  _INIT_8_Thread_cpp__rootThread__THREAD = 21912 (0x5598) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  THREAD::THREAD() = 21960 (0x55c8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  THREAD::~THREAD() = 22000 (0x55f0) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  _EXIT_8_Thread_cpp_Main__THREAD_ = 22016 (0x5600) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  THREAD::Main() = 22032 (0x5610) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  THREAD::Current() = 22040 (0x5618) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  THREAD::GoIdle(unsigned long,short,short,unsigned long) = 22112 (0x5660) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  THREAD::Stop() = 22480 (0x57d0) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  THREAD::Sleep(unsigned long,short,short,unsigned long) = 22676 (0x5894) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  _0dt__IDLE__THREAD__T = 22744 (0x58d8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  THREAD_MAIN::Run() = 22760 (0x58e8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  _0virttab__12IDLE__THREAD__12IDLE__THREAD = 22764 (0x58ec) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  11THREAD_MAIN::_0virttab(THREAD_MAIN) = 22796 (0x590c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  POOL_ST::~POOL_ST() = 22844 (0x593c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/UtilityLib_far.lib
+  POOL_ST::ExamineBlock(unsigned long) = 22868 (0x5954) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/UtilityLib_far.lib
+  POOL_ST::TestConsistency(short) = 22932 (0x5994) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/UtilityLib_far.lib
+  POOL_ST::Create(unsigned short,unsigned long) = 23084 (0x5a2c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/UtilityLib_far.lib
+  POOL_ST::Delete(short,short) = 23372 (0x5b4c) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/UtilityLib_far.lib
+  POOL_ST::Defrag() = 23564 (0x5c0c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/UtilityLib_far.lib
+  POOL_ST::NewT(void *) = 23968 (0x5da0) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/UtilityLib_far.lib
+  POOL_ST::NewT(void *,unsigned short) = 24196 (0x5e84) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/UtilityLib_far.lib
+  POOL_ST::FreeT(void *) = 24520 (0x5fc8) referenced 5 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/UtilityLib_far.lib
+  xAUDIO::Init() = 24824 (0x60f8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/xSound_far.lib
+  xAUDIO::Done() = 25040 (0x61d0) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/xSound_far.lib
+  PCM::Free() = 25188 (0x6264) referenced 4 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/xSound_far.lib
+  PCM::New(long,long,long) = 25228 (0x628c) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/xSound_far.lib
+  PCM::Delete(short) = 25384 (0x6328) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/xSound_far.lib
+  PCM::Data() = 25420 (0x634c) referenced 13 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/xSound_far.lib
+  _CreateExtIO = 25496 (0x6398) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/amiga.lib
+  _DeleteExtIO = 25558 (0x63d6) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/amiga.lib
+  lib_double2float = 25596 (0x63fc) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _floor__r = 25616 (0x6410) referenced 3 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _pow__r = 25640 (0x6428) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  facoss::_060LSP() = 25680 (0x6450) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _acos__r = 25688 (0x6458) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  facosx::_060LSP() = 25696 (0x6460) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fasins::_060LSP() = 25704 (0x6468) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fasind::_060LSP() = 25712 (0x6470) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _asin__r = 25712 (0x6470) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fasinx::_060LSP() = 25720 (0x6478) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fatans::_060LSP() = 25728 (0x6480) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fatand::_060LSP() = 25736 (0x6488) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _atan__r = 25736 (0x6488) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fatanx::_060LSP() = 25744 (0x6490) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fatanhs::_060LSP() = 25752 (0x6498) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fatanhd::_060LSP() = 25760 (0x64a0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fatanhx::_060LSP() = 25768 (0x64a8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fcoss::_060LSP() = 25776 (0x64b0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fcosd::_060LSP() = 25784 (0x64b8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _cos__r = 25784 (0x64b8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fcosx::_060LSP() = 25792 (0x64c0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fcoshs::_060LSP() = 25800 (0x64c8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fcoshd::_060LSP() = 25808 (0x64d0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _cosh__r = 25808 (0x64d0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fcoshx::_060LSP() = 25816 (0x64d8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fetoxs::_060LSP() = 25824 (0x64e0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fetoxd::_060LSP() = 25832 (0x64e8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _exp__r = 25832 (0x64e8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fetoxx::_060LSP() = 25840 (0x64f0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fetoxm1s::_060LSP() = 25848 (0x64f8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fetoxm1d::_060LSP() = 25856 (0x6500) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fetoxm1x::_060LSP() = 25864 (0x6508) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fgetexps::_060LSP() = 25872 (0x6510) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fgetexpd::_060LSP() = 25880 (0x6518) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fgetexpx::_060LSP() = 25888 (0x6520) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fgetmans::_060LSP() = 25896 (0x6528) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fgetmand::_060LSP() = 25904 (0x6530) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fgetmanx::_060LSP() = 25912 (0x6538) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  flog10s::_060LSP() = 25920 (0x6540) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  flog10d::_060LSP() = 25928 (0x6548) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _log10__r = 25928 (0x6548) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  flog10x::_060LSP() = 25936 (0x6550) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  flog2s::_060LSP() = 25944 (0x6558) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  flog2d::_060LSP() = 25952 (0x6560) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  flog2x::_060LSP() = 25960 (0x6568) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  flogns::_060LSP() = 25968 (0x6570) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  flognd::_060LSP() = 25976 (0x6578) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _log__r = 25976 (0x6578) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  flognx::_060LSP() = 25984 (0x6580) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  flognp1s::_060LSP() = 25992 (0x6588) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  flognp1d::_060LSP() = 26000 (0x6590) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  flognp1x::_060LSP() = 26008 (0x6598) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fmods::_060LSP() = 26016 (0x65a0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fmodd::_060LSP() = 26024 (0x65a8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _fmod__r = 26024 (0x65a8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fmodx::_060LSP() = 26032 (0x65b0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  frems::_060LSP() = 26040 (0x65b8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fremd::_060LSP() = 26048 (0x65c0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fremx::_060LSP() = 26056 (0x65c8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fscales::_060LSP() = 26064 (0x65d0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fscaled::_060LSP() = 26072 (0x65d8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fscalex::_060LSP() = 26080 (0x65e0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fsins::_060LSP() = 26088 (0x65e8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fsind::_060LSP() = 26096 (0x65f0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _sin__r = 26096 (0x65f0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fsinx::_060LSP() = 26104 (0x65f8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fsincoss::_060LSP() = 26112 (0x6600) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fsincosd::_060LSP() = 26120 (0x6608) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fsincosx::_060LSP() = 26128 (0x6610) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fsinhs::_060LSP() = 26136 (0x6618) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fsinhd::_060LSP() = 26144 (0x6620) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _sinh__r = 26144 (0x6620) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fsinhx::_060LSP() = 26152 (0x6628) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  ftans::_060LSP() = 26160 (0x6630) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  ftand::_060LSP() = 26168 (0x6638) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _tan__r = 26168 (0x6638) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  ftanx::_060LSP() = 26176 (0x6640) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  ftanhs::_060LSP() = 26184 (0x6648) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  ftanhd::_060LSP() = 26192 (0x6650) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _tanh__r = 26192 (0x6650) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  ftanhx::_060LSP() = 26200 (0x6658) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  ftentoxs::_060LSP() = 26208 (0x6660) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  ftentoxd::_060LSP() = 26216 (0x6668) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  ftentoxx::_060LSP() = 26224 (0x6670) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  ftwotoxs::_060LSP() = 26232 (0x6678) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  ftwotoxd::_060LSP() = 26240 (0x6680) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  ftwotoxx::_060LSP() = 26248 (0x6688) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fabss::_060LSP() = 26256 (0x6690) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fabsd::_060LSP() = 26264 (0x6698) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _fabs__r = 26264 (0x6698) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fabsx::_060LSP() = 26272 (0x66a0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fadds::_060LSP() = 26280 (0x66a8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  faddd::_060LSP() = 26288 (0x66b0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  faddx::_060LSP() = 26296 (0x66b8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fdivs::_060LSP() = 26304 (0x66c0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fdivd::_060LSP() = 26312 (0x66c8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fdivx::_060LSP() = 26320 (0x66d0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fints::_060LSP() = 26328 (0x66d8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fintd::_060LSP() = 26336 (0x66e0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fintx::_060LSP() = 26344 (0x66e8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fintrzs::_060LSP() = 26352 (0x66f0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fintrzd::_060LSP() = 26360 (0x66f8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fintrzx::_060LSP() = 26368 (0x6700) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fmuls::_060LSP() = 26376 (0x6708) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fmuld::_060LSP() = 26384 (0x6710) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fmulx::_060LSP() = 26392 (0x6718) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fnegs::_060LSP() = 26400 (0x6720) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fnegd::_060LSP() = 26408 (0x6728) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fnegx::_060LSP() = 26416 (0x6730) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fsqrts::_060LSP() = 26424 (0x6738) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fsqrtd::_060LSP() = 26432 (0x6740) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _sqrt__r = 26432 (0x6740) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fsqrtx::_060LSP() = 26440 (0x6748) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fsubs::_060LSP() = 26448 (0x6750) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fsubd::_060LSP() = 26456 (0x6758) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  fsubx::_060LSP() = 26464 (0x6760) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  facosd::_060LSP() = 25688 (0x6458) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _060FPLSP_TOP = 25680 (0x6450) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+
+  Hunk #2 ( Far Public ) 5180 Bytes (0x143c)
+  _atan2__r = 0 (0x0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _ldexp__r = 234 (0xea) referenced 2 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _frexp__r = 284 (0x11c) referenced 2 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _modf__r = 366 (0x16e) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _fmod__r = 454 (0x1c6) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _double_out = 984 (0x3d8) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  _double_in = 2176 (0x880) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/math040.lib
+  main() = 3004 (0xbbc) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcstartup020.lib
+  wbmain(WBStartup *) = 3012 (0xbc4) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcstartup020.lib
+  _wbmain = 3020 (0xbcc) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcstartup020.lib
+  main(int,char *) = 3024 (0xbd0) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcstartup020.lib
+  _EXIT_0_Main = 3498 (0xdaa) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcstartup020.lib
+  _INIT_1_DOS_c = 3560 (0xde8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcstartup020.lib
+  _EXIT_1_DOS_c = 3592 (0xe08) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcstartup020.lib
+  _InitModules = 3652 (0xe44) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcstartup020.lib
+  _CleanupModules = 3720 (0xe88) referenced 2 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcstartup020.lib
+  _INIT_2_Keymap_c = 3776 (0xec0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcstartup020.lib
+  _EXIT_2_Keymap_c = 3808 (0xee0) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcstartup020.lib
+  LibBaseC::LibBaseC(char *,unsigned long,short) = 3880 (0xf28) referenced 3 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcstartup020.lib
+  LibBaseC::~LibBaseC() = 4216 (0x1078) referenced 3 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcstartup020.lib
+  LibBaseC::version() const  = 4254 (0x109e) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcstartup020.lib
+  _INIT_2_MathIEEEDoubTrans_c = 4392 (0x1128) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcstartup020.lib
+  _EXIT_2_MathIEEEDoubTrans_c = 4424 (0x1148) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcstartup020.lib
+  _INIT_3_TimerBase = 4468 (0x1174) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcstartup020.lib
+  _EXIT_3_TimerBase = 4600 (0x11f8) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcstartup020.lib
+  uintmult = 4668 (0x123c) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  intmult = 4668 (0x123c) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  ___uintmult32 = 4668 (0x123c) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  ___intmult32 = 4668 (0x123c) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  intdiv = 4700 (0x125c) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  uintdiv = 4738 (0x1282) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  lib_div_uint = 4738 (0x1282) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  ___uintdivmod32 = 4738 (0x1282) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  lib_div_int = 4700 (0x125c) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  ___intdivmod32 = 4700 (0x125c) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  Add64 = 4820 (0x12d4) referenced 2 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  ___add64 = 4820 (0x12d4) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  Neg64 = 4828 (0x12dc) referenced 2 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  ___neg64 = 4828 (0x12dc) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  SMult64 = 4836 (0x12e4) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  UMult64 = 4870 (0x1306) referenced 2 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  ___uintmult64 = 4870 (0x1306) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  ___intmult64 = 4836 (0x12e4) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  SDiv64 = 4988 (0x137c) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  UDiv64 = 5028 (0x13a4) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  ___uintdivmod64 = 5028 (0x13a4) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  ___intdivmod64 = 4988 (0x137c) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  UMod64 = 5128 (0x1408) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  ___uintmod64 = 5128 (0x1408) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  SMod64 = 5140 (0x1414) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  ___intmod64 = 5140 (0x1414) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  ___udivmod32 = 5152 (0x1420) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+  ___udivmod64 = 5164 (0x142c) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcsupport000.lib
+
+PowerPC Code
+
+
+Data
+
+
+  Hunk #3 ( Far Public ) 1212 Bytes (0x4bc)
+  _SysBase = 0 (0x0) referenced 34 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/startups/startup.o
+  _viewWindow__APP = 16 (0x10) referenced 4 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  _xDacName__APP = 216 (0xd8) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  _xDAC_XSFDesc = 272 (0x110) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/xDac.o
+  _IntuitionBase = 312 (0x138) referenced 8 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  _sysData__sysBASELIB = 316 (0x13c) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  _msgbuff__sysBASELIB = 320 (0x140) referenced 4 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  _allocated__MEM = 324 (0x144) referenced 5 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  _totSize__MEM = 328 (0x148) referenced 4 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  _nextFree__MEM = 332 (0x14c) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  _cnt__MEM = 336 (0x150) referenced 4 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  _stack__VGPU = 344 (0x158) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _stackPos__VGPU = 472 (0x1d8) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _vertexBase__VGPU = 476 (0x1dc) referenced 8 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _vertexTop__VGPU = 480 (0x1e0) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _dataPos__VGPU = 484 (0x1e4) referenced 16 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _instPos__VGPU = 488 (0x1e8) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _exe_flags__VGPU = 492 (0x1ec) referenced 3 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _exe_errReg__VGPU = 496 (0x1f0) referenced 22 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _exe_stateReg__VGPU = 500 (0x1f4) referenced 3 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _exe_colourReg__VGPU = 504 (0x1f8) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _exe_texReg__VGPU = 508 (0x1fc) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _exe_fogReg__VGPU = 512 (0x200) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _funcTab__VGPU = 520 (0x208) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _GfxBase = 652 (0x28c) referenced 11 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _CyberGfxBase = 656 (0x290) referenced 8 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _surfaceTypes__x2D = 660 (0x294) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _flags__xGFX = 664 (0x298) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _mode__xGFX = 668 (0x29c) referenced 3 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _numModes__xGFX = 672 (0x2a0) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _Warp3DBase = 676 (0x2a4) referenced 36 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _hw3D__sys3DDEVICE = 680 (0x2a8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _context__sys3DDEVICE = 684 (0x2ac) referenced 36 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _drawSurface__x3D = 688 (0x2b0) referenced 7 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _flags__x3D = 692 (0x2b4) referenced 4 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _drawRegion__x3D = 696 (0x2b8) referenced 5 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _fogData__x3D = 712 (0x2c8) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _vertices__x3D = 736 (0x2e0) referenced 3 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _currTex__x3D = 740 (0x2e4) referenced 3 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _currCol__x3D = 744 (0x2e8) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _useV4__x3D = 748 (0x2ec) referenced 4 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _sigXSF__XSFHEAD = 752 (0x2f0) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  _fileMarker__XSFOBJ = 756 (0x2f4) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  _KeyMapBase = 760 (0x2f8) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  _useCount__xKEY = 764 (0x2fc) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  _TimerBase__MILLICLOCK = 768 (0x300) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  _clockFreq__MILLICLOCK = 772 (0x304) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  _threadsIdle__THREAD = 776 (0x308) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  _rootThread__THREAD = 780 (0x30c) referenced 3 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  _AHIBase = 832 (0x340) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/xSound_far.lib
+  _AHIport__xAUDIO = 836 (0x344) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/xSound_far.lib
+  _AHImain__xAUDIO = 840 (0x348) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/xSound_far.lib
+  _flags__xAUDIO = 844 (0x34c) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/xSound_far.lib
+  _DOSBase = 1040 (0x410) referenced 14 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcstartup020.lib
+  _KeymapBase = 1056 (0x420) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcstartup020.lib
+  _not_open__LibBaseC = 1060 (0x424) unused, maybe local
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcstartup020.lib
+  _MathIeeeDoubTransBase = 1064 (0x428) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcstartup020.lib
+  ___init_table68k = 1072 (0x430) referenced 1 times
+    File <Internal Assembled>
+  ___exit_table68k = 1144 (0x478) referenced 1 times
+    File <Internal Assembled>
+
+BSS
+
+
+  Hunk #4 ( Far Public ) 10592 Bytes (0x2960)
+  _draw = 0 (0x0) referenced 8 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  _font = 104 (0x68) referenced 4 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  _sourceWave__APP = 192 (0xc0) referenced 4 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  _frame__APP = 264 (0x108) referenced 4 times
+    File Developer:eXtropia/eXtropiaOld/prj/xDAC/APP.o
+  _errno = 380 (0x17c) referenced 1 times
+    File Developer:C_CPlusPlus/StormC/Lib/storm020_far.lib
+  _gxSt = 1560 (0x618) referenced 1 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  _xbSt = 1816 (0x718) unused, maybe local
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  _rPool__xSURFACE = 10016 (0x2720) referenced 6 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/GraphicsLib_far.lib
+  _current__MILLICLOCK = 10056 (0x2748) referenced 2 times
+    File Developer:eXtropia/eXtropiaOld/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  _TimerBase = 10584 (0x2958) referenced 2 times
+    File Developer:C_CPlusPlus/StormC/StormSYS/lib/stormcstartup020.lib
+
+END

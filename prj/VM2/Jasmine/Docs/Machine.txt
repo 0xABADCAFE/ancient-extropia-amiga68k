@@ -1,0 +1,859 @@
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    eXtropia Studios
+
+    Jasmine Machine Reference
+
+    K Churchill
+
+    Instruction word format
+
+        The Jasmine virtual machine stores instructions as 32-bit words. A complete instruction may be upto 4 words long, though are single word in most instances. The first word defines the operation to be performed and is broken into 4 individual bytecodes. The high order byte is the opcode, the remaining three bytes are effective address (EA) codes that describe how arguments are accessed. Subsequent words may contain additional data required by the EA modes and the opcode itself. Hence, complete instructions have the following general layout:
+
+                         MSB                                                         LSB
+                         :                                                             :
+    high memory address  [                 <opcode byte extension word>                ]
+                         [                  <EA byte 3 extension word>                 ]
+                         [                  <EA byte 2 extension word>                 ]
+                         [                  <EA byte 1 extension word>                 ]
+    low memory  address  [ opcode byte ] [ <EA byte 1> ] [ <EA byte 2> ] [ <EA byte 3> ]
+                         :<------------------------- 32-bits ------------------------->:
+
+        Items in <angle brackets> may or may not be present depending on the exact instruction. Unused EA bytes in the instruction word are always set to zero.
+        The above diagram implies that instructions may be 5-words long. However, it transpires that no instruction that uses an opcode extension word uses more than two EA operands. The above strict 32-bit layout allows the instruction stream to be stored in the host machines memory 'endian native' without affecting the virtual machine behaviour.
+
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    Addressing capabilities
+
+        The Jasmine virtual machine implements a range of addressing modes. Operands may be held in registers or referenced by address. In the latter case the operand is accessed via a pointer held in a register. Unlike high level languages, virtual machine pointers are all unsized (i.e. equivalent to unsigned char*). As a result, when applying offsets to virtual machine pointers the size of the object pointed to must be taken into account by the programmer.
+
+        Not all addressing modes are valid for all operand types. Effective addresses are divided into 3 basic categories - source data, destination data and code address. The following table shows the effective addressing modes available and their applicability.
+
+    Addressing Mode                           | Jasm Syntax       | EA Byte     | Extension  | S  D  C
+    ------------------------------------------+-------------------+-------------+------------+--------
+    Reg direct                                | r<n>              | 0x00 - 0x1F |            | Y  Y  N
+    Reg pointer                               | (r<n>)            | 0x20 - 0x3F |            | Y  Y  Y
+    Reg pointer, literal offset               | (r<n>,#<l>)       | 0x40 - 0x5F | 0xllllllll | Y  Y  Y
+    Reg pointer, literal offset, writeback    | (r<n>,#<l>)+      | 0x60 - 0x7F | 0xllllllll | Y  Y  Y
+    Reg pointer, reg offset                   | (r<n>,r<i>)       | 0x80        | 0x0000iinn | Y  Y  Y
+    Reg pointer, reg offset, writeback        | (r<n>,r<i>)+      | 0x81        | 0x0000iinn | Y  Y  Y
+    Reg pointer, scaled reg offset            | (r<n>,r<i>,#<l>)  | 0x82        | 0xlllliinn | Y  Y  Y
+    Reg pointer, scaled reg offset, writeback | (r<n>,r<i>,#<l>)+ | 0x83        | 0xlllliinn | Y  Y  Y
+    Count register                            | cnt               | 0x84        |            | Y  Y  N
+    Data section, literal offset              | (data,#<l>) *     | 0x85        | 0xllllllll | Y  Y  N
+    Constant section, literal offset          | (cnst,#<l>) *     | 0x86        | 0xllllllll | Y  N  N
+    Program counter, literal offset           | (pc,#<l>) *       | 0x87        | 0xllllllll | N  N  Y
+    Literal (8/16/32 bit only)                | #<l>              | 0x88        | 0xllllllll | Y  N  N
+    Small literal (0-31)                      | #<l> **           | 0xE0 - 0xFF |            | Y  N  N
+
+    Notes
+        * Labels would normally be used in actual source code in place of the (<reg>,#lit) synatax
+       ** Integer literal data in range 0 - 31
+
+    S : source data operand
+    D : destination data operand
+    C : code address
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    Addressing Mode Description
+
+    r<n>
+        The operand is held in the specified register.
+
+
+    (r<n>)
+        The operand is pointed to by the address held in the specified register.
+
+
+    (r<n>,#<l>)
+        The operand is pointed to by the root address held in the specified register plus the signed 32-bit literal offset.
+
+
+    (r<n>,#<l>)+
+        The operand is pointed to by the root address held in the specified register plus the signed 32-bit literal offset. The resulting address is written back to the register.
+
+
+    (r<n>,r<i>)
+        The operand is pointed to by the root address stored in the specified register plus a signed 32-bit offset value stored in the index register. The base register number and index register number are stored together in a single 32-bit word. The root address and index registers must not be the same.
+
+
+    (r<n>,r<i>)+
+        The operand is pointed to by the root address stored in the specified register plus a signed 32-bit offset value stored in the index register. The base register number and index register number are stored together in a single 32-bit word. The resulting address is written back to the root address register. The root address and index registers must not be the same.
+
+
+    (r<n>,r<i>,#<l>)
+        The operand is pointed to by the root address stored in the specified register plus a signed 32-bit offset value stored in the index register that is in turn scaled by an unsigned 16-bit literal. The base register number, index register number and literal are stored together in a single 32-bit word. The root address and index registers must not be the same.
+
+
+    (r<n>,r<i>,#<l>)+ 
+        The operand is pointed to by the root address stored in the specified register plus a signed 32-bit offset value stored in the index register that is in turn scaled by an unsigned 16-bit literal. The base register number, index register number and literal are stored together in a single 32-bit word. The resulting address is written back to the root address register. The root address and index registers must not be the same.
+
+
+    cnt
+        The operand is a signed 32-bit integer stored in the count register. 
+
+
+    (data,#<l>)
+        The operand is located in the static data section and pointed to by the data section pointer plus the signed literal offset. This syntax is usually replaced by a label reference.
+
+
+    (cnst,#<l>)
+        The operand is located in the constant data section and pointed to by the constant data section pointer plus the signed literal offset. This mode is valid only as a source operand address. This syntax is usually replaced by a label reference.
+
+
+    (pc,#<l>)
+        The operand is located in the current instruction stream and pointed to by the program counter plus the signed literal offset. The offset value is measured in instruction words (32-bits). This mode is valid only as a code address for function calls within the current instruction stream. This syntax is usually replaced by a label reference.
+
+
+    #<l>
+        The operand is a 8/16/32-bit literal value in the current instruction stream. This mode is valid for source operands only. 8/16-bit values are stored as sign-extended 32-bit words.
+        When the literal value is in the range 0-31 it can be stored as a 'small literal' in the EA byte itself.
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    Jasmine Assembly Language Summary
+
+    The following lists the current mnemonic definitions. Not all EA types are sutible for all operands of each instruction. The EA modes are divided into several categories
+
+    Effective Address Category Table
+
+    [reg]  : Register direct
+             r<n>
+
+    [all]  : All effective address types
+             r<n>; (r<n>); (r<n>,#<l>); (r<n>,#<l>)+; (r<n>,r<i>); (r<n>,r<i>)+; (r<n>,r<i>,#<l>);
+             (r<n>,r<i>,#<l>)+; cnt; (data,#<l>); (cnst,#<l>); (pc,#<l>); #<l>
+
+    [ind]  : Indirect effective address types
+             (r<n>); (r<n>,#<l>); (r<n>,#<l>)+; (r<n>,r<i>); (r<n>,r<i>)+; (r<n>,r<i>,#<l>);
+             (r<n>,r<i>,#<l>)+; cnt; (data,#<l>); (cnst,#<l>; (pc,#<l>)
+
+    [src]  : Source data effective address types
+             r<n>; (r<n>); (r<n>,#<l>); (r<n>,#<l>)+; (r<n>,r<i>); (r<n>,r<i>)+; (r<n>,r<i>,#<l>);
+             (r<n>,r<i>,#<l>)+; cnt; (data,#<l>); (cnst,#<l>); #<l>
+
+    [srci] : Indirect source data effective address types
+             (r<n>); (r<n>,#<l>); (r<n>,#<l>)+; (r<n>,r<i>); (r<n>,r<i>)+; (r<n>,r<i>,#<l>);
+             (r<n>,r<i>,#<l>)+; cnt; (data,#<l>); (cnst,#<l>)
+
+    [dst]  : Destination data effective address types
+             r<n>; (r<n>); (r<n>,#<l>); (r<n>,#<l>)+; (r<n>,r<i>); (r<n>,r<i>)+; (r<n>,r<i>,#<l>);
+             (r<n>,r<i>,#<l>)+; cnt; (data,#<l>)
+
+    [dsti] : Indirect destination data effective address types
+             (r<n>); (r<n>,#<l>); (r<n>,#<l>)+; (r<n>,r<i>); (r<n>,r<i>)+; (r<n>,r<i>,#<l>);
+             (r<n>,r<i>,#<l>)+; cnt; (data,#<l>)
+
+    [code] : Code effective address types
+             (r<n>); (r<n>,#<l>); (r<n>,#<l>)+; (r<n>,r<i>); (r<n>,r<i>)+; (r<n>,r<i>,#<l>);
+             (r<n>,r<i>,#<l>)+; (pc,#<l>)
+
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    nop
+
+        No operation.
+
+
+    Opcode Table
+
+    Command        Instruction Word Format      Opcode Extn      Jasm Syntax
+    NOP            0x00     00     00     00                     nop
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    end
+
+        Signifies natural end of a program.
+
+
+    Opcode Table
+
+    Command        Instruction Word Format      Opcode Extn      Jasm Syntax
+    END            0x01     00     00     00                     end
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    print.type [src]var
+    print [srci]string
+    print "String" ( equ : (cnst,#offset) )
+
+        Outputs an elemental type or ASCIIZ string to the standard output stream. When the argument is a string literal, the string is stored in the constant data section and referenced indirectly from there. When printing non-literal strings 'string' must point to a valid ASCIIZ string.
+
+
+    Opcode Table
+
+    Command        Instruction Word Format      Opcode Extn      Jasm Syntax
+    SYS_OUT_U8     0x02     00  [src]     00                     print.u8
+    SYS_OUT_U16    0x02     01  [src]     00                     print.u16
+    SYS_OUT_U32    0x02     02  [src]     00                     print.u32
+    SYS_OUT_U64    0x02     03  [src]     00                     print.u64
+    SYS_OUT_S8     0x02     04  [src]     00                     print.s8
+    SYS_OUT_S16    0x02     05  [src]     00                     print.s16
+    SYS_OUT_S32    0x02     06  [src]     00                     print.s32
+    SYS_OUT_S64    0x02     07  [src]     00                     print.s64
+    SYS_OUT_F32    0x02     08  [src]     00                     print.f32
+    SYS_OUT_F64    0x02     09  [src]     00                     print.f64
+    SYS_OUT_STR    0x02     0A [srci]     00                     print
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    read.type [dst]var
+    read [dsti]buf, [src]count
+
+        Reads a value from the standard input stream into the primitive 'var' or a string from the standard input stream. When reading strings, 'buf' must point to an area able to hold a maximum 'count' characters. The count is considered to as a signed 32-bit integer.
+
+
+    Opcode Table
+
+    Command        Instruction Word Format      Opcode Extn      Jasm Syntax
+    SYS_INP_U8     0x02     0B  [dst]     00                     read.u8
+    SYS_INP_U16    0x02     0C  [dst]     00                     read.u16
+    SYS_INP_U32    0x02     0D  [dst]     00                     read.u32
+    SYS_INP_U64    0x02     0E  [dst]     00                     read.u64
+    SYS_INP_S8     0x02     0F  [dst]     00                     read.s8
+    SYS_INP_S16    0x02     10  [dst]     00                     read.s16
+    SYS_INP_S32    0x02     11  [dst]     00                     read.s32
+    SYS_INP_S64    0x02     12  [dst]     00                     read.s64
+    SYS_INP_F32    0x02     13  [dst]     00                     read.f32
+    SYS_INP_F64    0x02     14  [dst]     00                     read.f64
+    SYS_INP_STR    0x02     15 [dsti]     00                     read
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    brk
+
+        Reserved for debugging implementations. The action of this command is dependent on the implementation.
+
+
+    Opcode Table
+
+    Command        Instruction Word Format      Opcode Extn      Jasm Syntax
+    SYS_BRK        0x02     16     00     00                     brk
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    dump
+
+        Dumps the state of the virtual machine core to the standard output stream.
+
+
+    Opcode Table
+
+    Command        Instruction Word Format      Opcode Extn      Jasm Syntax
+    SYS_DUMP       0x02     17     00     00                     dump
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    ver
+
+        Outputs the virtual machine version information to the standard output stream.
+
+
+    Opcode Table
+
+    Command        Instruction Word Format      Opcode Extn      Jasm Syntax
+    SYS_VER        0x02     18     00     00                     ver
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    new.size|type [reg]n, [src]count
+
+        Attempts to allocate an area of memory for an array of 'count' elements of the specified type or size. The count value is considered a signed 32-bit integer. If sucessful, the address of the allocated region is written to register n. If the allocation fails, register n is set to zero.
+
+
+    Opcode Table
+
+    Command        Instruction Word Format      Opcode Extn      Jasm Syntax
+    SYS_NEW_X8     0x02     19  [src]  [reg]                     new.8/u8/s8    
+    SYS_NEW_X16    0x02     1A  [src]  [reg]                     new.16/u16/s16
+    SYS_NEW_X32    0x02     20  [src]  [reg]                     new.32/u32/s32/f32
+    SYS_NEW_X64    0x02     21  [src]  [reg]                     new.64/u64/s64/f64
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    del.type [reg]n
+
+        Attempts to release an area of memory pointed to by register n that was obtained by new.
+
+
+    Opcode Table
+
+    Command        Instruction Word Format      Opcode Extn      Jasm Syntax
+    SYS_DEL_X8     0x02     22     00  [reg]                     del.8/u8/s8
+    SYS_DEL_X16    0x02     23     00  [reg]                     del.16/u16/s16
+    SYS_DEL_X32    0x02     24     00  [reg]                     del.32/u32/s32/f32
+    SYS_DEL_X64    0x02     25     00  [reg]                     del.64/u64/s64/f64
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    lea [reg]n, [ind]addr
+
+        Evalutes the non-register effective address 'addr' and loads it as a pointer into the specified register. 
+
+
+    Opcode Table
+
+    Command        Instruction Word Format      Opcode Extn      Jasm Syntax
+    LEA            0x03  [ind]  [reg]     00                     lea
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    bra Label ( equ : bra #offset )
+
+        Performs an unconditional branch within the instruction stream.
+
+
+    Opcode Table
+
+    Command        Instruction Word Format      Opcode Extn      Jasm Syntax
+    BRA            0x04     00     00     00    [Displacement]   bra
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    b<cond>.type [src]A, [src]B, Label (T|F|U)
+
+    Performs a conditional branch based on the comparison of the operands A and B. A and B are both considered to be of the type indicated in the operation. Valid for all types. When the type is integer comparison uses signed arithmetic.
+    The optional T,F or U switch is used to set branch prediction to true, false or unknowable respectively. If unspecified, the default prediction is true (ie the branch will probably be taken). Setting branch prediction in the code allows JIT implementations of the Jasmine core to make the equivalent branch prediction in the native code.
+
+    Condition Table
+
+    bneq    Branch taken if A != B
+    bls     Branch taken if A  < B
+    blseq   Branch taken if A <= B
+    beq     Branch taken if A == B
+    bgreq   Branch taken if A >= B
+    bgr     Branch taken if A  > B
+
+
+    Opcode Table
+
+    Command        Instruction Word Format      Opcode Extn      Jasm Syntax
+    BNEQ_I8        0x05  [src]  [src]  00-02*   [Displacement]   bneq.u8/s8
+    BNEQ_I16       0x06  [src]  [src]  00-02*   [Displacement]   bneq.u16/s16
+    BNEQ_I32       0x07  [src]  [src]  00-02*   [Displacement]   bneq.u32/s32
+    BNEQ_I64       0x08  [src]  [src]  00-02*   [Displacement]   bneq.u64/s64
+    BNEQ_F32       0x09  [src]  [src]  00-02*   [Displacement]   bneq.f32
+    BNEQ_F64       0x0A  [src]  [src]  00-02*   [Displacement]   bneq.f64
+    BLS_I8         0x0B  [src]  [src]  00-02*   [Displacement]   bls.u8/s8
+    BLS_I16        0x0C  [src]  [src]  00-02*   [Displacement]   bls.u16/s16
+    BLS_I32        0x0D  [src]  [src]  00-02*   [Displacement]   bls.u32/s32
+    BLS_I64        0x0E  [src]  [src]  00-02*   [Displacement]   bls.u64/s64
+    BLS_F32        0x0F  [src]  [src]  00-02*   [Displacement]   bls.f32
+    BLS_F64        0x10  [src]  [src]  00-02*   [Displacement]   bls.f64
+    BLSEQ_I8       0x11  [src]  [src]  00-02*   [Displacement]   blseq.u8/s8
+    BLSEQ_I16      0x12  [src]  [src]  00-02*   [Displacement]   blseq.u16/s16
+    BLSEQ_I32      0x13  [src]  [src]  00-02*   [Displacement]   blseq.u32/s32
+    BLSEQ_I64      0x14  [src]  [src]  00-02*   [Displacement]   blseq.u64/s64
+    BLSEQ_F321     0x15  [src]  [src]  00-02*   [Displacement]   blseq.f32
+    BLSEQ_F64      0x16  [src]  [src]  00-02*   [Displacement]   blseq.f64
+    BEQ_I8         0x17  [src]  [src]  00-02*   [Displacement]   beq.u8/s8
+    BEQ_I16        0x18  [src]  [src]  00-02*   [Displacement]   beq.u16/s16
+    BEQ_I32        0x19  [src]  [src]  00-02*   [Displacement]   beq.u32/s32
+    BEQ_I64        0x1A  [src]  [src]  00-02*   [Displacement]   beq.u64/s64
+    BEQ_F32        0x1B  [src]  [src]  00-02*   [Displacement]   beq.f32
+    BEQ_F64        0x1C  [src]  [src]  00-02*   [Displacement]   beq.f64
+    BGREQ_I8       0x1D  [src]  [src]  00-02*   [Displacement]   bgreq.u8/s8
+    BGREQ_I16      0x1E  [src]  [src]  00-02*   [Displacement]   bgreq.u16/s16
+    BGREQ_I32      0x1F  [src]  [src]  00-02*   [Displacement]   bgreq.u32/s32
+    BGREQ_I64      0x20  [src]  [src]  00-02*   [Displacement]   bgreq.u64/s64
+    BGREQ_F32      0x21  [src]  [src]  00-02*   [Displacement]   bgreq.f32
+    BGREQ_F64      0x22  [src]  [src]  00-02*   [Displacement]   bgreq.f64
+    BGR_I8         0x23  [src]  [src]  00-02*   [Displacement]   bgr.u8/s8
+    BGR_I16        0x24  [src]  [src]  00-02*   [Displacement]   bgr.u16/s16
+    BGR_I32        0x25  [src]  [src]  00-02*   [Displacement]   bgr.u32/s32
+    BGR_I64        0x26  [src]  [src]  00-02*   [Displacement]   bgr.u64/s64
+    BGR_F32        0x27  [src]  [src]  00-02*   [Displacement]   bgr.f32
+    BGR_F64        0x28  [src]  [src]  00-02*   [Displacement]   bgr.f64
+
+    * Prediction state : 00 True, 01 False, 02 Unknowable
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    call    Label    ( equ : (pc,#offset) )
+    call    [code]fp
+
+    Calls the function referred to by Label or through a pointer 'fp'. The address of the subsequent instruction is pushed onto a return address stack prior to the call.
+
+
+    Opcode Table
+
+    Command        Instruction Word Format      Opcode Extn      Jasm Syntax
+    CALL           0x29 [code]     00     00                     call
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    ret
+
+    Returns from the current function called using 'call'. The appropriate return address is popped from the address stack.
+
+
+    Opcode Table
+
+    Command        Instruction Word Format      Opcode Extn      Jasm Syntax
+    RET            0x2A     00     00     00                     ret
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    push.size [src]item
+
+    Pushes an item onto the data stack. Any primitive type may be specified or just the size.
+
+
+    Opcode Table
+
+    Command        Instruction Word Format      Opcode Extn      Jasm Syntax
+    PUSH_X8        0x2B  [src]     00     00                     push.8/u8/s8
+    PUSH_X16       0x2C  [src]     00     00                     push.16/u16/s16
+    PUSH_X32       0x2D  [src]     00     00                     push.32/u32/s32/f32
+    PUSH_X64       0x2E  [src]     00     00                     push.64/u64/s64/f64
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    pop.size [dst]item
+
+    Pops an item from the data stack. Any primitive type may be specified or just the size. The size of the element popped must be equivalent of the size of the last element pushed.
+
+
+    Opcode Table
+
+    Command        Instruction Word Format      Opcode Extn      Jasm Syntax
+    POP_X8         0x2F  [dst]     00     00                     pop.8/u8/s8
+    POP_X16        0x30  [dst]     00     00                     pop.16/u16/s16
+    POP_X32        0x31  [dst]     00     00                     pop.32/u32/s32/f32
+    POP_X64        0x32  [dst]     00     00                     pop.64/u64/s64/f64
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    save [reg]n
+    save [reg]first, [reg]last
+
+    Pushes the specified register or register block onto the register stack. When pushing a register block, the first register may be numerically higher than the last in which case the registers are pushed in reverse order.
+
+
+    Opcode Table
+
+    Command        Instruction Word Format      Opcode Extn      Jasm Syntax
+    SAVE           0x33  [reg]  [reg]     00                     save
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    restore [reg]n
+    restore [reg]first, [reg]last
+
+    Pops specified register or register block from the register stack. When popping a register block, the first register may be numerically higher than the last in which case the registers are popped in reverse order.
+
+
+    Opcode Table
+
+    Command        Instruction Word Format      Opcode Extn      Jasm Syntax
+    RESTORE        0x34  [reg]  [reg]     00                     restore
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    set.size [dst]destination, [src]value
+    set.size [dsti]destination, [src]value, [src]count 
+
+    Sets the destination operand to value. When the destination is indirect, a third operand may be specified that gives the number of elements to set. The count argument is considered as a signed 32-bit integer.
+
+
+    Opcode Table
+
+    Command        Instruction Word Format      Opcode Extn      Jasm Syntax
+    SET_X8         0x35  [src]  [dst]  [src]*                    set.8/u8/s8
+    SET_X16        0x36  [src]  [dst]  [src]*                    set.16/u16/s16
+    SET_X32        0x37  [src]  [dst]  [src]*                    set.32/u32/s32/s32
+    SET_X64        0x38  [src]  [dst]  [src]*                    set.64/u64/s64/f64
+
+    * When opereration is performed singularly, the count operand is 0xE1 which is equivalent to the effective address #1  as a small literal.
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    move.size [dst]destination, [src]source
+    move.size [dsti]destination, [srci]source, [src]count 
+
+    Copies source operand to destination. When both source and destination are indirect, a third operand may be specified that gives the number of elements to copy. The count argument is considered as a signed 32-bit integer.
+
+
+    Opcode Table
+
+    Command        Instruction Word Format      Opcode Extn      Jasm Syntax
+    MOVE_X8        0x39  [dst]  [src]  [src]*                    move.8/u8/s8
+    MOVE_X16       0x3A  [dst]  [src]  [src]*                    move.16/u16/s16
+    MOVE_X32       0x3B  [dst]  [src]  [src]*                    move.32/u32/s32/f32
+    MOVE_X64       0x3C  [dst]  [src]  [src]*                    move.64/u64/s64/f64
+
+    * When opereration is performed singularly, the count operand is 0xE1 which is equivalent to the effective address #1  as a small literal.
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    emov.size [dst]destination, [src]source
+    emov.size [dsti]destination, [srci]source, [src]count
+
+    Copies source operand to destination with byte swapping of the data. When both source and destination are indirect, a third operand may be specified that gives the number of elements to copy. The count argument is considered as a signed 32-bit integer.
+
+
+    Opcode Table
+
+    Command        Instruction Word Format      Opcode Extn      Jasm Syntax
+    EMOV_X16       0x3D  [src]  [dst]  [src]*                    emov.16/u16/s16
+    EMOV_X32       0x3E  [src]  [dst]  [src]*                    emov.32/u32/s32/f32
+    EMOV_X64       0x3F  [src]  [dst]  [src]*                    emov.64/u64/s64/f64
+
+    * When opereration is performed singularly, the count operand is 0xE1 which is equivalent to the effective address #1  as a small literal.
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    swap.size [dst]first, [dst]second
+    swap.size [dsti]first, [srci]second, [src]count
+
+    Swaps two data operands.  When both source and destination are indirect, a third operand may be specified that gives the number of elements to swap. The count argument is considered as a signed 32-bit integer.
+
+
+    Opcode Table
+
+    Command        Instruction Word Format      Opcode Extn      Jasm Syntax
+    SWAP_X8        0x40  [dst]  [dst]  [src]*                    swap.8/u8/s8
+    SWAP_X16       0x41  [dst]  [dst]  [src]*                    swap.16/u16/s16
+    SWAP_X32       0x42  [dst]  [dst]  [src]*                    swap.32/u32/s32/f32
+    SWAP_X64       0x43  [dst]  [dst]  [src]*                    swap.64/u64/s64/f64 
+
+    * When opereration is performed singularly, the count operand is 0xE1 which is equivalent to the effective address #1  as a small literal.
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    add.type [dst]c, [src]a, [src]b
+
+    Performs the arithmetic c = a + b. Note that any combination of a, b and c can be the same as long as the destination argument is writable. Valid for all types.
+
+
+    Opcode Table
+
+    Command        Instruction Word Format      Opcode Extn      Jasm Syntax
+    ADD_I8         0x62  [src]  [src]  [dst]                     add.u8/s8
+    ADD_I16        0x63  [src]  [src]  [dst]                     add.u16/s16
+    ADD_I32        0x64  [src]  [src]  [dst]                     add.u32/s32
+    ADD_I64        0x65  [src]  [src]  [dst]                     add.u64/s64
+    ADD_F32        0x66  [src]  [src]  [dst]                     add.f32
+    ADD_F64        0x67  [src]  [src]  [dst]                     add.f64
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    sub.type [dst]c, [src]a, [src]b
+
+    Performs the arithmetic c = a - b. Note that any combination of a, b and c can be the same as long as the destination argument is writable. Valid for all types.
+
+
+    Opcode Table
+
+    Command        Instruction Word Format      Opcode Extn      Jasm Syntax
+    SUB_I8         0x68  [src]  [src]  [dst]                     sub.u8/s8
+    SUB_I16        0x69  [src]  [src]  [dst]                     sub.u16/s16
+    SUB_I32        0x6A  [src]  [src]  [dst]                     sub.u32/s32
+    SUB_I64        0x6B  [src]  [src]  [dst]                     sub.u64/s64
+    SUB_F32        0x6C  [src]  [src]  [dst]                     sub.f32
+    SUB_F64        0x6D  [src]  [src]  [dst]                     sub.f64
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    mul.type [dst]c, [src]a, [src]b
+
+    Performs the arithmetic c = a * b. Note that any combination of a, b and c can be the same as long as the destination argument is writable. Valid for all types, if the type is an unsigned integer, unsigned multiplication is performed.
+
+
+    Opcode Table
+
+    Command        Instruction Word Format      Opcode Extn      Jasm Syntax
+    MUL_I8         0x6E  [src]  [src]  [dst]                     mul.s8
+    MUL_I16        0x6F  [src]  [src]  [dst]                     mul.s16
+    MUL_I32        0x70  [src]  [src]  [dst]                     mul.s32
+    MUL_I64        0x71  [src]  [src]  [dst]                     mul.s64
+    MUL_F32        0x72  [src]  [src]  [dst]                     mul.f32
+    MUL_F64        0x73  [src]  [src]  [dst]                     mul.f64
+    MUL_U8         0x80  [src]  [src]  [dst]                     mul.u8
+    MUL_U16        0x81  [src]  [src]  [dst]                     mul.u16
+    MUL_U32        0x82  [src]  [src]  [dst]                     mul.u32
+    MUL_U64        0x83  [src]  [src]  [dst]                     mul.u64
+<--------------------------------------------------------------------------------------------------------------->
+
+    div.type [dst]c, [src]a, [src]b
+
+    Performs the arithmetic c = a / b. Note that any combination of a, b and c can be the same as long as the destination argument is writable. Valid for all types. When the type is an unsigned integer, unsigned division is performed.
+
+
+    Opcode Table
+
+    Command        Instruction Word Format      Opcode Extn      Jasm Syntax
+    DIV_I8         0x74  [src]  [src]  [dst]                     div.s8
+    DIV_I16        0x75  [src]  [src]  [dst]                     div.s16
+    DIV_I32        0x76  [src]  [src]  [dst]                     div.s32
+    DIV_I64        0x77  [src]  [src]  [dst]                     div.s64
+    DIV_F32        0x78  [src]  [src]  [dst]                     div.f32
+    DIV_F64        0x79  [src]  [src]  [dst]                     div.f64
+    DIV_U8         0x84  [src]  [src]  [dst]                     div.u8
+    DIV_U16        0x85  [src]  [src]  [dst]                     div.u16
+    DIV_U32        0x86  [src]  [src]  [dst]                     div.u32
+    DIV_U64        0x87  [src]  [src]  [dst]                     div.u64
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    mod.type [dst]c, [src]a, [src]b
+
+    Performs the arithmetic c = a % b (remainder). Note that any combination of a, b and c can be the same as long as the destination argument is writable. Valid for all types. When the type is an unsigned integer, unsigned division is performed.
+
+
+    Opcode Table
+
+    Command        Instruction Word Format      Opcode Extn      Jasm Syntax
+    MOD_I8         0x7A  [src]  [src]  [dst]                     mod.s8
+    MOD_I16        0x7B  [src]  [src]  [dst]                     mod.s16
+    MOD_I32        0x7C  [src]  [src]  [dst]                     mod.s32
+    MOD_I64        0x7D  [src]  [src]  [dst]                     mod.s64
+    MOD_F32        0x7E  [src]  [src]  [dst]                     mod.f32
+    MOD_F64        0x7F  [src]  [src]  [dst]                     mod.f64
+    MOD_U8         0x88  [src]  [src]  [dst]                     mod.u8
+    MOD_U16        0x89  [src]  [src]  [dst]                     mod.u16
+    MOD_U32        0x8A  [src]  [src]  [dst]                     mod.u32
+    MOD_U64        0x8B  [src]  [src]  [dst]                     mod.u64
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    neg.type [dst]b, [src]a
+
+    Performs the arithmetic b = -a. Note that a and cbcan be the same as long as the destination argument is writable. Valid for floating point and signed integer types only.
+
+
+    Opcode Table
+
+    Command        Instruction Word Format      Opcode Extn      Jasm Syntax
+    NEG_I8         0x8C  [src]  [dst]     00                     neg.s8
+    NEG_I16        0x8D  [src]  [dst]     00                     neg.s16
+    NEG_I32        0x8E  [src]  [dst]     00                     neg.s32
+    NEG_I64        0x8F  [src]  [dst]     00                     neg.s64
+    NEG_F32        0x90  [src]  [dst]     00                     neg.f32
+    NEG_F64        0x91  [src]  [dst]     00                     neg.f64
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    shl.type|size [dst]c, [src]a, [src]b
+
+    Performs the operation c = a << b (shift left). Note that any combination of a, b and c can be the same as long as the destination argument is writable. Valid for integer types only. When the type is an unsigned integer or size only, logical shifting is performed.
+
+
+    Opcode Table
+
+    Command        Instruction Word Format      Opcode Extn      Jasm Syntax
+    SHL_I8         0x92  [src]  [src]  [dst]                     shl.s8
+    SHL_I16        0x93  [src]  [src]  [dst]                     shl.s16
+    SHL_I32        0x94  [src]  [src]  [dst]                     shl.s32
+    SHL_I64        0x95  [src]  [src]  [dst]                     shl.s64
+    SHL_X8         0xAA  [src]  [src]  [dst]                     shl.8/u8
+    SHL_X16        0xAB  [src]  [src]  [dst]                     shl.16/u16
+    SHL_X32        0xAC  [src]  [src]  [dst]                     shl.32/u32
+    SHL_X64        0xAD  [src]  [src]  [dst]                     shl.64/u64
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    shr.type|size [dst]c, [src]a, [src]b
+
+    Performs the operation c = a >> b (shift right). Note that any combination of a, b and c can be the same as long as the destination argument is writable. Valid for integer types only. When the type is an unsigned integer or size only, logical shifting is performed.
+
+
+    Opcode Table
+
+    Command        Instruction Word Format      Opcode Extn      Jasm Syntax
+    SHR_I8         0x96  [src]  [src]  [dst]                     shr.s8
+    SHR_I16        0x97  [src]  [src]  [dst]                     shr.s16
+    SHR_I32        0x98  [src]  [src]  [dst]                     shr.s32
+    SHR_I64        0x99  [src]  [src]  [dst]                     shr.s64
+    SHR_X8         0xAE  [src]  [src]  [dst]                     shr.8/u8
+    SHR_X16        0xAF  [src]  [src]  [dst]                     shr.16/u16
+    SHR_X32        0xB0  [src]  [src]  [dst]                     shr.32/u32
+    SHR_X64        0xB1  [src]  [src]  [dst]                     shr.64/u64
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    and.type|size [dst]c, [src]a, [src]b
+
+    Performs the operation c = a & b (bitwise AND). Note that any combination of a, b and c can be the same as long as the destination argument is writable. Valid for integer types only.
+
+
+    Opcode Table
+
+    Command        Instruction Word Format      Opcode Extn      Jasm Syntax
+    AND_X8         0x9A  [src]  [src]  [dst]                     and.8
+    AND_X16        0x9B  [src]  [src]  [dst]                     and.16
+    AND_X32        0x9C  [src]  [src]  [dst]                     and.32
+    AND_X64        0x9D  [src]  [src]  [dst]                     and.64
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    or.type|size [dst]c, [src]a, [src]b
+
+    Performs the operation c = a | b (bitwise OR). Note that any combination of a, b and c can be the same as long as the destination argument is writable. Valid for integer types only.
+
+
+    Opcode Table
+
+    Command        Instruction Word Format      Opcode Extn      Jasm Syntax
+    OR_X8          0x9E  [src]  [src]  [dst]                     or.8
+    OR_X16         0x9F  [src]  [src]  [dst]                     or.16
+    OR_X32         0xA0  [src]  [src]  [dst]                     or.32
+    OR_X64         0xA1  [src]  [src]  [dst]                     or.64
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    xor.type|size [dst]c, [src]a, [src]b
+
+    Performs the operation c = a ^ b (bitwise Exclusive OR). Note that any combination of a, b and c can be the same as long as the destination argument is writable. Valid for integer types only.
+
+
+    Opcode Table
+
+    Command        Instruction Word Format      Opcode Extn      Jasm Syntax
+    XOR_X8         0xA2  [src]  [src]  [dst]                     xor.8
+    XOR_X16        0xA3  [src]  [src]  [dst]                     xor.16
+    XOR_X32        0xA4  [src]  [src]  [dst]                     xor.32
+    XOR_X64        0xA5  [src]  [src]  [dst]                     xor.64
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    not.type|size [dst]b, [src]a
+
+    Performs the operation b = ~a. Note that any combination of a, b and c can be the same as long as the destination argument is writable. Valid for integer types only.
+
+
+    Opcode Table
+
+    Command        Instruction Word Format      Opcode Extn      Jasm Syntax
+    INV_X8         0xA6  [src]  [dst]     00                     not.8
+    INV_X16        0xA7  [src]  [dst]     00                     not.16
+    INV_X32        0xA8  [src]  [dst]     00                     not.32
+    INV_X64        0xA9  [src]  [dst]     00                     not.64
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    toi8.type [dst]b, [src]a
+
+    Casts the type to a (signed) 8-bit integer. Note that a and b may only be the same if both operands are register direct. Indirect casting on a memory operand will result in host machine endian dependency. Valid for all types except the target.
+
+
+    Opcode Table
+
+    Command        Instruction Word Format      Opcode Extn      Jasm Syntax
+    F64TOI8        0x57  [src]  [dst]     00                     toi8.f64
+    F32TOI8        0x5B  [src]  [dst]     00                     toi8.f32
+    I64TOI8        0x5E  [src]  [dst]     00                     toi8.s64
+    I32TOI8        0x60  [src]  [dst]     00                     toi8.s32
+    I16TOI8        0x61  [src]  [dst]     00                     toi8.s16
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    toi16.type [dst]b, [src]a
+
+    Casts the type to a (signed) 16-bit integer. Note that a and b may only be the same if both operands are register direct. Indirect casting on a memory operand will result in host machine endian dependency. Valid for all types except the target.
+
+
+    Opcode Table
+
+    Command        Instruction Word Format      Opcode Extn      Jasm Syntax
+    F64TOI16       0x56  [src]  [dst]     00                     toi16.f64
+    F32TOI16       0x5A  [src]  [dst]     00                     toi16.f32
+    I64TOI16       0x5D  [src]  [dst]     00                     toi16.s64
+    I32TOI16       0x5F  [src]  [dst]     00                     toi16.s32
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    toi32.type [dst]b, [src]a
+
+    Casts the type to a (signed) 16-bit integer. Note that a and b may only be the same if both operands are register direct. Indirect casting on a memory operand will result in host machine endian dependency unless the source type is also 32-bits. Valid for all types except the target.
+
+
+    Opcode Table
+
+    Command        Instruction Word Format      Opcode Extn      Jasm Syntax
+    I8TOI32        0x45  [src]  [dst]     00                     toi32.s8
+    I16TOI32       0x49  [src]  [dst]     00                     toi32.s16
+    F64TOI32       0x55  [src]  [dst]     00                     toi32.f64
+    F32TOI32       0x59  [src]  [dst]     00                     toi32.f32
+    I64TOI32       0x5C  [src]  [dst]     00                     toi32.s64
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    toi64.type [dst]b, [src]a
+
+    Casts the type to a (signed) 16-bit integer. Note that a and b may only be the same if both operands are register direct. Indirect casting on a memory operand will result in host machine endian dependency unless the source type is also 64-bits. Valid for all types except the target.
+
+
+    Opcode Table
+
+    Command        Instruction Word Format      Opcode Extn      Jasm Syntax
+    I8TOI64        0x46  [src]  [dst]     00                     toi64.s8
+    I32TOI64       0x4D  [src]  [dst]     00                     toi64.s32
+    F64TOI64       0x54  [src]  [dst]     00                     toi64.f64
+    F32TOI64       0x58  [src]  [dst]     00                     toi64.f32
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    tof32.type [dst]b, [src]a
+
+    Casts the type to a 32-bit float. Note that a and b may only be the same if both operands are register direct. Indirect casting on a memory operand will result in host machine endian dependency unless the source type is also 32-bits. Valid for all types except the target.
+
+
+    Opcode Table
+
+    Command        Instruction Word Format      Opcode Extn      Jasm Syntax
+    I8TOF32        0x47  [src]  [dst]     00                     tof32.s8
+    I16TOF32       0x4B  [src]  [dst]     00                     tof32.s16
+    I32TOF32       0x4E  [src]  [dst]     00                     tof32.s32
+    I64TOF32       0x50  [src]  [dst]     00                     tof32.s64
+    F64TOF32       0x53  [src]  [dst]     00                     tof32.f64
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    tof64.type [dst]b, [src]a
+
+    Casts the type to a 64-bit float. Note that a and b may only be the same if both operands are register direct. Indirect casting on a memory operand will result in host machine endian dependency unless the source type is also 64-bits. Valid for all types except the target.
+
+
+    Opcode Table
+
+    Command        Instruction Word Format      Opcode Extn      Jasm Syntax
+    I8TOF64        0x48  [src]  [dst]     00                     tof64.s8
+    I16TOF64       0x4C  [src]  [dst]     00                     tof64.s16
+    I32TOF64       0x4F  [src]  [dst]     00                     tof64.s32
+    I64TOF64       0x51  [src]  [dst]     00                     tof64.s64
+    F32TOF64       0x52  [src]  [dst]     00                     tof64.f32
+
+<--------------------------------------------------------------------------------------------------------------->
+
+    Other commands
+
+    The following commands are currently reserved but only partially implemented.
+
+    Opcode Table
+
+    Command        Instruction Word Format      Opcode Extn      Jasm Syntax
+    SYS_NEWS_X8    0x02     26  [src]  [reg]                     news.u8/s8
+    SYS_NEWS_X16   0x02     27  [src]  [reg]                     news.u16/s16
+    SYS_NEWS_X32   0x02     28  [src]  [reg]                     news.u32/s32/f32
+    SYS_NEWS_X64   0x02     29  [src]  [reg]                     news.u64/s64/f64
+    SYS_DELS_X8    0x02     2A     00  [reg]                     dels.u8/s8
+    SYS_DELS_X16   0x02     2B     00  [reg]                     dels.u16/s16
+    SYS_DELS_X32   0x02     2C     00  [reg]                     dels.u32/s32/f32
+    SYS_DELS_X64   0x02     2D     00  [reg]                     dels.u64/s64/f64
+    NEW_OBJ        0xB2
+    DEL_OBJ        0xB3
+    CALL_STATIC    0xB4
+    CALL_METHOD    0xB5
+    CALL_VIRTUAL   0xB6
+    CALL_NATIVE    0xB7
+
+<--------------------------------------------------------------------------------------------------------------->
+
+

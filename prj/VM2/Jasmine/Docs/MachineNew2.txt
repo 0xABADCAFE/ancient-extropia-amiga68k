@@ -1,0 +1,224 @@
+    NOP              0x00     00     00     00                nop
+    END              0x01     00     00     00                end
+    SYS              0x02     00     00     00                
+    LEA              0x03     00     00     00                lea
+    BRA              0x40     00     00     00                bra
+    BNEQ_I8          0x05     00     00     00                bneq.i8
+    BNEQ_I16         0x06     00     00     00                bneq.i16
+    BNEQ_I32         0x07     00     00     00                bneq.i32
+    BNEQ_I64         0x08     00     00     00                bneq.i64
+    BNEQ_f32         0x09     00     00     00                bneq.f32
+    BNEQ_F64         0x0A     00     00     00                bneq.f64
+    BLS_I8           0x0B     00     00     00                bls.i8
+    BLS_I16          0x0C     00     00     00                bls.i16
+    BLS_I32          0x0D     00     00     00                bls.i32
+    BLS_I64          0x0E     00     00     00                bls.i64
+    BLS_F32          0x0F     00     00     00                bls.f32
+    BLS_F64          0x10     00     00     00                bls.f64
+    BLSEQ_I8         0x11     00     00     00                blseq.i8
+    BLSEQ_I16        0x12     00     00     00                blseq.i16
+    BLSEQ_I32        0x13     00     00     00                blseq.i32
+    BLSEQ_I64        0x14     00     00     00                blseq.i64
+    BLSEQ_F32        0x15     00     00     00                blseq.f32
+    BLSEQ_F64        0x16     00     00     00                blseq.f64
+    BEQ_I8           0x17     00     00     00                beq.i8
+    BEQ_I16          0x18     00     00     00                beq.i16
+    BEQ_I32          0x19     00     00     00                beq.i32
+    BEQ_I64          0x1A     00     00     00                beq.i64
+    BEQ_F32          0x1B     00     00     00                beq.f32
+    BEQ_F64          0x1C     00     00     00                beq.f64
+    BGREQ_I8         0x1D     00     00     00                bgreq.i8
+    BGREQ_I16        0x1E     00     00     00                bgreq.i16
+    BGREQ_I32        0x1F     00     00     00                bgreq.i32
+    BGREQ_I64        0x20     00     00     00                bgreq.i64
+    BGREQ_F32        0x21     00     00     00                bgreq.f32
+    BGREQ_F64        0x22     00     00     00                bgreq.f64
+    BGR_I8           0x23     00     00     00                bgr.i8
+    BGR_I16          0x24     00     00     00                bgr.i16
+    BGR_I32          0x25     00     00     00                bgr.i32
+    BGR_I64          0x26     00     00     00                bgr.i64
+    BGR_F32          0x27     00     00     00                bgr.f32
+    BGR_F64          0x28     00     00     00                bgr.f64
+    CALL             0x29     00     00     00                call
+    RET              0x2A     00     00     00                ret
+    PUSH_X8          0x2B     00     00     00                push.8
+    PUSH_X16         0x2C     00     00     00                push.16
+    PUSH_X32         0x2D     00     00     00                push.32
+    PUSH_X64         0x2E     00     00     00                push.64
+    POP_X8           0x2F     00     00     00                pop.8
+    POP_X16          0x30     00     00     00                pop.16
+    POP_X32          0x31     00     00     00                pop.32
+    POP_X64          0x32     00     00     00                pop.64
+    SAVE             0x33     00     00     00                save
+    RESTORE          0x34     00     00     00                restore
+    CLR_X8           0x35     00     00     00                clr.8
+    CLR_X16          0x36     00     00     00                clr.16
+    CLR_X32          0x37     00     00     00                clr.32
+    CLR_X64          0x38     00     00     00                clr.64
+    MOVE_X8          0x39     00     00     00                move.8
+    MOVE_X16         0x3A     00     00     00                move.16
+    MOVE_X32         0x3B     00     00     00                move.32
+    MOVE_X64         0x3C     00     00     00                move.64
+    EMOV_X16         0x3D     00     00     00                emov.16
+    EMOV_X32         0x3E     00     00     00                emov.32
+    EMOV_X64         0x3F     00     00     00                emov.64
+    SWAP_X8          0x40     00     00     00                swap.8
+    SWAP_X16         0x41     00     00     00                swap.16
+    SWAP_X32         0x42     00     00     00                swap.32
+    SWAP_X64         0x43     00     00     00                swap.64
+
+    I16_U8           0x44
+    I32_U8           0x45
+    I64_U8           0x46
+    F32_U8           0x47
+    F64_U8           0x48
+    I32_U16          0x49
+    I64_U16          0x4A
+    F32_U16          0x4B
+    F64_U16          0x4C
+    I64_U32          0x4D
+    F32_U32          0x4E
+    F64_U32          0x4F
+    F32_U64          0x50
+    F64_U64          0x51
+    I16_S8           0x52
+    I32_S8           0x53
+    I64_S8           0x54
+    F32_S8           0x55
+    F64_S8           0x56
+    I32_S16          0x57
+    I64_S16          0x58
+    F32_S16          0x59
+    F64_S16          0x5A
+    I64_S32          0x5B
+    F32_S32          0x5C
+    F64_S32          0x5D
+    F32_S64          0x5E
+    F64_S64          0x5F
+    F64_F32          0x60
+    U64_F64          0x61
+    U32_F64          0x62
+    U16_F64          0x63
+    U8_F64           0x64
+    U64_F32          0x65
+    U32_F32          0x66
+    U16_F32          0x67
+    U8_F32           0x68
+    I32_U64          0x69
+    I16_U64          0x6A
+    I8_U64           0x6B
+    I16_U32          0x6C
+    I8_U32           0x6D
+    I8_U16           0x6E
+    F32_F64          0x6F
+    S64_F64          0x70
+    S32_F64          0x71
+    S16_F64          0x72
+    S8_F64           0x73
+    S64_F32          0x74
+    S32_F32          0x75
+    S16_F32          0x76
+    S8_F32           0x77
+    I32_S64          0x78
+    I16_S64          0x79
+    I8_S64           0x7A
+    I16_S32          0x7B
+    I8_S32           0x7C
+    I8_S16           0x7D
+
+    ADD_I8           0x7E     00     00     00                add.i8
+    ADD_I16          0x7F     00     00     00                add.i16
+    ADD_I32          0x80     00     00     00                add.i32
+    ADD_I64          0x81     00     00     00                add.i64
+    ADD_F32          0x82     00     00     00                add.f32
+    ADD_F64          0x83     00     00     00                add.f64
+    SUB_I8           0x84     00     00     00                sub.i8
+    SUB_I16          0x85     00     00     00                sub.i16
+    SUB_I32          0x86     00     00     00                sub.i32
+    SUB_I64          0x87     00     00     00                sub.i64
+    SUB_F32          0x88     00     00     00                sub.f32
+    SUB_F64          0x89     00     00     00                sub.f64
+    MUL_U8           0x8A     00     00     00                mul.u8
+    MUL_U16          0x8B     00     00     00                mul.u16
+    MUL_U32          0x8C     00     00     00                mul.u32
+    MUL_U64          0x8D     00     00     00                mul.u64
+    MUL_I8           0x8E     00     00     00                mul.s8
+    MUL_I16          0x8F     00     00     00                mul.s16
+    MUL_I32          0x90     00     00     00                mul.s32
+    MUL_I64          0x91     00     00     00                mul.s64
+    MUL_F32          0x92     00     00     00                mul.f32
+    MUL_F64          0x93     00     00     00                mul.f64
+    DIV_U8           0x94     00     00     00                div.u8
+    DIV_U16          0x95     00     00     00                div.u16
+    DIV_U32          0x96     00     00     00                div.u32
+    DIV_U64          0x97     00     00     00                div.u64
+    DIV_I8           0x98     00     00     00                div.s8
+    DIV_I16          0x99     00     00     00                div.s16
+    DIV_I32          0x9A     00     00     00                div.s32
+    DIV_I64          0x9B     00     00     00                div.s64
+    DIV_F32          0x9C     00     00     00                div.f32
+    DIV_F64          0x9D     00     00     00                div.f64
+    MOD_U8           0x9E     00     00     00                mod.u8
+    MOD_U16          0x9F     00     00     00                mod.u16
+    MOD_U32          0xA0     00     00     00                mod.u32
+    MOD_U64          0xA1     00     00     00                mod.u64
+    MOD_I8           0xA2     00     00     00                mod.s8
+    MOD_I16          0xA3     00     00     00                mod.s16
+    MOD_I32          0xA4     00     00     00                mod.s32
+    MOD_I64          0xA5     00     00     00                mod.s64
+    MOD_F32          0xA6     00     00     00                mod.f32
+    MOD_F64          0xA7     00     00     00                mod.f64
+    NEG_I8           0xA8     00     00     00                neg.i8
+    NEG_I16          0xA9     00     00     00                neg.i16
+    NEG_I32          0xAA     00     00     00                neg.i32
+    NEG_I64          0xAB     00     00     00                neg.i64
+    NEG_F32          0xAC     00     00     00                neg.f32
+    NEG_F64          0xAD     00     00     00                neg.f64
+    SHL_I8           0xAE     00     00     00                shl.i8
+    SHL_I16          0xAF     00     00     00                shl.i16
+    SHL_I32          0xB0     00     00     00                shl.i32
+    SHL_I64          0xB1     00     00     00                shl.i64
+    SHR_I8           0xB2     00     00     00                shr.i8
+    SHR_I16          0xB3     00     00     00                shr.i16
+    SHR_I32          0xB4     00     00     00                shr.i32
+    SHR_I64          0xB5     00     00     00                shr.i64
+    AND_X8           0xB6     00     00     00                and.8
+    AND_X16          0xB7     00     00     00                and.16
+    AND_X32          0xB8     00     00     00                and.32
+    AND_X64          0xB9     00     00     00                and.64
+    OR_X8            0xBA     00     00     00                or.8
+    OR_X16           0xBB     00     00     00                or.16
+    OR_X32           0xBC     00     00     00                or.32
+    OR_X64           0xBD     00     00     00                or.64
+    XOR_X8           0xBE     00     00     00                xor.8
+    XOR_X16          0xBF     00     00     00                xor.16
+    XOR_X32          0xC0     00     00     00                xor.32
+    XOR_X64          0xC1     00     00     00                xor.64
+    INV_X8           0xC2     00     00     00                not.8
+    INV_X16          0xC3     00     00     00                not.16
+    INV_X32          0xC4     00     00     00                not.32
+    INV_X64          0xC5     00     00     00                not.64
+    SHL_X8           0xC6     00     00     00                shl.8
+    SHL_X16          0xC7     00     00     00                shl.16
+    SHL_X32          0xC8     00     00     00                shl.32
+    SHL_X64          0xC9     00     00     00                shl.64
+    SHR_X8           0xCA     00     00     00                shr.8
+    SHR_X16          0xCB     00     00     00                shr.16
+    SHR_X32          0xCC     00     00     00                shr.32
+    SHR_X64          0xCD     00     00     00                shr.64
+
+    ROL_X8
+    ROL_X16
+    ROL_X32
+    ROL_X64
+    ROR_X8
+    ROR_X16
+    ROR_X32
+    ROR_X64
+
+    NEW_OBJ          0xCE     00     00     00                newobj
+    DEL_OBJ          0xCF     00     00     00                delobj
+    CALL_STATIC      0xD0     00     00     00                callst
+    CALL_METHOD      0xD1     00     00     00                callmd
+    CALL_VIRTUAL     0xD2     00     00     00                callv
+    CALL_NATIVE      0xD3     00     00     00                calln

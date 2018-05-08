@@ -1,0 +1,35 @@
+  
+
+        
+
+                           
+
+                                    
+
+                                  
+
+  
+
+#pragma stack (1024)                 
+
+    ver                                         
+    print     aString
+    new.32    p31, 16
+
+APointlessLabel:
+    push.s32  15                                    
+    call      TestFunc;
+    
+    del.32    p31
+    print     myString; end                                
+
+TestFunc: dump
+    pop.s32 r0;print "Popped sint32 "; print.s32 r0; 
+    print.ch '\n'
+    ret
+
+const.f64 mmmmmmPI 3.14159265
+data.u32 someStaticData {0xCAFEBABE}
+
+const.ch myString  "The End!\n"
+data.ch aString {'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd', '\n', 0}

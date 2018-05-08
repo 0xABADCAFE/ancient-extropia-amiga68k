@@ -1,0 +1,1162 @@
+Global M68K Construktors
+	_INIT_0_InitExceptionHandling
+	_INIT_0_InitFiles
+	_INIT_1_DOS_c
+	_INIT_2_MathIEEEDoubTrans_c
+	_INIT_2_Keymap_c
+	_INIT_3_TimerBase
+	_INIT_5_InitStdIOFiles
+	_INIT_8_Thread_cpp__rootThread__THREAD
+	_INIT_8_Model_cpp__points__BUILDING
+	_INIT_8_Model_cpp__points__PINETREE
+	_INIT_8_DrawOld_cpp__sTab__xDRAW
+	_INIT_8_Surface_cpp__rPool__xSURFACE
+	_INIT_8_Timer_cpp__TimerBase__MILLICLOCK
+	_INIT_8_xBase_cpp__xbSt
+	_INIT_8_World_cpp__water__WORLDMAP
+	_INIT_8_World_cpp__ground__WORLDMAP
+	_INIT_8_World_cpp__stopWatch__WORLDMAP
+	_INIT_8_main_cpp__view__APP
+Global M68K Destruktors
+	_EXIT_8_Thread_cpp_Main__THREAD_
+	_EXIT_8_main_cpp__view__APP
+	_EXIT_8_Surface_cpp__rPool__xSURFACE
+	_EXIT_5_InitFiles
+	_EXIT_5_InitStdIOFiles
+	_EXIT_4_free
+	_EXIT_3_TimerBase
+	_EXIT_2_Keymap_c
+	_EXIT_2_MathIEEEDoubTrans_c
+	_EXIT_1_DOS_c
+No Global PPC Construktors
+No Global PPC Destruktors
+
+M68K Code
+
+
+  Hunk #0 ( Far Public ) 51408 Bytes (0xc8d0)
+  _exit = 132 (0x84) referenced 2 times
+    File Van:Development/StormC/StormSYS/startups/startup.o
+  abort__STANDARD = 180 (0xb4) referenced 1 times
+    File Van:Development/StormC/StormSYS/startups/startup.o
+  _INIT_8_main_cpp__view__APP = 216 (0xd8) unused, maybe local
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  _EXIT_8_main_cpp__view__APP = 328 (0x148) unused, maybe local
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  APP::Init() = 364 (0x16c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  APP::Done() = 1908 (0x774) referenced 2 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  APP::Run() = 2184 (0x888) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  main() = 3120 (0xc30) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  AREA::Width() = 3340 (0xd0c) referenced 4 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  AREA::Width() = 3340 (0xd0c) unused, maybe local
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  AREA::Height() = 3352 (0xd18) referenced 4 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  AREA::Height() = 3352 (0xd18) unused, maybe local
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  AREA::Depth() = 3364 (0xd24) referenced 4 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  AREA::Depth() = 3364 (0xd24) unused, maybe local
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  AREA::Format() = 3376 (0xd30) referenced 4 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  AREA::Format() = 3376 (0xd30) unused, maybe local
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  xDISPLAYIO::InputQueued() = 3388 (0xd3c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  xDBWIN::Refresh() = 3404 (0xd4c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  xDBWIN::DrawSurface() = 3572 (0xdf4) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  xDBWIN::ViewSurface() = 3584 (0xe00) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  PINETREE::ClipBox() = 3596 (0xe0c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  PINETREE::Move(const VEC3D &) = 3600 (0xe10) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  PINETREE::Rotate(short,short,short) = 3604 (0xe14) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  BUILDING::ClipBox() = 3608 (0xe18) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  BUILDING::Move(const VEC3D &) = 3612 (0xe1c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  BUILDING::Rotate(short,short,short) = 3616 (0xe20) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  PINETREE::Move(const VEC3D &) = 3600 (0xe10) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  PINETREE::Rotate(short,short,short) = 3604 (0xe14) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  BUILDING::ClipBox() = 3608 (0xe18) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  BUILDING::Move(const VEC3D &) = 3612 (0xe1c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  BUILDING::Rotate(short,short,short) = 3616 (0xe20) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  PINETREE::Rotate(short,short,short) = 3604 (0xe14) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  BUILDING::ClipBox() = 3608 (0xe18) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  BUILDING::Move(const VEC3D &) = 3612 (0xe1c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  BUILDING::Rotate(short,short,short) = 3616 (0xe20) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  BUILDING::ClipBox() = 3608 (0xe18) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  BUILDING::Move(const VEC3D &) = 3612 (0xe1c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  BUILDING::Rotate(short,short,short) = 3616 (0xe20) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  BUILDING::Move(const VEC3D &) = 3612 (0xe1c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  BUILDING::Rotate(short,short,short) = 3616 (0xe20) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  BUILDING::Rotate(short,short,short) = 3616 (0xe20) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  08xSURFACE::_0virttab(xSURFACE) = 3620 (0xe24) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  04VIEW::_0virttab(VIEW) = 3684 (0xe64) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  04AREA::_0virttab(VIEW) = 3892 (0xf34) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  06xDBWIN::_0virttab(VIEW) = 3940 (0xf64) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  08PINETREE::_0virttab(PINETREE) = 4052 (0xfd4) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  08BUILDING::_0virttab(BUILDING) = 4164 (0x1044) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  PLANE::Define(C3D *,C3D *,C3D *) = 4276 (0x10b4) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/3DBase.o
+  TRANSFORM::Scale(const VEC3D &) = 5256 (0x1488) referenced 2 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/3DBase.o
+  TRANSFORM::Translate(const VEC3D &) = 5516 (0x158c) referenced 2 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/3DBase.o
+  TRANSFORM::Rotate(float,float,float) = 5608 (0x15e8) referenced 2 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/3DBase.o
+  AXON::Init() = 8584 (0x2188) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/axon.o
+  AXON::Done() = 8728 (0x2218) referenced 2 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/axon.o
+  TEXTUREHEAP::Init(long) = 8828 (0x227c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/heap.o
+  TEXTUREHEAP::Done() = 9204 (0x23f4) referenced 2 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/heap.o
+  TEXTUREHEAP::UsePPM(const char *,unsigned long) = 9472 (0x2500) referenced 2 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/heap.o
+  TEXTUREHEAP::UseTex(const char *,long) = 9720 (0x25f8) referenced 2 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/heap.o
+  AREA::~AREA() = 9968 (0x26f0) referenced 2 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/heap.o
+  xTEXTURE::~xTEXTURE() = 9972 (0x26f4) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/heap.o
+  08xTEXTURE::_0virttab(xTEXTURE) = 9988 (0x2704) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/heap.o
+  _INIT_8_World_cpp__stopWatch__WORLDMAP = 10052 (0x2744) unused, maybe local
+    File Mendoza:Extropia/eXtropia/prj/AXON/World.o
+  _INIT_8_World_cpp__ground__WORLDMAP = 10108 (0x277c) unused, maybe local
+    File Mendoza:Extropia/eXtropia/prj/AXON/World.o
+  _INIT_8_World_cpp__water__WORLDMAP = 10128 (0x2790) unused, maybe local
+    File Mendoza:Extropia/eXtropia/prj/AXON/World.o
+  WORLDMAP::Init(unsigned long,float,float,float,float,char *) = 10148 (0x27a4) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/World.o
+  WORLDMAP::Done() = 12024 (0x2ef8) referenced 2 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/World.o
+  WORLDMAP::GeneratePoints() = 12476 (0x30bc) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/World.o
+  WORLDMAP::LinkCells() = 14400 (0x3840) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/World.o
+  WORLDMAP::Clip(VIEW &) = 16724 (0x4154) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/World.o
+  WORLDMAP::Render(VIEW &) = 17312 (0x43a0) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/World.o
+  WORLDMAP::DisplayStats(VIEW &) = 18328 (0x4798) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/World.o
+  MAPCELL::MAPCELL() = 19528 (0x4c48) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/Cell.o
+  MAPCELL::~MAPCELL() = 19592 (0x4c88) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/Cell.o
+  MAPCELL::Set(C3D &,C3D &,C3D &,C3D &,unsigned long,xTEXTURE *,xTEXTURE *) = 19616 (0x4ca0) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/Cell.o
+  MAPCELL::FindPlane(const VEC3D &) = 20140 (0x4eac) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/Cell.o
+  MAPCELL::DropToFloor(VEC3D &) = 20352 (0x4f80) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/Cell.o
+  MAPCELL::AddThing(MODEL &,float,float,float,short,short,short) = 20472 (0x4ff8) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/Cell.o
+  MAPCELL::Visibility(VIEW &) = 20800 (0x5140) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/Cell.o
+  MAPCELL::Display(VIEW &) = 22880 (0x5960) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/Cell.o
+  MAPCELL::Render(VIEW &) = 23500 (0x5bcc) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/Cell.o
+  MAPCELL::WaterSurf() = 23980 (0x5dac) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/Cell.o
+  MAPCELL::Detail() = 24080 (0x5e10) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/Cell.o
+  VIEW::VIEW(short,short,short,short,short,const char *) = 24288 (0x5ee0) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/View.o
+  VIEW::~VIEW() = 25152 (0x6240) referenced 4 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/View.o
+  VIEW::Open() = 25252 (0x62a4) referenced 3 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/View.o
+  VIEW::Close() = 25716 (0x6474) referenced 4 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/View.o
+  VIEW::MouseEvent(long,long,long) = 25796 (0x64c4) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/View.o
+  VIEW::KeyEvent(long,short,long) = 25852 (0x64fc) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/View.o
+  VIEW::ExitEvent() = 27116 (0x69ec) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/View.o
+  VIEW::ResizeEvent() = 27140 (0x6a04) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/View.o
+  VIEW::MoveEvent() = 27164 (0x6a1c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/View.o
+  VIEW::Camera(float,float,float,short,short) = 27188 (0x6a34) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/View.o
+  VIEW::Display() = 27564 (0x6bac) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/View.o
+  VIEW::Move(float,float) = 28732 (0x703c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/View.o
+  VIEW::Zoom(float) = 28876 (0x70cc) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/View.o
+  VIEW::Yaw(short) = 28988 (0x713c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/View.o
+  VIEW::Pitch(short) = 29124 (0x71c4) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/View.o
+  VIEW::Project() = 29184 (0x7200) referenced 3 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/View.o
+  VIEW::operator *=(const TRANSFORM &) = 31408 (0x7ab0) referenced 2 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/View.o
+  VIEW::Transform(C3D *,W3D_Vertex *,unsigned long) = 32100 (0x7d64) referenced 3 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/View.o
+  VIEW::Dump() = 32500 (0x7ef4) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/View.o
+  xINPUT::~xINPUT() = 33596 (0x833c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/View.o
+  xDISPLAY::~xDISPLAY() = 33612 (0x834c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/View.o
+  xDISPLAYIO::~xDISPLAYIO() = 33624 (0x8358) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/View.o
+  xDBWIN::~xDBWIN() = 33664 (0x8380) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/View.o
+  _INIT_8_Model_cpp__points__PINETREE = 33720 (0x83b8) unused, maybe local
+    File Mendoza:Extropia/eXtropia/prj/AXON/Model.o
+  PINETREE::PINETREE() = 35024 (0x88d0) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/Model.o
+  PINETREE::Place(const VEC3D &,float,short,short,short) = 35484 (0x8a9c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/Model.o
+  PINETREE::Render(VIEW &) = 35740 (0x8b9c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/Model.o
+  PINETREE::~PINETREE() = 36368 (0x8e10) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/Model.o
+  BUILDING::BUILDING() = 36400 (0x8e30) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/Model.o
+  _INIT_8_Model_cpp__points__BUILDING = 36840 (0x8fe8) unused, maybe local
+    File Mendoza:Extropia/eXtropia/prj/AXON/Model.o
+  BUILDING::Place(const VEC3D &,float,short,short,short) = 37772 (0x938c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/Model.o
+  BUILDING::Render(VIEW &) = 38152 (0x9508) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/Model.o
+  BUILDING::~BUILDING() = 38660 (0x9704) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/Model.o
+  _fopen = 38826 (0x97aa) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _freopen = 38982 (0x9846) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _fclose = 39074 (0x98a2) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _fflush = 39174 (0x9906) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _setvbuf = 39258 (0x995a) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _setbuf = 39478 (0x9a36) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _ferror = 39534 (0x9a6e) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _clearerr = 39560 (0x9a88) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _perror = 39578 (0x9a9a) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _remove = 39628 (0x9acc) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _rename = 39660 (0x9aec) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _tmpnam = 39700 (0x9b14) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _tmpfile = 39824 (0x9b90) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigaopen = 39878 (0x9bc6) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigaread = 40814 (0x9f6e) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigareadunget = 41306 (0xa15a) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigawrite = 41410 (0xa1c2) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigaeof = 41986 (0xa402) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigaseek = 42010 (0xa41a) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigagetc = 42316 (0xa54c) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigagetcunget = 42374 (0xa586) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigaungetc = 42406 (0xa5a6) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigaputc = 42436 (0xa5c4) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigaflush = 42498 (0xa602) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _amigaclose = 42736 (0xa6f0) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _INIT_0_InitFiles = 42868 (0xa774) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _EXIT_5_InitFiles = 42940 (0xa7bc) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _memcpy = 43100 (0xa85c) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _memmove = 43138 (0xa882) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _memcmp = 43198 (0xa8be) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _memchr = 43258 (0xa8fa) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _memset = 43308 (0xa92c) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _set_new_handler = 43378 (0xa972) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _malloc = 43398 (0xa986) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _free = 43812 (0xab24) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _EXIT_4_free = 44006 (0xabe6) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _calloc = 44124 (0xac5c) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _realloc = 44176 (0xac90) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  operator new(unsigned int) = 44292 (0xad04) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  operator delete(void *,unsigned int) = 44308 (0xad14) referenced 8 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _rand = 44324 (0xad24) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _srand = 44368 (0xad50) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _signal = 44382 (0xad5e) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _raise = 44434 (0xad92) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _abort = 44472 (0xadb8) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _formatted_out = 45380 (0xb144) referenced 4 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _formatted_in = 47448 (0xb958) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _puts = 48868 (0xbee4) referenced 14 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _printf = 48968 (0xbf48) referenced 5 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _fprintf = 49020 (0xbf7c) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _sprintf = 49072 (0xbfb0) referenced 3 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _vsprintf = 49136 (0xbff0) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _fscanf = 49200 (0xc030) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _fread = 49252 (0xc064) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _INIT_5_InitStdIOFiles = 49304 (0xc098) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _EXIT_5_InitStdIOFiles = 49568 (0xc1a0) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strerror = 49612 (0xc1cc) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+
+  Hunk #1 ( Far Public ) 54788 Bytes (0xd604)
+  _strcpy = 0 (0x0) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strncpy = 28 (0x1c) referenced 3 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strcat = 82 (0x52) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strncat = 116 (0x74) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strcmp = 168 (0xa8) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strncmp = 224 (0xe0) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strchr = 300 (0x12c) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strrchr = 340 (0x154) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strspn = 410 (0x19a) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strcspn = 454 (0x1c6) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strpbrk = 498 (0x1f2) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strstr = 548 (0x224) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strlen = 620 (0x26c) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strtok = 642 (0x282) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _stricmp = 808 (0x328) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strnicmp = 930 (0x3a2) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strlwr = 1126 (0x466) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _strupr = 1180 (0x49c) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _signed_out = 1236 (0x4d4) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _signed_out_l = 1892 (0x764) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _unsigned_out = 1980 (0x7bc) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _unsigned_out_l = 2580 (0xa14) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _char_out = 3146 (0xc4a) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _string_out = 3302 (0xce6) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _int_in = 3514 (0xdba) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _char_in = 4630 (0x1216) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _string_in = 4788 (0x12b4) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  sysBASELIB::Init() = 5044 (0x13b4) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  sysBASELIB::Done() = 5212 (0x145c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  sysBASELIB::MessageBox(char *,char *,char * ...) = 5292 (0x14ac) referenced 6 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  _INIT_8_xBase_cpp__xbSt = 5392 (0x1510) unused, maybe local
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  xBASELIB::Init() = 5400 (0x1518) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  xBASELIB::Done() = 5896 (0x1708) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  Alloc__MEM__UisE = 5904 (0x1710) referenced 9 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  MEM::Free(void *) = 6184 (0x1828) referenced 11 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  MEM::DebugInfo() = 6576 (0x19b0) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  MEM::FreeAll() = 7024 (0x1b70) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  MEM::Zero(register __a0 void *,register __d0 unsigned int) = 7336 (0x1ca8) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  MEM::Copy(register __a0 void *,register __a1 void *,register __d0 unsigned int) = 7472 (0x1d30) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  _INIT_8_Timer_cpp__TimerBase__MILLICLOCK = 7640 (0x1dd8) unused, maybe local
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  MILLICLOCK::Elapsed() = 7692 (0x1e0c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  DELAY::DELAY() = 7780 (0x1e64) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  DELAY::~DELAY() = 7984 (0x1f30) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  DELAY::Abort() = 8120 (0x1fb8) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  DELAY::Pause(unsigned long,unsigned long) = 8208 (0x2010) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  THREAD_MAIN::THREAD_MAIN() = 8404 (0x20d4) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  THREAD_MAIN::~THREAD_MAIN() = 8524 (0x214c) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  _INIT_8_Thread_cpp__rootThread__THREAD = 8620 (0x21ac) unused, maybe local
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  THREAD::THREAD() = 8668 (0x21dc) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  THREAD::~THREAD() = 8708 (0x2204) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  _EXIT_8_Thread_cpp_Main__THREAD_ = 8724 (0x2214) unused, maybe local
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  THREAD::Main() = 8740 (0x2224) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  THREAD::Current() = 8748 (0x222c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  THREAD::GoIdle(unsigned long,short,short,unsigned long) = 8820 (0x2274) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  THREAD::Stop() = 9188 (0x23e4) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  THREAD::Sleep(unsigned long,short,short,unsigned long) = 9384 (0x24a8) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  _0dt__IDLE__THREAD__T = 9452 (0x24ec) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  THREAD_MAIN::Run() = 9468 (0x24fc) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  _0virttab__12IDLE__THREAD__12IDLE__THREAD = 9472 (0x2500) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  11THREAD_MAIN::_0virttab(THREAD_MAIN) = 9504 (0x2520) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  xDBWIN::Free() = 9552 (0x2550) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  xDBWIN::Set(short,short,short,short,short,const char *) = 9688 (0x25d8) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  xDBWIN::Open() = 10012 (0x271c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  xDBWIN::Close() = 10932 (0x2ab4) referenced 4 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  xDISPLAYIO::ApplyInputModification() = 10952 (0x2ac8) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  xDISPLAYIO::Idle() = 11120 (0x2b70) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  xDISPLAYIO::HandleEvent() = 11176 (0x2ba8) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  xDISPLAYIO::WaitForEvent() = 12052 (0x2f14) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  x2D::Init() = 12120 (0x2f58) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  x2D::Done() = 12420 (0x3084) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  xGFX::Init() = 12488 (0x30c8) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  xGFX::Done() = 12988 (0x32bc) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  xGFX::BestMode(short,short,unsigned char,short) = 13164 (0x336c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  xDMODE::ReadCGXData(CyberModeNode *) = 13624 (0x3538) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  xDMODE::~xDMODE() = 13736 (0x35a8) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  06xDMODE::_0virttab(xDMODE) = 13740 (0x35ac) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  x3D::Init(unsigned long) = 13804 (0x35ec) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  x3D::Done() = 13964 (0x368c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  x3D::BuildContext(xSURFACE *,short) = 14004 (0x36b4) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  x3D::FreeContext() = 14576 (0x38f0) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  x3D::SetDrawArea(xSURFACE *,short,short,short,short) = 14760 (0x39a8) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  _INIT_8_Surface_cpp__rPool__xSURFACE = 15012 (0x3aa4) unused, maybe local
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  _EXIT_8_Surface_cpp__rPool__xSURFACE = 15054 (0x3ace) unused, maybe local
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  xSURFACE::Init() = 15072 (0x3ae0) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  xSURFACE::Done() = 15244 (0x3b8c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  xSURFACE::Attach(register __a6 RastPort *) = 15268 (0x3ba4) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  xSURFACE::Create(short,short,xSURFACE *) = 15548 (0x3cbc) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  xSURFACE::Delete() = 15900 (0x3e1c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  xSURFACE::ReadAttrs(BitMap *) = 16092 (0x3edc) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  xSURFACE::~xSURFACE() = 16264 (0x3f88) referenced 4 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  xTEXTURE::Create(short,short,short,void *,unsigned long *) = 16400 (0x4010) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  xTEXTURE::Delete() = 16816 (0x41b0) referenced 4 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  xTEXTURE::Load(const char *,long) = 16980 (0x4254) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  xTEXTURE::LoadPPM(const char *,unsigned long) = 17616 (0x44d0) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  _INIT_8_DrawOld_cpp__sTab__xDRAW = 18300 (0x477c) unused, maybe local
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  xDRAW::Init(unsigned long) = 18320 (0x4790) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  xDRAW::Done() = 18764 (0x494c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  xDRAW::AllocDepthBuffer() = 18940 (0x49fc) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  xDRAW::FreeDepthBuffer() = 19072 (0x4a80) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  xDRAW::Bind(xSURFACE *) = 19176 (0x4ae8) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  xDRAW::Release() = 19432 (0x4be8) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  xDRAW::SimpleText(unsigned long,unsigned long,char * ...) = 19568 (0x4c70) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  xDRAW::Line(unsigned long,unsigned long,unsigned long) = 19764 (0x4d34) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  xDRAW::Rect(unsigned long,unsigned long,unsigned long) = 20112 (0x4e90) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  xDRAW::RectShV(register __a6 unsigned long *,unsigned long,unsigned long) = 20632 (0x5098) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  xKEY::xKEY() = 21212 (0x52dc) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  xKEY::~xKEY() = 21292 (0x532c) referenced 4 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  xKEY::KeyToChar(IntuiMessage *) = 21356 (0x536c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  POOL_ST::~POOL_ST() = 21488 (0x53f0) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/UtilityLib_far.lib
+  POOL_ST::ExamineBlock(unsigned long) = 21512 (0x5408) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/UtilityLib_far.lib
+  POOL_ST::TestConsistency(short) = 21576 (0x5448) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/UtilityLib_far.lib
+  POOL_ST::Create(unsigned short,unsigned long) = 21728 (0x54e0) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/UtilityLib_far.lib
+  POOL_ST::Delete(short,short) = 22016 (0x5600) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/UtilityLib_far.lib
+  POOL_ST::Defrag() = 22208 (0x56c0) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/UtilityLib_far.lib
+  POOL_ST::NewT(void *) = 22612 (0x5854) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/UtilityLib_far.lib
+  POOL_ST::NewT(void *,unsigned short) = 22840 (0x5938) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/UtilityLib_far.lib
+  POOL_ST::FreeT(void *) = 23164 (0x5a7c) referenced 5 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/UtilityLib_far.lib
+  _CreateExtIO = 23468 (0x5bac) referenced 1 times
+    File Van:Development/StormC/Lib/amiga.lib
+  _DeleteExtIO = 23530 (0x5bea) referenced 1 times
+    File Van:Development/StormC/Lib/amiga.lib
+  lib_double2float = 23568 (0x5c10) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _floor__r = 23588 (0x5c24) referenced 2 times
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _pow__r = 23612 (0x5c3c) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  facoss::_060LSP() = 23652 (0x5c64) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _acos__r = 23660 (0x5c6c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  facosx::_060LSP() = 23668 (0x5c74) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fasins::_060LSP() = 23676 (0x5c7c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fasind::_060LSP() = 23684 (0x5c84) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _asin__r = 23684 (0x5c84) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fasinx::_060LSP() = 23692 (0x5c8c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fatans::_060LSP() = 23700 (0x5c94) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fatand::_060LSP() = 23708 (0x5c9c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _atan__r = 23708 (0x5c9c) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fatanx::_060LSP() = 23716 (0x5ca4) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fatanhs::_060LSP() = 23724 (0x5cac) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fatanhd::_060LSP() = 23732 (0x5cb4) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fatanhx::_060LSP() = 23740 (0x5cbc) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fcoss::_060LSP() = 23748 (0x5cc4) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fcosd::_060LSP() = 23756 (0x5ccc) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _cos__r = 23756 (0x5ccc) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fcosx::_060LSP() = 23764 (0x5cd4) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fcoshs::_060LSP() = 23772 (0x5cdc) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fcoshd::_060LSP() = 23780 (0x5ce4) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _cosh__r = 23780 (0x5ce4) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fcoshx::_060LSP() = 23788 (0x5cec) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fetoxs::_060LSP() = 23796 (0x5cf4) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fetoxd::_060LSP() = 23804 (0x5cfc) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _exp__r = 23804 (0x5cfc) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fetoxx::_060LSP() = 23812 (0x5d04) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fetoxm1s::_060LSP() = 23820 (0x5d0c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fetoxm1d::_060LSP() = 23828 (0x5d14) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fetoxm1x::_060LSP() = 23836 (0x5d1c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fgetexps::_060LSP() = 23844 (0x5d24) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fgetexpd::_060LSP() = 23852 (0x5d2c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fgetexpx::_060LSP() = 23860 (0x5d34) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fgetmans::_060LSP() = 23868 (0x5d3c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fgetmand::_060LSP() = 23876 (0x5d44) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fgetmanx::_060LSP() = 23884 (0x5d4c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flog10s::_060LSP() = 23892 (0x5d54) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flog10d::_060LSP() = 23900 (0x5d5c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _log10__r = 23900 (0x5d5c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flog10x::_060LSP() = 23908 (0x5d64) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flog2s::_060LSP() = 23916 (0x5d6c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flog2d::_060LSP() = 23924 (0x5d74) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flog2x::_060LSP() = 23932 (0x5d7c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flogns::_060LSP() = 23940 (0x5d84) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flognd::_060LSP() = 23948 (0x5d8c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _log__r = 23948 (0x5d8c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flognx::_060LSP() = 23956 (0x5d94) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flognp1s::_060LSP() = 23964 (0x5d9c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flognp1d::_060LSP() = 23972 (0x5da4) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  flognp1x::_060LSP() = 23980 (0x5dac) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fmods::_060LSP() = 23988 (0x5db4) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fmodd::_060LSP() = 23996 (0x5dbc) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _fmod__r = 23996 (0x5dbc) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fmodx::_060LSP() = 24004 (0x5dc4) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  frems::_060LSP() = 24012 (0x5dcc) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fremd::_060LSP() = 24020 (0x5dd4) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fremx::_060LSP() = 24028 (0x5ddc) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fscales::_060LSP() = 24036 (0x5de4) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fscaled::_060LSP() = 24044 (0x5dec) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fscalex::_060LSP() = 24052 (0x5df4) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsins::_060LSP() = 24060 (0x5dfc) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsind::_060LSP() = 24068 (0x5e04) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _sin__r = 24068 (0x5e04) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsinx::_060LSP() = 24076 (0x5e0c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsincoss::_060LSP() = 24084 (0x5e14) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsincosd::_060LSP() = 24092 (0x5e1c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsincosx::_060LSP() = 24100 (0x5e24) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsinhs::_060LSP() = 24108 (0x5e2c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsinhd::_060LSP() = 24116 (0x5e34) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _sinh__r = 24116 (0x5e34) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsinhx::_060LSP() = 24124 (0x5e3c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftans::_060LSP() = 24132 (0x5e44) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftand::_060LSP() = 24140 (0x5e4c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _tan__r = 24140 (0x5e4c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftanx::_060LSP() = 24148 (0x5e54) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftanhs::_060LSP() = 24156 (0x5e5c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftanhd::_060LSP() = 24164 (0x5e64) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _tanh__r = 24164 (0x5e64) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftanhx::_060LSP() = 24172 (0x5e6c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftentoxs::_060LSP() = 24180 (0x5e74) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftentoxd::_060LSP() = 24188 (0x5e7c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftentoxx::_060LSP() = 24196 (0x5e84) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftwotoxs::_060LSP() = 24204 (0x5e8c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftwotoxd::_060LSP() = 24212 (0x5e94) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  ftwotoxx::_060LSP() = 24220 (0x5e9c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fabss::_060LSP() = 24228 (0x5ea4) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fabsd::_060LSP() = 24236 (0x5eac) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _fabs__r = 24236 (0x5eac) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fabsx::_060LSP() = 24244 (0x5eb4) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fadds::_060LSP() = 24252 (0x5ebc) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  faddd::_060LSP() = 24260 (0x5ec4) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  faddx::_060LSP() = 24268 (0x5ecc) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fdivs::_060LSP() = 24276 (0x5ed4) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fdivd::_060LSP() = 24284 (0x5edc) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fdivx::_060LSP() = 24292 (0x5ee4) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fints::_060LSP() = 24300 (0x5eec) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fintd::_060LSP() = 24308 (0x5ef4) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fintx::_060LSP() = 24316 (0x5efc) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fintrzs::_060LSP() = 24324 (0x5f04) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fintrzd::_060LSP() = 24332 (0x5f0c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fintrzx::_060LSP() = 24340 (0x5f14) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fmuls::_060LSP() = 24348 (0x5f1c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fmuld::_060LSP() = 24356 (0x5f24) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fmulx::_060LSP() = 24364 (0x5f2c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fnegs::_060LSP() = 24372 (0x5f34) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fnegd::_060LSP() = 24380 (0x5f3c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fnegx::_060LSP() = 24388 (0x5f44) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsqrts::_060LSP() = 24396 (0x5f4c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsqrtd::_060LSP() = 24404 (0x5f54) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _sqrt__r = 24404 (0x5f54) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsqrtx::_060LSP() = 24412 (0x5f5c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsubs::_060LSP() = 24420 (0x5f64) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsubd::_060LSP() = 24428 (0x5f6c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  fsubx::_060LSP() = 24436 (0x5f74) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  facosd::_060LSP() = 23660 (0x5c6c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _060FPLSP_TOP = 23652 (0x5c64) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+
+  Hunk #2 ( Far Public ) 4648 Bytes (0x1228)
+  _atan2__r = 0 (0x0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _ldexp__r = 234 (0xea) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _frexp__r = 284 (0x11c) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _modf__r = 366 (0x16e) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _fmod__r = 454 (0x1c6) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _double_out = 984 (0x3d8) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  _double_in = 2176 (0x880) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/math040.lib
+  wbmain(WBStartup *) = 3004 (0xbbc) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  _wbmain = 3012 (0xbc4) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  _INIT_1_DOS_c = 3016 (0xbc8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  _EXIT_1_DOS_c = 3048 (0xbe8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  _InitModules = 3108 (0xc24) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  _CleanupModules = 3176 (0xc68) referenced 2 times
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  _INIT_2_Keymap_c = 3232 (0xca0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  _EXIT_2_Keymap_c = 3264 (0xcc0) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  LibBaseC::LibBaseC(char *,unsigned long,short) = 3336 (0xd08) referenced 3 times
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  LibBaseC::~LibBaseC() = 3672 (0xe58) referenced 3 times
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  LibBaseC::version() const  = 3710 (0xe7e) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  _INIT_2_MathIEEEDoubTrans_c = 3848 (0xf08) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  _EXIT_2_MathIEEEDoubTrans_c = 3880 (0xf28) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  _INIT_3_TimerBase = 3924 (0xf54) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  _EXIT_3_TimerBase = 4056 (0xfd8) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  uintmult = 4124 (0x101c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  intmult = 4124 (0x101c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___uintmult32 = 4124 (0x101c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___intmult32 = 4124 (0x101c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  Add64 = 4156 (0x103c) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___add64 = 4156 (0x103c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  Neg64 = 4164 (0x1044) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___neg64 = 4164 (0x1044) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  SMult64 = 4172 (0x104c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  UMult64 = 4206 (0x106e) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___uintmult64 = 4206 (0x106e) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___intmult64 = 4172 (0x104c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  SDiv64 = 4324 (0x10e4) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  UDiv64 = 4364 (0x110c) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___uintdivmod64 = 4364 (0x110c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___intdivmod64 = 4324 (0x10e4) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  UMod64 = 4464 (0x1170) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___uintmod64 = 4464 (0x1170) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  SMod64 = 4476 (0x117c) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___intmod64 = 4476 (0x117c) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  lib_throw = 4488 (0x1188) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  lib_rethrow = 4548 (0x11c4) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  lib_catch = 4566 (0x11d6) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  lib_catchclass = 4598 (0x11f6) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  _INIT_0_InitExceptionHandling = 4628 (0x1214) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___catchclass = 4598 (0x11f6) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___catch = 4566 (0x11d6) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___rethrow = 4548 (0x11c4) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___throw = 4488 (0x1188) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+
+PowerPC Code
+
+
+Data
+
+
+  Hunk #3 ( Far Public ) 5400 Bytes (0x1518)
+  _SysBase = 0 (0x0) referenced 28 times
+    File Van:Development/StormC/StormSYS/startups/startup.o
+  _buildings__APP = 12 (0xc) referenced 2 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  _trees__APP = 16 (0x10) referenced 2 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  _view__APP = 24 (0x18) referenced 3 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/main.o
+  _sineData__QTRIG = 432 (0x1b0) referenced 2 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/3DBase.o
+  _gradData__QTRIG = 800 (0x320) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/3DBase.o
+  _vCachePtr__AXON = 1164 (0x48c) referenced 5 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/axon.o
+  _vCache__AXON = 1168 (0x490) referenced 5 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/axon.o
+  _heap__TEXTUREHEAP = 1172 (0x494) referenced 4 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/heap.o
+  _keys__TEXTUREHEAP = 1176 (0x498) referenced 4 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/heap.o
+  _index__TEXTUREHEAP = 1180 (0x49c) referenced 3 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/heap.o
+  _heapSize__TEXTUREHEAP = 1184 (0x4a0) referenced 4 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/heap.o
+  _lastTexture__TEXTUREHEAP = 1188 (0x4a4) referenced 3 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/heap.o
+  _lastKey__TEXTUREHEAP = 1192 (0x4a8) referenced 3 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/heap.o
+  _dimension__WORLDMAP = 1196 (0x4ac) referenced 8 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/World.o
+  _logDim__WORLDMAP = 1200 (0x4b0) referenced 2 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/World.o
+  _fracLimit__WORLDMAP = 1204 (0x4b4) referenced 2 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/World.o
+  _worldGrid__WORLDMAP = 1208 (0x4b8) referenced 3 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/World.o
+  _minZ__WORLDMAP = 1212 (0x4bc) referenced 3 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/World.o
+  _maxZ__WORLDMAP = 1216 (0x4c0) referenced 3 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/World.o
+  _floodLevel__WORLDMAP = 1220 (0x4c4) referenced 3 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/World.o
+  _scale__WORLDMAP = 1224 (0x4c8) referenced 8 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/World.o
+  _unitName__WORLDMAP = 1228 (0x4cc) referenced 2 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/World.o
+  _detailLevel__WORLDMAP = 1232 (0x4d0) referenced 4 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/World.o
+  _frames__WORLDMAP = 1236 (0x4d4) referenced 4 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/World.o
+  _frameTime__WORLDMAP = 1240 (0x4d8) referenced 2 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/World.o
+  _totalTime__WORLDMAP = 1244 (0x4dc) referenced 2 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/World.o
+  _cell__WORLDMAP = 1248 (0x4e0) referenced 5 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/World.o
+  _visible__WORLDMAP = 1252 (0x4e4) referenced 4 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/World.o
+  _wet__WORLDMAP = 1256 (0x4e8) referenced 4 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/World.o
+  _things__WORLDMAP = 1260 (0x4ec) referenced 4 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/World.o
+  _ground__WORLDMAP = 1264 (0x4f0) referenced 3 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/World.o
+  _water__WORLDMAP = 1328 (0x530) referenced 3 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/World.o
+  _count__PINETREE = 1376 (0x560) referenced 2 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/Model.o
+  _points__PINETREE = 1384 (0x568) referenced 2 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/Model.o
+  _count__BUILDING = 2104 (0x838) referenced 2 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/Model.o
+  _points__BUILDING = 2112 (0x840) referenced 2 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/Model.o
+  _std__out = 2992 (0xbb0) referenced 2 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _std__in = 3076 (0xc04) unused, maybe local
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _std__err = 3160 (0xc58) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _IntuitionBase = 3568 (0xdf0) referenced 8 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  _sysData__sysBASELIB = 3572 (0xdf4) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  _msgbuff__sysBASELIB = 3576 (0xdf8) referenced 4 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  _allocated__MEM = 3580 (0xdfc) referenced 5 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  _totSize__MEM = 3584 (0xe00) referenced 4 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  _nextFree__MEM = 3588 (0xe04) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  _cnt__MEM = 3592 (0xe08) referenced 4 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  _TimerBase__MILLICLOCK = 3596 (0xe0c) unused, maybe local
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  _clockFreq__MILLICLOCK = 3600 (0xe10) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  _threadsIdle__THREAD = 3604 (0xe14) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  _rootThread__THREAD = 3608 (0xe18) referenced 3 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  _GfxBase = 3664 (0xe50) referenced 11 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  _CyberGfxBase = 3668 (0xe54) referenced 8 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  _surfaceTypes__x2D = 3672 (0xe58) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  _flags__xGFX = 3676 (0xe5c) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  _mode__xGFX = 3680 (0xe60) referenced 3 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  _numModes__xGFX = 3684 (0xe64) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  _Warp3DBase = 3688 (0xe68) referenced 28 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  _hw3D__sys3DDEVICE = 3692 (0xe6c) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  _context__sys3DDEVICE = 3696 (0xe70) referenced 23 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  _drawSurface__x3D = 3700 (0xe74) referenced 6 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  _drawRegion__x3D = 3704 (0xe78) referenced 3 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  _DiskfontBase = 3720 (0xe88) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  _fontInfo__xDRAW = 3728 (0xe90) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  _fontData__xDRAW = 3760 (0xeb0) referenced 3 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  _flags__xDRAW = 3776 (0xec0) referenced 7 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  _flushCnt__xDRAW = 3780 (0xec4) referenced 6 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  _vBuffer__xDRAW = 3784 (0xec8) referenced 6 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  _vBufPos__xDRAW = 3788 (0xecc) referenced 5 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  _vArraySize__xDRAW = 3792 (0xed0) referenced 5 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  _zDepth__xDRAW = 3800 (0xed8) referenced 4 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  _maxVBufPos__xDRAW = 3808 (0xee0) referenced 6 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  _currentCol__xDRAW = 3812 (0xee4) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  _cTab__xDRAW = 3816 (0xee8) referenced 7 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  _sTab__xDRAW = 4840 (0x12e8) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  _nestCount__xDRAW = 4912 (0x1330) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  _KeyMapBase = 4916 (0x1334) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  _useCount__xKEY = 4920 (0x1338) referenced 2 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/IOLib_far.lib
+  _DOSBase = 5120 (0x1400) referenced 3 times
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  _KeymapBase = 5136 (0x1410) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  _not_open__LibBaseC = 5140 (0x1414) unused, maybe local
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  _MathIeeeDoubTransBase = 5144 (0x1418) referenced 1 times
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+  sym_handlers = 5228 (0x146c) referenced 4 times
+    File Van:Development/StormC/StormSYS/lib/stormcsupport000.lib
+  ___init_table68k = 5240 (0x1478) referenced 1 times
+    File <Internal Assembled>
+  ___exit_table68k = 5320 (0x14c8) referenced 1 times
+    File <Internal Assembled>
+
+BSS
+
+
+  Hunk #4 ( Far Public ) 9872 Bytes (0x2690)
+  _stopWatch__WORLDMAP = 0 (0x0) referenced 1 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/World.o
+  _texture__PINETREE = 8 (0x8) referenced 2 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/Model.o
+  _texture__BUILDING = 12 (0xc) referenced 2 times
+    File Mendoza:Extropia/eXtropia/prj/AXON/Model.o
+  _errno = 16 (0x10) referenced 1 times
+    File Van:Development/StormC/Lib/storm020_far.lib
+  _gxSt = 1104 (0x450) referenced 1 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  _xbSt = 1360 (0x550) unused, maybe local
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib
+  _current__MILLICLOCK = 9560 (0x2558) referenced 3 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib
+  _rPool__xSURFACE = 9568 (0x2560) referenced 6 times
+    File Mendoza:Extropia/eXtropia/lib/Platforms/Amiga68k/far/lib/GraphicsLibOld_far.lib
+  _TimerBase = 9864 (0x2688) referenced 3 times
+    File Van:Development/StormC/StormSYS/lib/stormcstartup020.lib
+
+END

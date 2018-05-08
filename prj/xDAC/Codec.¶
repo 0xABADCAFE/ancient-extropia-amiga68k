@@ -1,0 +1,193 @@
+Storm Shell Project (0013)
+Settings (Start)
+C/C++ Environment
+"StormC:include"
+"ExtropiaLib:include"
+Includepath (End)
+0 "" 80
+0 "objects"
+C/C++ Preprozessor
+1 "NDEBUG" ""
+1 "KARL_FIXES" ""
+1 "PARANOID" ""
+Defines (End)
+1 1 1
+C/C++ Options
+1 0 1 0 1 0 2 1 0 1 0 3 1 0 0
+C/C++ Optimizer
+6
+C/C++ Warnings
+1 1 1 1 1 0 1 1
+Assembler
+0 ""
+0 "CON://640/200/Storm Assembler/AUTO/WAIT/SCREEN StormScreen"
+0 0
+0 1 60 0 1 0 0 20 0
+Sets (End)
+0 1 0 0 0 2 1 0 0
+1 1 1 1 0 0 0 0 0
+1 0
+0 0 0 0 0
+Linker
+0 0 "PROGDIR:startup.o" 0 0 1 0 1 0 0
+"StormC:lib/" 0 "StormC:lib/logfile" 0 1 1
+0 "_WizardSurface"
+0 0 50 0 50 0 50 0 0
+0 0 0 0 0 0 0 0
+Run
+40 "" "" "" 0
+""
+-snd ram:decode.aiff -xdac ram:test.xdac
+1 "CON:640/800/664/224/Storm Console/AUTO/WAIT/SCREEN StormScreen" "RAM:Output" "RAM:Input"
+1 0
+0 0 0 "" ""
+Settings (End)
+File
+10 "Codec"
+"xDAC"
+"Codec"
+Storm Shell Project (Dependencies)
+"" ""
+""
+"Codec.link"
+Section
+10 1 -128
+File
+2 "ExtropiaLib:include/xDefs.hpp"
+"ExtropiaLib:include/xDefs.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "ExtropiaLib:include/xBase.hpp"
+"ExtropiaLib:include/xBase.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "ExtropiaLib:include/Platforms/Amiga68k/sysBase.hpp"
+"ExtropiaLib:include/Platforms/Amiga68k/sysBase.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "ExtropiaLib:include/XSF/XSF.hpp"
+"ExtropiaLib:include/XSF/XSF.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "ExtropiaLib:include/XSF/XSFClassDefs.hpp"
+"ExtropiaLib:include/XSF/XSFClassDefs.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "ExtropiaLib:include/Platforms/Amiga68k/SoundLib/PCM.hpp"
+"ExtropiaLib:include/Platforms/Amiga68k/SoundLib/PCM.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "xDac.hpp"
+"Frame.hpp"
+"xDac.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+2 "SoundFormats.hpp"
+"SoundFormats.hpp"
+Storm Shell Project (Dependencies)
+"" ""
+""
+Section
+2 1 -128
+File
+1 "codec.cpp"
+"codec.cpp"
+"ExtropiaLib:prj/xDAC/xDac.hpp"
+"ExtropiaLib:prj/xDAC/SoundFormats.hpp"
+Storm Shell Project (Dependencies)
+"codec.o" "codec.debug"
+""
+"codec.o" "codec.debug"
+File
+1 "xDac.cpp"
+"xDac.cpp"
+"ExtropiaLib:prj/xDAC/xDac.hpp"
+Storm Shell Project (Dependencies)
+"xDac.o" "xDac.debug"
+""
+"xDac.o" "xDac.debug"
+File
+1 "SoundFormats.cpp"
+"SoundFormats.cpp"
+"ExtropiaLib:prj/xDAC/SoundFormats.hpp"
+Storm Shell Project (Dependencies)
+"SoundFormats.o" "SoundFormats.debug"
+""
+"SoundFormats.o" "SoundFormats.debug"
+File
+1 "xDacEncode.cpp"
+"xDacEncode.cpp"
+"ExtropiaLib:prj/xDAC/xDac.hpp"
+Storm Shell Project (Dependencies)
+"xDacEncode.o" "xDacEncode.debug"
+""
+"xDacEncode.o" "xDacEncode.debug"
+File
+1 "xDacDecode.cpp"
+"xDacDecode.cpp"
+"ExtropiaLib:prj/xDAC/xDac.hpp"
+Storm Shell Project (Dependencies)
+"xDacDecode.o" "xDacDecode.debug"
+""
+"xDacDecode.o" "xDacDecode.debug"
+Section
+1 1 100
+File
+5 "storm020_far.lib"
+"storm020_far.lib"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+5 "ExtropiaLib:lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib"
+"ExtropiaLib:lib/Platforms/Amiga68k/far/lib/BaseLib_far.lib"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+5 "ExtropiaLib:lib/Platforms/Amiga68k/far/lib/IOLib_far.lib"
+"ExtropiaLib:lib/Platforms/Amiga68k/far/lib/IOLib_far.lib"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+5 "ExtropiaLib:lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib"
+"ExtropiaLib:lib/Platforms/Amiga68k/far/lib/ServiceLib_far.lib"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+5 "ExtropiaLib:lib/Platforms/Amiga68k/far/lib/UtilityLib_far.lib"
+"ExtropiaLib:lib/Platforms/Amiga68k/far/lib/UtilityLib_far.lib"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+5 "ExtropiaLib:lib/Platforms/Amiga68k/far/lib/xSound_far.lib"
+"ExtropiaLib:lib/Platforms/Amiga68k/far/lib/xSound_far.lib"
+Storm Shell Project (Dependencies)
+"" ""
+""
+File
+5 "amiga.lib"
+"amiga.lib"
+Storm Shell Project (Dependencies)
+"" ""
+""
+Section
+5 1 -50
+Storm Shell Project (End)

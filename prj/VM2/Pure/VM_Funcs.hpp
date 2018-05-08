@@ -2,7 +2,7 @@
 //** Description:   eXtropia XSF Codec Virtual Machine           **//
 //** First Started: 2002-03-08                                   **//
 //** Last Updated:                                               **//
-//** Author       	Karl Churchill                               **//
+//** Author         Karl Churchill                               **//
 //** Copyright:     (C)1998-2002, eXtropia Studios               **//
 //**                Serkan YAZICI, Karl Churchill                **//
 //**                All Rights Reserved.                         **//
@@ -13,15 +13,15 @@
 #endif
 
 #ifdef XP_AMIGAOS
-	#define EX_ARGS		register __a2 VMCORE* This, register __a3 VMCORE::OPFUNC* iTab
-	#define EA_ARGS 	register __a2 VMCORE* This, register __d7 size_t s
-	#define EA_2ARGS	register __a2 VMCORE* This, register __d6 size_t s1, register __d7 size_t s2
-	#define OP_ARGS		register __a2 VMCORE* This
+  #define EX_ARGS   register __a2 VMCORE* This, register __a3 VMCORE::OPFUNC* iTab
+  #define EA_ARGS   register __a2 VMCORE* This, register __d7 size_t s
+  #define EA_2ARGS  register __a2 VMCORE* This, register __d6 size_t s1, register __d7 size_t s2
+  #define OP_ARGS   register __a2 VMCORE* This
 #else
-	#define EX_ARGS		VMCORE* This, OPFUNC* iTab
-	#define EA_ARGS		VMCORE* This, size_t s
-	#define EA_2ARGS	VMCORE* This, size_t s1, size_t s2
-	#define OP_ARGS		VMCORE* This
+  #define EX_ARGS   VMCORE* This, OPFUNC* iTab
+  #define EA_ARGS   VMCORE* This, size_t s
+  #define EA_2ARGS  VMCORE* This, size_t s1, size_t s2
+  #define OP_ARGS   VMCORE* This
 #endif
 
 static void DecodeSYS_EA(EA_ARGS);
@@ -37,372 +37,372 @@ static void Decode2SYS_EA(EA_2ARGS);
 
 static void Decode1_X8(OP_ARGS)
 {
-	uint32 x = ((uint8*)This->instPtr)[1];
-	if (x<VM::IM0)
-		This->op[0].any = eaTable[x](This,1);
-	else
-	{
-		This->imReg[0].ValU8() = x-VM::IM0;
-		This->op[0].any = This->imReg[0].Data8();
-	}
-	This->instPtr++;
+  uint32 x = ((uint8*)This->instPtr)[1];
+  if (x<VM::IM0)
+    This->op[0].any = eaTable[x](This,1);
+  else
+  {
+    This->imReg[0].ValU8() = x-VM::IM0;
+    This->op[0].any = This->imReg[0].Data8();
+  }
+  This->instPtr++;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 
 static void Decode1_X16(OP_ARGS)
 {
-	uint32 x = ((uint8*)This->instPtr)[1];
-	if (x<VM::IM0)
-		This->op[0].any = eaTable[x](This,2);
-	else
-	{
-		This->imReg[0].ValU16() = x-VM::IM0;
-		This->op[0].any = This->imReg[0].Data16();
-	}
-	This->instPtr++;
+  uint32 x = ((uint8*)This->instPtr)[1];
+  if (x<VM::IM0)
+    This->op[0].any = eaTable[x](This,2);
+  else
+  {
+    This->imReg[0].ValU16() = x-VM::IM0;
+    This->op[0].any = This->imReg[0].Data16();
+  }
+  This->instPtr++;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 
 static void Decode1_X32(OP_ARGS)
 {
-	uint32 x = ((uint8*)This->instPtr)[1];
-	if (x<VM::IM0)
-		This->op[0].any = eaTable[x](This,4);
-	else
-	{
-		This->imReg[0].ValU32() = x-VM::IM0;
-		This->op[0].any = This->imReg[0].Data32();
-	}
-	This->instPtr++;
+  uint32 x = ((uint8*)This->instPtr)[1];
+  if (x<VM::IM0)
+    This->op[0].any = eaTable[x](This,4);
+  else
+  {
+    This->imReg[0].ValU32() = x-VM::IM0;
+    This->op[0].any = This->imReg[0].Data32();
+  }
+  This->instPtr++;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 
 static void Decode1_X64(OP_ARGS)
 {
-	uint32 x = ((uint8*)This->instPtr)[1];
-	if (x<VM::IM0)
-		This->op[0].any = eaTable[x](This,8);
-	else
-	{
-		This->imReg[0].ValU64() = x-VM::IM0;
-		This->op[0].any = This->imReg[0].Data64();
-	}
-	This->instPtr++;
+  uint32 x = ((uint8*)This->instPtr)[1];
+  if (x<VM::IM0)
+    This->op[0].any = eaTable[x](This,8);
+  else
+  {
+    This->imReg[0].ValU64() = x-VM::IM0;
+    This->op[0].any = This->imReg[0].Data64();
+  }
+  This->instPtr++;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 
 static void Decode2(EA_2ARGS)
 {
-	ruint8* p = ((uint8*)This->instPtr)+1;
-	uint32	x = *p++;
-	if (x<VM::IM0)
-		This->op[0].any = eaTable[x](This,s1);
-	else
-	{
-		switch(s1)
-		{
-			case 1:
-				This->imReg[0].ValU8() = x-VM::IM0;
-				This->op[0].any = This->imReg[0].Data8();
-				break;
-			case 2:
-				This->imReg[0].ValU16() = x-VM::IM0;
-				This->op[0].any = This->imReg[0].Data16();
-				break;
-			case 4:
-				This->imReg[0].ValU32() = x-VM::IM0;
-				This->op[0].any = This->imReg[0].Data32();
-				break;
-			case 8:
-				This->imReg[0].ValU64() = x-VM::IM0;
-				This->op[0].any = This->imReg[0].Data64();
-				break;
-		}
-	}
-	x = *p;
-	This->op[1].any = eaTable[x](This,s2);
-	This->instPtr++;
+  ruint8* p = ((uint8*)This->instPtr)+1;
+  uint32  x = *p++;
+  if (x<VM::IM0)
+    This->op[0].any = eaTable[x](This,s1);
+  else
+  {
+    switch(s1)
+    {
+      case 1:
+        This->imReg[0].ValU8() = x-VM::IM0;
+        This->op[0].any = This->imReg[0].Data8();
+        break;
+      case 2:
+        This->imReg[0].ValU16() = x-VM::IM0;
+        This->op[0].any = This->imReg[0].Data16();
+        break;
+      case 4:
+        This->imReg[0].ValU32() = x-VM::IM0;
+        This->op[0].any = This->imReg[0].Data32();
+        break;
+      case 8:
+        This->imReg[0].ValU64() = x-VM::IM0;
+        This->op[0].any = This->imReg[0].Data64();
+        break;
+    }
+  }
+  x = *p;
+  This->op[1].any = eaTable[x](This,s2);
+  This->instPtr++;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 
 static void Decode2_X8(OP_ARGS)
 {
-	ruint8* p = ((uint8*)This->instPtr)+1;
-	uint32 x = *p++;
-	if (x<VM::IM0)
-		This->op[0].any = eaTable[x](This,1);
-	else
-	{
-		This->imReg[0].ValU8() = x-VM::IM0;
-		This->op[0].any = This->imReg[0].Data8();
-	}
-	x = *p;
-	This->op[1].any = eaTable[x](This,1);
-	This->instPtr++;
+  ruint8* p = ((uint8*)This->instPtr)+1;
+  uint32 x = *p++;
+  if (x<VM::IM0)
+    This->op[0].any = eaTable[x](This,1);
+  else
+  {
+    This->imReg[0].ValU8() = x-VM::IM0;
+    This->op[0].any = This->imReg[0].Data8();
+  }
+  x = *p;
+  This->op[1].any = eaTable[x](This,1);
+  This->instPtr++;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 
 static void Decode2_X16(OP_ARGS)
 {
-	ruint8* p = ((uint8*)This->instPtr)+1;
-	uint32 x = *p++;
-	if (x<VM::IM0)
-		This->op[0].any = eaTable[x](This,2);
-	else
-	{
-		This->imReg[0].ValU16() = x-VM::IM0;
-		This->op[0].any = This->imReg[0].Data16();
-	}
-	x = *p;
-	This->op[1].any = eaTable[x](This,2);
-	This->instPtr++;
+  ruint8* p = ((uint8*)This->instPtr)+1;
+  uint32 x = *p++;
+  if (x<VM::IM0)
+    This->op[0].any = eaTable[x](This,2);
+  else
+  {
+    This->imReg[0].ValU16() = x-VM::IM0;
+    This->op[0].any = This->imReg[0].Data16();
+  }
+  x = *p;
+  This->op[1].any = eaTable[x](This,2);
+  This->instPtr++;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 
 static void Decode2_X32(OP_ARGS)
 {
-	ruint8* p = ((uint8*)This->instPtr)+1;
-	uint32 x = *p++;
-	if (x<VM::IM0)
-		This->op[0].any = eaTable[x](This,4);
-	else
-	{
-		This->imReg[0].ValU32() = x-VM::IM0;
-		This->op[0].any = This->imReg[0].Data32();
-	}
-	x = *p;
-	This->op[1].any = eaTable[x](This,4);
-	This->instPtr++;
+  ruint8* p = ((uint8*)This->instPtr)+1;
+  uint32 x = *p++;
+  if (x<VM::IM0)
+    This->op[0].any = eaTable[x](This,4);
+  else
+  {
+    This->imReg[0].ValU32() = x-VM::IM0;
+    This->op[0].any = This->imReg[0].Data32();
+  }
+  x = *p;
+  This->op[1].any = eaTable[x](This,4);
+  This->instPtr++;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 
 static void Decode2_X64(OP_ARGS)
 {
-	ruint8* p = ((uint8*)This->instPtr)+1;
-	uint32 x = *p++;
-	if (x<VM::IM0)
-		This->op[0].any = eaTable[x](This,8);
-	else
-	{
-		This->imReg[0].ValU64() = x-VM::IM0;
-		This->op[0].any = This->imReg[0].Data64();
-	}
-	x = *p;
-	This->op[1].any = eaTable[x](This,8);
-	This->instPtr++;
+  ruint8* p = ((uint8*)This->instPtr)+1;
+  uint32 x = *p++;
+  if (x<VM::IM0)
+    This->op[0].any = eaTable[x](This,8);
+  else
+  {
+    This->imReg[0].ValU64() = x-VM::IM0;
+    This->op[0].any = This->imReg[0].Data64();
+  }
+  x = *p;
+  This->op[1].any = eaTable[x](This,8);
+  This->instPtr++;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 
 static void Decode2C_X8(OP_ARGS)
 {
-	ruint8* p = ((uint8*)This->instPtr)+1;
-	uint32 x = *p++;
-	if (x<VM::IM0)
-		This->op[0].any = eaTable[x](This,1);
-	else
-	{
-		This->imReg[0].ValU8() = x-VM::IM0;
-		This->op[0].any = This->imReg[0].Data8();
-	}
-	x = *p;
-	if (x<VM::IM0)
-		This->op[1].any = eaTable[x](This,1);
-	else
-	{
-		This->imReg[1].ValU8() = x-VM::IM0;
-		This->op[1].any = This->imReg[1].Data8();
-	}
-	This->instPtr++;
+  ruint8* p = ((uint8*)This->instPtr)+1;
+  uint32 x = *p++;
+  if (x<VM::IM0)
+    This->op[0].any = eaTable[x](This,1);
+  else
+  {
+    This->imReg[0].ValU8() = x-VM::IM0;
+    This->op[0].any = This->imReg[0].Data8();
+  }
+  x = *p;
+  if (x<VM::IM0)
+    This->op[1].any = eaTable[x](This,1);
+  else
+  {
+    This->imReg[1].ValU8() = x-VM::IM0;
+    This->op[1].any = This->imReg[1].Data8();
+  }
+  This->instPtr++;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 
 static void Decode2C_X16(OP_ARGS)
 {
-	ruint8* p = ((uint8*)This->instPtr)+1;
-	uint32 x = *p++;
-	if (x<VM::IM0)
-		This->op[0].any = eaTable[x](This,2);
-	else
-	{
-		This->imReg[0].ValU16() = x-VM::IM0;
-		This->op[0].any = This->imReg[0].Data16();
-	}
-	x = *p;
-	if (x<VM::IM0)
-		This->op[1].any = eaTable[x](This,2);
-	else
-	{
-		This->imReg[1].ValU16() = x-VM::IM0;
-		This->op[1].any = This->imReg[1].Data16();
-	}
-	This->instPtr++;
+  ruint8* p = ((uint8*)This->instPtr)+1;
+  uint32 x = *p++;
+  if (x<VM::IM0)
+    This->op[0].any = eaTable[x](This,2);
+  else
+  {
+    This->imReg[0].ValU16() = x-VM::IM0;
+    This->op[0].any = This->imReg[0].Data16();
+  }
+  x = *p;
+  if (x<VM::IM0)
+    This->op[1].any = eaTable[x](This,2);
+  else
+  {
+    This->imReg[1].ValU16() = x-VM::IM0;
+    This->op[1].any = This->imReg[1].Data16();
+  }
+  This->instPtr++;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 
 static void Decode2C_X32(OP_ARGS)
 {
-	ruint8* p = ((uint8*)This->instPtr)+1;
-	uint32 x = *p++;
-	if (x<VM::IM0)
-		This->op[0].any = eaTable[x](This,4);
-	else
-	{
-		This->imReg[0].ValU32() = x-VM::IM0;
-		This->op[0].any = This->imReg[0].Data32();
-	}
-	x = *p;
-	if (x<VM::IM0)
-		This->op[1].any = eaTable[x](This,4);
-	else
-	{
-		This->imReg[1].ValU32() = x-VM::IM0;
-		This->op[1].any = This->imReg[1].Data32();
-	}
-	This->instPtr++;
+  ruint8* p = ((uint8*)This->instPtr)+1;
+  uint32 x = *p++;
+  if (x<VM::IM0)
+    This->op[0].any = eaTable[x](This,4);
+  else
+  {
+    This->imReg[0].ValU32() = x-VM::IM0;
+    This->op[0].any = This->imReg[0].Data32();
+  }
+  x = *p;
+  if (x<VM::IM0)
+    This->op[1].any = eaTable[x](This,4);
+  else
+  {
+    This->imReg[1].ValU32() = x-VM::IM0;
+    This->op[1].any = This->imReg[1].Data32();
+  }
+  This->instPtr++;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 
 static void Decode2C_X64(OP_ARGS)
 {
-	ruint8* p = ((uint8*)This->instPtr)+1;
-	uint32 x = *p++;
-	if (x<VM::IM0)
-		This->op[0].any = eaTable[x](This,8);
-	else
-	{
-		This->imReg[0].ValU64() = x-VM::IM0;
-		This->op[0].any = This->imReg[0].Data64();
-	}
-	x = *p;
+  ruint8* p = ((uint8*)This->instPtr)+1;
+  uint32 x = *p++;
+  if (x<VM::IM0)
+    This->op[0].any = eaTable[x](This,8);
+  else
+  {
+    This->imReg[0].ValU64() = x-VM::IM0;
+    This->op[0].any = This->imReg[0].Data64();
+  }
+  x = *p;
 
-	if (x<VM::IM0)
-		This->op[1].any = eaTable[x](This,8);
-	else
-	{
-		This->imReg[1].ValU64() = x-VM::IM0;
-		This->op[1].any = This->imReg[1].Data64();
-	}
-	This->instPtr++;
+  if (x<VM::IM0)
+    This->op[1].any = eaTable[x](This,8);
+  else
+  {
+    This->imReg[1].ValU64() = x-VM::IM0;
+    This->op[1].any = This->imReg[1].Data64();
+  }
+  This->instPtr++;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 
 static void Decode3_X8(OP_ARGS)
 {
-	ruint8* p = ((uint8*)This->instPtr)+1;
-	uint32 x = *p++;
-	if (x<VM::IM0)
-		This->op[0].any = eaTable[x](This,1);
-	else
-	{
-		This->imReg[0].ValU8() = x-VM::IM0;
-		This->op[0].any = This->imReg[0].Data8();
-	}
+  ruint8* p = ((uint8*)This->instPtr)+1;
+  uint32 x = *p++;
+  if (x<VM::IM0)
+    This->op[0].any = eaTable[x](This,1);
+  else
+  {
+    This->imReg[0].ValU8() = x-VM::IM0;
+    This->op[0].any = This->imReg[0].Data8();
+  }
 
-	x = *p++;
-	if (x<VM::IM0)
-		This->op[1].any = eaTable[x](This,1);
-	else
-	{
-		This->imReg[1].ValU8() = x-VM::IM0;
-		This->op[1].any = This->imReg[1].Data8();
-	}
+  x = *p++;
+  if (x<VM::IM0)
+    This->op[1].any = eaTable[x](This,1);
+  else
+  {
+    This->imReg[1].ValU8() = x-VM::IM0;
+    This->op[1].any = This->imReg[1].Data8();
+  }
 
-	This->op[2].any = eaTable[*p](This,1);
-	This->instPtr++;
+  This->op[2].any = eaTable[*p](This,1);
+  This->instPtr++;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 
 static void Decode3_X16(OP_ARGS)
 {
-	ruint8* p = ((uint8*)This->instPtr)+1;
-	uint32 x = *p++;
-	if (x<VM::IM0)
-		This->op[0].any = eaTable[x](This,2);
-	else
-	{
-		This->imReg[0].ValU16() = x-VM::IM0;
-		This->op[0].any = This->imReg[0].Data16();
-	}
+  ruint8* p = ((uint8*)This->instPtr)+1;
+  uint32 x = *p++;
+  if (x<VM::IM0)
+    This->op[0].any = eaTable[x](This,2);
+  else
+  {
+    This->imReg[0].ValU16() = x-VM::IM0;
+    This->op[0].any = This->imReg[0].Data16();
+  }
 
-	x = *p++;
-	if (x<VM::IM0)
-		This->op[1].any = eaTable[x](This,2);
-	else
-	{
-		This->imReg[1].ValU16() = x-VM::IM0;
-		This->op[1].any = This->imReg[1].Data16();
-	}
+  x = *p++;
+  if (x<VM::IM0)
+    This->op[1].any = eaTable[x](This,2);
+  else
+  {
+    This->imReg[1].ValU16() = x-VM::IM0;
+    This->op[1].any = This->imReg[1].Data16();
+  }
 
-	This->op[2].any = eaTable[*p](This,2);
-	This->instPtr++;
+  This->op[2].any = eaTable[*p](This,2);
+  This->instPtr++;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 
 static void Decode3_X32(OP_ARGS)
 {
-	ruint8* p = ((uint8*)This->instPtr)+1;
-	uint32 x = *p++;
-	if (x<VM::IM0)
-		This->op[0].any = eaTable[x](This,4);
-	else
-	{
-		This->imReg[0].ValU32() = x-VM::IM0;
-		This->op[0].any = This->imReg[0].Data32();
-	}
+  ruint8* p = ((uint8*)This->instPtr)+1;
+  uint32 x = *p++;
+  if (x<VM::IM0)
+    This->op[0].any = eaTable[x](This,4);
+  else
+  {
+    This->imReg[0].ValU32() = x-VM::IM0;
+    This->op[0].any = This->imReg[0].Data32();
+  }
 
-	x = *p++;
-	if (x<VM::IM0)
-		This->op[1].any = eaTable[x](This,4);
-	else
-	{
-		This->imReg[1].ValU32() = x-VM::IM0;
-		This->op[1].any = This->imReg[1].Data32();
-	}
+  x = *p++;
+  if (x<VM::IM0)
+    This->op[1].any = eaTable[x](This,4);
+  else
+  {
+    This->imReg[1].ValU32() = x-VM::IM0;
+    This->op[1].any = This->imReg[1].Data32();
+  }
 
-	This->op[2].any = eaTable[*p](This,4);
-	This->instPtr++;
+  This->op[2].any = eaTable[*p](This,4);
+  This->instPtr++;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 
 static void Decode3_X64(OP_ARGS)
 {
-	ruint8* p = ((uint8*)This->instPtr)+1;
-	uint32 x = *p++;
-	if (x<VM::IM0)
-		This->op[0].any = eaTable[x](This,8);
-	else
-	{
-		This->imReg[0].ValU64() = x-VM::IM0;
-		This->op[0].any = This->imReg[0].Data64();
-	}
+  ruint8* p = ((uint8*)This->instPtr)+1;
+  uint32 x = *p++;
+  if (x<VM::IM0)
+    This->op[0].any = eaTable[x](This,8);
+  else
+  {
+    This->imReg[0].ValU64() = x-VM::IM0;
+    This->op[0].any = This->imReg[0].Data64();
+  }
 
-	x = *p++;
-	if (x<VM::IM0)
-		This->op[1].any = eaTable[x](This,8);
-	else
-	{
-		This->imReg[1].ValU64() = x-VM::IM0;
-		This->op[1].any = This->imReg[1].Data64();
-	}
+  x = *p++;
+  if (x<VM::IM0)
+    This->op[1].any = eaTable[x](This,8);
+  else
+  {
+    This->imReg[1].ValU64() = x-VM::IM0;
+    This->op[1].any = This->imReg[1].Data64();
+  }
 
-	This->op[2].any = eaTable[*p](This,8);
-	This->instPtr++;
+  This->op[2].any = eaTable[*p](This,8);
+  This->instPtr++;
 }
 
 #else
@@ -415,362 +415,362 @@ static void Decode3_X64(OP_ARGS)
 
 static void Decode1_X8(OP_ARGS)
 {
-	uint32 x = ((uint8*)This->instPtr)[2];
-	if (x<VM::IM0)
-		This->op[0].any = eaTable[x](This,1);
-	else
-	{
-		This->imReg[0].ValU8() = x-VM::IM0;
-		This->op[0].any = This->imReg[0].Data8();
-	}
-	This->instPtr++;
+  uint32 x = ((uint8*)This->instPtr)[2];
+  if (x<VM::IM0)
+    This->op[0].any = eaTable[x](This,1);
+  else
+  {
+    This->imReg[0].ValU8() = x-VM::IM0;
+    This->op[0].any = This->imReg[0].Data8();
+  }
+  This->instPtr++;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 
 static void Decode1_X16(OP_ARGS)
 {
-	uint32 x = ((uint8*)This->instPtr)[2];
-	if (x<VM::IM0)
-		This->op[0].any = eaTable[x](This,2);
-	else
-	{
-		This->imReg[0].ValU16() = x-VM::IM0;
-		This->op[0].any = This->imReg[0].Data16();
-	}
-	This->instPtr++;
+  uint32 x = ((uint8*)This->instPtr)[2];
+  if (x<VM::IM0)
+    This->op[0].any = eaTable[x](This,2);
+  else
+  {
+    This->imReg[0].ValU16() = x-VM::IM0;
+    This->op[0].any = This->imReg[0].Data16();
+  }
+  This->instPtr++;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 
 static void Decode1_X32(OP_ARGS)
 {
-	uint32 x = ((uint8*)This->instPtr)[2];
-	if (x<VM::IM0)
-		This->op[0].any = eaTable[x](This,4);
-	else
-	{
-		This->imReg[0].ValU32() = x-VM::IM0;
-		This->op[0].any = This->imReg[0].Data32();
-	}
-	This->instPtr++;
+  uint32 x = ((uint8*)This->instPtr)[2];
+  if (x<VM::IM0)
+    This->op[0].any = eaTable[x](This,4);
+  else
+  {
+    This->imReg[0].ValU32() = x-VM::IM0;
+    This->op[0].any = This->imReg[0].Data32();
+  }
+  This->instPtr++;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 
 static void Decode1_X64(OP_ARGS)
 {
-	uint32 x = ((uint8*)This->instPtr)[2];
-	if (x<VM::IM0)
-		This->op[0].any = eaTable[x](This,8);
-	else
-	{
-		This->imReg[0].ValU64() = x-VM::IM0;
-		This->op[0].any = This->imReg[0].Data64();
-	}
-	This->instPtr++;
+  uint32 x = ((uint8*)This->instPtr)[2];
+  if (x<VM::IM0)
+    This->op[0].any = eaTable[x](This,8);
+  else
+  {
+    This->imReg[0].ValU64() = x-VM::IM0;
+    This->op[0].any = This->imReg[0].Data64();
+  }
+  This->instPtr++;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 
 static void Decode2(EA_2ARGS)
 {
-	ruint32 x = ((uint8*)This->instPtr)[2];
-	if (x<VM::IM0)
-		This->op[0].any = eaTable[x](This,s1);
-	else
-	{
-		switch(s1)
-		{
-			case 1:
-				This->imReg[0].ValU8() = x-VM::IM0;
-				This->op[0].any = This->imReg[0].Data8();
-				break;
-			case 2:
-				This->imReg[0].ValU16() = x-VM::IM0;
-				This->op[0].any = This->imReg[0].Data16();
-				break;
-			case 4:
-				This->imReg[0].ValU32() = x-VM::IM0;
-				This->op[0].any = This->imReg[0].Data32();
-				break;
-			case 8:
-				This->imReg[0].ValU64() = x-VM::IM0;
-				This->op[0].any = This->imReg[0].Data64();
-				break;
-		}
-	}
-	x = ((uint8*)This->instPtr)[1];
-	This->op[1].any = eaTable[x](This,s2);
-	This->instPtr++;
+  ruint32 x = ((uint8*)This->instPtr)[2];
+  if (x<VM::IM0)
+    This->op[0].any = eaTable[x](This,s1);
+  else
+  {
+    switch(s1)
+    {
+      case 1:
+        This->imReg[0].ValU8() = x-VM::IM0;
+        This->op[0].any = This->imReg[0].Data8();
+        break;
+      case 2:
+        This->imReg[0].ValU16() = x-VM::IM0;
+        This->op[0].any = This->imReg[0].Data16();
+        break;
+      case 4:
+        This->imReg[0].ValU32() = x-VM::IM0;
+        This->op[0].any = This->imReg[0].Data32();
+        break;
+      case 8:
+        This->imReg[0].ValU64() = x-VM::IM0;
+        This->op[0].any = This->imReg[0].Data64();
+        break;
+    }
+  }
+  x = ((uint8*)This->instPtr)[1];
+  This->op[1].any = eaTable[x](This,s2);
+  This->instPtr++;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 
 static void Decode2_X8(OP_ARGS)
 {
-	ruint32 x = ((uint8*)This->instPtr)[2];
-	if (x<VM::IM0)
-		This->op[0].any = eaTable[x](This,1);
-	else
-	{
-		This->imReg[0].ValU8() = x-VM::IM0;
-		This->op[0].any = This->imReg[0].Data8();
-	}
-	x = ((uint8*)This->instPtr)[1];
-	This->op[1].any = eaTable[x](This,1);
-	This->instPtr++;
+  ruint32 x = ((uint8*)This->instPtr)[2];
+  if (x<VM::IM0)
+    This->op[0].any = eaTable[x](This,1);
+  else
+  {
+    This->imReg[0].ValU8() = x-VM::IM0;
+    This->op[0].any = This->imReg[0].Data8();
+  }
+  x = ((uint8*)This->instPtr)[1];
+  This->op[1].any = eaTable[x](This,1);
+  This->instPtr++;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 
 static void Decode2_X16(OP_ARGS)
 {
-	ruint32 x = ((uint8*)This->instPtr)[2];
-	if (x<VM::IM0)
-		This->op[0].any = eaTable[x](This,2);
-	else
-	{
-		This->imReg[0].ValU16() = x-VM::IM0;
-		This->op[0].any = This->imReg[0].Data16();
-	}
-	x = ((uint8*)This->instPtr)[1];
-	This->op[1].any = eaTable[x](This,2);
-	This->instPtr++;
+  ruint32 x = ((uint8*)This->instPtr)[2];
+  if (x<VM::IM0)
+    This->op[0].any = eaTable[x](This,2);
+  else
+  {
+    This->imReg[0].ValU16() = x-VM::IM0;
+    This->op[0].any = This->imReg[0].Data16();
+  }
+  x = ((uint8*)This->instPtr)[1];
+  This->op[1].any = eaTable[x](This,2);
+  This->instPtr++;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 
 static void Decode2_X32(OP_ARGS)
 {
-	ruint32 x = ((uint8*)This->instPtr)[2];
-	if (x<VM::IM0)
-		This->op[0].any = eaTable[x](This,4);
-	else
-	{
-		This->imReg[0].ValU32() = x-VM::IM0;
-		This->op[0].any = This->imReg[0].Data32();
-	}
-	x = ((uint8*)This->instPtr)[1];
-	This->op[1].any = eaTable[x](This,4);
-	This->instPtr++;
+  ruint32 x = ((uint8*)This->instPtr)[2];
+  if (x<VM::IM0)
+    This->op[0].any = eaTable[x](This,4);
+  else
+  {
+    This->imReg[0].ValU32() = x-VM::IM0;
+    This->op[0].any = This->imReg[0].Data32();
+  }
+  x = ((uint8*)This->instPtr)[1];
+  This->op[1].any = eaTable[x](This,4);
+  This->instPtr++;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 
 static void Decode2_X64(OP_ARGS)
 {
-	ruint32 x = ((uint8*)This->instPtr)[2];
-	if (x<VM::IM0)
-		This->op[0].any = eaTable[x](This,8);
-	else
-	{
-		This->imReg[0].ValU64() = x-VM::IM0;
-		This->op[0].any = This->imReg[0].Data64();
-	}
-	x = ((uint8*)This->instPtr)[1];
-	This->op[1].any = eaTable[x](This,8);
-	This->instPtr++;
+  ruint32 x = ((uint8*)This->instPtr)[2];
+  if (x<VM::IM0)
+    This->op[0].any = eaTable[x](This,8);
+  else
+  {
+    This->imReg[0].ValU64() = x-VM::IM0;
+    This->op[0].any = This->imReg[0].Data64();
+  }
+  x = ((uint8*)This->instPtr)[1];
+  This->op[1].any = eaTable[x](This,8);
+  This->instPtr++;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 
 static void Decode2C_X8(OP_ARGS)
 {
-	ruint32 x = ((uint8*)This->instPtr)[2];
-	if (x<VM::IM0)
-		This->op[0].any = eaTable[x](This,1);
-	else
-	{
-		This->imReg[0].ValU8() = x-VM::IM0;
-		This->op[0].any = This->imReg[0].Data8();
-	}
-	x = ((uint8*)This->instPtr)[1];
-	if (x<VM::IM0)
-		This->op[1].any = eaTable[x](This,1);
-	else
-	{
-		This->imReg[1].ValU8() = x-VM::IM0;
-		This->op[1].any = This->imReg[1].Data8();
-	}
-	This->instPtr++;
+  ruint32 x = ((uint8*)This->instPtr)[2];
+  if (x<VM::IM0)
+    This->op[0].any = eaTable[x](This,1);
+  else
+  {
+    This->imReg[0].ValU8() = x-VM::IM0;
+    This->op[0].any = This->imReg[0].Data8();
+  }
+  x = ((uint8*)This->instPtr)[1];
+  if (x<VM::IM0)
+    This->op[1].any = eaTable[x](This,1);
+  else
+  {
+    This->imReg[1].ValU8() = x-VM::IM0;
+    This->op[1].any = This->imReg[1].Data8();
+  }
+  This->instPtr++;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 
 static void Decode2C_X16(OP_ARGS)
 {
-	ruint32 x = ((uint8*)This->instPtr)[2];
-	if (x<VM::IM0)
-		This->op[0].any = eaTable[x](This,2);
-	else
-	{
-		This->imReg[0].ValU16() = x-VM::IM0;
-		This->op[0].any = This->imReg[0].Data16();
-	}
-	x = ((uint8*)This->instPtr)[1];
-	if (x<VM::IM0)
-		This->op[1].any = eaTable[x](This,2);
-	else
-	{
-		This->imReg[1].ValU16() = x-VM::IM0;
-		This->op[1].any = This->imReg[1].Data16();
-	}
-	This->instPtr++;
+  ruint32 x = ((uint8*)This->instPtr)[2];
+  if (x<VM::IM0)
+    This->op[0].any = eaTable[x](This,2);
+  else
+  {
+    This->imReg[0].ValU16() = x-VM::IM0;
+    This->op[0].any = This->imReg[0].Data16();
+  }
+  x = ((uint8*)This->instPtr)[1];
+  if (x<VM::IM0)
+    This->op[1].any = eaTable[x](This,2);
+  else
+  {
+    This->imReg[1].ValU16() = x-VM::IM0;
+    This->op[1].any = This->imReg[1].Data16();
+  }
+  This->instPtr++;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 
 static void Decode2C_X32(OP_ARGS)
 {
-	ruint32 x = ((uint8*)This->instPtr)[2];
-	if (x<VM::IM0)
-		This->op[0].any = eaTable[x](This,4);
-	else
-	{
-		This->imReg[0].ValU32() = x-VM::IM0;
-		This->op[0].any = This->imReg[0].Data32();
-	}
-	x = ((uint8*)This->instPtr)[1];
-	if (x<VM::IM0)
-		This->op[1].any = eaTable[x](This,4);
-	else
-	{
-		This->imReg[1].ValU32() = x-VM::IM0;
-		This->op[1].any = This->imReg[1].Data32();
-	}
-	This->instPtr++;
+  ruint32 x = ((uint8*)This->instPtr)[2];
+  if (x<VM::IM0)
+    This->op[0].any = eaTable[x](This,4);
+  else
+  {
+    This->imReg[0].ValU32() = x-VM::IM0;
+    This->op[0].any = This->imReg[0].Data32();
+  }
+  x = ((uint8*)This->instPtr)[1];
+  if (x<VM::IM0)
+    This->op[1].any = eaTable[x](This,4);
+  else
+  {
+    This->imReg[1].ValU32() = x-VM::IM0;
+    This->op[1].any = This->imReg[1].Data32();
+  }
+  This->instPtr++;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 
 static void Decode2C_X64(OP_ARGS)
 {
-	ruint32 x = ((uint8*)This->instPtr)[2];
-	if (x<VM::IM0)
-		This->op[0].any = eaTable[x](This,8);
-	else
-	{
-		This->imReg[0].ValU64() = x-VM::IM0;
-		This->op[0].any = This->imReg[0].Data64();
-	}
-	x = ((uint8*)This->instPtr)[1];
-	if (x<VM::IM0)
-		This->op[1].any = eaTable[x](This,8);
-	else
-	{
-		This->imReg[1].ValU64() = x-VM::IM0;
-		This->op[1].any = This->imReg[1].Data64();
-	}
-	This->instPtr++;
+  ruint32 x = ((uint8*)This->instPtr)[2];
+  if (x<VM::IM0)
+    This->op[0].any = eaTable[x](This,8);
+  else
+  {
+    This->imReg[0].ValU64() = x-VM::IM0;
+    This->op[0].any = This->imReg[0].Data64();
+  }
+  x = ((uint8*)This->instPtr)[1];
+  if (x<VM::IM0)
+    This->op[1].any = eaTable[x](This,8);
+  else
+  {
+    This->imReg[1].ValU64() = x-VM::IM0;
+    This->op[1].any = This->imReg[1].Data64();
+  }
+  This->instPtr++;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 
 static void Decode3_X8(OP_ARGS)
 {
-	ruint32 x = ((uint8*)This->instPtr)[2];
-	if (x<VM::IM0)
-		This->op[0].any = eaTable[x](This,1);
-	else
-	{
-		This->imReg[0].ValU8() = x-VM::IM0;
-		This->op[0].any = This->imReg[0].Data8();
-	}
+  ruint32 x = ((uint8*)This->instPtr)[2];
+  if (x<VM::IM0)
+    This->op[0].any = eaTable[x](This,1);
+  else
+  {
+    This->imReg[0].ValU8() = x-VM::IM0;
+    This->op[0].any = This->imReg[0].Data8();
+  }
 
-	x = ((uint8*)This->instPtr)[1];
-	if (x<VM::IM0)
-		This->op[1].any = eaTable[x](This,1);
-	else
-	{
-		This->imReg[1].ValU8() = x-VM::IM0;
-		This->op[1].any = This->imReg[1].Data8();
-	}
+  x = ((uint8*)This->instPtr)[1];
+  if (x<VM::IM0)
+    This->op[1].any = eaTable[x](This,1);
+  else
+  {
+    This->imReg[1].ValU8() = x-VM::IM0;
+    This->op[1].any = This->imReg[1].Data8();
+  }
 
-	x = ((uint8*)This->instPtr)[0];
-	This->op[2].any = eaTable[x](This,1);
-	This->instPtr++;
+  x = ((uint8*)This->instPtr)[0];
+  This->op[2].any = eaTable[x](This,1);
+  This->instPtr++;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 
 static void Decode3_X16(OP_ARGS)
 {
-	ruint32 x = ((uint8*)This->instPtr)[2];
-	if (x<VM::IM0)
-		This->op[0].any = eaTable[x](This,2);
-	else
-	{
-		This->imReg[0].ValU16() = x-VM::IM0;
-		This->op[0].any = This->imReg[0].Data16();
-	}
+  ruint32 x = ((uint8*)This->instPtr)[2];
+  if (x<VM::IM0)
+    This->op[0].any = eaTable[x](This,2);
+  else
+  {
+    This->imReg[0].ValU16() = x-VM::IM0;
+    This->op[0].any = This->imReg[0].Data16();
+  }
 
-	x = ((uint8*)This->instPtr)[1];
+  x = ((uint8*)This->instPtr)[1];
 
-	if (x<VM::IM0)
-		This->op[1].any = eaTable[x](This,2);
-	else
-	{
-		This->imReg[1].ValU16() = x-VM::IM0;
-		This->op[1].any = This->imReg[1].Data16();
-	}
-	x = ((uint8*)This->instPtr)[0];
-	This->op[2].any = eaTable[x](This,2);
-	This->instPtr++;
+  if (x<VM::IM0)
+    This->op[1].any = eaTable[x](This,2);
+  else
+  {
+    This->imReg[1].ValU16() = x-VM::IM0;
+    This->op[1].any = This->imReg[1].Data16();
+  }
+  x = ((uint8*)This->instPtr)[0];
+  This->op[2].any = eaTable[x](This,2);
+  This->instPtr++;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 
 static void Decode3_X32(OP_ARGS)
 {
-	ruint32 x = ((uint8*)This->instPtr)[2];
-	if (x<VM::IM0)
-		This->op[0].any = eaTable[x](This,4);
-	else
-	{
-		This->imReg[0].ValU32() = x-VM::IM0;
-		This->op[0].any = This->imReg[0].Data32();
-	}
+  ruint32 x = ((uint8*)This->instPtr)[2];
+  if (x<VM::IM0)
+    This->op[0].any = eaTable[x](This,4);
+  else
+  {
+    This->imReg[0].ValU32() = x-VM::IM0;
+    This->op[0].any = This->imReg[0].Data32();
+  }
 
-	x = ((uint8*)This->instPtr)[1];
-	if (x<VM::IM0)
-		This->op[1].any = eaTable[x](This,4);
-	else
-	{
-		This->imReg[1].ValU32() = x-VM::IM0;
-		This->op[1].any = This->imReg[1].Data32();
-	}
+  x = ((uint8*)This->instPtr)[1];
+  if (x<VM::IM0)
+    This->op[1].any = eaTable[x](This,4);
+  else
+  {
+    This->imReg[1].ValU32() = x-VM::IM0;
+    This->op[1].any = This->imReg[1].Data32();
+  }
 
-	x = ((uint8*)This->instPtr)[0];
-	This->op[2].any = eaTable[x](This,4);
-	This->instPtr++;
+  x = ((uint8*)This->instPtr)[0];
+  This->op[2].any = eaTable[x](This,4);
+  This->instPtr++;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 
 static void Decode3_X64(OP_ARGS)
 {
-	ruint32 x = ((uint8*)This->instPtr)[2];
-	if (x<VM::IM0)
-		This->op[0].any = eaTable[x](This,8);
-	else
-	{
-		This->imReg[0].ValU64() = x-VM::IM0;
-		This->op[0].any = This->imReg[0].Data64();
-	}
+  ruint32 x = ((uint8*)This->instPtr)[2];
+  if (x<VM::IM0)
+    This->op[0].any = eaTable[x](This,8);
+  else
+  {
+    This->imReg[0].ValU64() = x-VM::IM0;
+    This->op[0].any = This->imReg[0].Data64();
+  }
 
-	x = ((uint8*)This->instPtr)[1];
-	if (x<VM::IM0)
-		This->op[1].any = eaTable[x](This,8);
-	else
-	{
-		This->imReg[1].ValU64() = x-VM::IM0;
-		This->op[1].any = This->imReg[1].Data64();
-	}
+  x = ((uint8*)This->instPtr)[1];
+  if (x<VM::IM0)
+    This->op[1].any = eaTable[x](This,8);
+  else
+  {
+    This->imReg[1].ValU64() = x-VM::IM0;
+    This->op[1].any = This->imReg[1].Data64();
+  }
 
-	x = ((uint8*)This->instPtr)[0];
-	This->op[2].any = eaTable[x](This,8);
-	This->instPtr++;
+  x = ((uint8*)This->instPtr)[0];
+  This->op[2].any = eaTable[x](This,8);
+  This->instPtr++;
 }
 
 #endif
@@ -915,86 +915,86 @@ static void* fOFFSET_PC(EA_ARGS);
 static void* IllegalAddress(EA_ARGS);
 
 static void IllegalOpcode(OP_ARGS);
-static void	fNOP(OP_ARGS);
-static void	fEND(OP_ARGS);
-static void	fSYS(OP_ARGS);
-static void	fLEA(OP_ARGS);
-static void	fBRA(OP_ARGS);
-static void	fBNEQ_I8(OP_ARGS);
-static void	fBNEQ_I16(OP_ARGS);
-static void	fBNEQ_I32(OP_ARGS);
-static void	fBNEQ_I64(OP_ARGS);
-static void	fBNEQ_F32(OP_ARGS);
-static void	fBNEQ_F64(OP_ARGS);
-static void	fBLS_I8(OP_ARGS);
-static void	fBLS_I16(OP_ARGS);
-static void	fBLS_I32(OP_ARGS);
-static void	fBLS_I64(OP_ARGS);
-static void	fBLS_F32(OP_ARGS);
-static void	fBLS_F64(OP_ARGS);
-static void	fBLSEQ_I8(OP_ARGS);
-static void	fBLSEQ_I16(OP_ARGS);
-static void	fBLSEQ_I32(OP_ARGS);
-static void	fBLSEQ_I64(OP_ARGS);
-static void	fBLSEQ_F32(OP_ARGS);
-static void	fBLSEQ_F64(OP_ARGS);
-static void	fBEQ_I8(OP_ARGS);
-static void	fBEQ_I16(OP_ARGS);
-static void	fBEQ_I32(OP_ARGS);
-static void	fBEQ_I64(OP_ARGS);
-static void	fBEQ_F32(OP_ARGS);
-static void	fBEQ_F64(OP_ARGS);
-static void	fBGREQ_I8(OP_ARGS);
-static void	fBGREQ_I16(OP_ARGS);
-static void	fBGREQ_I32(OP_ARGS);
-static void	fBGREQ_I64(OP_ARGS);
-static void	fBGREQ_F32(OP_ARGS);
-static void	fBGREQ_F64(OP_ARGS);
-static void	fBGR_I8(OP_ARGS);
-static void	fBGR_I16(OP_ARGS);
-static void	fBGR_I32(OP_ARGS);
-static void	fBGR_I64(OP_ARGS);
-static void	fBGR_F32(OP_ARGS);
-static void	fBGR_F64(OP_ARGS);
+static void fNOP(OP_ARGS);
+static void fEND(OP_ARGS);
+static void fSYS(OP_ARGS);
+static void fLEA(OP_ARGS);
+static void fBRA(OP_ARGS);
+static void fBNEQ_I8(OP_ARGS);
+static void fBNEQ_I16(OP_ARGS);
+static void fBNEQ_I32(OP_ARGS);
+static void fBNEQ_I64(OP_ARGS);
+static void fBNEQ_F32(OP_ARGS);
+static void fBNEQ_F64(OP_ARGS);
+static void fBLS_I8(OP_ARGS);
+static void fBLS_I16(OP_ARGS);
+static void fBLS_I32(OP_ARGS);
+static void fBLS_I64(OP_ARGS);
+static void fBLS_F32(OP_ARGS);
+static void fBLS_F64(OP_ARGS);
+static void fBLSEQ_I8(OP_ARGS);
+static void fBLSEQ_I16(OP_ARGS);
+static void fBLSEQ_I32(OP_ARGS);
+static void fBLSEQ_I64(OP_ARGS);
+static void fBLSEQ_F32(OP_ARGS);
+static void fBLSEQ_F64(OP_ARGS);
+static void fBEQ_I8(OP_ARGS);
+static void fBEQ_I16(OP_ARGS);
+static void fBEQ_I32(OP_ARGS);
+static void fBEQ_I64(OP_ARGS);
+static void fBEQ_F32(OP_ARGS);
+static void fBEQ_F64(OP_ARGS);
+static void fBGREQ_I8(OP_ARGS);
+static void fBGREQ_I16(OP_ARGS);
+static void fBGREQ_I32(OP_ARGS);
+static void fBGREQ_I64(OP_ARGS);
+static void fBGREQ_F32(OP_ARGS);
+static void fBGREQ_F64(OP_ARGS);
+static void fBGR_I8(OP_ARGS);
+static void fBGR_I16(OP_ARGS);
+static void fBGR_I32(OP_ARGS);
+static void fBGR_I64(OP_ARGS);
+static void fBGR_F32(OP_ARGS);
+static void fBGR_F64(OP_ARGS);
 
-static void	fCALL(OP_ARGS);
-static void	fRET(OP_ARGS);
+static void fCALL(OP_ARGS);
+static void fRET(OP_ARGS);
 
-static void	fPUSH_X8(OP_ARGS);
-static void	fPUSH_X16(OP_ARGS);
-static void	fPUSH_X32(OP_ARGS);
-static void	fPUSH_X64(OP_ARGS);
-static void	fPOP_X8(OP_ARGS);
+static void fPUSH_X8(OP_ARGS);
+static void fPUSH_X16(OP_ARGS);
+static void fPUSH_X32(OP_ARGS);
+static void fPUSH_X64(OP_ARGS);
+static void fPOP_X8(OP_ARGS);
 static void fPOP_X16(OP_ARGS);
 static void fPOP_X32(OP_ARGS);
-static void	fPOP_X64(OP_ARGS);
-static void	fPUSHREGS(OP_ARGS);
-static void	fPOPREGS(OP_ARGS);
-static void	fCLR_X8(OP_ARGS);
-static void	fCLR_X16(OP_ARGS);
-static void	fCLR_X32(OP_ARGS);
-static void	fCLR_X64(OP_ARGS);
-static void	fMOVE_X8(OP_ARGS);
-static void	fMOVE_X16(OP_ARGS);
-static void	fMOVE_X32(OP_ARGS);
-static void	fMOVE_X64(OP_ARGS);
-static void	fENDIAN_X16(OP_ARGS);
-static void	fENDIAN_X32(OP_ARGS);
-static void	fENDIAN_X64(OP_ARGS);
-static void	fSWAP_X8(OP_ARGS);
-static void	fSWAP_X16(OP_ARGS);
-static void	fSWAP_X32(OP_ARGS);
-static void	fSWAP_X64(OP_ARGS);
+static void fPOP_X64(OP_ARGS);
+static void fPUSHREGS(OP_ARGS);
+static void fPOPREGS(OP_ARGS);
+static void fCLR_X8(OP_ARGS);
+static void fCLR_X16(OP_ARGS);
+static void fCLR_X32(OP_ARGS);
+static void fCLR_X64(OP_ARGS);
+static void fMOVE_X8(OP_ARGS);
+static void fMOVE_X16(OP_ARGS);
+static void fMOVE_X32(OP_ARGS);
+static void fMOVE_X64(OP_ARGS);
+static void fENDIAN_X16(OP_ARGS);
+static void fENDIAN_X32(OP_ARGS);
+static void fENDIAN_X64(OP_ARGS);
+static void fSWAP_X8(OP_ARGS);
+static void fSWAP_X16(OP_ARGS);
+static void fSWAP_X32(OP_ARGS);
+static void fSWAP_X64(OP_ARGS);
 
 
 // Cast (VMCORE* This,wide)
-static void	fI8TOI16(OP_ARGS);
-static void	fI8TOI32(OP_ARGS);
-static void	fI8TOI64(OP_ARGS);
+static void fI8TOI16(OP_ARGS);
+static void fI8TOI32(OP_ARGS);
+static void fI8TOI64(OP_ARGS);
 static void fI8TOF32(OP_ARGS);
 static void fI8TOF64(OP_ARGS);
-static void	fI16TOI32(OP_ARGS);
-static void	fI16TOI64(OP_ARGS);
+static void fI16TOI32(OP_ARGS);
+static void fI16TOI64(OP_ARGS);
 static void fI16TOF32(OP_ARGS);
 static void fI16TOF64(OP_ARGS);
 static void fI32TOI64(OP_ARGS);
@@ -1107,14 +1107,14 @@ static void fSHR_X32(OP_ARGS);
 static void fSHR_X64(OP_ARGS);
 
 #ifdef USE_VM_BLOCKCOMMANDS
-static void	fBCLR_X8(OP_ARGS);
-static void	fBCLR_X16(OP_ARGS);
-static void	fBCLR_X32(OP_ARGS);
-static void	fBCLR_X64(OP_ARGS);
-static void	fBMOVE_X8(OP_ARGS);
-static void	fBMOVE_X16(OP_ARGS);
-static void	fBMOVE_X32(OP_ARGS);
-static void	fBMOVE_X64(OP_ARGS);
+static void fBCLR_X8(OP_ARGS);
+static void fBCLR_X16(OP_ARGS);
+static void fBCLR_X32(OP_ARGS);
+static void fBCLR_X64(OP_ARGS);
+static void fBMOVE_X8(OP_ARGS);
+static void fBMOVE_X16(OP_ARGS);
+static void fBMOVE_X32(OP_ARGS);
+static void fBMOVE_X64(OP_ARGS);
 static void fBADD_I8(OP_ARGS);
 static void fBADD_I16(OP_ARGS);
 static void fBADD_I32(OP_ARGS);

@@ -58,89 +58,89 @@
 
 void xDRAW::Line(ruint32 col, RICOORD2D p1, RICOORD2D p2)
 {
-	// simple single line routine does not use vertex buffer, uses a line structure instead
-	if (col != currentCol)
-	{
-		currentCol = col;
-		SetColour(col);
-	}
-	W3D_Line lin = {0};
-	{
-		register sysVERTEX* v = &lin.v1;
-		rfloat64 d = zDepth;
-		VTX_X(v)=CoordX(p1);	VTX_Y(v)=CoordY(p1);	VTX_Z(v++)=d;
-		VTX_X(v)=CoordX(p2);	VTX_Y(v)=CoordY(p2);	VTX_Z(v)=d;
-	}
-	{
-		Disable(GOURAUD);
-		Disable(TEXTURE);
-		W3D_DrawLine(x3D::Context(), &lin);
-	}
+  // simple single line routine does not use vertex buffer, uses a line structure instead
+  if (col != currentCol)
+  {
+    currentCol = col;
+    SetColour(col);
+  }
+  W3D_Line lin = {0};
+  {
+    register sysVERTEX* v = &lin.v1;
+    rfloat64 d = zDepth;
+    VTX_X(v)=CoordX(p1);  VTX_Y(v)=CoordY(p1);  VTX_Z(v++)=d;
+    VTX_X(v)=CoordX(p2);  VTX_Y(v)=CoordY(p2);  VTX_Z(v)=d;
+  }
+  {
+    Disable(GOURAUD);
+    Disable(TEXTURE);
+    W3D_DrawLine(x3D::Context(), &lin);
+  }
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void xDRAW::LineShA(ruint32* col, RICOORD2D p1, RICOORD2D p2)
 {
-	// simple single line routine does not use vertex buffer, uses a line structure instead
-	W3D_Line lin = {0};
-	register sysVERTEX* v = &lin.v1;
-	{
-		rfloat64 d = zDepth;
-		VTX_X(v)=CoordX(p1);	VTX_Y(v)=CoordY(p1);	VTX_Z(v++)=d;
-		VTX_X(v)=CoordX(p2);	VTX_Y(v)=CoordY(p2);	VTX_Z(v)=d;
-	}
-	{
-		#define WRITECOLOUR(v) {ruint32* c = (uint32*)(v); *(c++) = r; *(c++) = g; *(c++) = b; *(c) = a;}
-		p1 = *(col++);	p2 = 8;
-		ruint32 b = p1; p1 >>= p2;
-		ruint32 g = p1; p1 >>= p2;
-		ruint32 r = p1; p1 >>= p2;
-		ruint32 a = cTab[(p1)];
+  // simple single line routine does not use vertex buffer, uses a line structure instead
+  W3D_Line lin = {0};
+  register sysVERTEX* v = &lin.v1;
+  {
+    rfloat64 d = zDepth;
+    VTX_X(v)=CoordX(p1);  VTX_Y(v)=CoordY(p1);  VTX_Z(v++)=d;
+    VTX_X(v)=CoordX(p2);  VTX_Y(v)=CoordY(p2);  VTX_Z(v)=d;
+  }
+  {
+    #define WRITECOLOUR(v) {ruint32* c = (uint32*)(v); *(c++) = r; *(c++) = g; *(c++) = b; *(c) = a;}
+    p1 = *(col++);  p2 = 8;
+    ruint32 b = p1; p1 >>= p2;
+    ruint32 g = p1; p1 >>= p2;
+    ruint32 r = p1; p1 >>= p2;
+    ruint32 a = cTab[(p1)];
 
-		p2 = 0x000000FF; r = cTab[(r&p2)]; g = cTab[(g&p2)]; b = cTab[(b&p2)];
-		WRITECOLOUR(VTX_C(v));
+    p2 = 0x000000FF; r = cTab[(r&p2)]; g = cTab[(g&p2)]; b = cTab[(b&p2)];
+    WRITECOLOUR(VTX_C(v));
 
-		p1 = *col; p2 = 8;
-		b = p1; p1 >>= p2;
-		g = p1; p1 >>= p2;
+    p1 = *col; p2 = 8;
+    b = p1; p1 >>= p2;
+    g = p1; p1 >>= p2;
 
-		p2 = 0x000000FF; r = cTab[(p1&p2)]; g = cTab[(g&p2)]; b = cTab[(b&p2)];
-		WRITECOLOUR(VTX_C(v+1));
+    p2 = 0x000000FF; r = cTab[(p1&p2)]; g = cTab[(g&p2)]; b = cTab[(b&p2)];
+    WRITECOLOUR(VTX_C(v+1));
 
-		#undef WRITECOLOUR
-	}
-	{
-		Enable(GOURAUD);
-		Disable(TEXTURE);
-		W3D_DrawLine(x3D::Context(), &lin);
-	}
+    #undef WRITECOLOUR
+  }
+  {
+    Enable(GOURAUD);
+    Disable(TEXTURE);
+    W3D_DrawLine(x3D::Context(), &lin);
+  }
 }
 
 void xDRAW::LineStrip(ruint32 col, RICOORD2D* p, ruint32 n)
 {
-	sysVERTEX*	v = Vertices(n);
-	{
-		register sysVERTEX* t = v;
-		rfloat64 d = zDepth;
-		rsint32 i=n+1;
-		while(--i)
-		{
-			VTX_X(t)=CoordX(*p);
-			VTX_Y(t)=CoordY(*(p++));
-			VTX_Z(t++)=d;
-		}
-	}
-	if (col != currentCol)
-	{
-		currentCol = col;
-		SetColour(col);
-	}
-	{
-		Disable(GOURAUD);
-		Disable(TEXTURE);
-		LineStrip(v,n);
-	}
+  sysVERTEX*  v = Vertices(n);
+  {
+    register sysVERTEX* t = v;
+    rfloat64 d = zDepth;
+    rsint32 i=n+1;
+    while(--i)
+    {
+      VTX_X(t)=CoordX(*p);
+      VTX_Y(t)=CoordY(*(p++));
+      VTX_Z(t++)=d;
+    }
+  }
+  if (col != currentCol)
+  {
+    currentCol = col;
+    SetColour(col);
+  }
+  {
+    Disable(GOURAUD);
+    Disable(TEXTURE);
+    LineStrip(v,n);
+  }
 }
 
 
@@ -160,72 +160,72 @@ void xDRAW::LineStrip(ruint32 col, RICOORD2D* p, ruint32 n)
 
 void xDRAW::Tri(ruint32 col, RICOORD2D p1, RICOORD2D p2, RICOORD2D p3)
 {
-	if (col != currentCol)
-	{
-		currentCol = col;
-		SetColour(col);
-	}
-	W3D_Triangle tri = {0};
-	{
-		register sysVERTEX* v = &tri.v1;
-		rfloat64 d = zDepth;
-		VTX_X(v)=CoordX(p1);	VTX_Y(v)=CoordY(p1);	VTX_Z(v++)=d;
-		VTX_X(v)=CoordX(p2);	VTX_Y(v)=CoordY(p2);	VTX_Z(v++)=d;
-		VTX_X(v)=CoordX(p3);	VTX_Y(v)=CoordY(p3);	VTX_Z(v)=d;
-	}
-	{
-		Disable(GOURAUD);
-		Disable(TEXTURE);
-		W3D_DrawTriangle(x3D::Context(), &tri);
-	}
+  if (col != currentCol)
+  {
+    currentCol = col;
+    SetColour(col);
+  }
+  W3D_Triangle tri = {0};
+  {
+    register sysVERTEX* v = &tri.v1;
+    rfloat64 d = zDepth;
+    VTX_X(v)=CoordX(p1);  VTX_Y(v)=CoordY(p1);  VTX_Z(v++)=d;
+    VTX_X(v)=CoordX(p2);  VTX_Y(v)=CoordY(p2);  VTX_Z(v++)=d;
+    VTX_X(v)=CoordX(p3);  VTX_Y(v)=CoordY(p3);  VTX_Z(v)=d;
+  }
+  {
+    Disable(GOURAUD);
+    Disable(TEXTURE);
+    W3D_DrawTriangle(x3D::Context(), &tri);
+  }
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void xDRAW::TriShA(ruint32* col, RICOORD2D p1, RICOORD2D p2, RICOORD2D p3)
 {
-	W3D_Triangle tri = {0};
-	register sysVERTEX* v = &tri.v1;
-	{
-		rfloat64 d = zDepth;
-		VTX_X(v)=CoordX(p1);	VTX_Y(v)=CoordY(p1);	VTX_Z(v++)=d;
-		VTX_X(v)=CoordX(p2);	VTX_Y(v)=CoordY(p2);	VTX_Z(v++)=d;
-		VTX_X(v)=CoordX(p3);	VTX_Y(v)=CoordY(p3);	VTX_Z(v)=d;
-	}
-	{
-		#define WRITECOLOUR(v) {ruint32* c = (uint32*)(v); *(c++) = r; *(c++) = g; *(c++) = b; *(c) = p3};
-		// Re use the uint32 registers that were used by p1 / p2 / p3
-		// p1 = 32bpp ARGB colour
-		// p2 = masking temp
-		// p3 = alpha component
+  W3D_Triangle tri = {0};
+  register sysVERTEX* v = &tri.v1;
+  {
+    rfloat64 d = zDepth;
+    VTX_X(v)=CoordX(p1);  VTX_Y(v)=CoordY(p1);  VTX_Z(v++)=d;
+    VTX_X(v)=CoordX(p2);  VTX_Y(v)=CoordY(p2);  VTX_Z(v++)=d;
+    VTX_X(v)=CoordX(p3);  VTX_Y(v)=CoordY(p3);  VTX_Z(v)=d;
+  }
+  {
+    #define WRITECOLOUR(v) {ruint32* c = (uint32*)(v); *(c++) = r; *(c++) = g; *(c++) = b; *(c) = p3};
+    // Re use the uint32 registers that were used by p1 / p2 / p3
+    // p1 = 32bpp ARGB colour
+    // p2 = masking temp
+    // p3 = alpha component
 
-		p1 = *(col++);  p2 = 8;
-		ruint32 b = p1; p1 >>= p2; // only use this alpha for v[0]-v[3]
-		ruint32 g = p1; p1 >>= p2;
-		ruint32 r = p1; p1 >>= p2;
-		p3 = cTab[(p1)];
-		p2 = 0x000000FF; r = cTab[(r&p2)]; g = cTab[(g&p2)]; b = cTab[(b&p2)];
-		WRITECOLOUR(VTX_C(v));
+    p1 = *(col++);  p2 = 8;
+    ruint32 b = p1; p1 >>= p2; // only use this alpha for v[0]-v[3]
+    ruint32 g = p1; p1 >>= p2;
+    ruint32 r = p1; p1 >>= p2;
+    p3 = cTab[(p1)];
+    p2 = 0x000000FF; r = cTab[(r&p2)]; g = cTab[(g&p2)]; b = cTab[(b&p2)];
+    WRITECOLOUR(VTX_C(v));
 
-		p1 = *(col++); p2 = 8;
-		b = p1; p1 >>= p2;
-		g = p1; p1 >>= p2;
-		p2 = 0x000000FF; r = cTab[(p1&p2)]; g = cTab[(g&p2)]; b = cTab[(b&p2)];
-		WRITECOLOUR(VTX_C(v+1));
+    p1 = *(col++); p2 = 8;
+    b = p1; p1 >>= p2;
+    g = p1; p1 >>= p2;
+    p2 = 0x000000FF; r = cTab[(p1&p2)]; g = cTab[(g&p2)]; b = cTab[(b&p2)];
+    WRITECOLOUR(VTX_C(v+1));
 
-		p1 = *(col++); p2 = 8;
-		b = p1; p1 >>= p2;
-		g = p1; p1 >>= p2;
-		p2 = 0x000000FF; r = cTab[(p1&p2)]; g = cTab[(g&p2)]; b = cTab[(b&p2)];
-		WRITECOLOUR(VTX_C(v+2));
+    p1 = *(col++); p2 = 8;
+    b = p1; p1 >>= p2;
+    g = p1; p1 >>= p2;
+    p2 = 0x000000FF; r = cTab[(p1&p2)]; g = cTab[(g&p2)]; b = cTab[(b&p2)];
+    WRITECOLOUR(VTX_C(v+2));
 
-		#undef WRITECOLOUR
-	}
-	{
-		Enable(GOURAUD);
-		Disable(TEXTURE);
-		W3D_DrawTriangle(x3D::Context(), &tri);
-	}
+    #undef WRITECOLOUR
+  }
+  {
+    Enable(GOURAUD);
+    Disable(TEXTURE);
+    W3D_DrawTriangle(x3D::Context(), &tri);
+  }
 }
 
 
@@ -256,87 +256,87 @@ void xDRAW::TriShA(ruint32* col, RICOORD2D p1, RICOORD2D p2, RICOORD2D p3)
 
 void xDRAW::Rect(ruint32 col, RICOORD2D p1, RICOORD2D p2)
 {
-	if ((vBufPos+4) >= vArraySize) Flush();
-	if (col != currentCol)
-	{
-		currentCol = col;
-		SetColour(col);
-	}
-	register sysVERTEX* v = vBuffer+vBufPos;
-	{
-		rfloat64 d = zDepth;
-		rfloat32 x1 = CoordX(p1); rfloat32 x2 = CoordX(p2);
-		rfloat32 y1 = CoordY(p1); rfloat32 y2 = CoordY(p2);
-		VTX_X(v)=x1;	VTX_Y(v)=y1;	VTX_Z(v++)=d;
-		VTX_X(v)=x2;	VTX_Y(v)=y1;	VTX_Z(v++)=d;
-		VTX_X(v)=x1;	VTX_Y(v)=y2;	VTX_Z(v++)=d;
-		VTX_X(v)=x2;	VTX_Y(v)=y2;	VTX_Z(v)=d;
-		vBufPos += 4;
-		v-=3;
-	}
-	{
-		Disable(GOURAUD);
-		Disable(TEXTURE);
-		TriStrip(v,4);
-	}
+  if ((vBufPos+4) >= vArraySize) Flush();
+  if (col != currentCol)
+  {
+    currentCol = col;
+    SetColour(col);
+  }
+  register sysVERTEX* v = vBuffer+vBufPos;
+  {
+    rfloat64 d = zDepth;
+    rfloat32 x1 = CoordX(p1); rfloat32 x2 = CoordX(p2);
+    rfloat32 y1 = CoordY(p1); rfloat32 y2 = CoordY(p2);
+    VTX_X(v)=x1;  VTX_Y(v)=y1;  VTX_Z(v++)=d;
+    VTX_X(v)=x2;  VTX_Y(v)=y1;  VTX_Z(v++)=d;
+    VTX_X(v)=x1;  VTX_Y(v)=y2;  VTX_Z(v++)=d;
+    VTX_X(v)=x2;  VTX_Y(v)=y2;  VTX_Z(v)=d;
+    vBufPos += 4;
+    v-=3;
+  }
+  {
+    Disable(GOURAUD);
+    Disable(TEXTURE);
+    TriStrip(v,4);
+  }
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void xDRAW::RectScTx(ruint32 col, RICOORD2D p1, RICOORD2D p2, register xTEXTURE& tx)
 {
-	if ((vBufPos+4) >= vArraySize) Flush();
-	if (col != currentCol)
-	{
-		currentCol = col;
-		SetColour(col);
-	}
-	register sysVERTEX* v = vBuffer+vBufPos;
-	{
-		rfloat64 d = zDepth;
-		rfloat32 x1 = CoordX(p1); rfloat32 x2 = CoordX(p2);
-		rfloat32 y1 = CoordY(p1); rfloat32 y2 = CoordY(p2);
-		VTX_X(v)=x1;	VTX_Y(v)=y1;	VTX_Z(v)=d; VTX_U(v) = tx.x1;  VTX_V(v++) = tx.y1;
-		VTX_X(v)=x2;	VTX_Y(v)=y1;	VTX_Z(v)=d; VTX_U(v) = tx.x2;  VTX_V(v++) = tx.y1;
-		VTX_X(v)=x1;	VTX_Y(v)=y2;	VTX_Z(v)=d; VTX_U(v) = tx.x1;  VTX_V(v++) = tx.y2;
-		VTX_X(v)=x2;	VTX_Y(v)=y2;	VTX_Z(v)=d; VTX_U(v) = tx.x2;  VTX_V(v) = tx.y2;
-		vBufPos += 4;
-		v-=3;
-	}
-	{
-		Disable(GOURAUD);
-		Enable(TEXTURE);
-		TriStripTx(v, 4, tx.tex);
-	}
+  if ((vBufPos+4) >= vArraySize) Flush();
+  if (col != currentCol)
+  {
+    currentCol = col;
+    SetColour(col);
+  }
+  register sysVERTEX* v = vBuffer+vBufPos;
+  {
+    rfloat64 d = zDepth;
+    rfloat32 x1 = CoordX(p1); rfloat32 x2 = CoordX(p2);
+    rfloat32 y1 = CoordY(p1); rfloat32 y2 = CoordY(p2);
+    VTX_X(v)=x1;  VTX_Y(v)=y1;  VTX_Z(v)=d; VTX_U(v) = tx.x1;  VTX_V(v++) = tx.y1;
+    VTX_X(v)=x2;  VTX_Y(v)=y1;  VTX_Z(v)=d; VTX_U(v) = tx.x2;  VTX_V(v++) = tx.y1;
+    VTX_X(v)=x1;  VTX_Y(v)=y2;  VTX_Z(v)=d; VTX_U(v) = tx.x1;  VTX_V(v++) = tx.y2;
+    VTX_X(v)=x2;  VTX_Y(v)=y2;  VTX_Z(v)=d; VTX_U(v) = tx.x2;  VTX_V(v) = tx.y2;
+    vBufPos += 4;
+    v-=3;
+  }
+  {
+    Disable(GOURAUD);
+    Enable(TEXTURE);
+    TriStripTx(v, 4, tx.tex);
+  }
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void xDRAW::RectTlTx(ruint32 col, RICOORD2D p1, RICOORD2D p2, register xTEXTURE& tx)
 {
-	if ((vBufPos+4) >= vArraySize) Flush();
-	if (col != currentCol)
-	{
-		currentCol = col;
-		SetColour(col);
-	}
-	register sysVERTEX* v = vBuffer+vBufPos;
-	{
-		rfloat64 d = zDepth;
-		rfloat32 x1 = CoordX(p1); rfloat32 x2 = CoordX(p2);
-		rfloat32 y1 = CoordY(p1); rfloat32 y2 = CoordY(p2);
-		VTX_X(v)=x1;	VTX_Y(v)=y1;	VTX_Z(v)=d; VTX_U(v) = tx.x1;						VTX_V(v++) = tx.y1;
-		VTX_X(v)=x2;	VTX_Y(v)=y1;	VTX_Z(v)=d; VTX_U(v) = tx.x1 + x2 - x1;	VTX_V(v++) = tx.y1;
-		VTX_X(v)=x1;	VTX_Y(v)=y2;	VTX_Z(v)=d; VTX_U(v) = tx.x1;						VTX_V(v++) = tx.y1 + y2 - y1;
-		VTX_X(v)=x2;	VTX_Y(v)=y2;	VTX_Z(v)=d; VTX_U(v) = tx.x1 + x2 - x1;	VTX_V(v) = tx.y1 + y2 - y1;
-		vBufPos += 4;
-		v-=3;
-	}
-	{
-		Disable(GOURAUD);
-		Enable(TEXTURE);
-		TriStripTx(v, 4, tx.tex);
-	}
+  if ((vBufPos+4) >= vArraySize) Flush();
+  if (col != currentCol)
+  {
+    currentCol = col;
+    SetColour(col);
+  }
+  register sysVERTEX* v = vBuffer+vBufPos;
+  {
+    rfloat64 d = zDepth;
+    rfloat32 x1 = CoordX(p1); rfloat32 x2 = CoordX(p2);
+    rfloat32 y1 = CoordY(p1); rfloat32 y2 = CoordY(p2);
+    VTX_X(v)=x1;  VTX_Y(v)=y1;  VTX_Z(v)=d; VTX_U(v) = tx.x1;           VTX_V(v++) = tx.y1;
+    VTX_X(v)=x2;  VTX_Y(v)=y1;  VTX_Z(v)=d; VTX_U(v) = tx.x1 + x2 - x1; VTX_V(v++) = tx.y1;
+    VTX_X(v)=x1;  VTX_Y(v)=y2;  VTX_Z(v)=d; VTX_U(v) = tx.x1;           VTX_V(v++) = tx.y1 + y2 - y1;
+    VTX_X(v)=x2;  VTX_Y(v)=y2;  VTX_Z(v)=d; VTX_U(v) = tx.x1 + x2 - x1; VTX_V(v) = tx.y1 + y2 - y1;
+    vBufPos += 4;
+    v-=3;
+  }
+  {
+    Disable(GOURAUD);
+    Enable(TEXTURE);
+    TriStripTx(v, 4, tx.tex);
+  }
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -345,103 +345,103 @@ void xDRAW::RectTlTx(ruint32 col, RICOORD2D p1, RICOORD2D p2, register xTEXTURE&
 //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#define GENGRADIENT																													\
-	p1 = *(col++);  p2 = 8;																										\
-	ruint32 b = p1; p1 >>= p2;																								\
-	ruint32 g = p1; p1 >>= p2;																								\
-	ruint32 r = p1; p1 >>= p2;																								\
-	ruint32 a = cTab[(p1)];																										\
-	p2 = 0x000000FF; r = cTab[(r&p2)]; g = cTab[(g&p2)]; b = cTab[(b&p2)];		\
-	WRITECOLOUR(VTX_C(v));																										\
-	WRITECOLOUR(VTX_C(v+1));																									\
-	p1 = *col; p2 = 8;																												\
-	b = p1; p1 >>= p2;																												\
-	g = p1; p1 >>= p2;																												\
-	p2 = 0x000000FF; r = cTab[(p1&p2)]; g = cTab[(g&p2)]; b = cTab[(b&p2)];		\
-	WRITECOLOUR(VTX_C(v+2));																									\
-	WRITECOLOUR(VTX_C(v+3));																									\
+#define GENGRADIENT                                                         \
+  p1 = *(col++);  p2 = 8;                                                   \
+  ruint32 b = p1; p1 >>= p2;                                                \
+  ruint32 g = p1; p1 >>= p2;                                                \
+  ruint32 r = p1; p1 >>= p2;                                                \
+  ruint32 a = cTab[(p1)];                                                   \
+  p2 = 0x000000FF; r = cTab[(r&p2)]; g = cTab[(g&p2)]; b = cTab[(b&p2)];    \
+  WRITECOLOUR(VTX_C(v));                                                    \
+  WRITECOLOUR(VTX_C(v+1));                                                  \
+  p1 = *col; p2 = 8;                                                        \
+  b = p1; p1 >>= p2;                                                        \
+  g = p1; p1 >>= p2;                                                        \
+  p2 = 0x000000FF; r = cTab[(p1&p2)]; g = cTab[(g&p2)]; b = cTab[(b&p2)];   \
+  WRITECOLOUR(VTX_C(v+2));                                                  \
+  WRITECOLOUR(VTX_C(v+3));                                                  \
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void xDRAW::RectShV(ruint32* col, RICOORD2D p1, RICOORD2D p2)
 { // draws a vertically shaded rectangle
-	// *c points to array of four ARGB32 values
-	if ((vBufPos+4) >= vArraySize) Flush();
-	register sysVERTEX* v = vBuffer+vBufPos;
-	{
-		rfloat64 d	= zDepth;
-		rfloat32 x1 = CoordX(p1); rfloat32 x2 = CoordX(p2);
-		rfloat32 y1 = CoordY(p1); rfloat32 y2 = CoordY(p2);
-		VTX_X(v)=x1;	VTX_Y(v)=y1;	VTX_Z(v++)=d;
-		VTX_X(v)=x2;	VTX_Y(v)=y1;	VTX_Z(v++)=d;
-		VTX_X(v)=x1;	VTX_Y(v)=y2;	VTX_Z(v++)=d;
-		VTX_X(v)=x2;	VTX_Y(v)=y2;	VTX_Z(v)=d;
-		vBufPos += 4;
-		v-=3;
-	}
-	{
-		GENGRADIENT
-	}
-	{
-		Enable(GOURAUD);
-		Disable(TEXTURE);
-		TriStrip(v, 4);
-	}
+  // *c points to array of four ARGB32 values
+  if ((vBufPos+4) >= vArraySize) Flush();
+  register sysVERTEX* v = vBuffer+vBufPos;
+  {
+    rfloat64 d  = zDepth;
+    rfloat32 x1 = CoordX(p1); rfloat32 x2 = CoordX(p2);
+    rfloat32 y1 = CoordY(p1); rfloat32 y2 = CoordY(p2);
+    VTX_X(v)=x1;  VTX_Y(v)=y1;  VTX_Z(v++)=d;
+    VTX_X(v)=x2;  VTX_Y(v)=y1;  VTX_Z(v++)=d;
+    VTX_X(v)=x1;  VTX_Y(v)=y2;  VTX_Z(v++)=d;
+    VTX_X(v)=x2;  VTX_Y(v)=y2;  VTX_Z(v)=d;
+    vBufPos += 4;
+    v-=3;
+  }
+  {
+    GENGRADIENT
+  }
+  {
+    Enable(GOURAUD);
+    Disable(TEXTURE);
+    TriStrip(v, 4);
+  }
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void xDRAW::RectScTxShV(ruint32* col, RICOORD2D p1, RICOORD2D p2, register xTEXTURE& tx)
 { // draws a vertically shaded rectangle
-	// *c points to array of four ARGB32 values
-	if ((vBufPos+4) >= vArraySize) Flush();
-	register sysVERTEX* v = vBuffer+vBufPos;
-	{
-		rfloat64 d	= zDepth;
-		rfloat32 x1 = CoordX(p1); rfloat32 x2 = CoordX(p2);
-		rfloat32 y1 = CoordY(p1); rfloat32 y2 = CoordY(p2);
-		VTX_X(v)=x1;	VTX_Y(v)=y1;	VTX_Z(v)=d; VTX_U(v) = tx.x1;  VTX_V(v++) = tx.y1;
-		VTX_X(v)=x2;	VTX_Y(v)=y1;	VTX_Z(v)=d; VTX_U(v) = tx.x2;  VTX_V(v++) = tx.y1;
-		VTX_X(v)=x1;	VTX_Y(v)=y2;	VTX_Z(v)=d; VTX_U(v) = tx.x1;  VTX_V(v++) = tx.y2;
-		VTX_X(v)=x2;	VTX_Y(v)=y2;	VTX_Z(v)=d; VTX_U(v) = tx.x2;  VTX_V(v) = tx.y2;
-		vBufPos += 4;
-		v-=3;
-	}
-	{
-		GENGRADIENT
-	}
-	{
-		Enable(GOURAUD);
-		Enable(TEXTURE);
-		TriStripTx(v, 4, tx.tex);
-	}
+  // *c points to array of four ARGB32 values
+  if ((vBufPos+4) >= vArraySize) Flush();
+  register sysVERTEX* v = vBuffer+vBufPos;
+  {
+    rfloat64 d  = zDepth;
+    rfloat32 x1 = CoordX(p1); rfloat32 x2 = CoordX(p2);
+    rfloat32 y1 = CoordY(p1); rfloat32 y2 = CoordY(p2);
+    VTX_X(v)=x1;  VTX_Y(v)=y1;  VTX_Z(v)=d; VTX_U(v) = tx.x1;  VTX_V(v++) = tx.y1;
+    VTX_X(v)=x2;  VTX_Y(v)=y1;  VTX_Z(v)=d; VTX_U(v) = tx.x2;  VTX_V(v++) = tx.y1;
+    VTX_X(v)=x1;  VTX_Y(v)=y2;  VTX_Z(v)=d; VTX_U(v) = tx.x1;  VTX_V(v++) = tx.y2;
+    VTX_X(v)=x2;  VTX_Y(v)=y2;  VTX_Z(v)=d; VTX_U(v) = tx.x2;  VTX_V(v) = tx.y2;
+    vBufPos += 4;
+    v-=3;
+  }
+  {
+    GENGRADIENT
+  }
+  {
+    Enable(GOURAUD);
+    Enable(TEXTURE);
+    TriStripTx(v, 4, tx.tex);
+  }
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void xDRAW::RectTlTxShV(ruint32* col, RICOORD2D p1, RICOORD2D p2, register xTEXTURE& tx)
 {
-	if ((vBufPos+4) >= vArraySize) Flush();
-	register sysVERTEX* v = vBuffer+vBufPos;
-	{
-		rfloat64 d	= zDepth;
-		rfloat32 x1 = CoordX(p1); rfloat32 x2 = CoordX(p2);
-		rfloat32 y1 = CoordY(p1); rfloat32 y2 = CoordY(p2);
-		VTX_X(v)=x1;	VTX_Y(v)=y1;	VTX_Z(v)=d; VTX_U(v) = tx.x1;						VTX_V(v++) = tx.y1;
-		VTX_X(v)=x2;	VTX_Y(v)=y1;	VTX_Z(v)=d; VTX_U(v) = tx.x1 + x2 - x1;	VTX_V(v++) = tx.y1;
-		VTX_X(v)=x1;	VTX_Y(v)=y2;	VTX_Z(v)=d; VTX_U(v) = tx.x1;						VTX_V(v++) = tx.y1 + y2 - y1;
-		VTX_X(v)=x2;	VTX_Y(v)=y2;	VTX_Z(v)=d; VTX_U(v) = tx.x1 + x2 - x1;	VTX_V(v) = tx.y1 + y2 - y1;
-		vBufPos += 4;
-		v-=3;
-	}
-	{
-		GENGRADIENT
-	}
-	{
-		Enable(GOURAUD);
-		Enable(TEXTURE);
-		TriStripTx(v, 4, tx.tex);
-	}
+  if ((vBufPos+4) >= vArraySize) Flush();
+  register sysVERTEX* v = vBuffer+vBufPos;
+  {
+    rfloat64 d  = zDepth;
+    rfloat32 x1 = CoordX(p1); rfloat32 x2 = CoordX(p2);
+    rfloat32 y1 = CoordY(p1); rfloat32 y2 = CoordY(p2);
+    VTX_X(v)=x1;  VTX_Y(v)=y1;  VTX_Z(v)=d; VTX_U(v) = tx.x1;           VTX_V(v++) = tx.y1;
+    VTX_X(v)=x2;  VTX_Y(v)=y1;  VTX_Z(v)=d; VTX_U(v) = tx.x1 + x2 - x1; VTX_V(v++) = tx.y1;
+    VTX_X(v)=x1;  VTX_Y(v)=y2;  VTX_Z(v)=d; VTX_U(v) = tx.x1;           VTX_V(v++) = tx.y1 + y2 - y1;
+    VTX_X(v)=x2;  VTX_Y(v)=y2;  VTX_Z(v)=d; VTX_U(v) = tx.x1 + x2 - x1; VTX_V(v) = tx.y1 + y2 - y1;
+    vBufPos += 4;
+    v-=3;
+  }
+  {
+    GENGRADIENT
+  }
+  {
+    Enable(GOURAUD);
+    Enable(TEXTURE);
+    TriStripTx(v, 4, tx.tex);
+  }
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -452,103 +452,103 @@ void xDRAW::RectTlTxShV(ruint32* col, RICOORD2D p1, RICOORD2D p2, register xTEXT
 
 #undef GENGRADIENT
 
-#define GENGRADIENT																													\
-	p1 = *(col++);  p2 = 8;																										\
-	ruint32 b = p1; p1 >>= p2;																								\
-	ruint32 g = p1; p1 >>= p2;																								\
-	ruint32 r = p1; p1 >>= p2;																								\
-	ruint32 a = cTab[(p1)];																										\
-	p2 = 0x000000FF; r = cTab[(r&p2)]; g = cTab[(g&p2)]; b = cTab[(b&p2)];		\
-	WRITECOLOUR(VTX_C(v));																										\
-	WRITECOLOUR(VTX_C(v+2));																									\
-	p1 = *col; p2 = 8;																												\
-	b = p1; p1 >>= p2;																												\
-	g = p1; p1 >>= p2;																												\
-	p2 = 0x000000FF; r = cTab[(p1&p2)]; g = cTab[(g&p2)]; b = cTab[(b&p2)];		\
-	WRITECOLOUR(VTX_C(v+1));																									\
-	WRITECOLOUR(VTX_C(v+3));																									\
+#define GENGRADIENT                                                         \
+  p1 = *(col++);  p2 = 8;                                                   \
+  ruint32 b = p1; p1 >>= p2;                                                \
+  ruint32 g = p1; p1 >>= p2;                                                \
+  ruint32 r = p1; p1 >>= p2;                                                \
+  ruint32 a = cTab[(p1)];                                                   \
+  p2 = 0x000000FF; r = cTab[(r&p2)]; g = cTab[(g&p2)]; b = cTab[(b&p2)];    \
+  WRITECOLOUR(VTX_C(v));                                                    \
+  WRITECOLOUR(VTX_C(v+2));                                                  \
+  p1 = *col; p2 = 8;                                                        \
+  b = p1; p1 >>= p2;                                                        \
+  g = p1; p1 >>= p2;                                                        \
+  p2 = 0x000000FF; r = cTab[(p1&p2)]; g = cTab[(g&p2)]; b = cTab[(b&p2)];   \
+  WRITECOLOUR(VTX_C(v+1));                                                  \
+  WRITECOLOUR(VTX_C(v+3));                                                  \
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void xDRAW::RectShH(ruint32* col, RICOORD2D p1, RICOORD2D p2)
-{	// draws a horizontally shaded rectangle
-	// *c points to array of two ARGB32 values
-	if ((vBufPos+4) >= vArraySize) Flush();
-	register sysVERTEX* v = vBuffer+vBufPos;
-	{
-		rfloat64 d	= zDepth;
-		rfloat32 x1 = CoordX(p1); rfloat32 x2 = CoordX(p2);
-		rfloat32 y1 = CoordY(p1); rfloat32 y2 = CoordY(p2);
-		VTX_X(v)=x1;	VTX_Y(v)=y1;	VTX_Z(v++)=d;
-		VTX_X(v)=x2;	VTX_Y(v)=y1;	VTX_Z(v++)=d;
-		VTX_X(v)=x1;	VTX_Y(v)=y2;	VTX_Z(v++)=d;
-		VTX_X(v)=x2;	VTX_Y(v)=y2;	VTX_Z(v)=d;
-		vBufPos += 4;
-		v-=3;
-	}
-	{
-		GENGRADIENT
-	}
-	{
-		Enable(GOURAUD);
-		Disable(TEXTURE);
-		TriStrip(v, 4);
-	}
+{ // draws a horizontally shaded rectangle
+  // *c points to array of two ARGB32 values
+  if ((vBufPos+4) >= vArraySize) Flush();
+  register sysVERTEX* v = vBuffer+vBufPos;
+  {
+    rfloat64 d  = zDepth;
+    rfloat32 x1 = CoordX(p1); rfloat32 x2 = CoordX(p2);
+    rfloat32 y1 = CoordY(p1); rfloat32 y2 = CoordY(p2);
+    VTX_X(v)=x1;  VTX_Y(v)=y1;  VTX_Z(v++)=d;
+    VTX_X(v)=x2;  VTX_Y(v)=y1;  VTX_Z(v++)=d;
+    VTX_X(v)=x1;  VTX_Y(v)=y2;  VTX_Z(v++)=d;
+    VTX_X(v)=x2;  VTX_Y(v)=y2;  VTX_Z(v)=d;
+    vBufPos += 4;
+    v-=3;
+  }
+  {
+    GENGRADIENT
+  }
+  {
+    Enable(GOURAUD);
+    Disable(TEXTURE);
+    TriStrip(v, 4);
+  }
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void xDRAW::RectScTxShH(ruint32* col, RICOORD2D p1, RICOORD2D p2, register xTEXTURE& tx)
-{	// draws a horizontally shaded rectangle
-	// *c points to array of two ARGB32 values
-	if ((vBufPos+4) >= vArraySize) Flush();
-	register sysVERTEX* v = vBuffer+vBufPos;
-	{
-		rfloat64 d	= zDepth;
-		rfloat32 x1 = CoordX(p1); rfloat32 x2 = CoordX(p2);
-		rfloat32 y1 = CoordY(p1); rfloat32 y2 = CoordY(p2);
-		VTX_X(v)=x1;	VTX_Y(v)=y1;	VTX_Z(v)=d; VTX_U(v) = tx.x1;  VTX_V(v++) = tx.y1;
-		VTX_X(v)=x2;	VTX_Y(v)=y1;	VTX_Z(v)=d; VTX_U(v) = tx.x2;  VTX_V(v++) = tx.y1;
-		VTX_X(v)=x1;	VTX_Y(v)=y2;	VTX_Z(v)=d; VTX_U(v) = tx.x1;  VTX_V(v++) = tx.y2;
-		VTX_X(v)=x2;	VTX_Y(v)=y2;	VTX_Z(v)=d; VTX_U(v) = tx.x2;  VTX_V(v) = tx.y2;
-		vBufPos += 4;
-		v-=3;
-	}
-	{
-		GENGRADIENT
-	}
-	{
-		Enable(GOURAUD);
-		Enable(TEXTURE);
-		TriStripTx(v, 4, tx.tex);
-	}
+{ // draws a horizontally shaded rectangle
+  // *c points to array of two ARGB32 values
+  if ((vBufPos+4) >= vArraySize) Flush();
+  register sysVERTEX* v = vBuffer+vBufPos;
+  {
+    rfloat64 d  = zDepth;
+    rfloat32 x1 = CoordX(p1); rfloat32 x2 = CoordX(p2);
+    rfloat32 y1 = CoordY(p1); rfloat32 y2 = CoordY(p2);
+    VTX_X(v)=x1;  VTX_Y(v)=y1;  VTX_Z(v)=d; VTX_U(v) = tx.x1;  VTX_V(v++) = tx.y1;
+    VTX_X(v)=x2;  VTX_Y(v)=y1;  VTX_Z(v)=d; VTX_U(v) = tx.x2;  VTX_V(v++) = tx.y1;
+    VTX_X(v)=x1;  VTX_Y(v)=y2;  VTX_Z(v)=d; VTX_U(v) = tx.x1;  VTX_V(v++) = tx.y2;
+    VTX_X(v)=x2;  VTX_Y(v)=y2;  VTX_Z(v)=d; VTX_U(v) = tx.x2;  VTX_V(v) = tx.y2;
+    vBufPos += 4;
+    v-=3;
+  }
+  {
+    GENGRADIENT
+  }
+  {
+    Enable(GOURAUD);
+    Enable(TEXTURE);
+    TriStripTx(v, 4, tx.tex);
+  }
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void xDRAW::RectTlTxShH(ruint32* col, RICOORD2D p1, RICOORD2D p2, register xTEXTURE& tx)
 {
-	if ((vBufPos+4) >= vArraySize) Flush();
-	register sysVERTEX* v = vBuffer+vBufPos;
-	{
-		rfloat64 d	= zDepth;
-		rfloat32 x1 = CoordX(p1); rfloat32 x2 = CoordX(p2);
-		rfloat32 y1 = CoordY(p1); rfloat32 y2 = CoordY(p2);
-		VTX_X(v)=x1;	VTX_Y(v)=y1;	VTX_Z(v)=d; VTX_U(v) = tx.x1;						VTX_V(v++) = tx.y1;
-		VTX_X(v)=x2;	VTX_Y(v)=y1;	VTX_Z(v)=d; VTX_U(v) = tx.x1 + x2 - x1;	VTX_V(v++) = tx.y1;
-		VTX_X(v)=x1;	VTX_Y(v)=y2;	VTX_Z(v)=d; VTX_U(v) = tx.x1;						VTX_V(v++) = tx.y1 + y2 - y1;
-		VTX_X(v)=x2;	VTX_Y(v)=y2;	VTX_Z(v)=d; VTX_U(v) = tx.x1 + x2 - x1;	VTX_V(v) = tx.y1 + y2 - y1;
-		vBufPos += 4;
-		v-=3;
-	}
-	{
-		GENGRADIENT
-	}
-	{
-		Enable(GOURAUD);
-		Enable(TEXTURE);
-		TriStripTx(v, 4, tx.tex);
-	}
+  if ((vBufPos+4) >= vArraySize) Flush();
+  register sysVERTEX* v = vBuffer+vBufPos;
+  {
+    rfloat64 d  = zDepth;
+    rfloat32 x1 = CoordX(p1); rfloat32 x2 = CoordX(p2);
+    rfloat32 y1 = CoordY(p1); rfloat32 y2 = CoordY(p2);
+    VTX_X(v)=x1;  VTX_Y(v)=y1;  VTX_Z(v)=d; VTX_U(v) = tx.x1;           VTX_V(v++) = tx.y1;
+    VTX_X(v)=x2;  VTX_Y(v)=y1;  VTX_Z(v)=d; VTX_U(v) = tx.x1 + x2 - x1; VTX_V(v++) = tx.y1;
+    VTX_X(v)=x1;  VTX_Y(v)=y2;  VTX_Z(v)=d; VTX_U(v) = tx.x1;           VTX_V(v++) = tx.y1 + y2 - y1;
+    VTX_X(v)=x2;  VTX_Y(v)=y2;  VTX_Z(v)=d; VTX_U(v) = tx.x1 + x2 - x1; VTX_V(v) = tx.y1 + y2 - y1;
+    vBufPos += 4;
+    v-=3;
+  }
+  {
+    GENGRADIENT
+  }
+  {
+    Enable(GOURAUD);
+    Enable(TEXTURE);
+    TriStripTx(v, 4, tx.tex);
+  }
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -559,109 +559,109 @@ void xDRAW::RectTlTxShH(ruint32* col, RICOORD2D p1, RICOORD2D p2, register xTEXT
 
 #undef GENGRADIENT
 
-#define GENGRADIENT																												\
-	p1 = *(col++);	p2 = 8;																									\
-	ruint32 b = p1; p1 >>= p2;																							\
-	ruint32 g = p1; p1 >>= p2;																							\
-	ruint32 r = p1; p1 >>= p2;																							\
-	ruint32	a = cTab[(p1)];																									\
-	p2 = 0x000000FF; r = cTab[(r&p2)]; g = cTab[(g&p2)]; b = cTab[(b&p2)];	\
-	WRITECOLOUR(VTX_C(v));																									\
-	p1 = *(col++); p2 = 8;																									\
-	b = p1; p1 >>= p2;																											\
-	g = p1; p1 >>= p2;																											\
-	p2 = 0x000000FF; r = cTab[(p1&p2)]; g = cTab[(g&p2)]; b = cTab[(b&p2)];	\
-	WRITECOLOUR(VTX_C(v+1));																								\
-	p1 = *(col++); p2 = 8;																									\
-	b = p1; p1 >>= p2;																											\
-	g = p1; p1 >>= p2;																											\
-	p2 = 0x000000FF; r = cTab[(p1&p2)]; g = cTab[(g&p2)]; b = cTab[(b&p2)];	\
-	WRITECOLOUR(VTX_C(v+2));																								\
-	p1 = *(col++); p2 = 8;																									\
-	b = p1; p1 >>= p2;																											\
-	g = p1; p1 >>= p2;																											\
-	p2 = 0x000000FF; r = cTab[(p1&p2)]; g = cTab[(g&p2)]; b = cTab[(b&p2)];	\
-	WRITECOLOUR(VTX_C(v+3));																								\
+#define GENGRADIENT                                                       \
+  p1 = *(col++);  p2 = 8;                                                 \
+  ruint32 b = p1; p1 >>= p2;                                              \
+  ruint32 g = p1; p1 >>= p2;                                              \
+  ruint32 r = p1; p1 >>= p2;                                              \
+  ruint32 a = cTab[(p1)];                                                 \
+  p2 = 0x000000FF; r = cTab[(r&p2)]; g = cTab[(g&p2)]; b = cTab[(b&p2)];  \
+  WRITECOLOUR(VTX_C(v));                                                  \
+  p1 = *(col++); p2 = 8;                                                  \
+  b = p1; p1 >>= p2;                                                      \
+  g = p1; p1 >>= p2;                                                      \
+  p2 = 0x000000FF; r = cTab[(p1&p2)]; g = cTab[(g&p2)]; b = cTab[(b&p2)]; \
+  WRITECOLOUR(VTX_C(v+1));                                                \
+  p1 = *(col++); p2 = 8;                                                  \
+  b = p1; p1 >>= p2;                                                      \
+  g = p1; p1 >>= p2;                                                      \
+  p2 = 0x000000FF; r = cTab[(p1&p2)]; g = cTab[(g&p2)]; b = cTab[(b&p2)]; \
+  WRITECOLOUR(VTX_C(v+2));                                                \
+  p1 = *(col++); p2 = 8;                                                  \
+  b = p1; p1 >>= p2;                                                      \
+  g = p1; p1 >>= p2;                                                      \
+  p2 = 0x000000FF; r = cTab[(p1&p2)]; g = cTab[(g&p2)]; b = cTab[(b&p2)]; \
+  WRITECOLOUR(VTX_C(v+3));                                                \
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void xDRAW::RectShA(ruint32* col, RICOORD2D p1, RICOORD2D p2)
 {
-	if ((vBufPos+4) >= vArraySize) Flush();
-	register sysVERTEX* v = vBuffer+vBufPos;
-	{
-		rfloat64 d	= zDepth;
-		rfloat32 x1 = CoordX(p1); rfloat32 x2 = CoordX(p2);
-		rfloat32 y1 = CoordY(p1); rfloat32 y2 = CoordY(p2);
-		VTX_X(v)=x1;	VTX_Y(v)=y1;	VTX_Z(v++)=d;
-		VTX_X(v)=x2;	VTX_Y(v)=y1;	VTX_Z(v++)=d;
-		VTX_X(v)=x1;	VTX_Y(v)=y2;	VTX_Z(v++)=d;
-		VTX_X(v)=x2;	VTX_Y(v)=y2;	VTX_Z(v)=d;
-		vBufPos += 4;
-		v-=3;
-	}
-	{
-		GENGRADIENT
-	}
-	{
-		Enable(GOURAUD);
-		Disable(TEXTURE);
-		TriStrip(v, 4);
-	}
+  if ((vBufPos+4) >= vArraySize) Flush();
+  register sysVERTEX* v = vBuffer+vBufPos;
+  {
+    rfloat64 d  = zDepth;
+    rfloat32 x1 = CoordX(p1); rfloat32 x2 = CoordX(p2);
+    rfloat32 y1 = CoordY(p1); rfloat32 y2 = CoordY(p2);
+    VTX_X(v)=x1;  VTX_Y(v)=y1;  VTX_Z(v++)=d;
+    VTX_X(v)=x2;  VTX_Y(v)=y1;  VTX_Z(v++)=d;
+    VTX_X(v)=x1;  VTX_Y(v)=y2;  VTX_Z(v++)=d;
+    VTX_X(v)=x2;  VTX_Y(v)=y2;  VTX_Z(v)=d;
+    vBufPos += 4;
+    v-=3;
+  }
+  {
+    GENGRADIENT
+  }
+  {
+    Enable(GOURAUD);
+    Disable(TEXTURE);
+    TriStrip(v, 4);
+  }
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void xDRAW::RectScTxShA(ruint32* col, RICOORD2D p1, RICOORD2D p2, register xTEXTURE& tx)
 {
-	if ((vBufPos+4) >= vArraySize) Flush();
-	register sysVERTEX* v = vBuffer+vBufPos;
-	{
-		rfloat64 d	= zDepth;
-		rfloat32 x1 = CoordX(p1); rfloat32 x2 = CoordX(p2);
-		rfloat32 y1 = CoordY(p1); rfloat32 y2 = CoordY(p2);
-		VTX_X(v)=x1;	VTX_Y(v)=y1;	VTX_Z(v)=d; VTX_U(v) = tx.x1;  VTX_V(v++) = tx.y1;
-		VTX_X(v)=x2;	VTX_Y(v)=y1;	VTX_Z(v)=d; VTX_U(v) = tx.x2;  VTX_V(v++) = tx.y1;
-		VTX_X(v)=x1;	VTX_Y(v)=y2;	VTX_Z(v)=d; VTX_U(v) = tx.x1;  VTX_V(v++) = tx.y2;
-		VTX_X(v)=x2;	VTX_Y(v)=y2;	VTX_Z(v)=d; VTX_U(v) = tx.x2;  VTX_V(v) = tx.y2;
-		vBufPos += 4;
-		v-=3;
-	}
-	{
-		GENGRADIENT
-	}
-	{
-		Enable(GOURAUD);
-		Enable(TEXTURE);
-		TriStripTx(v, 4, tx.tex);
-	}
+  if ((vBufPos+4) >= vArraySize) Flush();
+  register sysVERTEX* v = vBuffer+vBufPos;
+  {
+    rfloat64 d  = zDepth;
+    rfloat32 x1 = CoordX(p1); rfloat32 x2 = CoordX(p2);
+    rfloat32 y1 = CoordY(p1); rfloat32 y2 = CoordY(p2);
+    VTX_X(v)=x1;  VTX_Y(v)=y1;  VTX_Z(v)=d; VTX_U(v) = tx.x1;  VTX_V(v++) = tx.y1;
+    VTX_X(v)=x2;  VTX_Y(v)=y1;  VTX_Z(v)=d; VTX_U(v) = tx.x2;  VTX_V(v++) = tx.y1;
+    VTX_X(v)=x1;  VTX_Y(v)=y2;  VTX_Z(v)=d; VTX_U(v) = tx.x1;  VTX_V(v++) = tx.y2;
+    VTX_X(v)=x2;  VTX_Y(v)=y2;  VTX_Z(v)=d; VTX_U(v) = tx.x2;  VTX_V(v) = tx.y2;
+    vBufPos += 4;
+    v-=3;
+  }
+  {
+    GENGRADIENT
+  }
+  {
+    Enable(GOURAUD);
+    Enable(TEXTURE);
+    TriStripTx(v, 4, tx.tex);
+  }
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void xDRAW::RectTlTxShA(ruint32* col, RICOORD2D p1, RICOORD2D p2, register xTEXTURE& tx)
 {
-	if ((vBufPos+4) >= vArraySize) Flush();
-	register sysVERTEX* v = vBuffer+vBufPos;
-	{
-		rfloat64 d	= zDepth;
-		rfloat32 x1 = CoordX(p1); rfloat32 x2 = CoordX(p2);
-		rfloat32 y1 = CoordY(p1); rfloat32 y2 = CoordY(p2);
-		VTX_X(v)=x1;	VTX_Y(v)=y1;	VTX_Z(v)=d; VTX_U(v) = tx.x1;						VTX_V(v++) = tx.y1;
-		VTX_X(v)=x2;	VTX_Y(v)=y1;	VTX_Z(v)=d; VTX_U(v) = tx.x1 + x2 - x1;	VTX_V(v++) = tx.y1;
-		VTX_X(v)=x1;	VTX_Y(v)=y2;	VTX_Z(v)=d; VTX_U(v) = tx.x1;						VTX_V(v++) = tx.y1 + y2 - y1;
-		VTX_X(v)=x2;	VTX_Y(v)=y2;	VTX_Z(v)=d; VTX_U(v) = tx.x1 + x2 - x1;	VTX_V(v) = tx.y1 + y2 - y1;
-		vBufPos += 4;
-		v-=3;
-	}
-	{
-		GENGRADIENT
-	}
-	{
-		Enable(GOURAUD);
-		Enable(TEXTURE);
-		TriStripTx(v, 4, tx.tex);
-	}
+  if ((vBufPos+4) >= vArraySize) Flush();
+  register sysVERTEX* v = vBuffer+vBufPos;
+  {
+    rfloat64 d  = zDepth;
+    rfloat32 x1 = CoordX(p1); rfloat32 x2 = CoordX(p2);
+    rfloat32 y1 = CoordY(p1); rfloat32 y2 = CoordY(p2);
+    VTX_X(v)=x1;  VTX_Y(v)=y1;  VTX_Z(v)=d; VTX_U(v) = tx.x1;           VTX_V(v++) = tx.y1;
+    VTX_X(v)=x2;  VTX_Y(v)=y1;  VTX_Z(v)=d; VTX_U(v) = tx.x1 + x2 - x1; VTX_V(v++) = tx.y1;
+    VTX_X(v)=x1;  VTX_Y(v)=y2;  VTX_Z(v)=d; VTX_U(v) = tx.x1;           VTX_V(v++) = tx.y1 + y2 - y1;
+    VTX_X(v)=x2;  VTX_Y(v)=y2;  VTX_Z(v)=d; VTX_U(v) = tx.x1 + x2 - x1; VTX_V(v) = tx.y1 + y2 - y1;
+    vBufPos += 4;
+    v-=3;
+  }
+  {
+    GENGRADIENT
+  }
+  {
+    Enable(GOURAUD);
+    Enable(TEXTURE);
+    TriStripTx(v, 4, tx.tex);
+  }
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -696,176 +696,176 @@ void xDRAW::RectTlTxShA(ruint32* col, RICOORD2D p1, RICOORD2D p2, register xTEXT
 //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#define GENCIRCLEVERTICIES																					\
-	{																																	\
-		rad = XDRAW_TRIGSIZE;																						\
-		register sysVERTEX* v2 = v+1;																		\
-		VTX_X(v2) = x; VTX_Y(v2) = y - rfx; VTX_Z(v2) = d; v2 += rad;		\
-		VTX_X(v2) = x + rfx; VTX_Y(v2) = y; VTX_Z(v2) = d; v2 += rad;		\
-		VTX_X(v2) = x; VTX_Y(v2) = y + rfx; VTX_Z(v2) = d; v2 += rad;		\
-		VTX_X(v2) = x - rfx; VTX_Y(v2) = y; VTX_Z(v2) = d; v2 += rad;		\
-		VTX_X(v2) = x; VTX_Y(v2) = y - rfx; VTX_Z(v2) = d;							\
-		for (rad = 1; rad < XDRAW_TRIGSIZE; rad++)											\
-		{																																\
-			rfloat32 sn = rfx*sTab[rad];																	\
-			rfloat32 cs = rfx*sTab[XDRAW_TRIGSIZE-rad];										\
-			v2 = v + rad+1;																								\
-			VTX_X(v2)  = x + sn; VTX_Y(v2)  = y - cs; VTX_Z(v2)  = d;			\
-			v2 += XDRAW_TRIGSIZE;																					\
-			VTX_X(v2)  = x + cs; VTX_Y(v2)  = y + sn; VTX_Z(v2)  = d;			\
-			v2 += XDRAW_TRIGSIZE;																					\
-			VTX_X(v2)  = x - sn; VTX_Y(v2)  = y + cs; VTX_Z(v2)  = d;			\
-			v2 += XDRAW_TRIGSIZE;																					\
-			VTX_X(v2)  = x - cs; VTX_Y(v2)  = y - sn; VTX_Z(v2)  = d;			\
-		}																																\
-	}																																	\
+#define GENCIRCLEVERTICIES                                          \
+  {                                                                 \
+    rad = XDRAW_TRIGSIZE;                                           \
+    register sysVERTEX* v2 = v+1;                                   \
+    VTX_X(v2) = x; VTX_Y(v2) = y - rfx; VTX_Z(v2) = d; v2 += rad;   \
+    VTX_X(v2) = x + rfx; VTX_Y(v2) = y; VTX_Z(v2) = d; v2 += rad;   \
+    VTX_X(v2) = x; VTX_Y(v2) = y + rfx; VTX_Z(v2) = d; v2 += rad;   \
+    VTX_X(v2) = x - rfx; VTX_Y(v2) = y; VTX_Z(v2) = d; v2 += rad;   \
+    VTX_X(v2) = x; VTX_Y(v2) = y - rfx; VTX_Z(v2) = d;              \
+    for (rad = 1; rad < XDRAW_TRIGSIZE; rad++)                      \
+    {                                                               \
+      rfloat32 sn = rfx*sTab[rad];                                  \
+      rfloat32 cs = rfx*sTab[XDRAW_TRIGSIZE-rad];                   \
+      v2 = v + rad+1;                                               \
+      VTX_X(v2)  = x + sn; VTX_Y(v2)  = y - cs; VTX_Z(v2)  = d;     \
+      v2 += XDRAW_TRIGSIZE;                                         \
+      VTX_X(v2)  = x + cs; VTX_Y(v2)  = y + sn; VTX_Z(v2)  = d;     \
+      v2 += XDRAW_TRIGSIZE;                                         \
+      VTX_X(v2)  = x - sn; VTX_Y(v2)  = y + cs; VTX_Z(v2)  = d;     \
+      v2 += XDRAW_TRIGSIZE;                                         \
+      VTX_X(v2)  = x - cs; VTX_Y(v2)  = y - sn; VTX_Z(v2)  = d;     \
+    }                                                               \
+  }                                                                 \
 
-#define GENCIRCLEVERTICIESCLR																				\
-	{																																	\
-		rad = XDRAW_TRIGSIZE;																						\
-		register sysVERTEX* v2 = v+1;																		\
-		VTX_X(v2) = x; VTX_Y(v2) = y - rfx; VTX_Z(v2) = d;							\
-		WRITECOLOUR(VTX_C(v2));	v2 += rad;															\
-		VTX_X(v2) = x + rfx; VTX_Y(v2) = y; VTX_Z(v2) = d;							\
-		WRITECOLOUR(VTX_C(v2)); v2 += rad;															\
-		VTX_X(v2) = x; VTX_Y(v2) = y + rfx; VTX_Z(v2) = d;							\
-		WRITECOLOUR(VTX_C(v2)); v2 += rad;															\
-		VTX_X(v2) = x - rfx; VTX_Y(v2) = y; VTX_Z(v2) = d;							\
-		WRITECOLOUR(VTX_C(v2)); v2 += rad;															\
-		VTX_X(v2) = x; VTX_Y(v2) = y - rfx; VTX_Z(v2) = d;							\
-		WRITECOLOUR(VTX_C(v2));																					\
-		for (rad = 1; rad < XDRAW_TRIGSIZE; rad++)											\
-		{																																\
-			rfloat32 sn = rfx*sTab[rad];																	\
-			rfloat32 cs = rfx*sTab[XDRAW_TRIGSIZE-rad];										\
-			v2 = v + rad+1;																								\
-			VTX_X(v2)  = x + sn; VTX_Y(v2)  = y - cs; VTX_Z(v2)  = d;			\
-			WRITECOLOUR(VTX_C(v2)); v2 += XDRAW_TRIGSIZE;									\
-			VTX_X(v2)  = x + cs; VTX_Y(v2)  = y + sn; VTX_Z(v2)  = d;			\
-			WRITECOLOUR(VTX_C(v2)); v2 += XDRAW_TRIGSIZE;									\
-			VTX_X(v2)  = x - sn; VTX_Y(v2)  = y + cs; VTX_Z(v2)  = d;			\
-			WRITECOLOUR(VTX_C(v2));	v2 += XDRAW_TRIGSIZE;									\
-			VTX_X(v2)  = x - cs; VTX_Y(v2)  = y - sn; VTX_Z(v2)  = d;			\
-			WRITECOLOUR(VTX_C(v2));																				\
-		}																																\
-	}																																	\
+#define GENCIRCLEVERTICIESCLR                                       \
+  {                                                                 \
+    rad = XDRAW_TRIGSIZE;                                           \
+    register sysVERTEX* v2 = v+1;                                   \
+    VTX_X(v2) = x; VTX_Y(v2) = y - rfx; VTX_Z(v2) = d;              \
+    WRITECOLOUR(VTX_C(v2)); v2 += rad;                              \
+    VTX_X(v2) = x + rfx; VTX_Y(v2) = y; VTX_Z(v2) = d;              \
+    WRITECOLOUR(VTX_C(v2)); v2 += rad;                              \
+    VTX_X(v2) = x; VTX_Y(v2) = y + rfx; VTX_Z(v2) = d;              \
+    WRITECOLOUR(VTX_C(v2)); v2 += rad;                              \
+    VTX_X(v2) = x - rfx; VTX_Y(v2) = y; VTX_Z(v2) = d;              \
+    WRITECOLOUR(VTX_C(v2)); v2 += rad;                              \
+    VTX_X(v2) = x; VTX_Y(v2) = y - rfx; VTX_Z(v2) = d;              \
+    WRITECOLOUR(VTX_C(v2));                                         \
+    for (rad = 1; rad < XDRAW_TRIGSIZE; rad++)                      \
+    {                                                               \
+      rfloat32 sn = rfx*sTab[rad];                                  \
+      rfloat32 cs = rfx*sTab[XDRAW_TRIGSIZE-rad];                   \
+      v2 = v + rad+1;                                               \
+      VTX_X(v2)  = x + sn; VTX_Y(v2)  = y - cs; VTX_Z(v2)  = d;     \
+      WRITECOLOUR(VTX_C(v2)); v2 += XDRAW_TRIGSIZE;                 \
+      VTX_X(v2)  = x + cs; VTX_Y(v2)  = y + sn; VTX_Z(v2)  = d;     \
+      WRITECOLOUR(VTX_C(v2)); v2 += XDRAW_TRIGSIZE;                 \
+      VTX_X(v2)  = x - sn; VTX_Y(v2)  = y + cs; VTX_Z(v2)  = d;     \
+      WRITECOLOUR(VTX_C(v2)); v2 += XDRAW_TRIGSIZE;                 \
+      VTX_X(v2)  = x - cs; VTX_Y(v2)  = y - sn; VTX_Z(v2)  = d;     \
+      WRITECOLOUR(VTX_C(v2));                                       \
+    }                                                               \
+  }                                                                 \
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void xDRAW::Circle(ruint32 col, RICOORD2D p1, ruint32 rad)
 {
-	// TO DO : Evaluate a segment count based on radius. minimum 8, max 64
-	if (vBufPos+(4*XDRAW_TRIGSIZE+2) >= vArraySize) Flush();
-	if (col != currentCol)
-	{
-		currentCol = col;
-		SetColour(col);
-	}
-	register sysVERTEX* v = vBuffer+vBufPos;
-	{
-		rfloat64 d = zDepth;
-		rfloat32 x = CoordX(p1);
-		rfloat32 y = CoordY(p1);
-		rfloat32 rfx = rad;
+  // TO DO : Evaluate a segment count based on radius. minimum 8, max 64
+  if (vBufPos+(4*XDRAW_TRIGSIZE+2) >= vArraySize) Flush();
+  if (col != currentCol)
+  {
+    currentCol = col;
+    SetColour(col);
+  }
+  register sysVERTEX* v = vBuffer+vBufPos;
+  {
+    rfloat64 d = zDepth;
+    rfloat32 x = CoordX(p1);
+    rfloat32 y = CoordY(p1);
+    rfloat32 rfx = rad;
 
-		// Easy verticies
+    // Easy verticies
 
-		VTX_X(v)=x;	VTX_Y(v)=y;	VTX_Z(v)=d; // centre
+    VTX_X(v)=x; VTX_Y(v)=y; VTX_Z(v)=d; // centre
 
-		GENCIRCLEVERTICIES
+    GENCIRCLEVERTICIES
 
-		vBufPos += (4*XDRAW_TRIGSIZE+2);
-	}
-	{
-		Disable(GOURAUD);
-		Disable(TEXTURE);
-		TriFan(v, 4*XDRAW_TRIGSIZE+2);
-	}
+    vBufPos += (4*XDRAW_TRIGSIZE+2);
+  }
+  {
+    Disable(GOURAUD);
+    Disable(TEXTURE);
+    TriFan(v, 4*XDRAW_TRIGSIZE+2);
+  }
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void xDRAW::CircleShC(ruint32* col, RICOORD2D p1, ruint32 rad)
 {
-	if (vBufPos+(4*XDRAW_TRIGSIZE+2) >= vArraySize) Flush();
-	register sysVERTEX* v = vBuffer+vBufPos;
-	{
-		rfloat64 d = zDepth;
-		rfloat32 x = CoordX(p1);
-		rfloat32 y = CoordY(p1);
-		rfloat32 rfx = rad;
+  if (vBufPos+(4*XDRAW_TRIGSIZE+2) >= vArraySize) Flush();
+  register sysVERTEX* v = vBuffer+vBufPos;
+  {
+    rfloat64 d = zDepth;
+    rfloat32 x = CoordX(p1);
+    rfloat32 y = CoordY(p1);
+    rfloat32 rfx = rad;
 
-		// colours
-		// we can re use the registers occupied by p1 and rad now
-		// p1 stores colour
-		// rad is a masking/shifting temp
-		p1 = *(col++);
-		rad = 8;
-		ruint32 b = p1; p1 >>= rad;
-		ruint32 g = p1; p1 >>= rad;
-		ruint32 r = p1; p1 >>= rad;
-		ruint32 a = cTab[(p1)];
-		rad = 0x000000FF; r = cTab[(r&rad)]; g = cTab[(g&rad)]; b = cTab[(b&rad)];
+    // colours
+    // we can re use the registers occupied by p1 and rad now
+    // p1 stores colour
+    // rad is a masking/shifting temp
+    p1 = *(col++);
+    rad = 8;
+    ruint32 b = p1; p1 >>= rad;
+    ruint32 g = p1; p1 >>= rad;
+    ruint32 r = p1; p1 >>= rad;
+    ruint32 a = cTab[(p1)];
+    rad = 0x000000FF; r = cTab[(r&rad)]; g = cTab[(g&rad)]; b = cTab[(b&rad)];
 
-		VTX_X(v)=x;	VTX_Y(v)=y;	VTX_Z(v)=d;
-		WRITECOLOUR(VTX_C(v));
+    VTX_X(v)=x; VTX_Y(v)=y; VTX_Z(v)=d;
+    WRITECOLOUR(VTX_C(v));
 
-		p1 = *(col); rad = 8;
-		b = p1; p1 >>= rad;
-		g = p1; p1 >>= rad;
-		rad = 0x000000FF; r = cTab[(p1&rad)]; g = cTab[(g&rad)]; b = cTab[(b&rad)];
+    p1 = *(col); rad = 8;
+    b = p1; p1 >>= rad;
+    g = p1; p1 >>= rad;
+    rad = 0x000000FF; r = cTab[(p1&rad)]; g = cTab[(g&rad)]; b = cTab[(b&rad)];
 
-		GENCIRCLEVERTICIESCLR
+    GENCIRCLEVERTICIESCLR
 
-		vBufPos += (4*XDRAW_TRIGSIZE+2);
-	}
-	{
-		Enable(GOURAUD);
-		Disable(TEXTURE);
-		TriFan(v, 4*XDRAW_TRIGSIZE+2);
-	}
+    vBufPos += (4*XDRAW_TRIGSIZE+2);
+  }
+  {
+    Enable(GOURAUD);
+    Disable(TEXTURE);
+    TriFan(v, 4*XDRAW_TRIGSIZE+2);
+  }
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void xDRAW::CircleShPt(ruint32* col, RICOORD2D p1, RICOORD2D p2, ruint32 rad)
 {
-	if (vBufPos+(4*XDRAW_TRIGSIZE+2) >= vArraySize) Flush();
-	register sysVERTEX* v = vBuffer+vBufPos;
-	{
-		rfloat64 d = zDepth;
-		rfloat32 x = CoordX(p1);
-		rfloat32 y = CoordY(p1);
-		rfloat32 rfx = rad;
+  if (vBufPos+(4*XDRAW_TRIGSIZE+2) >= vArraySize) Flush();
+  register sysVERTEX* v = vBuffer+vBufPos;
+  {
+    rfloat64 d = zDepth;
+    rfloat32 x = CoordX(p1);
+    rfloat32 y = CoordY(p1);
+    rfloat32 rfx = rad;
 
-		VTX_X(v)=x+CoordX(p2);	VTX_Y(v)=y+CoordY(p2);	VTX_Z(v)=d;
+    VTX_X(v)=x+CoordX(p2);  VTX_Y(v)=y+CoordY(p2);  VTX_Z(v)=d;
 
-		// we can re use the registers occupied by p1 and p2 now
-		// p1 stores colour
-		// p2 is a masking/shifting temp
+    // we can re use the registers occupied by p1 and p2 now
+    // p1 stores colour
+    // p2 is a masking/shifting temp
 
-		p1 = *(col++);	p2 = 8;
-		ruint32 b = p1; p1 >>= p2;
-		ruint32 g = p1; p1 >>= p2;
-		ruint32 r = p1; p1 >>= p2;
-		ruint32 a = cTab[(p1)];
-		p2 = 0x000000FF; r = cTab[(r&p2)]; g = cTab[(g&p2)]; b = cTab[(b&p2)];
+    p1 = *(col++);  p2 = 8;
+    ruint32 b = p1; p1 >>= p2;
+    ruint32 g = p1; p1 >>= p2;
+    ruint32 r = p1; p1 >>= p2;
+    ruint32 a = cTab[(p1)];
+    p2 = 0x000000FF; r = cTab[(r&p2)]; g = cTab[(g&p2)]; b = cTab[(b&p2)];
 
-		WRITECOLOUR(VTX_C(v));
+    WRITECOLOUR(VTX_C(v));
 
-		p1 = *(col); p2 = 8;
-		b = p1; p1 >>= p2;
-		g = p1; p1 >>= p2;
-		p2 = 0x000000FF; r = cTab[(p1&p2)]; g = cTab[(g&p2)]; b = cTab[(b&p2)];
+    p1 = *(col); p2 = 8;
+    b = p1; p1 >>= p2;
+    g = p1; p1 >>= p2;
+    p2 = 0x000000FF; r = cTab[(p1&p2)]; g = cTab[(g&p2)]; b = cTab[(b&p2)];
 
-		GENCIRCLEVERTICIESCLR
+    GENCIRCLEVERTICIESCLR
 
-		vBufPos += (4*XDRAW_TRIGSIZE+2);
-	}
-	{
-		Enable(GOURAUD);
-		Disable(TEXTURE);
-		TriFan(v, 4*XDRAW_TRIGSIZE+2);
-	}
+    vBufPos += (4*XDRAW_TRIGSIZE+2);
+  }
+  {
+    Enable(GOURAUD);
+    Disable(TEXTURE);
+    TriFan(v, 4*XDRAW_TRIGSIZE+2);
+  }
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -874,169 +874,169 @@ void xDRAW::CircleShPt(ruint32* col, RICOORD2D p1, RICOORD2D p2, ruint32 rad)
 //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#define GENELIPSEVERTICIES																							\
-	{																																			\
-		rad = XDRAW_TRIGSIZE;																								\
-		register sysVERTEX* v2 = v+1;																				\
-		VTX_X(v2) = x; VTX_Y(v2) = y - rfy; VTX_Z(v2) = d; v2 += rad;				\
-		VTX_X(v2) = x + rfx; VTX_Y(v2) = y; VTX_Z(v2) = d; v2 += rad;				\
-		VTX_X(v2) = x; VTX_Y(v2) = y + rfy; VTX_Z(v2) = d; v2 += rad;				\
-		VTX_X(v2) = x - rfx; VTX_Y(v2) = y; VTX_Z(v2) = d; v2 += rad;				\
-		VTX_X(v2) = x; VTX_Y(v2) = y - rfy; VTX_Z(v2) = d;									\
-		for (rad = 1; rad < XDRAW_TRIGSIZE; rad++)													\
-		{																																		\
-			rfloat32 sn = sTab[rad];																					\
-			rfloat32 cs = sTab[XDRAW_TRIGSIZE-rad];														\
-			v2 = v + rad+1;																										\
-			VTX_X(v2)  = x + rfx*sn; VTX_Y(v2)  = y - rfy*cs; VTX_Z(v2)  = d;	\
-			v2 += XDRAW_TRIGSIZE;																							\
-			VTX_X(v2)  = x + rfx*cs; VTX_Y(v2)  = y + rfy*sn; VTX_Z(v2)  = d;	\
-			v2 += XDRAW_TRIGSIZE;																							\
-			VTX_X(v2)  = x - rfx*sn; VTX_Y(v2)  = y + rfy*cs; VTX_Z(v2)  = d;	\
-			v2 += XDRAW_TRIGSIZE;																							\
-			VTX_X(v2)  = x - rfx*cs; VTX_Y(v2)  = y - rfy*sn; VTX_Z(v2)  = d;	\
-		}																																		\
-	}																																			\
+#define GENELIPSEVERTICIES                                              \
+  {                                                                     \
+    rad = XDRAW_TRIGSIZE;                                               \
+    register sysVERTEX* v2 = v+1;                                       \
+    VTX_X(v2) = x; VTX_Y(v2) = y - rfy; VTX_Z(v2) = d; v2 += rad;       \
+    VTX_X(v2) = x + rfx; VTX_Y(v2) = y; VTX_Z(v2) = d; v2 += rad;       \
+    VTX_X(v2) = x; VTX_Y(v2) = y + rfy; VTX_Z(v2) = d; v2 += rad;       \
+    VTX_X(v2) = x - rfx; VTX_Y(v2) = y; VTX_Z(v2) = d; v2 += rad;       \
+    VTX_X(v2) = x; VTX_Y(v2) = y - rfy; VTX_Z(v2) = d;                  \
+    for (rad = 1; rad < XDRAW_TRIGSIZE; rad++)                          \
+    {                                                                   \
+      rfloat32 sn = sTab[rad];                                          \
+      rfloat32 cs = sTab[XDRAW_TRIGSIZE-rad];                           \
+      v2 = v + rad+1;                                                   \
+      VTX_X(v2)  = x + rfx*sn; VTX_Y(v2)  = y - rfy*cs; VTX_Z(v2)  = d; \
+      v2 += XDRAW_TRIGSIZE;                                             \
+      VTX_X(v2)  = x + rfx*cs; VTX_Y(v2)  = y + rfy*sn; VTX_Z(v2)  = d; \
+      v2 += XDRAW_TRIGSIZE;                                             \
+      VTX_X(v2)  = x - rfx*sn; VTX_Y(v2)  = y + rfy*cs; VTX_Z(v2)  = d; \
+      v2 += XDRAW_TRIGSIZE;                                             \
+      VTX_X(v2)  = x - rfx*cs; VTX_Y(v2)  = y - rfy*sn; VTX_Z(v2)  = d; \
+    }                                                                   \
+  }                                                                     \
 
 
-#define GENELIPSEVERTICIESCLR																						\
-	{																																			\
-		rad = XDRAW_TRIGSIZE;																								\
-		register sysVERTEX* v2 = v+1;																				\
-		VTX_X(v2) = x; VTX_Y(v2) = y - rfy; VTX_Z(v2) = d;									\
-		WRITECOLOUR(VTX_C(v2));	v2 += rad;																	\
-		VTX_X(v2) = x + rfx; VTX_Y(v2) = y; VTX_Z(v2) = d;									\
-		WRITECOLOUR(VTX_C(v2)); v2 += rad;																	\
-		VTX_X(v2) = x; VTX_Y(v2) = y + rfy; VTX_Z(v2) = d;									\
-		WRITECOLOUR(VTX_C(v2)); v2 += rad;																	\
-		VTX_X(v2) = x - rfx; VTX_Y(v2) = y; VTX_Z(v2) = d;									\
-		WRITECOLOUR(VTX_C(v2)); v2 += rad;																	\
-		VTX_X(v2) = x; VTX_Y(v2) = y - rfy; VTX_Z(v2) = d;									\
-		WRITECOLOUR(VTX_C(v2));																							\
-		for (rad = 1; rad < XDRAW_TRIGSIZE; rad++)													\
-		{																																		\
-			rfloat32 sn = sTab[rad];																					\
-			rfloat32 cs = sTab[XDRAW_TRIGSIZE-rad];														\
-			v2 = v + rad+1;																										\
-			VTX_X(v2)  = x + rfx*sn; VTX_Y(v2)  = y - rfy*cs; VTX_Z(v2)  = d;	\
-			WRITECOLOUR(VTX_C(v2)); v2 += XDRAW_TRIGSIZE;											\
-			VTX_X(v2)  = x + rfx*cs; VTX_Y(v2)  = y + rfy*sn; VTX_Z(v2)  = d;	\
-			WRITECOLOUR(VTX_C(v2)); v2 += XDRAW_TRIGSIZE;											\
-			VTX_X(v2)  = x - rfx*sn; VTX_Y(v2)  = y + rfy*cs; VTX_Z(v2)  = d;	\
-			WRITECOLOUR(VTX_C(v2));	v2 += XDRAW_TRIGSIZE;											\
-			VTX_X(v2)  = x - rfx*cs; VTX_Y(v2)  = y - rfy*sn; VTX_Z(v2)  = d;	\
-			WRITECOLOUR(VTX_C(v2));																						\
-		}																																		\
-	}																																			\
+#define GENELIPSEVERTICIESCLR                                           \
+  {                                                                     \
+    rad = XDRAW_TRIGSIZE;                                               \
+    register sysVERTEX* v2 = v+1;                                       \
+    VTX_X(v2) = x; VTX_Y(v2) = y - rfy; VTX_Z(v2) = d;                  \
+    WRITECOLOUR(VTX_C(v2)); v2 += rad;                                  \
+    VTX_X(v2) = x + rfx; VTX_Y(v2) = y; VTX_Z(v2) = d;                  \
+    WRITECOLOUR(VTX_C(v2)); v2 += rad;                                  \
+    VTX_X(v2) = x; VTX_Y(v2) = y + rfy; VTX_Z(v2) = d;                  \
+    WRITECOLOUR(VTX_C(v2)); v2 += rad;                                  \
+    VTX_X(v2) = x - rfx; VTX_Y(v2) = y; VTX_Z(v2) = d;                  \
+    WRITECOLOUR(VTX_C(v2)); v2 += rad;                                  \
+    VTX_X(v2) = x; VTX_Y(v2) = y - rfy; VTX_Z(v2) = d;                  \
+    WRITECOLOUR(VTX_C(v2));                                             \
+    for (rad = 1; rad < XDRAW_TRIGSIZE; rad++)                          \
+    {                                                                   \
+      rfloat32 sn = sTab[rad];                                          \
+      rfloat32 cs = sTab[XDRAW_TRIGSIZE-rad];                           \
+      v2 = v + rad+1;                                                   \
+      VTX_X(v2)  = x + rfx*sn; VTX_Y(v2)  = y - rfy*cs; VTX_Z(v2)  = d; \
+      WRITECOLOUR(VTX_C(v2)); v2 += XDRAW_TRIGSIZE;                     \
+      VTX_X(v2)  = x + rfx*cs; VTX_Y(v2)  = y + rfy*sn; VTX_Z(v2)  = d; \
+      WRITECOLOUR(VTX_C(v2)); v2 += XDRAW_TRIGSIZE;                     \
+      VTX_X(v2)  = x - rfx*sn; VTX_Y(v2)  = y + rfy*cs; VTX_Z(v2)  = d; \
+      WRITECOLOUR(VTX_C(v2)); v2 += XDRAW_TRIGSIZE;                     \
+      VTX_X(v2)  = x - rfx*cs; VTX_Y(v2)  = y - rfy*sn; VTX_Z(v2)  = d; \
+      WRITECOLOUR(VTX_C(v2));                                           \
+    }                                                                   \
+  }                                                                     \
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void xDRAW::Elipse(ruint32 col, RICOORD2D p1, RICOORD2D rad)
 {
-	if (vBufPos+(4*XDRAW_TRIGSIZE+2) >= vArraySize) Flush();
-	if (col != currentCol)
-	{
-		currentCol = col;
-		SetColour(col);
-	}
-	register sysVERTEX* v = vBuffer+vBufPos;
-	{
-		rfloat64 d = zDepth;
-		rfloat32 x = CoordX(p1);		rfloat32 y = CoordY(p1);
-		rfloat32 rfx = CoordX(rad);	rfloat32 rfy = CoordY(rad);
+  if (vBufPos+(4*XDRAW_TRIGSIZE+2) >= vArraySize) Flush();
+  if (col != currentCol)
+  {
+    currentCol = col;
+    SetColour(col);
+  }
+  register sysVERTEX* v = vBuffer+vBufPos;
+  {
+    rfloat64 d = zDepth;
+    rfloat32 x = CoordX(p1);    rfloat32 y = CoordY(p1);
+    rfloat32 rfx = CoordX(rad); rfloat32 rfy = CoordY(rad);
 
-		VTX_X(v)=x;	VTX_Y(v)=y;	VTX_Z(v)=d; // centre
+    VTX_X(v)=x; VTX_Y(v)=y; VTX_Z(v)=d; // centre
 
-		GENELIPSEVERTICIES
+    GENELIPSEVERTICIES
 
-		vBufPos += (4*XDRAW_TRIGSIZE+2);
-	}
-	{
-		Disable(GOURAUD);
-		Disable(TEXTURE);
-		TriFan(v, 4*XDRAW_TRIGSIZE+2);
-	}
+    vBufPos += (4*XDRAW_TRIGSIZE+2);
+  }
+  {
+    Disable(GOURAUD);
+    Disable(TEXTURE);
+    TriFan(v, 4*XDRAW_TRIGSIZE+2);
+  }
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void xDRAW::ElipseShC(ruint32* col, RICOORD2D p1, RICOORD2D rad)
 {
-	if (vBufPos+(4*XDRAW_TRIGSIZE+2) >= vArraySize) Flush();
-	register sysVERTEX* v = vBuffer+vBufPos;
-	{
-		rfloat64 d = zDepth;
-		rfloat32 x = CoordX(p1);		rfloat32 y = CoordY(p1);
-		rfloat32 rfx = CoordX(rad);	rfloat32 rfy = CoordY(rad);
+  if (vBufPos+(4*XDRAW_TRIGSIZE+2) >= vArraySize) Flush();
+  register sysVERTEX* v = vBuffer+vBufPos;
+  {
+    rfloat64 d = zDepth;
+    rfloat32 x = CoordX(p1);    rfloat32 y = CoordY(p1);
+    rfloat32 rfx = CoordX(rad); rfloat32 rfy = CoordY(rad);
 
-		// we can re use the registers occupied by p1 and rad now
-		// p1 stores colour
-		// rad is a masking/shifting temp
-		p1 = *(col++);  rad = 8;
-		ruint32 b = p1; p1 >>= rad;
-		ruint32 g = p1; p1 >>= rad;
-		ruint32 r = p1; p1 >>= rad;
-		ruint32 a = cTab[(p1)];
-		rad = 0x000000FF; r = cTab[(r&rad)]; g = cTab[(g&rad)]; b = cTab[(b&rad)];
+    // we can re use the registers occupied by p1 and rad now
+    // p1 stores colour
+    // rad is a masking/shifting temp
+    p1 = *(col++);  rad = 8;
+    ruint32 b = p1; p1 >>= rad;
+    ruint32 g = p1; p1 >>= rad;
+    ruint32 r = p1; p1 >>= rad;
+    ruint32 a = cTab[(p1)];
+    rad = 0x000000FF; r = cTab[(r&rad)]; g = cTab[(g&rad)]; b = cTab[(b&rad)];
 
-		VTX_X(v)=x;	VTX_Y(v)=y;	VTX_Z(v)=d;
-		WRITECOLOUR(VTX_C(v));
+    VTX_X(v)=x; VTX_Y(v)=y; VTX_Z(v)=d;
+    WRITECOLOUR(VTX_C(v));
 
-		p1 = *(col); rad = 8;
-		b = p1; p1 >>= rad;
-		g = p1; p1 >>= rad;
-		rad = 0x000000FF; r = cTab[(p1&rad)]; g = cTab[(g&rad)]; b = cTab[(b&rad)];
+    p1 = *(col); rad = 8;
+    b = p1; p1 >>= rad;
+    g = p1; p1 >>= rad;
+    rad = 0x000000FF; r = cTab[(p1&rad)]; g = cTab[(g&rad)]; b = cTab[(b&rad)];
 
-		GENELIPSEVERTICIESCLR
+    GENELIPSEVERTICIESCLR
 
-		vBufPos += (4*XDRAW_TRIGSIZE+2);
-	}
-	{
-		Enable(GOURAUD);
-		Disable(TEXTURE);
-		TriFan(v, 4*XDRAW_TRIGSIZE+2);
-	}
+    vBufPos += (4*XDRAW_TRIGSIZE+2);
+  }
+  {
+    Enable(GOURAUD);
+    Disable(TEXTURE);
+    TriFan(v, 4*XDRAW_TRIGSIZE+2);
+  }
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void xDRAW::ElipseShPt(ruint32* col, RICOORD2D p1, RICOORD2D p2, RICOORD2D rad)
 {
-	if (vBufPos+(4*XDRAW_TRIGSIZE+2) >= vArraySize) Flush();
-	register sysVERTEX* v = vBuffer+vBufPos;
-	{
-		rfloat64 d = zDepth;
-		rfloat32 x = CoordX(p1);		rfloat32 y = CoordY(p1);
-		rfloat32 rfx = CoordX(rad);	rfloat32 rfy = CoordY(rad);
+  if (vBufPos+(4*XDRAW_TRIGSIZE+2) >= vArraySize) Flush();
+  register sysVERTEX* v = vBuffer+vBufPos;
+  {
+    rfloat64 d = zDepth;
+    rfloat32 x = CoordX(p1);    rfloat32 y = CoordY(p1);
+    rfloat32 rfx = CoordX(rad); rfloat32 rfy = CoordY(rad);
 
-		v[0].x=x+CoordX(p2);	v[0].y=y+CoordY(p2);	v[0].z=d;
+    v[0].x=x+CoordX(p2);  v[0].y=y+CoordY(p2);  v[0].z=d;
 
-		// we can re use the registers occupied by p1 and p2 now
-		// p1 stores colour
-		// p2 is a masking/shifting temp
-		p1 = *(col++);	p2 = 8;
-		ruint32 b = p1; p1 >>= p2;
-		ruint32 g = p1; p1 >>= p2;
-		ruint32 r = p1; p1 >>= p2;
-		ruint32 a = cTab[(p1)];
-		p2 = 0x000000FF; r = cTab[(r&p2)]; g = cTab[(g&p2)]; b = cTab[(b&p2)];
+    // we can re use the registers occupied by p1 and p2 now
+    // p1 stores colour
+    // p2 is a masking/shifting temp
+    p1 = *(col++);  p2 = 8;
+    ruint32 b = p1; p1 >>= p2;
+    ruint32 g = p1; p1 >>= p2;
+    ruint32 r = p1; p1 >>= p2;
+    ruint32 a = cTab[(p1)];
+    p2 = 0x000000FF; r = cTab[(r&p2)]; g = cTab[(g&p2)]; b = cTab[(b&p2)];
 
-		WRITECOLOUR(VTX_C(v))
+    WRITECOLOUR(VTX_C(v))
 
-		p1 = *(col);	p2 = 8;
-		b = p1; p1 >>= p2;
-		g = p1; p1 >>= p2;
-		p2 = 0x000000FF; r = cTab[(p1&p2)]; g = cTab[(g&p2)]; b = cTab[(b&p2)];
+    p1 = *(col);  p2 = 8;
+    b = p1; p1 >>= p2;
+    g = p1; p1 >>= p2;
+    p2 = 0x000000FF; r = cTab[(p1&p2)]; g = cTab[(g&p2)]; b = cTab[(b&p2)];
 
-		GENELIPSEVERTICIESCLR
+    GENELIPSEVERTICIESCLR
 
-		vBufPos += 4*XDRAW_TRIGSIZE+2;
-	}
-	{
-		Enable(GOURAUD);
-		Disable(TEXTURE);
-		TriFan(v, 4*XDRAW_TRIGSIZE+2);
-	}
+    vBufPos += 4*XDRAW_TRIGSIZE+2;
+  }
+  {
+    Enable(GOURAUD);
+    Disable(TEXTURE);
+    TriFan(v, 4*XDRAW_TRIGSIZE+2);
+  }
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1045,204 +1045,204 @@ void xDRAW::ElipseShPt(ruint32* col, RICOORD2D p1, RICOORD2D p2, RICOORD2D rad)
 //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#define GENTEXCOORDS																		\
-	{																											\
-		VTX_U(v) = x; VTX_V(v) = y;													\
-		rad = XDRAW_TRIGSIZE;																\
-		register sysVERTEX* v2 = v+1;												\
-		VTX_U(v2) = x; VTX_V(v2) = tx.y1; v2 += rad;				\
-		VTX_U(v2) = tx.x2; VTX_V(v2) = y; v2 += rad;				\
-		VTX_U(v2) = x; VTX_V(v2) = tx.y2; v2 += rad;				\
-		VTX_U(v2) = tx.x1; VTX_V(v2) = y;	v2 += rad;				\
-		VTX_U(v2) = x; VTX_V(v2) = tx.y1;										\
-		for (rad = 1; rad < XDRAW_TRIGSIZE; rad++)					\
-		{																										\
-			rfloat32 sn = sTab[rad];													\
-			rfloat32 cs = sTab[XDRAW_TRIGSIZE-rad];						\
-			v2 = v + rad+1;																		\
-			VTX_U(v2)  = x + rfx*sn; VTX_V(v2)  = y - rfy*cs;	\
-			v2 += XDRAW_TRIGSIZE;															\
-			VTX_U(v2)  = x + rfx*cs; VTX_V(v2)  = y + rfy*sn;	\
-			v2 += XDRAW_TRIGSIZE;															\
-			VTX_U(v2)  = x - rfx*sn; VTX_V(v2)  = y + rfy*cs;	\
-			v2 += XDRAW_TRIGSIZE;															\
-			VTX_U(v2)  = x - rfx*cs; VTX_V(v2)  = y - rfy*sn;	\
-		}																										\
-	}																											\
+#define GENTEXCOORDS                                    \
+  {                                                     \
+    VTX_U(v) = x; VTX_V(v) = y;                         \
+    rad = XDRAW_TRIGSIZE;                               \
+    register sysVERTEX* v2 = v+1;                       \
+    VTX_U(v2) = x; VTX_V(v2) = tx.y1; v2 += rad;        \
+    VTX_U(v2) = tx.x2; VTX_V(v2) = y; v2 += rad;        \
+    VTX_U(v2) = x; VTX_V(v2) = tx.y2; v2 += rad;        \
+    VTX_U(v2) = tx.x1; VTX_V(v2) = y; v2 += rad;        \
+    VTX_U(v2) = x; VTX_V(v2) = tx.y1;                   \
+    for (rad = 1; rad < XDRAW_TRIGSIZE; rad++)          \
+    {                                                   \
+      rfloat32 sn = sTab[rad];                          \
+      rfloat32 cs = sTab[XDRAW_TRIGSIZE-rad];           \
+      v2 = v + rad+1;                                   \
+      VTX_U(v2)  = x + rfx*sn; VTX_V(v2)  = y - rfy*cs; \
+      v2 += XDRAW_TRIGSIZE;                             \
+      VTX_U(v2)  = x + rfx*cs; VTX_V(v2)  = y + rfy*sn; \
+      v2 += XDRAW_TRIGSIZE;                             \
+      VTX_U(v2)  = x - rfx*sn; VTX_V(v2)  = y + rfy*cs; \
+      v2 += XDRAW_TRIGSIZE;                             \
+      VTX_U(v2)  = x - rfx*cs; VTX_V(v2)  = y - rfy*sn; \
+    }                                                   \
+  }                                                     \
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void xDRAW::CircleScTx(ruint32 col, RICOORD2D p1, ruint32 rad, register xTEXTURE& tx)
 {
-	// TO DO : Evaluate a segment count based on radius. minimum 8, max 64
-	if (vBufPos+(4*XDRAW_TRIGSIZE+2) >= vArraySize) Flush();
-	if (col != currentCol)
-	{
-		currentCol = col;
-		SetColour(col);
-	}
-	register sysVERTEX* v = vBuffer+vBufPos;
-	{
-		rfloat64 d = zDepth;
-		rfloat32 x = CoordX(p1);
-		rfloat32 y = CoordY(p1);
-		rfloat32 rfx = rad;
+  // TO DO : Evaluate a segment count based on radius. minimum 8, max 64
+  if (vBufPos+(4*XDRAW_TRIGSIZE+2) >= vArraySize) Flush();
+  if (col != currentCol)
+  {
+    currentCol = col;
+    SetColour(col);
+  }
+  register sysVERTEX* v = vBuffer+vBufPos;
+  {
+    rfloat64 d = zDepth;
+    rfloat32 x = CoordX(p1);
+    rfloat32 y = CoordY(p1);
+    rfloat32 rfx = rad;
 
-		VTX_X(v)=x;	VTX_Y(v)=y;	VTX_Z(v)=d; // centre
+    VTX_X(v)=x; VTX_Y(v)=y; VTX_Z(v)=d; // centre
 
-		GENCIRCLEVERTICIES
+    GENCIRCLEVERTICIES
 
-		{
-			x		= (tx.x1 + tx.x2)/2F;
-			y		= (tx.y1 + tx.y2)/2F;
-			rfx	= (tx.x2 - tx.x1)/2F;
-			rfloat32 rfy	= (tx.y2 - tx.y1)/2F;
+    {
+      x   = (tx.x1 + tx.x2)/2F;
+      y   = (tx.y1 + tx.y2)/2F;
+      rfx = (tx.x2 - tx.x1)/2F;
+      rfloat32 rfy  = (tx.y2 - tx.y1)/2F;
 
-			GENTEXCOORDS
+      GENTEXCOORDS
 
-		}
-		vBufPos += (4*XDRAW_TRIGSIZE+2);
-	}
-	{
-		Disable(GOURAUD);
-		Enable(TEXTURE);
-		TriFanTx(v, 4*XDRAW_TRIGSIZE+2, tx.tex);
-	}
+    }
+    vBufPos += (4*XDRAW_TRIGSIZE+2);
+  }
+  {
+    Disable(GOURAUD);
+    Enable(TEXTURE);
+    TriFanTx(v, 4*XDRAW_TRIGSIZE+2, tx.tex);
+  }
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void xDRAW::CircleScTxShC(ruint32* col, RICOORD2D p1, ruint32 rad, register xTEXTURE& tx)
 {
-	if (vBufPos+(4*XDRAW_TRIGSIZE+2) >= vArraySize) Flush();
-	register sysVERTEX* v = vBuffer+vBufPos;
-	{
-		rfloat64 d = zDepth;
-		rfloat32 x = CoordX(p1);
-		rfloat32 y = CoordY(p1);
-		rfloat32 rfx = rad;
+  if (vBufPos+(4*XDRAW_TRIGSIZE+2) >= vArraySize) Flush();
+  register sysVERTEX* v = vBuffer+vBufPos;
+  {
+    rfloat64 d = zDepth;
+    rfloat32 x = CoordX(p1);
+    rfloat32 y = CoordY(p1);
+    rfloat32 rfx = rad;
 
-		// colours
-		p1 = *(col++);
-		rad = 8;
-		ruint32 b = p1; p1 >>= rad;
-		ruint32 g = p1; p1 >>= rad;
-		ruint32 r = p1; p1 >>= rad;
-		ruint32 a = cTab[(p1)];
-		rad = 0x000000FF; r = cTab[(r&rad)]; g = cTab[(g&rad)]; b = cTab[(b&rad)];
+    // colours
+    p1 = *(col++);
+    rad = 8;
+    ruint32 b = p1; p1 >>= rad;
+    ruint32 g = p1; p1 >>= rad;
+    ruint32 r = p1; p1 >>= rad;
+    ruint32 a = cTab[(p1)];
+    rad = 0x000000FF; r = cTab[(r&rad)]; g = cTab[(g&rad)]; b = cTab[(b&rad)];
 
-		VTX_X(v)=x;	VTX_Y(v)=y;	VTX_Z(v)=d;
-		WRITECOLOUR(VTX_C(v));
+    VTX_X(v)=x; VTX_Y(v)=y; VTX_Z(v)=d;
+    WRITECOLOUR(VTX_C(v));
 
-		p1 = *(col); rad = 8;
-		b = p1; p1 >>= rad;
-		g = p1; p1 >>= rad;
-		rad = 0x000000FF; r = cTab[(p1&rad)]; g = cTab[(g&rad)]; b = cTab[(b&rad)];
+    p1 = *(col); rad = 8;
+    b = p1; p1 >>= rad;
+    g = p1; p1 >>= rad;
+    rad = 0x000000FF; r = cTab[(p1&rad)]; g = cTab[(g&rad)]; b = cTab[(b&rad)];
 
-		GENCIRCLEVERTICIESCLR
+    GENCIRCLEVERTICIESCLR
 
-		{
-			x		= (tx.x1 + tx.x2)/2F;
-			y		= (tx.y1 + tx.y2)/2F;
-			rfx	= (tx.x2 - tx.x1)/2F;
-			rfloat32 rfy	= (tx.y2 - tx.y1)/2F;
+    {
+      x   = (tx.x1 + tx.x2)/2F;
+      y   = (tx.y1 + tx.y2)/2F;
+      rfx = (tx.x2 - tx.x1)/2F;
+      rfloat32 rfy  = (tx.y2 - tx.y1)/2F;
 
-			GENTEXCOORDS
+      GENTEXCOORDS
 
-		}
-		vBufPos += (4*XDRAW_TRIGSIZE+2);
-	}
-	{
-		Enable(GOURAUD);
-		Enable(TEXTURE);
-		TriFanTx(v, 4*XDRAW_TRIGSIZE+2, tx.tex);
-	}
+    }
+    vBufPos += (4*XDRAW_TRIGSIZE+2);
+  }
+  {
+    Enable(GOURAUD);
+    Enable(TEXTURE);
+    TriFanTx(v, 4*XDRAW_TRIGSIZE+2, tx.tex);
+  }
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void xDRAW::ElipseScTx(ruint32 col, RICOORD2D p1, RICOORD2D rad, register xTEXTURE& tx)
 {
-	if (vBufPos+(4*XDRAW_TRIGSIZE+2) >= vArraySize) Flush();
-	if (col != currentCol)
-	{
-		currentCol = col;
-		SetColour(col);
-	}
-	register sysVERTEX* v = vBuffer+vBufPos;
-	{
-		rfloat64 d = zDepth;
-		rfloat32 x = CoordX(p1);		rfloat32 y = CoordY(p1);
-		rfloat32 rfx = CoordX(rad);	rfloat32 rfy = CoordY(rad);
-		VTX_X(v)=x;	VTX_Y(v)=y;	VTX_Z(v)=d; // centre
+  if (vBufPos+(4*XDRAW_TRIGSIZE+2) >= vArraySize) Flush();
+  if (col != currentCol)
+  {
+    currentCol = col;
+    SetColour(col);
+  }
+  register sysVERTEX* v = vBuffer+vBufPos;
+  {
+    rfloat64 d = zDepth;
+    rfloat32 x = CoordX(p1);    rfloat32 y = CoordY(p1);
+    rfloat32 rfx = CoordX(rad); rfloat32 rfy = CoordY(rad);
+    VTX_X(v)=x; VTX_Y(v)=y; VTX_Z(v)=d; // centre
 
-		GENELIPSEVERTICIES
+    GENELIPSEVERTICIES
 
-		{
-			x		= (tx.x1 + tx.x2)/2F;
-			y		= (tx.y1 + tx.y2)/2F;
-			rfx	= (tx.x2 - tx.x1)/2F;
-			rfy	= (tx.y2 - tx.y1)/2F;
+    {
+      x   = (tx.x1 + tx.x2)/2F;
+      y   = (tx.y1 + tx.y2)/2F;
+      rfx = (tx.x2 - tx.x1)/2F;
+      rfy = (tx.y2 - tx.y1)/2F;
 
-			GENTEXCOORDS
+      GENTEXCOORDS
 
-		}
-		vBufPos += (4*XDRAW_TRIGSIZE+2);
-	}
-	{
-		Disable(GOURAUD);
-		Enable(TEXTURE);
-		TriFanTx(v, 4*XDRAW_TRIGSIZE+2, tx.tex);
-	}
+    }
+    vBufPos += (4*XDRAW_TRIGSIZE+2);
+  }
+  {
+    Disable(GOURAUD);
+    Enable(TEXTURE);
+    TriFanTx(v, 4*XDRAW_TRIGSIZE+2, tx.tex);
+  }
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void xDRAW::ElipseScTxShC(ruint32* col, RICOORD2D p1, RICOORD2D rad, register xTEXTURE& tx)
 {
-	if (vBufPos+(4*XDRAW_TRIGSIZE+2) >= vArraySize) Flush();
-	register sysVERTEX* v = vBuffer+vBufPos;
-	{
-		rfloat64 d = zDepth;
-		rfloat32 x = CoordX(p1);		rfloat32 y = CoordY(p1);
-		rfloat32 rfx = CoordX(rad);	rfloat32 rfy = CoordY(rad);
+  if (vBufPos+(4*XDRAW_TRIGSIZE+2) >= vArraySize) Flush();
+  register sysVERTEX* v = vBuffer+vBufPos;
+  {
+    rfloat64 d = zDepth;
+    rfloat32 x = CoordX(p1);    rfloat32 y = CoordY(p1);
+    rfloat32 rfx = CoordX(rad); rfloat32 rfy = CoordY(rad);
 
 
-		// we can re use the registers occupied by p1 and rad now
-		// p1 stores colour
-		// rad is a masking/shifting temp
-		p1 = *(col++);  rad = 8;
-		ruint32 b = p1; p1 >>= rad;
-		ruint32 g = p1; p1 >>= rad;
-		ruint32 r = p1; p1 >>= rad;
-		ruint32 a = cTab[(p1)];
-		rad = 0x000000FF; r = cTab[(r&rad)]; g = cTab[(g&rad)]; b = cTab[(b&rad)];
+    // we can re use the registers occupied by p1 and rad now
+    // p1 stores colour
+    // rad is a masking/shifting temp
+    p1 = *(col++);  rad = 8;
+    ruint32 b = p1; p1 >>= rad;
+    ruint32 g = p1; p1 >>= rad;
+    ruint32 r = p1; p1 >>= rad;
+    ruint32 a = cTab[(p1)];
+    rad = 0x000000FF; r = cTab[(r&rad)]; g = cTab[(g&rad)]; b = cTab[(b&rad)];
 
-		VTX_X(v)=x;	VTX_Y(v)=y;	VTX_Z(v)=d;
-		WRITECOLOUR(VTX_C(v));
-		p1 = *(col); rad = 8;
-		b = p1; p1 >>= rad;
-		g = p1; p1 >>= rad;
-		rad = 0x000000FF; r = cTab[(p1&rad)]; g = cTab[(g&rad)]; b = cTab[(b&rad)];
+    VTX_X(v)=x; VTX_Y(v)=y; VTX_Z(v)=d;
+    WRITECOLOUR(VTX_C(v));
+    p1 = *(col); rad = 8;
+    b = p1; p1 >>= rad;
+    g = p1; p1 >>= rad;
+    rad = 0x000000FF; r = cTab[(p1&rad)]; g = cTab[(g&rad)]; b = cTab[(b&rad)];
 
-		GENELIPSEVERTICIESCLR
+    GENELIPSEVERTICIESCLR
 
-		{
-			x		= (tx.x1 + tx.x2)/2F;
-			y		= (tx.y1 + tx.y2)/2F;
-			rfx	= (tx.x2 - tx.x1)/2F;
-			rfy	= (tx.y2 - tx.y1)/2F;
+    {
+      x   = (tx.x1 + tx.x2)/2F;
+      y   = (tx.y1 + tx.y2)/2F;
+      rfx = (tx.x2 - tx.x1)/2F;
+      rfy = (tx.y2 - tx.y1)/2F;
 
-			GENTEXCOORDS
+      GENTEXCOORDS
 
-		}
-		vBufPos += (4*XDRAW_TRIGSIZE+2);
-	}
-	{
-		Enable(GOURAUD);
-		Enable(TEXTURE);
-		TriFanTx(v, 4*XDRAW_TRIGSIZE+2, tx.tex);
-	}
+    }
+    vBufPos += (4*XDRAW_TRIGSIZE+2);
+  }
+  {
+    Enable(GOURAUD);
+    Enable(TEXTURE);
+    TriFanTx(v, 4*XDRAW_TRIGSIZE+2, tx.tex);
+  }
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

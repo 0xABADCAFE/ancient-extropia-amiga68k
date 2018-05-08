@@ -16,7 +16,7 @@
 
     Require following methods : need a good 3D geometry book
 
-		PLANE:: class
+    PLANE:: class
 
 
 
@@ -44,138 +44,138 @@
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-sint32			AXON::vCachePtr		= 0;
-sysVERTEX*	AXON::vCache			= 0;
+sint32      AXON::vCachePtr   = 0;
+sysVERTEX*  AXON::vCache      = 0;
 
 #ifdef CLIPSTATS
-sint32	AXON::centreClips = 0;
-sint32	AXON::cornerClips = 0;
-sint32	AXON::edgeClips = 0;
+sint32  AXON::centreClips = 0;
+sint32  AXON::cornerClips = 0;
+sint32  AXON::edgeClips = 0;
 #endif
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 sint32 AXON::Init()
 {
-	if (TEXTUREHEAP::Init(64)!=OK)
-	{
-		Done();
-		return ERR_RSC_UNAVAILABLE;
-	}
+  if (TEXTUREHEAP::Init(64)!=OK)
+  {
+    Done();
+    return ERR_RSC_UNAVAILABLE;
+  }
 
-	vCache = New(vCache, VCACHESIZE);
-	if (!vCache)
-	{
-		Done();
-		return ERR_NO_FREE_STORE;
-	}
-	return OK;
+  vCache = New(vCache, VCACHESIZE);
+  if (!vCache)
+  {
+    Done();
+    return ERR_NO_FREE_STORE;
+  }
+  return OK;
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void AXON::Done()
 {
-	if (vCache)
-		Delete(vCache);
-	vCache		= 0;
+  if (vCache)
+    Delete(vCache);
+  vCache    = 0;
 
-	TEXTUREHEAP::Done();
+  TEXTUREHEAP::Done();
 
-	#ifdef CLIPSTATS
-	printf("edges clipped   : %d\n", edgeClips);
-	printf("corners clippes : %d\n", cornerClips);
-	printf("centres clipped : %d\n", centreClips);
-	#endif
+  #ifdef CLIPSTATS
+  printf("edges clipped   : %d\n", edgeClips);
+  printf("corners clippes : %d\n", cornerClips);
+  printf("centres clipped : %d\n", centreClips);
+  #endif
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 uint32 AXON::TraceVec(VEC3D* from, VEC3D* to, VEC3D* traceEnd, MODEL** hitThing)
 {
-	// this is gonna be quite tough to do
-	// Simply tracing along the line to-from in small increments is silly and time consuming.
-	// We need something like
+  // this is gonna be quite tough to do
+  // Simply tracing along the line to-from in small increments is silly and time consuming.
+  // We need something like
   // 1. Build a list of each cell that vector to-from crosses
-	// 2. Stop list the moment we detect that the trace has passed through the ground
+  // 2. Stop list the moment we detect that the trace has passed through the ground
   // 3. Use that list to build a list of MODELS that the trace could possibly hit
   // 4. Sort list in order of nearest ... farthest from 'from'
-	// 5. Test each MODEL for contact with the trace
+  // 5. Test each MODEL for contact with the trace
 
-	// Hardest parts are 2 and 5. Part 2 would probably be implemented by evaluating which PLANEs the trace passes through as we
-	// test the cell. We need to test not that the trace crosses a PLANE, but that it crosses the PLANE at a point INSIDE the three
-	// boundary points used in its definition. Probably, PLANE will need 3 VEC3D* members added to its definition to enable this
+  // Hardest parts are 2 and 5. Part 2 would probably be implemented by evaluating which PLANEs the trace passes through as we
+  // test the cell. We need to test not that the trace crosses a PLANE, but that it crosses the PLANE at a point INSIDE the three
+  // boundary points used in its definition. Probably, PLANE will need 3 VEC3D* members added to its definition to enable this
 
-	return 0;
+  return 0;
 }
 
 
 void AXON::MeshToStrips(C3D* m, sysVERTEX* v, sint32 n)
 {
-	//  The source data is a nth order 2D mesh of MAP3D coordinates.
-	//  We convert this into n strips of 2*n triangles suitable
-	//  for xDRAW::TriStrip()
-	//
-	//  Note, for an nth order mesh there are (n+1)^2 C3D coordinates
-	//  and each converted strip has 2n+2 vertices -> 2(n^2 + n) overall
-	//
- 	//  The vertex addresses are calculated by
-	//
-	//    strip i begins at &v[i*(2n+2)];
-	//
-	//  Hence, an 8th order mesh would comprise
-	//
-	//    81  MAP3D coords
-	//    128 triangles as 8 triangle strips
-	//    144 vertices
-	//
-	//    strip 0 at &v[0]
-	//    strip 1 at &v[18]
-	//
-	//
-	for (rsint32 s=0; s<n; s++, m += (n+1), v += ((n<<1)+1) )
-	{
-		for (rsint32 i=0; i<=n; i++)
-		{
-			// Even vertices (top of strip)
-			register C3D*			mSrc = m+i;
-			register sysVERTEX*	vDst = v+(i+i);
+  //  The source data is a nth order 2D mesh of MAP3D coordinates.
+  //  We convert this into n strips of 2*n triangles suitable
+  //  for xDRAW::TriStrip()
+  //
+  //  Note, for an nth order mesh there are (n+1)^2 C3D coordinates
+  //  and each converted strip has 2n+2 vertices -> 2(n^2 + n) overall
+  //
+  //  The vertex addresses are calculated by
+  //
+  //    strip i begins at &v[i*(2n+2)];
+  //
+  //  Hence, an 8th order mesh would comprise
+  //
+  //    81  MAP3D coords
+  //    128 triangles as 8 triangle strips
+  //    144 vertices
+  //
+  //    strip 0 at &v[0]
+  //    strip 1 at &v[18]
+  //
+  //
+  for (rsint32 s=0; s<n; s++, m += (n+1), v += ((n<<1)+1) )
+  {
+    for (rsint32 i=0; i<=n; i++)
+    {
+      // Even vertices (top of strip)
+      register C3D*     mSrc = m+i;
+      register sysVERTEX* vDst = v+(i+i);
 
-			vDst->x = mSrc->x;
-			vDst->y = mSrc->y;
-			vDst->z = mSrc->z;
-			vDst->u = mSrc->u;
-			vDst->v = mSrc->v;
-			xDRAW::ARGBtoCol(mSrc->c, &(vDst->color));
+      vDst->x = mSrc->x;
+      vDst->y = mSrc->y;
+      vDst->z = mSrc->z;
+      vDst->u = mSrc->u;
+      vDst->v = mSrc->v;
+      xDRAW::ARGBtoCol(mSrc->c, &(vDst->color));
 
-			// Odd vertices (bottom of strip)
-			mSrc += (n+1); vDst++;
+      // Odd vertices (bottom of strip)
+      mSrc += (n+1); vDst++;
 
-			vDst->x = mSrc->x;
-			vDst->y = mSrc->y;
-			vDst->z = mSrc->z;
-			vDst->u = mSrc->u;
-			vDst->v = mSrc->v;
-			xDRAW::ARGBtoCol(mSrc->c, &(vDst->color));
-		}
-	}
+      vDst->x = mSrc->x;
+      vDst->y = mSrc->y;
+      vDst->z = mSrc->z;
+      vDst->u = mSrc->u;
+      vDst->v = mSrc->v;
+      xDRAW::ARGBtoCol(mSrc->c, &(vDst->color));
+    }
+  }
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 sysVERTEX* AXON::PushCoords(C3D* c, sint32 n)
 {
-	sysVERTEX* v = Vertices(n);
-	{
-		register sysVERTEX* vt = v; n++;
-		while(--n)
-		{
-			vt->x = c->x;		vt->y = c->y;		vt->z = c->z;
-			vt->u = c->u;		vt->v = c->v;
-			ARGBtoCol((c++)->c, &((vt++)->color));
-		}
-	}
-	return v;
+  sysVERTEX* v = Vertices(n);
+  {
+    register sysVERTEX* vt = v; n++;
+    while(--n)
+    {
+      vt->x = c->x;   vt->y = c->y;   vt->z = c->z;
+      vt->u = c->u;   vt->v = c->v;
+      ARGBtoCol((c++)->c, &((vt++)->color));
+    }
+  }
+  return v;
 };
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -24,32 +24,32 @@
  
 void MEM::Swap16(ruint16* s, ruint16* d, rsize_t n) 
 { 
-	do { 
-		ruint16 r = *s++; 
-		*d++ = (r<<8) | (r>>8); 
-	} while(--n); 
+  do { 
+    ruint16 r = *s++; 
+    *d++ = (r<<8) | (r>>8); 
+  } while(--n); 
 } 
  
 /////////////////////////////////////////////////////////////////////////////////////////////////////// 
  
 void MEM::Swap32(ruint32* s, ruint32* d, rsize_t n) 
 { 
-	do { 
-		ruint32 r = *s++; 
-		*d++ = (r<<24) | ((r&0xFF00)<<8) | ((r>>8)&0xFF00) | (r>>24); 
-	}	while(--n); 
+  do { 
+    ruint32 r = *s++; 
+    *d++ = (r<<24) | ((r&0xFF00)<<8) | ((r>>8)&0xFF00) | (r>>24); 
+  } while(--n); 
 } 
  
 /////////////////////////////////////////////////////////////////////////////////////////////////////// 
  
 void MEM::Swap64(ruint64* s, ruint64* d, rsize_t n) 
 { 
-	// For true 64-bit machines you might want to do this with uint64 
-	do { 
-		ruint32 r1 = *((uint32*)s++);	ruint32 r2 = *((uint32*)s++); 
-		*((uint32*)d++) = (r2<<24) | ((r2&0xFF00)<<8) | ((r2>>8)&0xFF00) | (r2>>24); 
-		*((uint32*)d++) = (r1<<24) | ((r1&0xFF00)<<8) | ((r1>>8)&0xFF00) | (r1>>24); 
-	}	while(--n); 
+  // For true 64-bit machines you might want to do this with uint64 
+  do { 
+    ruint32 r1 = *((uint32*)s++); ruint32 r2 = *((uint32*)s++); 
+    *((uint32*)d++) = (r2<<24) | ((r2&0xFF00)<<8) | ((r2>>8)&0xFF00) | (r2>>24); 
+    *((uint32*)d++) = (r1<<24) | ((r1&0xFF00)<<8) | ((r1>>8)&0xFF00) | (r1>>24); 
+  } while(--n); 
 } 
  
 /////////////////////////////////////////////////////////////////////////////////////////////////////// 
@@ -64,7 +64,7 @@ sint32 sysBASELIB::Init()
  
 sint32 sysBASELIB::Done() 
 { 
-	return OK; 
+  return OK; 
 } 
  
  

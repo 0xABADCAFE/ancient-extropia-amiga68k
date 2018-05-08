@@ -28,7 +28,7 @@
 //  Compilation switches
 //
 //  JASMINE_DEBUG_ENABLE
-//		Enables dump instruction output and other debugging output
+//    Enables dump instruction output and other debugging output
 //
 //  JASMINE_MACRO_EA
 //    If specified, special macros that decode instruction operands as needed

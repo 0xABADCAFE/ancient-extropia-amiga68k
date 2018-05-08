@@ -27,106 +27,106 @@
 
 float32 xNUM::Sin(REGF(0) float32 x)
 {
-	x *= (2*XNUM_DATASIZE/PI);
-	ruint32 i = (uint32)x;
-	x -= i;
-	return (1.0F-x)*SinI(i) + x*SinI(i+1);
+  x *= (2*XNUM_DATASIZE/PI);
+  ruint32 i = (uint32)x;
+  x -= i;
+  return (1.0F-x)*SinI(i) + x*SinI(i+1);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 float32 xNUM::Cos(REGF(0) float32 x)
 {
-	x *= (2*XNUM_DATASIZE/PI);
-	ruint32 i = (uint32)x;
-	x -= i;
-	return (1.0F-x)*CosI(i) + x*CosI(i+1);
+  x *= (2*XNUM_DATASIZE/PI);
+  ruint32 i = (uint32)x;
+  x -= i;
+  return (1.0F-x)*CosI(i) + x*CosI(i+1);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 float32 xNUM::Tan(REGF(0) float32 x)
 {
-	x *= (2*XNUM_DATASIZE/PI);
-	ruint32 i = (uint32)x;
-	x -= i;
+  x *= (2*XNUM_DATASIZE/PI);
+  ruint32 i = (uint32)x;
+  x -= i;
 
-	// Below is optimized to get each sin / cosine pair read together, which increases chance of cache hit. i2 holds cosine index
+  // Below is optimized to get each sin / cosine pair read together, which increases chance of cache hit. i2 holds cosine index
 
-	if (i<XNUM_DATASIZE)
-	{
-		ruint32 i2 = XNUM_DATASIZE-i;
-		return ( (1.0F-x)*data[i] + x*data[i+1] ) / ( (1.0F-x)*data[i2] + x*data[i2+1] );
-	}
-	else if (i<(2*XNUM_DATASIZE))
-	{
-		ruint32 i2 = i-XNUM_DATASIZE; i = (2*XNUM_DATASIZE)-i;
-		return ( -(1.0F-x)*data[i] - x*data[i+1] ) / ( (1.0F-x)*data[i2] + x*data[i2+1] );
-	}
-	else if (i<(3*XNUM_DATASIZE))
-	{
-		ruint32 i2 = (3*XNUM_DATASIZE)-i; i -= (2*XNUM_DATASIZE);
-		return ( (1.0F-x)*data[i] + x*data[i+1]) / ( (1.0F-x)*data[i2] + x*data[i2+1] );
-	}
-	else if (i<(4*XNUM_DATASIZE))
-	{
-		ruint32 i2 = i-(3*XNUM_DATASIZE); i = (4*XNUM_DATASIZE)-i;
-		return ( -(1.0F-x)*data[i] - x*data[i+1]) / ( (1.0F-x)*data[i2] + x*data[i2+1] );
-	}
-	else
-	{
-		ruint32 i2 = (5*XNUM_DATASIZE)-i; i -= (4*XNUM_DATASIZE);
-		return ( (1.0F-x)*data[i] + x*data[i+1]) / ( (1.0F-x)*data[i2] + x*data[i2+1] );
-	}
+  if (i<XNUM_DATASIZE)
+  {
+    ruint32 i2 = XNUM_DATASIZE-i;
+    return ( (1.0F-x)*data[i] + x*data[i+1] ) / ( (1.0F-x)*data[i2] + x*data[i2+1] );
+  }
+  else if (i<(2*XNUM_DATASIZE))
+  {
+    ruint32 i2 = i-XNUM_DATASIZE; i = (2*XNUM_DATASIZE)-i;
+    return ( -(1.0F-x)*data[i] - x*data[i+1] ) / ( (1.0F-x)*data[i2] + x*data[i2+1] );
+  }
+  else if (i<(3*XNUM_DATASIZE))
+  {
+    ruint32 i2 = (3*XNUM_DATASIZE)-i; i -= (2*XNUM_DATASIZE);
+    return ( (1.0F-x)*data[i] + x*data[i+1]) / ( (1.0F-x)*data[i2] + x*data[i2+1] );
+  }
+  else if (i<(4*XNUM_DATASIZE))
+  {
+    ruint32 i2 = i-(3*XNUM_DATASIZE); i = (4*XNUM_DATASIZE)-i;
+    return ( -(1.0F-x)*data[i] - x*data[i+1]) / ( (1.0F-x)*data[i2] + x*data[i2+1] );
+  }
+  else
+  {
+    ruint32 i2 = (5*XNUM_DATASIZE)-i; i -= (4*XNUM_DATASIZE);
+    return ( (1.0F-x)*data[i] + x*data[i+1]) / ( (1.0F-x)*data[i2] + x*data[i2+1] );
+  }
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 float32 xNUM::ASin(REGF(0) float32 x)
 {
-	x *= XNUM_DATASIZE;
-	if (x<0F)
-	{
-		x = -x;
-		ruint32 i = (x - 0.5F);
-		x -= i;
-		return -(1.0F-x)*arcData[i] - x*arcData[i+1];
-	}
-	else
-	{
-		ruint32 i = (x - 0.5F);
-		x	-= i;
-		return (1.0F-x)*arcData[i] + x*arcData[i+1];
-	}
+  x *= XNUM_DATASIZE;
+  if (x<0F)
+  {
+    x = -x;
+    ruint32 i = (x - 0.5F);
+    x -= i;
+    return -(1.0F-x)*arcData[i] - x*arcData[i+1];
+  }
+  else
+  {
+    ruint32 i = (x - 0.5F);
+    x -= i;
+    return (1.0F-x)*arcData[i] + x*arcData[i+1];
+  }
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 float32 xNUM::ACos(REGF(0) float32 x)
 {
-	x *= XNUM_DATASIZE;
-	if (x<0F)
-	{
-		x = -x;
-		ruint32 i = (x - 0.5F);
-		x -= i;
-		return (PI/2) + (1.0F-x)*arcData[i] + x*arcData[i+1];
-	}
-	else
-	{
-		ruint32 i = (x - 0.5F);
-		x	-= i;
-		return (PI/2) - (1.0F-x)*arcData[i] - x*arcData[i+1];
-	}
+  x *= XNUM_DATASIZE;
+  if (x<0F)
+  {
+    x = -x;
+    ruint32 i = (x - 0.5F);
+    x -= i;
+    return (PI/2) + (1.0F-x)*arcData[i] + x*arcData[i+1];
+  }
+  else
+  {
+    ruint32 i = (x - 0.5F);
+    x -= i;
+    return (PI/2) - (1.0F-x)*arcData[i] - x*arcData[i+1];
+  }
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 float32 xNUM::Exp(REGF(0) float32 x)
 {
-	rsint32 i = (x+0.5F);
-	x -= (i-1);
-	x *= XNUM_DATASIZE;
-	ruint32 i2 = (x-0.5F);	x -= i2;
-	return eInt[i+(-E_MIN_INT)]*( (1.0F-x)*eFrac[i2] + x*eFrac[i2+1]);
+  rsint32 i = (x+0.5F);
+  x -= (i-1);
+  x *= XNUM_DATASIZE;
+  ruint32 i2 = (x-0.5F);  x -= i2;
+  return eInt[i+(-E_MIN_INT)]*( (1.0F-x)*eFrac[i2] + x*eFrac[i2+1]);
 }

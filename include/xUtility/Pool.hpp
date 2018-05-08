@@ -32,11 +32,11 @@
 //          |               |
 //     .....|...............|.....  Implementation level
 //          |               |
-//       POOL_LT         POOL_ST		protected construction
+//       POOL_LT         POOL_ST    protected construction
 //          |               |
 //          +-------+-------+
 //                  |
-//              POOL_BASE						protected construction
+//              POOL_BASE           protected construction
 //
 //  NOTE : the template adds type checking only. It does not invoke construction etc, it merely adds the interface
 //
@@ -64,39 +64,39 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class POOL_BASE {
-	protected:
-		uint32*			data;					// actual pool data
-		uint32 			size;					// size of pool (number of T)
-		uint32			rawSize;			// size of pool in 16-bit words
-		uint32			tSize;				// size of element T, in bytes
-		sint32 			nextFree;			// position of next unused T in pool
-		sint32			totalFree;		// remaining free T in pool
-		uint16***		allocTable;		// pointer to allocation address table (pointer-tastic man !)
-		uint16*			pool;					// pointer to pool
+  protected:
+    uint32*     data;         // actual pool data
+    uint32      size;         // size of pool (number of T)
+    uint32      rawSize;      // size of pool in 16-bit words
+    uint32      tSize;        // size of element T, in bytes
+    sint32      nextFree;     // position of next unused T in pool
+    sint32      totalFree;    // remaining free T in pool
+    uint16***   allocTable;   // pointer to allocation address table (pointer-tastic man !)
+    uint16*     pool;         // pointer to pool
 
-	protected:
-		// only to be used by derived class
-		void		BaseInit();
-	#ifdef X_VERBOSE
-		void		BasePrint(ostream& out);
-	#endif
-		sint32	IsInPool(void* t) 				{ return (((uint16*)t >= pool) && ((uint16*)t < &pool[rawSize-1])); }
-		POOL_BASE() : data(0), allocTable(0), pool(0), size(0), tSize(0), totalFree(0), nextFree(-1) { }
+  protected:
+    // only to be used by derived class
+    void    BaseInit();
+  #ifdef X_VERBOSE
+    void    BasePrint(ostream& out);
+  #endif
+    sint32  IsInPool(void* t)         { return (((uint16*)t >= pool) && ((uint16*)t < &pool[rawSize-1])); }
+    POOL_BASE() : data(0), allocTable(0), pool(0), size(0), tSize(0), totalFree(0), nextFree(-1) { }
 
-	public:
+  public:
 
-		enum {
-			ERR_NEW_ALLOC_TO_BIG 		= RPERR(USER,6),	// Attempt to allocate array failed because of insufficent free entries
-			ERR_RESIZE_TO_SMALL  		= RPERR(USER,5),	// Attempted to make pool smaller than current number of allocations
-			ERR_ALLOC_INCONSISTENT	= RPERR(USER,4),	// External pointers are inconsistant with allocTable
-			ERR_ALLOC_CORRUPT				= RPERR(USER,3),	// these are well serious total and utter chicken soup errors
-			ERR_POOL_CORRUPT				= RPERR(USER,2),	// meaning that the whole pool is irretrievably screwed up
-			ERR_POOL_FRAGMENTED 		= RPERR(USER,1),	// just for new pool evaluation purposes
-			ERR_POOL								= RPERR(USER,0)
-		};
-		sint32	Size()										{ return size; }
-		sint32	Space()										{ return totalFree; }
-		sint32	Next()										{ return nextFree; }
+    enum {
+      ERR_NEW_ALLOC_TO_BIG    = RPERR(USER,6),  // Attempt to allocate array failed because of insufficent free entries
+      ERR_RESIZE_TO_SMALL     = RPERR(USER,5),  // Attempted to make pool smaller than current number of allocations
+      ERR_ALLOC_INCONSISTENT  = RPERR(USER,4),  // External pointers are inconsistant with allocTable
+      ERR_ALLOC_CORRUPT       = RPERR(USER,3),  // these are well serious total and utter chicken soup errors
+      ERR_POOL_CORRUPT        = RPERR(USER,2),  // meaning that the whole pool is irretrievably screwed up
+      ERR_POOL_FRAGMENTED     = RPERR(USER,1),  // just for new pool evaluation purposes
+      ERR_POOL                = RPERR(USER,0)
+    };
+    sint32  Size()                    { return size; }
+    sint32  Space()                   { return totalFree; }
+    sint32  Next()                    { return nextFree; }
 };
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -107,14 +107,14 @@ class POOL_BASE {
 
 inline void POOL_BASE::BaseInit()
 {
-	data				= 0;
-	size				= 0;
-	tSize				= 0;
-	rawSize			= 0;
-	nextFree		= -1;
-	totalFree		= 0;
-  allocTable	= 0;
-	pool				= 0;
+  data        = 0;
+  size        = 0;
+  tSize       = 0;
+  rawSize     = 0;
+  nextFree    = -1;
+  totalFree   = 0;
+  allocTable  = 0;
+  pool        = 0;
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -124,27 +124,27 @@ inline void POOL_BASE::BaseInit()
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class POOL_LT : public POOL_BASE {
-	private:
-		uint32* lengthTable;
-		void		Init() 														{ lengthTable = 0; BaseInit(); }
-		uint32	ExamineBlock(uint32 location);
-		sint32	TestConsistency(bool strict=0);
-	public:
-	#ifdef X_VERBOSE
-		void		PrintAlloc(ostream& out, sint32 start=0, sint32 entries=32);
-	#endif
-		sint32	Delete(bool force=0, bool unallocate=0);
-		sint32	Defrag();
-		sint32	Resize(sint32 s);
-	protected:
-		// These are the performance critical methods that should be inlined
-		sint32	Create(uint32 entries, uint32 typeSize);
-		sint32	NewT(void* vt);							// vt still expected to be pointer to pointer to type !!!
-		sint32	NewT(void* vt, sint32 s);		// eg NewT(&<pointer to element>)
-		sint32	FreeT(void* vt);						//    FreeT(&<pointer to element>)
-		POOL_LT() : lengthTable(0) { }
-		POOL_LT(uint32 s, uint32 t);
-		~POOL_LT();
+  private:
+    uint32* lengthTable;
+    void    Init()                            { lengthTable = 0; BaseInit(); }
+    uint32  ExamineBlock(uint32 location);
+    sint32  TestConsistency(bool strict=0);
+  public:
+  #ifdef X_VERBOSE
+    void    PrintAlloc(ostream& out, sint32 start=0, sint32 entries=32);
+  #endif
+    sint32  Delete(bool force=0, bool unallocate=0);
+    sint32  Defrag();
+    sint32  Resize(sint32 s);
+  protected:
+    // These are the performance critical methods that should be inlined
+    sint32  Create(uint32 entries, uint32 typeSize);
+    sint32  NewT(void* vt);             // vt still expected to be pointer to pointer to type !!!
+    sint32  NewT(void* vt, sint32 s);   // eg NewT(&<pointer to element>)
+    sint32  FreeT(void* vt);            //    FreeT(&<pointer to element>)
+    POOL_LT() : lengthTable(0) { }
+    POOL_LT(uint32 s, uint32 t);
+    ~POOL_LT();
 };
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -154,26 +154,26 @@ class POOL_LT : public POOL_BASE {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class POOL_ST : public POOL_BASE {
-	private:
-		uint16* lengthTable;
-		void		Init() 														{ lengthTable = 0; BaseInit(); }
-		uint32	ExamineBlock(uint32 location);
-		sint32	TestConsistency(bool strict=0);
-	public:
-	#ifdef X_VERBOSE
-		void		PrintAlloc(ostream& out, sint32 start=0, sint32 entries=32);
-	#endif
-		sint32	Delete(bool force=0, bool unallocate=0);
-		sint32	Defrag();
-		sint32	Resize(uint16 s);
-	protected:
-		sint32	Create(uint16 entries, uint32 typeSize);
-		sint32	NewT(void* vt);
-		sint32	NewT(void* vt, uint16 s);
-		sint32	FreeT(void* vt);
-		POOL_ST() : lengthTable(0) { }
-		POOL_ST(uint16 s, uint32 t);
-		~POOL_ST();
+  private:
+    uint16* lengthTable;
+    void    Init()                            { lengthTable = 0; BaseInit(); }
+    uint32  ExamineBlock(uint32 location);
+    sint32  TestConsistency(bool strict=0);
+  public:
+  #ifdef X_VERBOSE
+    void    PrintAlloc(ostream& out, sint32 start=0, sint32 entries=32);
+  #endif
+    sint32  Delete(bool force=0, bool unallocate=0);
+    sint32  Defrag();
+    sint32  Resize(uint16 s);
+  protected:
+    sint32  Create(uint16 entries, uint32 typeSize);
+    sint32  NewT(void* vt);
+    sint32  NewT(void* vt, uint16 s);
+    sint32  FreeT(void* vt);
+    POOL_ST() : lengthTable(0) { }
+    POOL_ST(uint16 s, uint32 t);
+    ~POOL_ST();
 };
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -186,28 +186,28 @@ class POOL_ST : public POOL_BASE {
 
 template<class T> class xPOOL_S : public POOL_ST {
 
-	public:
-		sint32	Create(uint16 entries)		{ return POOL_ST::Create(entries, sizeof(T)); }
-		sint32	New(T** t)								{ return POOL_ST::NewT((void*)t); }
-		sint32	New(T** t, uint16 s)			{ return POOL_ST::NewT((void*)t,s); }
-		sint32	Free(T** t)								{ return POOL_ST::FreeT((void*)t); }
+  public:
+    sint32  Create(uint16 entries)    { return POOL_ST::Create(entries, sizeof(T)); }
+    sint32  New(T** t)                { return POOL_ST::NewT((void*)t); }
+    sint32  New(T** t, uint16 s)      { return POOL_ST::NewT((void*)t,s); }
+    sint32  Free(T** t)               { return POOL_ST::FreeT((void*)t); }
 
-		xPOOL_S()																							{}
-		xPOOL_S(uint16 entries) : POOL_ST(entries, sizeof(T)) {}
-		~xPOOL_S()																						{}
+    xPOOL_S()                                             {}
+    xPOOL_S(uint16 entries) : POOL_ST(entries, sizeof(T)) {}
+    ~xPOOL_S()                                            {}
 };
 
 template<class T> class xPOOL_L : public POOL_LT {
 
-	public:
-		sint32	Create(uint32 entries)		{ return POOL_LT::Create(entries, sizeof(T)); }
-		sint32	New(T** t)								{ return POOL_LT::NewT((void*)t); }
-		sint32	New(T** t, sint32 s)			{ return POOL_LT::NewT((void*)t,s); }
-		sint32	Free(T** t)								{ return POOL_LT::FreeT((void*)t); }
+  public:
+    sint32  Create(uint32 entries)    { return POOL_LT::Create(entries, sizeof(T)); }
+    sint32  New(T** t)                { return POOL_LT::NewT((void*)t); }
+    sint32  New(T** t, sint32 s)      { return POOL_LT::NewT((void*)t,s); }
+    sint32  Free(T** t)               { return POOL_LT::FreeT((void*)t); }
 
-		xPOOL_L()																							{}
-		xPOOL_L(uint32 entries) : POOL_LT(entries, sizeof(T)) {}
-		~xPOOL_L()																						{}
+    xPOOL_L()                                             {}
+    xPOOL_L(uint32 entries) : POOL_LT(entries, sizeof(T)) {}
+    ~xPOOL_L()                                            {}
 };
 
 #endif // _XUTILITY_POOLS_HPP

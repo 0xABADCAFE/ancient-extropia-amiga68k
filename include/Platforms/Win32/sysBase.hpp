@@ -63,30 +63,30 @@
 
 //-- Memory Wrapper
 class MEM {
-	public:
-		static void *Set(void*dst,int c,RSIZET len)     { return memset(dst,c,len); }
-		static void *Zero(void*dst,RSIZET len)          { return memset(dst,0,len); }
-		static void *Copy(void*dst,void*src,RSIZET len) { return memcpy(dst,src,len); }
-		static void *Move(void*dst,void*src,RSIZET len) { return memmove(dst,src,len); }
-		static void	*Alloc(rsize_t len, rbool zero=TRUE){ void* p = malloc(len); if (p && zero) Zero(p,len); return p; }
-		static void	Free(void* mem)											{ if (mem) free(mem); }
-	
-		// block endian conversion
-		static void Swap16(ruint16* s, ruint16* d, rsize_t n);
-		static void Swap32(ruint32* s, ruint32* d, rsize_t n);
-		static void Swap64(ruint64* s, ruint64* d, rsize_t n);
-		
-		static void DebugInfo() {}
+  public:
+    static void *Set(void*dst,int c,RSIZET len)     { return memset(dst,c,len); }
+    static void *Zero(void*dst,RSIZET len)          { return memset(dst,0,len); }
+    static void *Copy(void*dst,void*src,RSIZET len) { return memcpy(dst,src,len); }
+    static void *Move(void*dst,void*src,RSIZET len) { return memmove(dst,src,len); }
+    static void *Alloc(rsize_t len, rbool zero=TRUE){ void* p = malloc(len); if (p && zero) Zero(p,len); return p; }
+    static void Free(void* mem)                     { if (mem) free(mem); }
+  
+    // block endian conversion
+    static void Swap16(ruint16* s, ruint16* d, rsize_t n);
+    static void Swap32(ruint32* s, ruint32* d, rsize_t n);
+    static void Swap64(ruint64* s, ruint64* d, rsize_t n);
+    
+    static void DebugInfo() {}
 };
 
 
 //-- System Base Library
 class sysBASELIB {
-	public:
-		static sint32	Init();                    //Returns NONZERO on Error
-		static sint32	Done();
-		static void		RunAsyncProgram(char* name) {execl(name,"",0);}
-		static void		OpenDebugFile(char *name);
+  public:
+    static sint32 Init();                    //Returns NONZERO on Error
+    static sint32 Done();
+    static void   RunAsyncProgram(char* name) {execl(name,"",0);}
+    static void   OpenDebugFile(char *name);
 };
 
 inline void sysBASELIB::OpenDebugFile(char *name)
@@ -103,41 +103,41 @@ inline void sysBASELIB::OpenDebugFile(char *name)
 /*
 inline void* operator new(size_t s, void* p)
 {
-	return p;
+  return p;
 }
 */
 template<class T, class U> inline T* New(T*, U n)
-{	// class U should be a numeric type
-	void* temp = MEM::Alloc((2*sizeof(uint32) + n*sizeof(T)), TRUE);	// allocate enough room for n T objects + 2 uint32 values, zero the memory
-	if (temp)
-	{
-		{
-			uint32* sData = (uint32*)temp;
-			sData[0] = n;											// no of elements
-			sData[1] = sizeof(T);							// individual size
-		}
-		T*	oData = (T*)((uint32)temp + 2*sizeof(uint32));
-		{		
-			for (ruint32 i=0; i < n; i++)
-				T* d = new(&oData[i]) T; 				// individually construct each object at the desired address
-		}
-		return oData; 											// note that the return address is actually temp + 2*sizeof(uint32)
-	}
-	else
-		return 0;
+{ // class U should be a numeric type
+  void* temp = MEM::Alloc((2*sizeof(uint32) + n*sizeof(T)), TRUE);  // allocate enough room for n T objects + 2 uint32 values, zero the memory
+  if (temp)
+  {
+    {
+      uint32* sData = (uint32*)temp;
+      sData[0] = n;                     // no of elements
+      sData[1] = sizeof(T);             // individual size
+    }
+    T*  oData = (T*)((uint32)temp + 2*sizeof(uint32));
+    {   
+      for (ruint32 i=0; i < n; i++)
+        T* d = new(&oData[i]) T;        // individually construct each object at the desired address
+    }
+    return oData;                       // note that the return address is actually temp + 2*sizeof(uint32)
+  }
+  else
+    return 0;
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 template<class T> inline void Delete(T* p)
 {
-	if (p)
-	{	// get sData (8 bytes before the first T object)
-		uint32* sData = (uint32*)((uint32)p-(2*sizeof(uint32)));
-		for(uint32 i = 0; i<sData[0]; i++)
-			delete (&p[i]);									// individually destroy each object at the computed address
-		MEM::Free(sData);
-	}
+  if (p)
+  { // get sData (8 bytes before the first T object)
+    uint32* sData = (uint32*)((uint32)p-(2*sizeof(uint32)));
+    for(uint32 i = 0; i<sData[0]; i++)
+      delete (&p[i]);                 // individually destroy each object at the computed address
+    MEM::Free(sData);
+  }
 }
 
 #endif  //_sysBASE_HPP_INCLUDED//

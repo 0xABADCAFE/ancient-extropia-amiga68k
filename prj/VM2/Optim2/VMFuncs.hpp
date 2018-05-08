@@ -2,7 +2,7 @@
 //** Description:   eXtropia XSF Codec Virtual Machine           **//
 //** First Started: 2002-03-08                                   **//
 //** Last Updated:                                               **//
-//** Author       	Karl Churchill                               **//
+//** Author         Karl Churchill                               **//
 //** Copyright:     (C)1998-2002, eXtropia Studios               **//
 //**                Serkan YAZICI, Karl Churchill                **//
 //**                All Rights Reserved.                         **//
@@ -14,8 +14,8 @@
 
 #define CMDARGS register __a2 VMCORE* This, register __a3 VMCORE::EAFUNC* pf
 #define EAFARGS register __a2 VMCORE* This, register __d7 size_t s
-#define OPINIT()	ruint8* p = (uint8*)This->instPtr;
-#define OPDONE()	This->instPtr++
+#define OPINIT()  ruint8* p = (uint8*)This->instPtr;
+#define OPDONE()  This->instPtr++
 #define OP1(t) *((t*)pf[p[1]](This,sizeof(t)))
 #define OP2(t) *((t*)pf[p[2]](This,sizeof(t)))
 #define OP3(t) *((t*)pf[p[3]](This,sizeof(t)))
@@ -160,79 +160,79 @@ static void* fDS(EAFARGS);
 static void* fCDS(EAFARGS);
 static void* fLITERAL(EAFARGS);
 
-static void	fNOP(CMDARGS);
-static void	fBRK(CMDARGS);
-static void	fEXIT(CMDARGS);
-static void	fLEA(CMDARGS);
+static void fNOP(CMDARGS);
+static void fBRK(CMDARGS);
+static void fEXIT(CMDARGS);
+static void fLEA(CMDARGS);
 
-static void	fBRA(CMDARGS);
-static void	fBNEQ_I8(CMDARGS);
-static void	fBNEQ_I16(CMDARGS);
-static void	fBNEQ_I32(CMDARGS);
-static void	fBNEQ_I64(CMDARGS);
-static void	fBNEQ_F32(CMDARGS);
-static void	fBNEQ_F64(CMDARGS);
-static void	fBLS_I8(CMDARGS);
-static void	fBLS_I16(CMDARGS);
-static void	fBLS_I32(CMDARGS);
-static void	fBLS_I64(CMDARGS);
-static void	fBLS_F32(CMDARGS);
-static void	fBLS_F64(CMDARGS);
-static void	fBLSEQ_I8(CMDARGS);
-static void	fBLSEQ_I16(CMDARGS);
-static void	fBLSEQ_I32(CMDARGS);
-static void	fBLSEQ_I64(CMDARGS);
-static void	fBLSEQ_F32(CMDARGS);
-static void	fBLSEQ_F64(CMDARGS);
-static void	fBEQ_I8(CMDARGS);
-static void	fBEQ_I16(CMDARGS);
-static void	fBEQ_I32(CMDARGS);
-static void	fBEQ_I64(CMDARGS);
-static void	fBEQ_F32(CMDARGS);
-static void	fBEQ_F64(CMDARGS);
-static void	fBGREQ_I8(CMDARGS);
-static void	fBGREQ_I16(CMDARGS);
-static void	fBGREQ_I32(CMDARGS);
-static void	fBGREQ_I64(CMDARGS);
-static void	fBGREQ_F32(CMDARGS);
-static void	fBGREQ_F64(CMDARGS);
-static void	fBGR_I8(CMDARGS);
-static void	fBGR_I16(CMDARGS);
-static void	fBGR_I32(CMDARGS);
-static void	fBGR_I64(CMDARGS);
-static void	fBGR_F32(CMDARGS);
-static void	fBGR_F64(CMDARGS);
+static void fBRA(CMDARGS);
+static void fBNEQ_I8(CMDARGS);
+static void fBNEQ_I16(CMDARGS);
+static void fBNEQ_I32(CMDARGS);
+static void fBNEQ_I64(CMDARGS);
+static void fBNEQ_F32(CMDARGS);
+static void fBNEQ_F64(CMDARGS);
+static void fBLS_I8(CMDARGS);
+static void fBLS_I16(CMDARGS);
+static void fBLS_I32(CMDARGS);
+static void fBLS_I64(CMDARGS);
+static void fBLS_F32(CMDARGS);
+static void fBLS_F64(CMDARGS);
+static void fBLSEQ_I8(CMDARGS);
+static void fBLSEQ_I16(CMDARGS);
+static void fBLSEQ_I32(CMDARGS);
+static void fBLSEQ_I64(CMDARGS);
+static void fBLSEQ_F32(CMDARGS);
+static void fBLSEQ_F64(CMDARGS);
+static void fBEQ_I8(CMDARGS);
+static void fBEQ_I16(CMDARGS);
+static void fBEQ_I32(CMDARGS);
+static void fBEQ_I64(CMDARGS);
+static void fBEQ_F32(CMDARGS);
+static void fBEQ_F64(CMDARGS);
+static void fBGREQ_I8(CMDARGS);
+static void fBGREQ_I16(CMDARGS);
+static void fBGREQ_I32(CMDARGS);
+static void fBGREQ_I64(CMDARGS);
+static void fBGREQ_F32(CMDARGS);
+static void fBGREQ_F64(CMDARGS);
+static void fBGR_I8(CMDARGS);
+static void fBGR_I16(CMDARGS);
+static void fBGR_I32(CMDARGS);
+static void fBGR_I64(CMDARGS);
+static void fBGR_F32(CMDARGS);
+static void fBGR_F64(CMDARGS);
 
-static void	fJSR(CMDARGS);
-static void	fRTS(CMDARGS);
+static void fJSR(CMDARGS);
+static void fRTS(CMDARGS);
 
-static void	fPUSH_X8(CMDARGS);
-static void	fPUSH_X16(CMDARGS);
-static void	fPUSH_X32(CMDARGS);
-static void	fPUSH_X64(CMDARGS);
-static void	fPOP_X8(CMDARGS);
+static void fPUSH_X8(CMDARGS);
+static void fPUSH_X16(CMDARGS);
+static void fPUSH_X32(CMDARGS);
+static void fPUSH_X64(CMDARGS);
+static void fPOP_X8(CMDARGS);
 static void fPOP_X16(CMDARGS);
 static void fPOP_X32(CMDARGS);
-static void	fPOP_X64(CMDARGS);
-static void	fPUSHREGS(CMDARGS);
-static void	fPOPREGS(CMDARGS);
-static void	fCLR_X8(CMDARGS);
-static void	fCLR_X16(CMDARGS);
-static void	fCLR_X32(CMDARGS);
-static void	fCLR_X64(CMDARGS);
-static void	fMOVE_X8(CMDARGS);
-static void	fMOVE_X16(CMDARGS);
-static void	fMOVE_X32(CMDARGS);
-static void	fMOVE_X64(CMDARGS);
+static void fPOP_X64(CMDARGS);
+static void fPUSHREGS(CMDARGS);
+static void fPOPREGS(CMDARGS);
+static void fCLR_X8(CMDARGS);
+static void fCLR_X16(CMDARGS);
+static void fCLR_X32(CMDARGS);
+static void fCLR_X64(CMDARGS);
+static void fMOVE_X8(CMDARGS);
+static void fMOVE_X16(CMDARGS);
+static void fMOVE_X32(CMDARGS);
+static void fMOVE_X64(CMDARGS);
 
 // Cast (wide)
-static void	fI8TOI16(CMDARGS);
-static void	fI8TOI32(CMDARGS);
-static void	fI8TOI64(CMDARGS);
+static void fI8TOI16(CMDARGS);
+static void fI8TOI32(CMDARGS);
+static void fI8TOI64(CMDARGS);
 static void fI8TOF32(CMDARGS);
 static void fI8TOF64(CMDARGS);
-static void	fI16TOI32(CMDARGS);
-static void	fI16TOI64(CMDARGS);
+static void fI16TOI32(CMDARGS);
+static void fI16TOI64(CMDARGS);
 static void fI16TOF32(CMDARGS);
 static void fI16TOF64(CMDARGS);
 static void fI32TOI64(CMDARGS);
@@ -330,14 +330,14 @@ static void fSHR_X32(CMDARGS);
 static void fSHR_X64(CMDARGS);
 
 #ifdef USE_VM_BLOCKCOMMANDS
-static void	fBCLR_X8(CMDARGS);
-static void	fBCLR_X16(CMDARGS);
-static void	fBCLR_X32(CMDARGS);
-static void	fBCLR_X64(CMDARGS);
-static void	fBMOVE_X8(CMDARGS);
-static void	fBMOVE_X16(CMDARGS);
-static void	fBMOVE_X32(CMDARGS);
-static void	fBMOVE_X64(CMDARGS);
+static void fBCLR_X8(CMDARGS);
+static void fBCLR_X16(CMDARGS);
+static void fBCLR_X32(CMDARGS);
+static void fBCLR_X64(CMDARGS);
+static void fBMOVE_X8(CMDARGS);
+static void fBMOVE_X16(CMDARGS);
+static void fBMOVE_X32(CMDARGS);
+static void fBMOVE_X64(CMDARGS);
 static void fBADD_I8(CMDARGS);
 static void fBADD_I16(CMDARGS);
 static void fBADD_I32(CMDARGS);

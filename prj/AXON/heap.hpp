@@ -28,50 +28,50 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class TEXTUREHEAP {
-	private:
-		static xTEXTURE*	heap;
-		static uint32*		keys;
-		static sint32			index;
-		static sint32			heapSize;
+  private:
+    static xTEXTURE*  heap;
+    static uint32*    keys;
+    static sint32     index;
+    static sint32     heapSize;
 
-		// probably the case when initialising long lists of objects that we repeatedly use the
-		// same texture over and over. We can use a sort of prediction that the next request is
-		// the same as the previous. In theory :)
+    // probably the case when initialising long lists of objects that we repeatedly use the
+    // same texture over and over. We can use a sort of prediction that the next request is
+    // the same as the previous. In theory :)
 
-		static xTEXTURE*	lastTexture;
-		static uint32			lastKey;
-		static xTEXTURE*	FindByKey(uint32 key);
-		static uint32			Key(const char* name);
+    static xTEXTURE*  lastTexture;
+    static uint32     lastKey;
+    static xTEXTURE*  FindByKey(uint32 key);
+    static uint32     Key(const char* name);
 
-	public:
-		static xTEXTURE*	Find(const char* name);
-		static sint32			Init(sint32 size);
-		static sint32			Done();
-		static xTEXTURE*	UsePPM(const char* name, uint32 alphagen = 0xFF000000);
-		static xTEXTURE*	UseTex(const char* name, sint32 forceFmt = -1);
+  public:
+    static xTEXTURE*  Find(const char* name);
+    static sint32     Init(sint32 size);
+    static sint32     Done();
+    static xTEXTURE*  UsePPM(const char* name, uint32 alphagen = 0xFF000000);
+    static xTEXTURE*  UseTex(const char* name, sint32 forceFmt = -1);
 };
 
 inline uint32 TEXTUREHEAP::Key(const char* name)
 {
-	uint8* p = (uint8*)name;
-	uint32 r = 0;
-	while (*p) r = (r<<1)^*p++; // BS C++ Lang, 3rdEd, 503
-	return r;
+  uint8* p = (uint8*)name;
+  uint32 r = 0;
+  while (*p) r = (r<<1)^*p++; // BS C++ Lang, 3rdEd, 503
+  return r;
 }
 
 inline xTEXTURE* TEXTUREHEAP::FindByKey(uint32 key)
 {
-	if (key==lastKey)
-		return lastTexture;
-	else
-	{
-		for (rsint32 i = 0; i <= index; i++)
-			if (key==keys[i]) return &heap[i];
-	}
-	return 0;
+  if (key==lastKey)
+    return lastTexture;
+  else
+  {
+    for (rsint32 i = 0; i <= index; i++)
+      if (key==keys[i]) return &heap[i];
+  }
+  return 0;
 }
 
 inline xTEXTURE* TEXTUREHEAP::Find(const char* name)
 {
-	return FindByKey(Key(name));
+  return FindByKey(Key(name));
 }

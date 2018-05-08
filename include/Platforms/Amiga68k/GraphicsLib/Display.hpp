@@ -31,21 +31,21 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class xDMODE : public AREA {
-	friend class xGFX;
-	private:
-		uint32	ID;
-		char		name[DISPLAYNAMELEN];
-		void		ReadCGXData(CyberModeNode* m);
-	public:
-		char*		Name() 			{ return name; }
-		uint32	MachineID()	{ return ID; }
-	#ifdef X_VERBOSE
-		void		Dump(ostream& out);
-	#endif
+  friend class xGFX;
+  private:
+    uint32  ID;
+    char    name[DISPLAYNAMELEN];
+    void    ReadCGXData(CyberModeNode* m);
+  public:
+    char*   Name()      { return name; }
+    uint32  MachineID() { return ID; }
+  #ifdef X_VERBOSE
+    void    Dump(ostream& out);
+  #endif
 
-	public:
-		xDMODE() : ID(0)	{ }
-		~xDMODE() { }
+  public:
+    xDMODE() : ID(0)  { }
+    ~xDMODE() { }
 };
 
 
@@ -60,14 +60,14 @@ class xDMODE : public AREA {
 
 class xDISPLAYABLE : public xCHAINABLE {
 
-	public:
-		virtual sint32 ViewDefine(S_2CRD)										{ return OK; }
-		virtual sint32 ViewClear()	{ return OK; }
-		virtual sint32 ViewRender() { return OK; }
+  public:
+    virtual sint32 ViewDefine(S_2CRD)                   { return OK; }
+    virtual sint32 ViewClear()  { return OK; }
+    virtual sint32 ViewRender() { return OK; }
 
-	public:
-		xDISPLAYABLE() {}
-		virtual ~xDISPLAYABLE() { }
+  public:
+    xDISPLAYABLE() {}
+    virtual ~xDISPLAYABLE() { }
 };
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -86,7 +86,7 @@ class xDISPLAYABLE : public xCHAINABLE {
 //    Open()
 //    Close()
 //    Refresh()
-//		WaitSync() waits until the video beam passes the bottom of the visible area
+//    WaitSync() waits until the video beam passes the bottom of the visible area
 //
 //  Data access (virtual)
 //    DrawSurface() returns handle to rendering surface
@@ -97,39 +97,39 @@ class xDISPLAYABLE : public xCHAINABLE {
 //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#define W_MIN_WIDTH 128		// minimum window width
-#define W_MIN_HEIGHT 128	// minimum window height
-#define S_MIN_WIDTH 320		// minimum fullscreen width
-#define S_MIN_HEIGHT 200	// minimum fullscreen height
-#define S_MAX_WIDTH 1600	// maximum fullscreen width
-#define S_MAX_HEIGHT 1200	// maximum fullscreen height
+#define W_MIN_WIDTH 128   // minimum window width
+#define W_MIN_HEIGHT 128  // minimum window height
+#define S_MIN_WIDTH 320   // minimum fullscreen width
+#define S_MIN_HEIGHT 200  // minimum fullscreen height
+#define S_MAX_WIDTH 1600  // maximum fullscreen width
+#define S_MAX_HEIGHT 1200 // maximum fullscreen height
 
 class xDISPLAY : virtual public AREA {
 
-	protected:
-	// all the display types have these
-		char					name[64];
-		Screen*				scr;
-		Window*				win;
+  protected:
+  // all the display types have these
+    char          name[64];
+    Screen*       scr;
+    Window*       win;
 
-	public:
-	// AREA::
-	//virtual sint32 Width()
-	//virtual sint32 Height()
-	//virtual sint32 Depth()
-	//virtual sint32 Format()
-		virtual	sint32			Open()=0;
-		virtual	sint32			Close()=0;
-		virtual	void	 			Refresh()=0;
-		virtual	xSURFACE*		DrawSurface()=0;
-		virtual	xSURFACE*		ViewSurface()=0;
+  public:
+  // AREA::
+  //virtual sint32 Width()
+  //virtual sint32 Height()
+  //virtual sint32 Depth()
+  //virtual sint32 Format()
+    virtual sint32      Open()=0;
+    virtual sint32      Close()=0;
+    virtual void        Refresh()=0;
+    virtual xSURFACE*   DrawSurface()=0;
+    virtual xSURFACE*   ViewSurface()=0;
 
-		void		WaitSync()	{ WaitTOF(); /*WaitBOVP(&(scr->ViewPort));*/ }
-		sint32	MessageBox(char* title, char* opts, char* body,...);
+    void    WaitSync()  { WaitTOF(); /*WaitBOVP(&(scr->ViewPort));*/ }
+    sint32  MessageBox(char* title, char* opts, char* body,...);
 
-	public:
-		xDISPLAY() : AREA(), scr(0), win(0) {}
-		virtual ~xDISPLAY()	{ }
+  public:
+    xDISPLAY() : AREA(), scr(0), win(0) {}
+    virtual ~xDISPLAY() { }
 };
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -153,7 +153,7 @@ class xDISPLAY : virtual public AREA {
 //
 //  Query
 //    InputMask()
-//		InputQueued() returns true whilst input events are queued. Events MUST be always be handled
+//    InputQueued() returns true whilst input events are queued. Events MUST be always be handled
 //
 //  Control
 //    ApplyInputModification()
@@ -161,7 +161,7 @@ class xDISPLAY : virtual public AREA {
 //    ClrInput(uint32 f)
 //
 //    Launch()    [xDISPLAYIO_ASYNC only]
-//		ShutDown()  [xDISPLAYIO_ASYNC only]
+//    ShutDown()  [xDISPLAYIO_ASYNC only]
 //
 //  Operation
 //    MouseEvent(sint32 x, sint32 y, sint32 buttons)
@@ -177,22 +177,22 @@ class xDISPLAY : virtual public AREA {
 
 class xDISPLAYIO : virtual protected xDISPLAY, public xINPUT {
 
-	protected:
-		void		ApplyInputModification();	// Adjusts the input stream to match the required IO functionality
-		bool		WaitForEvent();						// Returns true if events, false if exit signal also recieved
-		bool		HandleEvent();						// Handles an event in the input queue, returns true
-		void		DiscardQueued();					// Discards remaining input to enable safe closing
+  protected:
+    void    ApplyInputModification(); // Adjusts the input stream to match the required IO functionality
+    bool    WaitForEvent();           // Returns true if events, false if exit signal also recieved
+    bool    HandleEvent();            // Handles an event in the input queue, returns true
+    void    DiscardQueued();          // Discards remaining input to enable safe closing
 
-	public:
-		// Display specific	events
-		void		Idle();									// Waits until an event occurs
-		bool		InputQueued()						{ return HandleEvent(); }
+  public:
+    // Display specific events
+    void    Idle();                 // Waits until an event occurs
+    bool    InputQueued()           { return HandleEvent(); }
 
-		virtual void ResizeEvent() = 0; // window resize or resolution change
-		virtual void MoveEvent() = 0;
-	public:
-		xDISPLAYIO()	{}
-		~xDISPLAYIO() {}
+    virtual void ResizeEvent() = 0; // window resize or resolution change
+    virtual void MoveEvent() = 0;
+  public:
+    xDISPLAYIO()  {}
+    ~xDISPLAYIO() {}
 };
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -206,49 +206,49 @@ class xDISPLAYIO : virtual protected xDISPLAY, public xINPUT {
 
 class xDBWIN : public xDISPLAY {
 
-	private:
-		uint32			flags;
-		sint16			left;
-		sint16			top;
-		xSURFACE		bBuf;			// our own surface
-		xSURFACE		disp;			// the screen surface
-		enum {
-			WIN_OPEN					= 0x00000001,
-			SCR_LOCK_FAILED		= 0x00000100,
-			SCR_TYPE_FAILED		= 0x00000200,
-			SCR_DEPTH_FAILED	= 0x00000400,
-			WIN_OPEN_FAILED		= 0x00000800,
-			WIN_SURF_FAILED		= 0x00001000,
-			BUF_ALLOC_FAILED	= 0x00002000
-		};
+  private:
+    uint32      flags;
+    sint16      left;
+    sint16      top;
+    xSURFACE    bBuf;     // our own surface
+    xSURFACE    disp;     // the screen surface
+    enum {
+      WIN_OPEN          = 0x00000001,
+      SCR_LOCK_FAILED   = 0x00000100,
+      SCR_TYPE_FAILED   = 0x00000200,
+      SCR_DEPTH_FAILED  = 0x00000400,
+      WIN_OPEN_FAILED   = 0x00000800,
+      WIN_SURF_FAILED   = 0x00001000,
+      BUF_ALLOC_FAILED  = 0x00002000
+    };
 
-	protected:
-		sint16			WinX()				{ return win->LeftEdge; }
-		sint16			WinY()				{ return win->TopEdge; }
-		sint16			WinW()				{ return win->Width; }
-		sint16			WinH()				{ return win->Height; }
-		sint16			WinBL()				{ return win->BorderLeft; }
-		sint16			WinBR()				{ return win->BorderRight; }
-		sint16			WinBT()				{ return win->BorderTop; }
-		sint16			WinBB()				{ return win->BorderBottom; }
-		sint16			ViewX()				{ return WinX()+WinBL(); }					// View offset into screen surface
-		sint16			ViewY()				{ return WinY()+WinBT(); }
-		sint16			ViewW()				{	return WinW()-WinBL()-WinBR(); }
-		sint16			ViewH()				{ return WinH()-WinBT()-WinBB(); }
-		void				Free();				// cleanly releases the resources
+  protected:
+    sint16      WinX()        { return win->LeftEdge; }
+    sint16      WinY()        { return win->TopEdge; }
+    sint16      WinW()        { return win->Width; }
+    sint16      WinH()        { return win->Height; }
+    sint16      WinBL()       { return win->BorderLeft; }
+    sint16      WinBR()       { return win->BorderRight; }
+    sint16      WinBT()       { return win->BorderTop; }
+    sint16      WinBB()       { return win->BorderBottom; }
+    sint16      ViewX()       { return WinX()+WinBL(); }          // View offset into screen surface
+    sint16      ViewY()       { return WinY()+WinBT(); }
+    sint16      ViewW()       { return WinW()-WinBL()-WinBR(); }
+    sint16      ViewH()       { return WinH()-WinBT()-WinBB(); }
+    void        Free();       // cleanly releases the resources
 
-	public:
-		sint32			Set(S_RECT, sint16 d, const char* title);
-		sint32			Open();
-		sint32			Close();
-		void				Refresh() 		{ xSURFACE::BlitC(&bBuf, &disp, 0, 0, ViewW(), ViewH(), WinBL(), WinBT()); }
-		xSURFACE*		DrawSurface()	{ return &bBuf; }
-		xSURFACE*		ViewSurface()	{ return &disp; }
+  public:
+    sint32      Set(S_RECT, sint16 d, const char* title);
+    sint32      Open();
+    sint32      Close();
+    void        Refresh()     { xSURFACE::BlitC(&bBuf, &disp, 0, 0, ViewW(), ViewH(), WinBL(), WinBT()); }
+    xSURFACE*   DrawSurface() { return &bBuf; }
+    xSURFACE*   ViewSurface() { return &disp; }
 
-	public:
-		xDBWIN() : xDISPLAY(), flags(0), top(0), left(0) { }
-		xDBWIN(S_RECT, sint16 d, const char* title="Unnamed") : xDISPLAY(), flags(0) { Set(x, y, w, h, d, title); }
-		~xDBWIN() { Close(); }
+  public:
+    xDBWIN() : xDISPLAY(), flags(0), top(0), left(0) { }
+    xDBWIN(S_RECT, sint16 d, const char* title="Unnamed") : xDISPLAY(), flags(0) { Set(x, y, w, h, d, title); }
+    ~xDBWIN() { Close(); }
 };
 
 
@@ -259,30 +259,30 @@ class xDBWIN : public xDISPLAY {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class xSCREEN : public xDISPLAY {
-	private:
-		xSURFACE			surf;
-		uint32				modeID;
+  private:
+    xSURFACE      surf;
+    uint32        modeID;
 
-	protected:
-		uint32			flags;
-		enum {
-			WIN_OPEN					= 0x00000001,
-			SCR_OPEN_FAILED		= 0x00000100,
-			WIN_OPEN_FAILED		= 0x00000800
-		};
-		void				Free();				// cleanly releases the resources
-	public:
-		sint32			Set(xDMODE* mode, const char* title);
-		sint32			Open();
-		sint32			Close();
-		void				Refresh()			{}
-		xSURFACE*		DrawSurface() { return &surf; }
-		xSURFACE*		ViewSurface() { return &surf; }
+  protected:
+    uint32      flags;
+    enum {
+      WIN_OPEN          = 0x00000001,
+      SCR_OPEN_FAILED   = 0x00000100,
+      WIN_OPEN_FAILED   = 0x00000800
+    };
+    void        Free();       // cleanly releases the resources
+  public:
+    sint32      Set(xDMODE* mode, const char* title);
+    sint32      Open();
+    sint32      Close();
+    void        Refresh()     {}
+    xSURFACE*   DrawSurface() { return &surf; }
+    xSURFACE*   ViewSurface() { return &surf; }
 
-	public:
-		xSCREEN() : xDISPLAY(), flags(0) {}
-		xSCREEN(xDMODE* mode, const char* title="Unnamed") : xDISPLAY(), flags(0) { Set(mode,title); }
-		~xSCREEN() { Close(); }
+  public:
+    xSCREEN() : xDISPLAY(), flags(0) {}
+    xSCREEN(xDMODE* mode, const char* title="Unnamed") : xDISPLAY(), flags(0) { Set(mode,title); }
+    ~xSCREEN() { Close(); }
 };
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -292,33 +292,33 @@ class xSCREEN : public xDISPLAY {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class xDBSCREEN : public xDISPLAY {
-	private:
-		xSURFACE			surf[2];
-		ScreenBuffer*	buffer[2];
-		uint32				modeID;
-		sint32				drawBuffer;
+  private:
+    xSURFACE      surf[2];
+    ScreenBuffer* buffer[2];
+    uint32        modeID;
+    sint32        drawBuffer;
 
-	protected:
-		uint32			flags;
-		enum {
-			WIN_OPEN					= 0x00000001,
-			SCR_OPEN_FAILED		= 0x00000100,
-			WIN_OPEN_FAILED		= 0x00000800,
-			BUF_ALLOC_FAILED	= 0x00002000
-		};
-		void				Free();				// cleanly releases the resources
-	public:
-		sint32			Set(xDMODE* mode, const char* title);
-		sint32			Open();
-		sint32			Close();
-		void				Refresh();
-		xSURFACE*		DrawSurface() { return surf+drawBuffer; }
-		xSURFACE*		ViewSurface() { return surf+(drawBuffer^1UL); }
+  protected:
+    uint32      flags;
+    enum {
+      WIN_OPEN          = 0x00000001,
+      SCR_OPEN_FAILED   = 0x00000100,
+      WIN_OPEN_FAILED   = 0x00000800,
+      BUF_ALLOC_FAILED  = 0x00002000
+    };
+    void        Free();       // cleanly releases the resources
+  public:
+    sint32      Set(xDMODE* mode, const char* title);
+    sint32      Open();
+    sint32      Close();
+    void        Refresh();
+    xSURFACE*   DrawSurface() { return surf+drawBuffer; }
+    xSURFACE*   ViewSurface() { return surf+(drawBuffer^1UL); }
 
-	public:
-		xDBSCREEN();
-		xDBSCREEN(xDMODE* mode, const char* title="Unnamed");
-		~xDBSCREEN() { Close(); }
+  public:
+    xDBSCREEN();
+    xDBSCREEN(xDMODE* mode, const char* title="Unnamed");
+    ~xDBSCREEN() { Close(); }
 };
 
 #endif

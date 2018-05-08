@@ -18,11 +18,11 @@
 #define _XSYSTEM_AUDIO68K_HPP
 
 extern "C" {
-	#include <exec/devices.h>
-	#include <devices/ahi.h>
+  #include <exec/devices.h>
+  #include <devices/ahi.h>
 }
 
-extern	LIBRARY				*AHIBase;	// Sound Card extensions
+extern  LIBRARY       *AHIBase; // Sound Card extensions
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -30,24 +30,24 @@ typedef AHIRequest* sysSOUND;
 
 class xAUDIO {
 
-	private:
-		static MsgPort*			AHIport; // reply port for AHI
-		static AHIRequest*	AHImain; // used for opening AHI
-		static uint32				flags;
+  private:
+    static MsgPort*     AHIport; // reply port for AHI
+    static AHIRequest*  AHImain; // used for opening AHI
+    static uint32       flags;
 
-		enum {
-			PORT_ERR		= 0x00000001,
-			IOREQ_ERR		= 0x00000002,
-			DEVICE_ERR	= 0x00000004,
-			AUDIO_ERR		= 0x0000000F
-		};
+    enum {
+      PORT_ERR    = 0x00000001,
+      IOREQ_ERR   = 0x00000002,
+      DEVICE_ERR  = 0x00000004,
+      AUDIO_ERR   = 0x0000000F
+    };
 
-	protected:
-		static sysSOUND			Play(void* data, uint16 freq, float32 vol, float32 pan);
-		static bool					IsPlaying(sysSOUND);
-	public:
-		static sint32 Init();
-		static sint32 Done();
+  protected:
+    static sysSOUND     Play(void* data, uint16 freq, float32 vol, float32 pan);
+    static bool         IsPlaying(sysSOUND);
+  public:
+    static sint32 Init();
+    static sint32 Done();
 };
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

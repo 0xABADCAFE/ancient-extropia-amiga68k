@@ -2,7 +2,7 @@
 //** Description:   eXtropia XSF Codec Virtual Machine           **//
 //** First Started: 2002-03-08                                   **//
 //** Last Updated:                                               **//
-//** Author       	Karl Churchill                               **//
+//** Author         Karl Churchill                               **//
 //** Copyright:     (C)1998-2002, eXtropia Studios               **//
 //**                Serkan YAZICI, Karl Churchill                **//
 //**                All Rights Reserved.                         **//
@@ -14,156 +14,156 @@
 
 void VMCORE::fAND_X8(OP_ARGS)
 {
-	Decode3_X8(This);
-	*This->op[2].u8 = *This->op[0].u8 & *This->op[1].u8;
+  Decode3_X8(This);
+  *This->op[2].u8 = *This->op[0].u8 & *This->op[1].u8;
 }
 
 void VMCORE::fAND_X16(OP_ARGS)
 {
-	Decode3_X16(This);
-	*This->op[2].u16 = *This->op[0].u16 & *This->op[1].u16;
+  Decode3_X16(This);
+  *This->op[2].u16 = *This->op[0].u16 & *This->op[1].u16;
 }
 
 void VMCORE::fAND_X32(OP_ARGS)
 {
-	Decode3_X32(This);
-	*This->op[2].u32 = *This->op[0].u32 & *This->op[1].u32;
+  Decode3_X32(This);
+  *This->op[2].u32 = *This->op[0].u32 & *This->op[1].u32;
 }
 
 void VMCORE::fAND_X64(OP_ARGS)
 {
-	Decode3_X64(This);
-	*This->op[2].u64 = *This->op[0].u64 & *This->op[1].u64;
+  Decode3_X64(This);
+  *This->op[2].u64 = *This->op[0].u64 & *This->op[1].u64;
 }
 
 /////////////////////////////////////////////////////////////////////////////////////
 
 void VMCORE::fOR_X8(OP_ARGS)
 {
-	Decode3_X8(This);
-	*This->op[2].u8 = *This->op[0].u8 | *This->op[1].u8;
+  Decode3_X8(This);
+  *This->op[2].u8 = *This->op[0].u8 | *This->op[1].u8;
 }
 
 void VMCORE::fOR_X16(OP_ARGS)
 {
-	Decode3_X16(This);
-	*This->op[2].u16 = *This->op[0].u16 | *This->op[1].u16;
+  Decode3_X16(This);
+  *This->op[2].u16 = *This->op[0].u16 | *This->op[1].u16;
 }
 
 void VMCORE::fOR_X32(OP_ARGS)
 {
-	Decode3_X32(This);
-	*This->op[2].u32 = *This->op[0].u32 | *This->op[1].u32;
+  Decode3_X32(This);
+  *This->op[2].u32 = *This->op[0].u32 | *This->op[1].u32;
 }
 
 void VMCORE::fOR_X64(OP_ARGS)
 {
-	Decode3_X64(This);
-	*This->op[2].u64 = *This->op[0].u64 | *This->op[1].u64;
+  Decode3_X64(This);
+  *This->op[2].u64 = *This->op[0].u64 | *This->op[1].u64;
 }
 
 /////////////////////////////////////////////////////////////////////////////////////
 
 void VMCORE::fXOR_X8(OP_ARGS)
 {
-	Decode3_X8(This);
-	*This->op[2].u8 = *This->op[0].u32 ^ *This->op[1].u8;
+  Decode3_X8(This);
+  *This->op[2].u8 = *This->op[0].u32 ^ *This->op[1].u8;
 }
 
 void VMCORE::fXOR_X16(OP_ARGS)
 {
-	Decode3_X16(This);
-	*This->op[2].u16 = *This->op[0].u16 ^ *This->op[1].u16;
+  Decode3_X16(This);
+  *This->op[2].u16 = *This->op[0].u16 ^ *This->op[1].u16;
 }
 
 void VMCORE::fXOR_X32(OP_ARGS)
 {
-	Decode3_X32(This);
-	*This->op[2].u32 = *This->op[0].u32 ^ *This->op[1].u32;
+  Decode3_X32(This);
+  *This->op[2].u32 = *This->op[0].u32 ^ *This->op[1].u32;
 }
 
 void VMCORE::fXOR_X64(OP_ARGS)
 {
-	Decode3_X64(This);
-	*This->op[2].u64 = *This->op[0].u64 ^ *This->op[1].u64;
+  Decode3_X64(This);
+  *This->op[2].u64 = *This->op[0].u64 ^ *This->op[1].u64;
 }
 
 /////////////////////////////////////////////////////////////////////////////////////
 
 void VMCORE::fINV_X8(OP_ARGS)
 {
-	Decode2_X8(This);
-	*This->op[1].u8 = ~(*This->op[0].u8);
+  Decode2_X8(This);
+  *This->op[1].u8 = ~(*This->op[0].u8);
 }
 
 void VMCORE::fINV_X16(OP_ARGS)
 {
-	Decode2_X16(This);
-	*This->op[1].u16 = ~(*This->op[0].u16);
+  Decode2_X16(This);
+  *This->op[1].u16 = ~(*This->op[0].u16);
 }
 
 void VMCORE::fINV_X32(OP_ARGS)
 {
-	Decode2_X32(This);
-	*This->op[1].u32 = ~(*This->op[0].u32);
+  Decode2_X32(This);
+  *This->op[1].u32 = ~(*This->op[0].u32);
 }
 
 void VMCORE::fINV_X64(OP_ARGS)
 {
-	Decode2_X64(This);
-	*This->op[1].u64 = ~(*This->op[0].u64);
+  Decode2_X64(This);
+  *This->op[1].u64 = ~(*This->op[0].u64);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////
 
 void VMCORE::fSHL_X8(OP_ARGS)
 {
-	Decode3_X8(This);
-	*This->op[2].u8 = (*This->op[0].u8) << (*This->op[1].u8);
+  Decode3_X8(This);
+  *This->op[2].u8 = (*This->op[0].u8) << (*This->op[1].u8);
 }
 
 void VMCORE::fSHL_X16(OP_ARGS)
 {
-	Decode3_X16(This);
-	*This->op[2].u16 = (*This->op[0].u16) << (*This->op[1].u16);
+  Decode3_X16(This);
+  *This->op[2].u16 = (*This->op[0].u16) << (*This->op[1].u16);
 }
 
 void VMCORE::fSHL_X32(OP_ARGS)
 {
-	Decode3_X32(This);
-	*This->op[2].u32 = (*This->op[0].u32) << (*This->op[1].u32);
+  Decode3_X32(This);
+  *This->op[2].u32 = (*This->op[0].u32) << (*This->op[1].u32);
 }
 
 void VMCORE::fSHL_X64(OP_ARGS)
 {
-	Decode3_X64(This);
-	*This->op[2].u64 = (*This->op[0].u64) << (*This->op[1].u64);
+  Decode3_X64(This);
+  *This->op[2].u64 = (*This->op[0].u64) << (*This->op[1].u64);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////
 
 void VMCORE::fSHR_X8(OP_ARGS)
 {
-	Decode3_X8(This);
-	*This->op[2].u8 = (*This->op[0].u8) >> (*This->op[1].u8);
+  Decode3_X8(This);
+  *This->op[2].u8 = (*This->op[0].u8) >> (*This->op[1].u8);
 }
 
 void VMCORE::fSHR_X16(OP_ARGS)
 {
-	Decode3_X16(This);
-	*This->op[2].u16 = (*This->op[0].u16) >> (*This->op[1].u16);
+  Decode3_X16(This);
+  *This->op[2].u16 = (*This->op[0].u16) >> (*This->op[1].u16);
 }
 
 void VMCORE::fSHR_X32(OP_ARGS)
 {
-	Decode3_X32(This);
-	*This->op[2].u32 = (*This->op[0].u32) >> (*This->op[1].u32);
+  Decode3_X32(This);
+  *This->op[2].u32 = (*This->op[0].u32) >> (*This->op[1].u32);
 }
 
 void VMCORE::fSHR_X64(OP_ARGS)
 {
-	Decode3_X64(This);
-	*This->op[2].u64 = (*This->op[0].u64) >> (*This->op[1].u64);
+  Decode3_X64(This);
+  *This->op[2].u64 = (*This->op[0].u64) >> (*This->op[1].u64);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////

@@ -19,28 +19,28 @@
 
 /*----------------------------------------------------------------------------------------------------------------
 
-		 eXtropia/
-		 |
-		 +->include/ ...Set to standard include path !!
-		 |  +->xDefs.hpp
-		 |  +->xBase.hpp
-		 |  +-><name>/ ...Library stub headers
-		 |  +->Platforms/
-		 |    +->Amiga68K/
-		 |    |  +-><name>/ ...Amiga specific headers
-		 |    :
-		 |    (other archiectures)
-		 |
-		 +->lib/
-		    +->Common/
-		    |  +->xBase.cpp
-		    |  +-><name>/ ...Platform independent .cpp sources
-		    |
-		    +->Platforms/
-		       +->Amiga68K/
+     eXtropia/
+     |
+     +->include/ ...Set to standard include path !!
+     |  +->xDefs.hpp
+     |  +->xBase.hpp
+     |  +-><name>/ ...Library stub headers
+     |  +->Platforms/
+     |    +->Amiga68K/
+     |    |  +-><name>/ ...Amiga specific headers
+     |    :
+     |    (other archiectures)
+     |
+     +->lib/
+        +->Common/
+        |  +->xBase.cpp
+        |  +-><name>/ ...Platform independent .cpp sources
+        |
+        +->Platforms/
+           +->Amiga68K/
            |  +-><name>/ ...Amiga specific .cpp sources
-		       :
-		       (other architectures)
+           :
+           (other architectures)
 
 ----------------------------------------------------------------------------------------------------------------*/
 
@@ -67,35 +67,35 @@
 
 //~~~~~~~~ ARCHITECTURE: XA_xxx (Only 32-bit or above) ~~~~~~~~~
 
-#if defined(__STORM__)		// lazy or what ?
-	#if defined(__PPC__)
-		#define XA_PPC				// Older 601/602/603/603e/604/604e
-		//#define XA_PPC_G3+	// Super PowerPC architectures G3 and above..mmmmm G4-II :)
-	#else
-		#define XA_M680x0
-	#endif
+#if defined(__STORM__)    // lazy or what ?
+  #if defined(__PPC__)
+    #define XA_PPC        // Older 601/602/603/603e/604/604e
+    //#define XA_PPC_G3+  // Super PowerPC architectures G3 and above..mmmmm G4-II :)
+  #else
+    #define XA_M680x0
+  #endif
 #else
-	#define XA_I386
+  #define XA_I386
 #endif
 
 //~~~~~~~~~~~ PLATFORM: XP_xxx (Only 32-bit or above) ~~~~~~~~~~
 
 #if defined(__STORM__)
-	#define XP_AMIGAOS     //Classic Amiga 68K / PowerPC
-	//#define XP_ELATE
+  #define XP_AMIGAOS     //Classic Amiga 68K / PowerPC
+  //#define XP_ELATE
 #else
-	#define XP_WIN32         //Win9x/NT
+  #define XP_WIN32         //Win9x/NT
 #endif // __STORM__
 
 //~~~~~~~~~~~ COMPILER: XC_xxx (Only sexy compilers) ~~~~~~~~~~~
 
 #if defined(__STORM__)
-	#define XC_STORM // version I have isn't that sexy, mate :)
-	#define XC_ALLOW_REF_ABSTRACT 1
+  #define XC_STORM // version I have isn't that sexy, mate :)
+  #define XC_ALLOW_REF_ABSTRACT 1
 
 #else
-	#define XC_WATCOM
-	#define XC_ALLOW_REF_ABSTRACT 0
+  #define XC_WATCOM
+  #define XC_ALLOW_REF_ABSTRACT 0
 
 #endif // __STORM__
 
@@ -107,10 +107,10 @@
 //~~~~~~~~~~~~~~~~~~~~~~ LANGUAGE OPTIONS ~~~~~~~~~~~~~~~~~~~~~~
 //#define X_VERBOSE       //Verbose Output
 #define X_DEBUG           //Enable Debug
-#define X_HAND_OPTIMISED	//For complex code fragments. Keep original and use this to enable the cryptic but fast version
+#define X_HAND_OPTIMISED  //For complex code fragments. Keep original and use this to enable the cryptic but fast version
 
 #ifndef __STORM__
-	#define X_SETALIGNMENT    //Structure Alignments will be set to fastest (overrides compiler)
+  #define X_SETALIGNMENT    //Structure Alignments will be set to fastest (overrides compiler)
 #endif //__STORM__
 
 //// ARCHITECTURE FLAGS //////////////////////////////////////////////////////
@@ -166,8 +166,8 @@
   typedef signed char           sint8;
   typedef signed short          sint16;
   typedef signed long           sint32;
-  typedef signed long long      sint64;				// Karl : Careful - long long support not complete
-  typedef short									bool;					// to be compatible with Exec/types.h BOOL
+  typedef signed long long      sint64;       // Karl : Careful - long long support not complete
+  typedef short                 bool;         // to be compatible with Exec/types.h BOOL
   typedef float                 float32;
   typedef double                float64;
   typedef float                 floatF;
@@ -177,7 +177,7 @@
   #define X_ARCHITECTURE        "PowerPC"
   #define X_ALIGNMENT           XA_ALIGN64
   #define X_PTRSIZE             XA_PTR32
-  #define X_ENDIAN              XA_BIGENDIAN	// Karl : Technically true, but supports little endian without much fuss
+  #define X_ENDIAN              XA_BIGENDIAN  // Karl : Technically true, but supports little endian without much fuss
   #define X_NEGATIVE            XA_TWOSCOMP
   #define X_FPU_IEEE754
   //Basic Types//
@@ -188,11 +188,11 @@
   typedef signed char           sint8;
   typedef signed short          sint16;
   typedef signed long           sint32;
-  typedef signed long long      sint64;				// Karl : Careful - support not complete
-  typedef unsigned short   	    bool;					// to be compatible with Exec/types.h BOOL
+  typedef signed long long      sint64;       // Karl : Careful - support not complete
+  typedef unsigned short        bool;         // to be compatible with Exec/types.h BOOL
   typedef float                 float32;      // Karl : OK is IEEE-754 standard 32-bit
   typedef double                float64;      // Karl : OK is IEEE-754 standard 64-bit
-  typedef double                floatF;				// float for 60x, double for G3 / G4 AFAIK
+  typedef double                floatF;       // float for 60x, double for G3 / G4 AFAIK
   enum { false = 0, true = 1 };
 
 #elif defined(XA_I386)

@@ -88,103 +88,103 @@ char** xBASELIB::startArgs = 0;
 #ifdef X_VERBOSE
 char* xBASELIB::errSev[] =
 {
-	"Success",
-	"Information",
-	"Warning",
-	"Error",
-	"Fatal",
-	"Undefined severity 5",
-	"Undefined severity 6",
-	"Undefined severity 7",
-	"Undefined severity 8",
-	"Undefined severity 9",
-	"Undefined severity 10",
-	"Undefined severity 11",
-	"Undefined severity 12",
-	"Undefined severity 13",
-	"Undefined severity 14",
-	"End of the World",
-	0
+  "Success",
+  "Information",
+  "Warning",
+  "Error",
+  "Fatal",
+  "Undefined severity 5",
+  "Undefined severity 6",
+  "Undefined severity 7",
+  "Undefined severity 8",
+  "Undefined severity 9",
+  "Undefined severity 10",
+  "Undefined severity 11",
+  "Undefined severity 12",
+  "Undefined severity 13",
+  "Undefined severity 14",
+  "End of the World",
+  0
 };
 
 // first dimenstion corresponds to REPCLASS, second is particular error
-char*	xBASELIB::errTbl[][] = {
-	{"returned", "User", 0},
+char* xBASELIB::errTbl[][] = {
+  {"returned", "User", 0},
 
-	{"Value", "is illegal", "overflowed", "is zero", "underflowed", "is not in range",
-	 "has invalid sign",	"has changed", 0},
+  {"Value", "is illegal", "overflowed", "is zero", "underflowed", "is not in range",
+   "has invalid sign",  "has changed", 0},
 
-	{"Pointer", "is not unique", "is empty", "is in use", "is not in range",
-	 "is bidirectionally inconsistent", 0},
+  {"Pointer", "is not unique", "is empty", "is in use", "is not in range",
+   "is bidirectionally inconsistent", 0},
 
-	{"Memory", "exhausted", "freed twice", 0},
+  {"Memory", "exhausted", "freed twice", 0},
 
-	{"File", "not found", "is empty", "is corrupt", "read failed", "write failed",
-	 "was not created", "already exists", "seek before start", "seek past end",
-	 "not opened", "not closed", 0},
+  {"File", "not found", "is empty", "is corrupt", "read failed", "write failed",
+   "was not created", "already exists", "seek before start", "seek past end",
+   "not opened", "not closed", 0},
 
-	{"Resource", "not found", "has incorrect version", "is not correct type",
-	 "is locked", "is unavailable", "is exhausted", "access violation",
-	 "is invalid", "lost", 0},
-	0
+  {"Resource", "not found", "has incorrect version", "is not correct type",
+   "is locked", "is unavailable", "is exhausted", "access violation",
+   "is invalid", "lost", 0},
+  0
 };
 
 char* xBASELIB::Error(sint32 err, char* causer)
 {
-	if (err>=-65536)
-	{
-		if (causer)
-			sprintf(st, "%s : %s %s %d", errSev[0], causer, errTbl[0][0], err);
-		else
-			sprintf(st, "%s : %d", errSev[0], err);
-	}
-	else
-	{
-		err = -err;
-		sint32 es = (err & RSMASK)>>RSBITS;
-		sint32 ec = (err & RCMASK)>>RCBITS;
-		sint32 er = (err & 0x0000FFFF);
+  if (err>=-65536)
+  {
+    if (causer)
+      sprintf(st, "%s : %s %s %d", errSev[0], causer, errTbl[0][0], err);
+    else
+      sprintf(st, "%s : %d", errSev[0], err);
+  }
+  else
+  {
+    err = -err;
+    sint32 es = (err & RSMASK)>>RSBITS;
+    sint32 ec = (err & RCMASK)>>RCBITS;
+    sint32 er = (err & 0x0000FFFF);
 
-		if (ec & USER)
-		{	// user defined errors
-			ec &= ~USER;
-			if (causer)
-				sprintf(st, "%s : %s '%s' %s %d:%d", errSev[es], errTbl[0][1], causer, errTbl[0][0], ec, er);
-				// <severity> : User '<name>' returned <custom error value>
-			else
-				sprintf(st, "%s : %s %s %d:%d", errSev[es], errTbl[0][1], errTbl[0][0], ec, er);
-				// <severity> : User returned <custom error value>
-		}
-		else
-		{
-			// standard error table for built-ins
-			if (causer)
-			{
-				sprintf(st, "%s : %s '%s' %s", errSev[es], errTbl[ec][0], causer, errTbl[ec][er]);
-				// <severity> : <error type> '<name>' <error string>
-			}
-			else
-			{
-				sprintf(st, "%s : %s %s", errSev[es], errTbl[ec][0], errTbl[ec][er]);
-				// <severity> : <error type> <error string>
-			}
-		}
-	}
-	return st;
+    if (ec & USER)
+    { // user defined errors
+      ec &= ~USER;
+      if (causer)
+        sprintf(st, "%s : %s '%s' %s %d:%d", errSev[es], errTbl[0][1], causer, errTbl[0][0], ec, er);
+        // <severity> : User '<name>' returned <custom error value>
+      else
+        sprintf(st, "%s : %s %s %d:%d", errSev[es], errTbl[0][1], errTbl[0][0], ec, er);
+        // <severity> : User returned <custom error value>
+    }
+    else
+    {
+      // standard error table for built-ins
+      if (causer)
+      {
+        sprintf(st, "%s : %s '%s' %s", errSev[es], errTbl[ec][0], causer, errTbl[ec][er]);
+        // <severity> : <error type> '<name>' <error string>
+      }
+      else
+      {
+        sprintf(st, "%s : %s %s", errSev[es], errTbl[ec][0], errTbl[ec][er]);
+        // <severity> : <error type> <error string>
+      }
+    }
+  }
+  return st;
 }
 #endif
 
 sint32 xBASELIB::Init()
 {
-	#ifdef X_VERBOSE
-	cerr.setf(ios::unitbuf);
-	cerr << "xBASELIB Debug build : " __DATE__ " at " __TIME__ "\n";
-	#endif
+  #ifdef X_VERBOSE
+  cerr.setf(ios::unitbuf);
+  cerr << "xBASELIB Debug build : " __DATE__ " at " __TIME__ "\n";
+  #endif
   sint32 result = sysBASELIB::Init();
   if(result!=OK)
     return result;
 
-	// Don't look at me, this part is Serkans code !!!
+  // Don't look at me, this part is Serkans code !!!
   char *s[] = { gxSt[1], gxSt[2], gxSt[0] };
   sint32  p=13, i=0;
   sint32  o[][24] = { { 70,18,13,-7,-10,13,-78,57,-24,25,-17,-6,6,-73,0,0,0,0,0,0,0,0,0,0 },
@@ -197,13 +197,13 @@ sint32 xBASELIB::Init()
 
 sint32 xBASELIB::Init(int argn, char** argv)
 {
-	sint32 r = xBASELIB::Init();
-	if (r==OK)
-	{
-		numStartArgs = argn;
-		startArgs = argv;
-	}
-	return r;
+  sint32 r = xBASELIB::Init();
+  if (r==OK)
+  {
+    numStartArgs = argn;
+    startArgs = argv;
+  }
+  return r;
 }
 
 void xBASELIB::Done()
@@ -213,11 +213,11 @@ void xBASELIB::Done()
 
 char* xBASELIB::Arg(const char* s)
 {
-	for (int i=0; i<numStartArgs; i++)
-	{
-		if (!stricmp(startArgs[i], s))
-			if (++i<numStartArgs)
-				return startArgs[i];
-	}
-	return 0;
+  for (int i=0; i<numStartArgs; i++)
+  {
+    if (!stricmp(startArgs[i], s))
+      if (++i<numStartArgs)
+        return startArgs[i];
+  }
+  return 0;
 }
